@@ -1,0 +1,13 @@
+device,type,gate,left,right
+P1,p,I,VDD,A
+Nclock1,n,phi,A,u1
+N1,n,I,u1,GND
+P2,p,A,VDD,B
+Nclock2,n,phi,B,u2
+N2,n,A,u2,GND
+P3,p,B,VDD,u3
+Pclock3,p,phi,u3,C
+N3,n,B,C,GND
+P4,p,C,VDD,u4
+Pclock4,p,phi,u4,O
+N4,n,C,O,GND

@@ -1,0 +1,5 @@
+branch,device,VGS_over_VDD,VDS_over_VDD,overdrive_over_VDD,region,VSG_over_VDD,VSD_over_VDD
+rising n,N1,0.7,0.7-eta_n,0.7-eta_n,saturation boundary,,
+rising n,N3,0.3+eta_n,0.3+eta_n,0.3,saturation,,
+falling p,P1,,,0.7-eta_p,saturation boundary,0.7,0.7-eta_p
+falling p,P3,,,0.3,saturation,0.3+eta_p,0.3+eta_p

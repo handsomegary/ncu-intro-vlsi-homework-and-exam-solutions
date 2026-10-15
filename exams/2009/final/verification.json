@@ -1,0 +1,8 @@
+{
+  "all_checks_passed": true,
+  "reports": [
+    "register-layout-verification.json",
+    "numerical-verification.json"
+  ],
+  "scope": "source-derived analytical checks only"
+}

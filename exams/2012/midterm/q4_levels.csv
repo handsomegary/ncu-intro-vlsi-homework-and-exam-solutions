@@ -1,0 +1,3 @@
+X_V,gate_degraded_V,Y_V,Z_V,scope,passed
+0,0,0,0,initialized low;constantVT;no bodyeffect,True
+1.8,1.4,1,1.4,settled high;constantVT;no bodyeffect,True

@@ -1,0 +1,918 @@
+{
+  "year": 2012,
+  "exam": "midterm",
+  "year_basis": "archivefolder;printeddateabsent;matchingreferencephotosduplicatedunder2013",
+  "status": "PASS",
+  "method": "ideal MOSrailgraphs;complete resistor-matrix firstmoments;analyticalslack/region/sizing;no processsimulation",
+  "Q2": {
+    "MOS": 10,
+    "graph": [
+      {
+        "name": "P1",
+        "kind": "P",
+        "drain": "n1",
+        "gate": "Xb",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "P2",
+        "kind": "P",
+        "drain": "n1",
+        "gate": "Yb",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "P3",
+        "kind": "P",
+        "drain": "f",
+        "gate": "Zb",
+        "source": "n1",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "P4",
+        "kind": "P",
+        "drain": "n2",
+        "gate": "Xb",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "P5",
+        "kind": "P",
+        "drain": "f",
+        "gate": "Yb",
+        "source": "n2",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "N1",
+        "kind": "N",
+        "drain": "f",
+        "gate": "Zb",
+        "source": "n3",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "N2",
+        "kind": "N",
+        "drain": "n3",
+        "gate": "Xb",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "N3",
+        "kind": "N",
+        "drain": "n3",
+        "gate": "Yb",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "N4",
+        "kind": "N",
+        "drain": "f",
+        "gate": "Yb",
+        "source": "n4",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "N5",
+        "kind": "N",
+        "drain": "n4",
+        "gate": "Xb",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      }
+    ],
+    "truth_cases": 8,
+    "allowed_states": [
+      "000",
+      "010",
+      "100",
+      "101",
+      "110",
+      "111"
+    ],
+    "elmore_states": 6,
+    "function": "XY+XZ+YZ",
+    "worst_rise_first_moment": "Rp*(3*C+2*Cout)",
+    "worst_fall_first_moment": "Rn*(3*C+2*Cout)",
+    "attainable_transition": "010<->110",
+    "student_omission": "attached C3 during rise and C2 during fall",
+    "time_convention": "Elmore first moment;2.2tau is single-pole10\u201390 estimate only, not exact multipole edge",
+    "internal_power": "f*VDD*sum(alpha01_i*C_i*Vi);i1..4 only;alpha01charging probability;excludeCout",
+    "no_process_measurement": true
+  },
+  "Q3": {
+    "MOS": 24,
+    "graph": [
+      {
+        "name": "AP1",
+        "kind": "P",
+        "drain": "a",
+        "gate": "I1",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "AP2",
+        "kind": "P",
+        "drain": "a",
+        "gate": "I2",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "AN1",
+        "kind": "N",
+        "drain": "a",
+        "gate": "I1",
+        "source": "Am",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "AN2",
+        "kind": "N",
+        "drain": "Am",
+        "gate": "I2",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "BP1",
+        "kind": "P",
+        "drain": "Bm",
+        "gate": "I0",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "BP2",
+        "kind": "P",
+        "drain": "b",
+        "gate": "a",
+        "source": "Bm",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "BN1",
+        "kind": "N",
+        "drain": "b",
+        "gate": "I0",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "H"
+      },
+      {
+        "name": "BN2",
+        "kind": "N",
+        "drain": "b",
+        "gate": "a",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "CP1",
+        "kind": "P",
+        "drain": "Cm",
+        "gate": "b",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "CP2",
+        "kind": "P",
+        "drain": "c",
+        "gate": "I3",
+        "source": "Cm",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "CN1",
+        "kind": "N",
+        "drain": "c",
+        "gate": "b",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "CN2",
+        "kind": "N",
+        "drain": "c",
+        "gate": "I3",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "H"
+      },
+      {
+        "name": "DP",
+        "kind": "P",
+        "drain": "O0",
+        "gate": "c",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "DN",
+        "kind": "N",
+        "drain": "O0",
+        "gate": "c",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "EP1",
+        "kind": "P",
+        "drain": "Em",
+        "gate": "I3",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "H"
+      },
+      {
+        "name": "EP2",
+        "kind": "P",
+        "drain": "e",
+        "gate": "I4",
+        "source": "Em",
+        "body": "VDD",
+        "vt": "H"
+      },
+      {
+        "name": "EN1",
+        "kind": "N",
+        "drain": "e",
+        "gate": "I3",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "H"
+      },
+      {
+        "name": "EN2",
+        "kind": "N",
+        "drain": "e",
+        "gate": "I4",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "H"
+      },
+      {
+        "name": "FP",
+        "kind": "P",
+        "drain": "v",
+        "gate": "I5",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "H"
+      },
+      {
+        "name": "FN",
+        "kind": "N",
+        "drain": "v",
+        "gate": "I5",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "H"
+      },
+      {
+        "name": "GP1",
+        "kind": "P",
+        "drain": "O1",
+        "gate": "e",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "H"
+      },
+      {
+        "name": "GP2",
+        "kind": "P",
+        "drain": "O1",
+        "gate": "v",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "H"
+      },
+      {
+        "name": "GN1",
+        "kind": "N",
+        "drain": "O1",
+        "gate": "e",
+        "source": "Gm",
+        "body": "VSS",
+        "vt": "H"
+      },
+      {
+        "name": "GN2",
+        "kind": "N",
+        "drain": "Gm",
+        "gate": "v",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "H"
+      }
+    ],
+    "truth_cases": 64,
+    "marked_low": 12,
+    "marked_high": 12,
+    "outputs": [
+      "O0=NOT(I0)*I1*I2+I3",
+      "O1=I3+I4+I5"
+    ],
+    "conditional_marking": "O1tenMOS high;BN1(I0parallel nMOS),CN2(I3parallel nMOS) high only if own short paths meet slack;other12low",
+    "student_marking": "upper14low/lower10high;conservative;no process delay data;not a proven global optimum",
+    "symbolic_constraints": [
+      "max(dNOR_H+dNAND_H,dINV_H+dNAND_H)<=dNAND_L+2*dNOR_L+dINV_L",
+      "I0 andI3high-nMOS shortpath delays<=same low critical bound"
+    ],
+    "optimum_limit": "unique leakage optimum cannot be established without high/low device delays,loading,leakweights/inputdistribution;marking has explicit eligibility conditions",
+    "illustrative_uniform_scale_bound": "rho<=11/6 forO1cone only;short branch bounds separate"
+  },
+  "Q4": {
+    "VDD": 1.8,
+    "VT": 0.4,
+    "high_Y": 1,
+    "high_Z": 1.4,
+    "low_Y": 0,
+    "low_Z": 0,
+    "source_topology": "Yupper pass takesX data and gate fromaVDD-gated nMOS passingX;ZsixnMOSallgatesVDD",
+    "m1": "can saturation orlinear dependingbias;ideal abrupthigh phase is saturation before cutoff",
+    "m2_to_m6": "linear while conducting, possible saturation boundary/cutoff atlimit;never interior saturation withbothends<=VDD-VT",
+    "downstream_bound_cases": 225,
+    "no_process_measurement": true,
+    "waveform_scope": "settled levels and qualitative rise;edge time/cap values unspecified;bodyeffect raisesVT andwouldlowerlevels"
+  },
+  "Q5": {
+    "mu_n_over_mu_p": 3,
+    "delay": "T/RC=(1+alpha)*(1+3/alpha)",
+    "required_T_over_RC": 8,
+    "feasible_alpha": [
+      1,
+      3
+    ],
+    "minimum_power_alpha": 1,
+    "switching_power": "2*alpha01*f*(1+alpha)*C*VDD^2;two interstage gates;ignoreunspecifieddiffusion/wirecaps",
+    "chosen_power_ratio_to_alpha3": 0.5,
+    "third_external_load": "CL doesnot enter bracketed first-two-stage delay/power;thirdstage gatecap does"
+  },
+  "Q6": {
+    "Q6a": {
+      "MOS": 8,
+      "graph": [
+        {
+          "name": "AN1",
+          "kind": "N",
+          "drain": "f",
+          "gate": "w",
+          "source": "ANj1",
+          "body": "VSS",
+          "vt": "L"
+        },
+        {
+          "name": "AN2",
+          "kind": "N",
+          "drain": "ANj1",
+          "gate": "x",
+          "source": "VSS",
+          "body": "VSS",
+          "vt": "L"
+        },
+        {
+          "name": "AN3",
+          "kind": "N",
+          "drain": "ANj1",
+          "gate": "y",
+          "source": "VSS",
+          "body": "VSS",
+          "vt": "L"
+        },
+        {
+          "name": "AN4",
+          "kind": "N",
+          "drain": "ANj1",
+          "gate": "z",
+          "source": "VSS",
+          "body": "VSS",
+          "vt": "L"
+        },
+        {
+          "name": "AP1",
+          "kind": "P",
+          "drain": "f",
+          "gate": "w",
+          "source": "VDD",
+          "body": "VDD",
+          "vt": "L"
+        },
+        {
+          "name": "AP2",
+          "kind": "P",
+          "drain": "f",
+          "gate": "x",
+          "source": "APj1",
+          "body": "VDD",
+          "vt": "L"
+        },
+        {
+          "name": "AP3",
+          "kind": "P",
+          "drain": "APj1",
+          "gate": "y",
+          "source": "APj2",
+          "body": "VDD",
+          "vt": "L"
+        },
+        {
+          "name": "AP4",
+          "kind": "P",
+          "drain": "APj2",
+          "gate": "z",
+          "source": "VDD",
+          "body": "VDD",
+          "vt": "L"
+        }
+      ],
+      "cases": 16
+    },
+    "Q6b": {
+      "MOS": 12,
+      "graph": [
+        {
+          "name": "IXP",
+          "kind": "P",
+          "drain": "xb",
+          "gate": "x",
+          "source": "VDD",
+          "body": "VDD",
+          "vt": "L"
+        },
+        {
+          "name": "IXN",
+          "kind": "N",
+          "drain": "xb",
+          "gate": "x",
+          "source": "VSS",
+          "body": "VSS",
+          "vt": "L"
+        },
+        {
+          "name": "IYP",
+          "kind": "P",
+          "drain": "yb",
+          "gate": "y",
+          "source": "VDD",
+          "body": "VDD",
+          "vt": "L"
+        },
+        {
+          "name": "IYN",
+          "kind": "N",
+          "drain": "yb",
+          "gate": "y",
+          "source": "VSS",
+          "body": "VSS",
+          "vt": "L"
+        },
+        {
+          "name": "BN1",
+          "kind": "N",
+          "drain": "f",
+          "gate": "x",
+          "source": "BNj1",
+          "body": "VSS",
+          "vt": "L"
+        },
+        {
+          "name": "BN2",
+          "kind": "N",
+          "drain": "BNj1",
+          "gate": "y",
+          "source": "VSS",
+          "body": "VSS",
+          "vt": "L"
+        },
+        {
+          "name": "BN3",
+          "kind": "N",
+          "drain": "f",
+          "gate": "xb",
+          "source": "BNj2",
+          "body": "VSS",
+          "vt": "L"
+        },
+        {
+          "name": "BN4",
+          "kind": "N",
+          "drain": "BNj2",
+          "gate": "yb",
+          "source": "VSS",
+          "body": "VSS",
+          "vt": "L"
+        },
+        {
+          "name": "BP1",
+          "kind": "P",
+          "drain": "f",
+          "gate": "x",
+          "source": "BPj1",
+          "body": "VDD",
+          "vt": "L"
+        },
+        {
+          "name": "BP2",
+          "kind": "P",
+          "drain": "f",
+          "gate": "y",
+          "source": "BPj1",
+          "body": "VDD",
+          "vt": "L"
+        },
+        {
+          "name": "BP3",
+          "kind": "P",
+          "drain": "BPj1",
+          "gate": "xb",
+          "source": "VDD",
+          "body": "VDD",
+          "vt": "L"
+        },
+        {
+          "name": "BP4",
+          "kind": "P",
+          "drain": "BPj1",
+          "gate": "yb",
+          "source": "VDD",
+          "body": "VDD",
+          "vt": "L"
+        }
+      ],
+      "cases": 4
+    },
+    "TG_alternative": {
+      "MOS": 8,
+      "graph": [
+        {
+          "name": "IXP",
+          "kind": "P",
+          "drain": "xb",
+          "gate": "x",
+          "source": "VDD",
+          "body": "VDD",
+          "vt": "L"
+        },
+        {
+          "name": "IXN",
+          "kind": "N",
+          "drain": "xb",
+          "gate": "x",
+          "source": "VSS",
+          "body": "VSS",
+          "vt": "L"
+        },
+        {
+          "name": "IYP",
+          "kind": "P",
+          "drain": "yb",
+          "gate": "y",
+          "source": "VDD",
+          "body": "VDD",
+          "vt": "L"
+        },
+        {
+          "name": "IYN",
+          "kind": "N",
+          "drain": "yb",
+          "gate": "y",
+          "source": "VSS",
+          "body": "VSS",
+          "vt": "L"
+        },
+        {
+          "name": "TY_P",
+          "kind": "P",
+          "drain": "f",
+          "gate": "x",
+          "source": "y",
+          "body": "VDD",
+          "vt": "L"
+        },
+        {
+          "name": "TY_N",
+          "kind": "N",
+          "drain": "f",
+          "gate": "xb",
+          "source": "y",
+          "body": "VSS",
+          "vt": "L"
+        },
+        {
+          "name": "TYB_P",
+          "kind": "P",
+          "drain": "f",
+          "gate": "xb",
+          "source": "yb",
+          "body": "VDD",
+          "vt": "L"
+        },
+        {
+          "name": "TYB_N",
+          "kind": "N",
+          "drain": "f",
+          "gate": "x",
+          "source": "yb",
+          "body": "VSS",
+          "vt": "L"
+        }
+      ]
+    },
+    "minimum_scope": "8forQ6a,12forQ6b inconventional fullycomplementary CMOSwithgeneratedliteralcomplements;8TGXORifbroader staticpasslogicallowed",
+    "student_error": "10T NAND(x,y) feedscompound PDNk+xy ->constant0;fails01and10"
+  },
+  "Q7": {
+    "MOS": 28,
+    "graph": [
+      {
+        "name": "CN1",
+        "kind": "N",
+        "drain": "cb",
+        "gate": "x",
+        "source": "CNj1",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "CN2",
+        "kind": "N",
+        "drain": "CNj1",
+        "gate": "y",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "CN3",
+        "kind": "N",
+        "drain": "cb",
+        "gate": "c",
+        "source": "CNj2",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "CN4",
+        "kind": "N",
+        "drain": "CNj2",
+        "gate": "x",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "CN5",
+        "kind": "N",
+        "drain": "CNj2",
+        "gate": "y",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "CP1",
+        "kind": "P",
+        "drain": "cb",
+        "gate": "x",
+        "source": "CPj1",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "CP2",
+        "kind": "P",
+        "drain": "cb",
+        "gate": "y",
+        "source": "CPj1",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "CP3",
+        "kind": "P",
+        "drain": "CPj1",
+        "gate": "c",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "CP4",
+        "kind": "P",
+        "drain": "CPj1",
+        "gate": "x",
+        "source": "CPj2",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "CP5",
+        "kind": "P",
+        "drain": "CPj2",
+        "gate": "y",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "CIP",
+        "kind": "P",
+        "drain": "cout",
+        "gate": "cb",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "CIN",
+        "kind": "N",
+        "drain": "cout",
+        "gate": "cb",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SN1",
+        "kind": "N",
+        "drain": "sb",
+        "gate": "cb",
+        "source": "SNj1",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SN2",
+        "kind": "N",
+        "drain": "SNj1",
+        "gate": "x",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SN3",
+        "kind": "N",
+        "drain": "SNj1",
+        "gate": "y",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SN4",
+        "kind": "N",
+        "drain": "SNj1",
+        "gate": "c",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SN5",
+        "kind": "N",
+        "drain": "sb",
+        "gate": "x",
+        "source": "SNj2",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SN6",
+        "kind": "N",
+        "drain": "SNj2",
+        "gate": "y",
+        "source": "SNj3",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SN7",
+        "kind": "N",
+        "drain": "SNj3",
+        "gate": "c",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SP1",
+        "kind": "P",
+        "drain": "sb",
+        "gate": "cb",
+        "source": "SPj1",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SP2",
+        "kind": "P",
+        "drain": "sb",
+        "gate": "x",
+        "source": "SPj2",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SP3",
+        "kind": "P",
+        "drain": "SPj2",
+        "gate": "y",
+        "source": "SPj3",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SP4",
+        "kind": "P",
+        "drain": "SPj3",
+        "gate": "c",
+        "source": "SPj1",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SP5",
+        "kind": "P",
+        "drain": "SPj1",
+        "gate": "x",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SP6",
+        "kind": "P",
+        "drain": "SPj1",
+        "gate": "y",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SP7",
+        "kind": "P",
+        "drain": "SPj1",
+        "gate": "c",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SIP",
+        "kind": "P",
+        "drain": "sout",
+        "gate": "sb",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SIN",
+        "kind": "N",
+        "drain": "sout",
+        "gate": "sb",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      }
+    ],
+    "cases": 8,
+    "carry": "xy+c(x+y)",
+    "sum": "xXORyXORc=cb(x+y+c)+xyc",
+    "internal": "cb=NOTcarry,sb=NOTsum;twooutputinverters;providedinternalcbavoidsinputcomplementgeneration",
+    "source_comparison": "studenttruth/SOPcorrect;complementliteral PDNs can produce trueoutputs whencomplementsprovided, but localinputINV generators omitted;complete28MOS usesonlytrueprimaryinputs"
+  }
+}

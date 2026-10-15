@@ -1,0 +1,216 @@
+% !TeX program = pdflatex
+% Standalone source. Compile with pdfLaTeX; no external figures are required.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,booktabs,array,xcolor,tikz,fancyhdr,hyperref,listings,pgfplots}
+\usetikzlibrary{calc,arrows.meta}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black}
+\definecolor{accent}{HTML}{124E66}
+\definecolor{pcol}{HTML}{A24021}
+\definecolor{ncol}{HTML}{175A86}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small EE3032 / Fall 2017 / HW1}
+\fancyhead[R]{\small CMOS logic}\fancyfoot[C]{\thepage}
+\setlength{\headheight}{15pt}\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\renewcommand{\arraystretch}{1.2}
+\newcommand{\answer}[1]{\par\noindent\colorbox{accent!9}{\parbox{0.96\linewidth}{#1}}\par}
+\newcommand{\AND}{\,}
+\newcommand{\VDD}{V_{\mathrm{DD}}}
+\newcommand{\VSS}{V_{\mathrm{SS}}}
+% A conventional switch-level MOS symbol: continuous channel, insulated gate,
+% and a gate bubble for pMOS. Bulk terminals are omitted, as explained below.
+% Arguments: device id, x, y, gate literal, p or n. t/b are upper/lower terminals.
+\newcommand{\MOS}[5]{
+  \coordinate (#1) at (#2,#3);
+  \coordinate (#1t) at ($(#1)+(0,.55)$);
+  \coordinate (#1b) at ($(#1)+(0,-.55)$);
+  \draw (#1t)--($(#1)+(0,.30)$)--($(#1)+(-.18,.30)$);
+  \draw ($(#1)+(-.18,.34)$)--($(#1)+(-.18,-.34)$);
+  \draw ($(#1)+(-.18,-.30)$)--($(#1)+(0,-.30)$)--(#1b);
+  \draw ($(#1)+(-.35,.33)$)--($(#1)+(-.35,-.33)$);
+  \def\type{#5}\def\ptype{p}
+  \ifx\type\ptype
+    \draw ($(#1)+(-.78,0)$)--($(#1)+(-.53,0)$);
+    \draw ($(#1)+(-.465,0)$) circle (.065);
+    \draw ($(#1)+(-.40,0)$)--($(#1)+(-.35,0)$);
+  \else
+    \draw ($(#1)+(-.78,0)$)--($(#1)+(-.35,0)$);
+  \fi
+  \node[anchor=east] at ($(#1)+(-.82,0)$) {$#4$};
+  \node[anchor=west,font=\scriptsize] at ($(#1)+(.10,0)$) {#1};
+}
+% A transmission-gate instance; its two MOS devices are expanded on page 3.
+\newcommand{\TG}[4]{
+  \node[draw,rounded corners=1pt,minimum width=11mm,minimum height=6mm,
+        fill=accent!5,font=\small] (#1) at (#2,#3) {$\mathrm{TG}_{#4}$};
+}
+
+\pgfplotsset{compat=1.18}
+\lstset{basicstyle=\ttfamily\scriptsize,breaklines=true,frame=single,columns=fullflexible}
+\begin{document}
+\begin{center}{\LARGE\bfseries 2017 HW1}\\[4pt]{\large MOS Theory, Dual Thresholds, and CMOS Logic}\\[4pt]{\small EE3032 / Introduction to VLSI Design}\end{center}
+The original two-page prompt and supplied scanned answers were read first. The results below are independently derived; the source ledger identifies every reference. PMOS bodies connect to VDD and NMOS bodies to VSS. True external literals suffice for the static-CMOS networks.
+\section*{1. Two identical series devices per inverter branch}
+\textbf{(a) The rail-side devices $M_1$ and $M_4$ cannot carry nonzero DC current in saturation.}
+For the nMOS stack let the internal node be $u$ and $U=V_{\rm in}-V_{tn}>0$.
+Saturation of the lower $M_1$ would require $u\ge U$. But then the upper device has
+$V_{GS,2}=V_{\rm in}-u\le V_{tn}$ and is cut off. Thus the assumed positive stack current is impossible. The pMOS argument is identical with voltages measured downward from $\VDD$: saturation of rail-side $M_4$ would cut off $M_3$.
+At cutoff or the zero-current boundary, the usual region inequalities may coincide; the statement concerns conducting operation.
+\textbf{(b) Both equivalent aspect ratios are one half of the original:}
+\[
+ \boxed{(W/L)_{N_1}=(W/L)_{N_2}=\tfrac 12(W/L).}
+\]
+Here $N_1$ is nMOS and $N_2$ is pMOS. This equality uses the ideal long-channel square-law model, no body effect, and no channel-length modulation; it does not assert exact BSIM short-channel equivalence.
+Let $k_n=\mu_n C_{\rm ox}(W/L)$. If the upper nMOS is saturated,
+\[
+ k_n(Uu-u^2/2)=\frac{k_n}{2}(U-u)^2,
+ \quad u=U\left(1-\frac 1{\sqrt 2}\right),
+ \quad I=\frac{k_nU^2}{4}.
+\]
+A single saturated nMOS with $k_{\rm eq}=k_n/2$ has the same current. If both devices are linear and $v=V_{\rm out}<U$, adding their equal-current equations gives
+\[
+ \frac{2I}{k_n}=Uv-\frac{v^2}{2},\qquad
+ I=\frac{k_n}{2}\left(Uv-\frac{v^2}{2}\right).
+\]
+Thus the half-aspect-ratio device also matches the linear part of the branch characteristic; the pMOS derivation is symmetric. Halve $W$ at fixed $L$, or double $L$ in this ideal model.
+\textbf{Reference comparison.} The supplied answer identifies $M_1,M_4$ and the factor $1/2$ correctly. The present proof also covers the linear region. \texttt{verify\_logic.py} checks 5,050 normalized operating points; the maximum current-equation error is below $10^{-12}$.
+
+\newpage
+\section*{2. High-$V_t$ selection on the NAND branch}
+From the original gate symbols,
+\[
+ D=\bar A\oplus B=AB+\bar A\bar B,\qquad E=\overline{BC}.
+\]
+With the given one-unit low-$V_t$ gate model, the path $A\to inverter\to XOR\to D$ is critical at two units. The direct $B\to XOR\to D$ and the two NAND paths each take one unit. Keep the inverter and XOR realization low-$V_t$; replace the \emph{entire} NAND driving $E$ by high-$V_t$ devices.
+\begin{center}\begin{tabular}{lccc}\toprule
+Path&Low-$V_t$ delay&New delay&Slack before change\\\midrule
+$A\to D$&2&2&0\\$B\to D$&1&1&1\\$B,C\to E$&1&$d_{\rm HVT,NAND}$&1\\\bottomrule
+\end{tabular}\end{center}
+\textbf{Necessary timing condition:} $d_{\rm HVT,NAND}\le 2$ units. The prompt supplies no high-$V_t$ delay or threshold values, so a numerical leakage reduction or unconditional timing guarantee cannot be inferred. Size the high-$V_t$ NAND if necessary to satisfy this condition. Changing transistors inside the shared critical XOR without a library timing model is not justified by the direct-$B$ slack alone.
+Below is a fully complementary static-CMOS realization. Complement-driver outputs are labeled rather than routed across the schematic; connect each identically named gate to its driver. All pMOS bodies connect to VDD and all nMOS bodies to VSS. The B complement generator belongs to the XOR-cell implementation, within the given abstract cell-delay model.
+\begin{center}
+\begin{tikzpicture}[x=.85cm,y=.45cm,line width=.8pt,font=\small]
+% Thin-channel low-Vt devices.
+\MOS{P1}{0}{6.5}{\bar A}{p}\MOS{P2}{2.7}{6.5}{B}{p}
+\MOS{P3}{0}{4.7}{A}{p}\MOS{P4}{2.7}{4.7}{\bar B}{p}
+\draw (0,7.5)--(2.7,7.5) node[right] {$\VDD$};
+\draw (0,7.5)--(P1t) (2.7,7.5)--(P2t);
+\draw (P1b)--(0,5.6)--(2.7,5.6)--(P2b);
+\draw (0,5.6)--(P3t) (2.7,5.6)--(P4t);
+\draw (P3b)--(0,3.55)--(3.7,3.55) node[right] {$D$};\draw (P4b)--(2.7,3.55);
+\MOS{N1}{0}{2.5}{\bar A}{n}\MOS{N2}{0}{.7}{B}{n}
+\MOS{N3}{2.7}{2.5}{A}{n}\MOS{N4}{2.7}{.7}{\bar B}{n}
+\draw (0,3.55)--(N1t) (2.7,3.55)--(N3t) (N1b)--(N2t) (N3b)--(N4t);
+\draw (N2b)--(0,-.35)--(2.7,-.35)--(N4b);\node[below] at (1.35,-.35) {$\VSS$};
+% Two low-Vt complement drivers.
+\MOS{PA}{-3.4}{6.0}{A}{p}\MOS{NA}{-3.4}{4.4}{A}{n}
+\draw (-3.4,7.5) node[above] {$\VDD$}--(PAt) (PAb)--(NAt);
+\draw (-3.4,5.2)--(-2.6,5.2) node[right] {$\bar A$};\draw (NAb)--(-3.4,3.5);\draw (-3.55,3.5)--(-3.25,3.5)--(-3.4,3.1)--cycle;
+\MOS{PB}{-3.4}{1.2}{B}{p}\MOS{NB}{-3.4}{-.6}{B}{n}
+\draw (-3.4,2.2) node[above] {$\VDD$}--(PBt) (PBb)--(NBt);
+\draw (-3.4,.3)--(-2.6,.3) node[right] {$\bar B$};\draw (NBb)--(-3.4,-1.6) node[below] {$\VSS$};
+% The E NAND uses thick-channel high-Vt devices.
+\MOS{P5}{6.0}{6.5}{B}{p}\MOS{P6}{8.7}{6.5}{C}{p}
+\MOS{N5}{7.35}{4.0}{B}{n}\MOS{N6}{7.35}{2.2}{C}{n}
+\draw (6,7.5)--(8.7,7.5) node[right] {$\VDD$};\draw (6,7.5)--(P5t) (8.7,7.5)--(P6t);
+\draw (P5b)--(6,5.1)--(9.5,5.1) node[right] {$E$};\draw (P6b)--(8.7,5.1);
+\draw (7.35,5.1)--(N5t) (N5b)--(N6t);\draw (N6b)--(7.35,1.1);\draw (7.2,1.1)--(7.5,1.1)--(7.35,.7)--cycle;
+\foreach \x/\y in {6/6.5,8.7/6.5,7.35/4,7.35/2.2}{\draw[line width=2.5pt] (\x-.18,\y+.34)--(\x-.18,\y-.34);}
+\node[align=center] at (7.35,-.2) {Thick channel: high $V_t$\\Thin channel: low $V_t$};
+\end{tikzpicture}\end{center}
+\textbf{Reference comparison.} The supplied scan correctly makes the noncritical NAND high-$V_t$ and also suggests optional high-$V_t$ devices inside the XOR. We retain the NAND change. The optional internal changes need a characterized cell timing model to guarantee the critical A path; the given direct-B slack alone is insufficient. All eight Boolean combinations are checked independently. CIC018 has no supplied characterized dual-$V_t$ variants; no process leakage value is invented.
+
+\newpage
+\section*{3. One 4:1 multiplexer}
+\[
+ F=\bar A(B+\bar C)+A\bar B\bar C.
+\]
+Choose the select pair $(s_1,s_0)=(B,C)$. Its Shannon cofactors are:
+\begin{center}\begin{tabular}{cc|c}\toprule
+$B$&$C$&Data input\\\midrule
+0&0&$D_0=1$\\0&1&$D_1=0$\\1&0&$D_2=\bar A$\\1&1&$D_3=\bar A$\\\bottomrule
+\end{tabular}\end{center}
+Thus one CMOS inverter generates $\bar A$, which drives both $D_2,D_3$. The 4:1 mux is selected in binary order 00,01,10,11:
+\begin{center}\begin{tikzpicture}[>=Latex,font=\small]
+\node[draw,minimum width=24mm,minimum height=40mm] (m) at (0,0) {4:1 MUX};
+\foreach \y/\v/\d in {1.5/1/0,.5/0/1,-.5/\bar A/2,-1.5/\bar A/3}{\draw (-3,\y) node[left] {$\v$}--(-1.2,\y) node[midway,above] {$D_\d$};}
+\draw[->] (m.east)--++(1.2,0) node[right] {$F$};
+\draw[->] (0,-3) node[below] {$s_1=B,\ s_0=C$}--(m.south);
+\end{tikzpicture}\end{center}
+\begin{center}\begin{tabular}{ccc|c}\toprule
+$A$&$B$&$C$&$F$\\\midrule
+0&0&0&1\\0&0&1&0\\0&1&0&1\\0&1&1&1\\
+1&0&0&1\\1&0&1&0\\1&1&0&0\\1&1&1&0\\\bottomrule
+\end{tabular}\end{center}
+\textbf{Reference comparison.} The supplied scan gives three valid select-pair choices, including this BC choice. We retain it because it uses only one complement and two repeated data inputs. All eight cases pass the independent cofactor check.
+
+\newpage
+\section*{4(a). Complemented AOI function}
+\textbf{Read the overbar in the prompt carefully: it spans the entire sum.}
+\[
+ \boxed{f(w,x,y,z)=\overline{w(x+y)+yz}.}
+\]
+The pull-down network (PDN) implements $G=w(x+y)+yz$: $n_w$ in series with $(n_x\parallel n_y)$, in parallel with $(n_y\hbox{ series }n_z)$.
+The pull-up network (PUN) is the dual:
+$(p_w\parallel(p_x\hbox{ series }p_y))$ in series with $(p_y\parallel p_z)$.
+\begin{center}
+\begin{tikzpicture}[x=.92cm,y=.52cm,line width=.8pt,font=\small]
+\MOS{P1}{-.6}{6.1}{w}{p}\MOS{P2}{2.2}{6.8}{x}{p}\MOS{P3}{2.2}{5.3}{y}{p}
+\MOS{P4}{-.6}{3.3}{y}{p}\MOS{P5}{2.2}{3.3}{z}{p}
+\draw (-.6,7.8)--(2.2,7.8) node[right] {$\VDD$};
+\draw (-.6,7.8)--(P1t) (2.2,7.8)--(P2t) (P2b)--(P3t);
+\draw (P1b)--(-.6,4.35)--(2.2,4.35)--(P3b);
+\draw (-.6,4.35)--(P4t) (2.2,4.35)--(P5t);
+\draw (P4b)--(-.6,2.2)--(4.5,2.2) node[right] {$f$};\draw (P5b)--(2.2,2.2);
+\MOS{N1}{0}{.65}{w}{n}\MOS{N2}{-1.2}{-1.8}{x}{n}\MOS{N3}{1.5}{-1.8}{y}{n}
+\MOS{N4}{4.5}{.65}{y}{n}\MOS{N5}{4.5}{-1.8}{z}{n}
+\draw (0,2.2)--(N1t) (4.5,2.2)--(N4t);
+\draw (N1b)--(0,-.65)--(-1.2,-.65)--(N2t);\draw (0,-.65)--(1.5,-.65)--(N3t);
+\draw (N4b)--(N5t);
+\draw (N2b)--(-1.2,-3.1)--(4.5,-3.1)--(N5b);\draw (N3b)--(1.5,-3.1);
+\node[below] at (1.6,-3.1) {$\VSS$};
+\end{tikzpicture}
+\end{center}
+There are five nMOS and five pMOS devices: \textbf{10 transistors total}. Two devices are separately controlled by $y$ in each network; they are distinct transistors.
+\[
+ PUN=\bigl[\bar w+\bar x\bar y\bigr](\bar y+\bar z)
+     =\overline{w(x+y)+yz}=f.
+\]
+Every input has exactly one conducting rail network in ideal switch logic, so there is no static VDD-to-ground path. No complemented external input is needed.
+\textbf{Reference comparison.} The cleaned scan uses the same correct 10-transistor topology. The photographed answer reads the polarity differently and adds complemented inputs; we follow the original full overbar. This solution retains it, clarifies the overbar, and checks all 16 input combinations.
+\newpage
+\section*{4(b). Complement of a three-input majority}
+\[
+ f=\bar x\bar y+\bar x\bar z+\bar y\bar z
+   =\overline{xy+xz+yz}
+   =\boxed{\overline{x(y+z)+yz}}.
+\]
+Use the same network structure as 4(a), now with the first branch $n_x$ in series with $(n_y\parallel n_z)$ and the second branch $n_y$ in series with $n_z$.
+\begin{center}
+\begin{tikzpicture}[x=.92cm,y=.52cm,line width=.8pt,font=\small]
+\MOS{P1}{-.6}{6.1}{x}{p}\MOS{P2}{2.2}{6.8}{y}{p}\MOS{P3}{2.2}{5.3}{z}{p}
+\MOS{P4}{-.6}{3.3}{y}{p}\MOS{P5}{2.2}{3.3}{z}{p}
+\draw (-.6,7.8)--(2.2,7.8) node[right] {$\VDD$};
+\draw (-.6,7.8)--(P1t) (2.2,7.8)--(P2t) (P2b)--(P3t);
+\draw (P1b)--(-.6,4.35)--(2.2,4.35)--(P3b);
+\draw (-.6,4.35)--(P4t) (2.2,4.35)--(P5t);
+\draw (P4b)--(-.6,2.2)--(4.5,2.2) node[right] {$f$};\draw (P5b)--(2.2,2.2);
+\MOS{N1}{0}{.65}{x}{n}\MOS{N2}{-1.2}{-1.8}{y}{n}\MOS{N3}{1.5}{-1.8}{z}{n}
+\MOS{N4}{4.5}{.65}{y}{n}\MOS{N5}{4.5}{-1.8}{z}{n}
+\draw (0,2.2)--(N1t) (4.5,2.2)--(N4t);
+\draw (N1b)--(0,-.65)--(-1.2,-.65)--(N2t);\draw (0,-.65)--(1.5,-.65)--(N3t);
+\draw (N4b)--(N5t);
+\draw (N2b)--(-1.2,-3.1)--(4.5,-3.1)--(N5b);\draw (N3b)--(1.5,-3.1);
+\node[below] at (1.6,-3.1) {$\VSS$};
+\end{tikzpicture}
+\end{center}
+\textbf{Gate labels in this diagram.} P4/N4 are controlled by $y$ and P5/N5 by $z$; repeated labels denote independent devices.
+The dual PUN is $(p_x\parallel(p_y\hbox{ series }p_z))$ in series with $(p_y\parallel p_z)$. It uses true literals only and needs \textbf{10 transistors}.
+\begin{center}\begin{tabular}{ccc|c}\toprule
+$x$&$y$&$z$&$f$\\\midrule
+0&0&0&1\\0&0&1&1\\0&1&0&1\\0&1&1&0\\
+1&0&0&1\\1&0&1&0\\1&1&0&0\\1&1&1&0\\\bottomrule
+\end{tabular}\end{center}
+\textbf{Reference comparison.} The supplied answer implements the equivalent PDN $(x+y)(x+z)(y+z)=xy+xz+yz$, using six nMOS and six pMOS. Factoring the majority expression saves two transistors. All eight combinations pass the independent PDN/PUN complement check.
+\end{document}

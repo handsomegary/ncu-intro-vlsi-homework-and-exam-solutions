@@ -1,0 +1,17 @@
+device,type,gate,channel1,channel2
+P1,p,c1,D,b
+N1,n,CLK,D,b
+P2,p,CLK,VDD,c1
+N2,n,CLK,c1,GND
+P3,p,b,VDD,m
+N3,n,b,m,GND
+P4,p,m,VDD,b
+N4,n,m,b,GND
+P5,p,c2,m,s
+N5,n,CLKB,m,s
+P6,p,CLKB,VDD,c2
+N6,n,CLKB,c2,GND
+P7,p,s,VDD,Q
+N7,n,s,Q,GND
+P8,p,Q,VDD,s
+N8,n,Q,s,GND

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "clock_paths": 3,
+  "critical_path": "A->C",
+  "critical_delay_ns": 0.6,
+  "matched_threshold_mobility_ratio_mu_n_over_mu_p": 2,
+  "noise_margin_examples": 5,
+  "noise_model": "ideal long-channel inverter; Vdd1.8V, equal |Vt|0.45V; slope=-1 boundaries",
+  "physical_simulation_required_by_prompt": false
+}

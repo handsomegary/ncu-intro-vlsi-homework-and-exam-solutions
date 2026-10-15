@@ -1,0 +1,9 @@
+A,B,C,U,driver_R_over_R,selected_rail
+0,0,0,1,2/3,VDD
+0,0,1,1,2,VDD
+0,1,0,1,1,VDD
+0,1,1,0,2,VSS
+1,0,0,1,1,VDD
+1,0,1,0,2,VSS
+1,1,0,1,1,VDD
+1,1,1,0,3/2,VSS

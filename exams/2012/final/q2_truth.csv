@@ -1,0 +1,9 @@
+A,B,C,printed_F,simplified_F,dynamic_evaluation_F,differential_F,differential_Fbar,differential_stable_assignments
+0,0,0,1,1,1,1,0,1
+0,0,1,0,0,0,0,1,1
+0,1,0,1,1,1,1,0,1
+0,1,1,0,0,0,0,1,1
+1,0,0,1,1,1,1,0,1
+1,0,1,0,0,0,0,1,1
+1,1,0,0,0,0,0,1,1
+1,1,1,0,0,0,0,1,1

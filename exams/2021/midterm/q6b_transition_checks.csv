@@ -1,0 +1,4 @@
+X,Y,Z,F,conducting_drive_path,series_devices,equivalent_width_over_W,pass
+1,0,1,0,N_X + N_Z,2,0.5,True
+1,0,0,1,P_Y + P_Z,2,0.5,True
+1,0,1,0,N_X + N_Z,2,0.5,True

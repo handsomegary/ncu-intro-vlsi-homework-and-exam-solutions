@@ -1,0 +1,17 @@
+{
+  "year": 2021,
+  "exam": "final",
+  "questions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    "7(a)-(c)"
+  ],
+  "points": 76,
+  "printed_whole_paper_points": 105,
+  "status": "available_questions_complete",
+  "scope_label": "Q1-Q5 and Q7(a)-(c),76pts; cropped Q6 omitted",
+  "missing": "Q6(a)/(b) and timing premises cropped; visible Q6(c) retained without numeric answer. Q7(d) fragment retained; typed Q7(d)-(f) are separated as unverified secondary text."
+}

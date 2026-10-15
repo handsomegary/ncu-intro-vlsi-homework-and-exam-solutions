@@ -1,0 +1,53 @@
+[
+  {
+    "source": "2013/HW1/HW1.pdf",
+    "bytes": 15688,
+    "role": "original_printed_prompt",
+    "archive_copy": "assignments/homework1.pdf",
+    "exact_byte_copy_verified": true
+  },
+  {
+    "source": "2013/HW1/MOS prove.pdf",
+    "sha256": "c0b86375c4be7d61b9462b85b86b75ed2ed4da70c367a16100e369d01d683a38",
+    "bytes": 345266,
+    "role": "reference_answer_or_background"
+  },
+  {
+    "source": "2013/HW2/HW2 (1).jpg",
+    "sha256": "f2a300b35cb1c16cb55eeaceb6761920c8a99df1039adc26f84ec6d361472344",
+    "bytes": 1179932,
+    "role": "reference_answer_or_background"
+  },
+  {
+    "source": "2013/HW2/HW2 (2).jpg",
+    "sha256": "15a4270c1708f8f5b4d443c17e355d9b4c71c1aa9e32e76faa082c76ed9afa16",
+    "bytes": 1177672,
+    "role": "reference_answer_or_background"
+  },
+  {
+    "source": "2013/HW2/HW2.pdf",
+    "bytes": 19678,
+    "role": "original_printed_prompt",
+    "archive_copy": "assignments/homework2.pdf",
+    "exact_byte_copy_verified": true
+  },
+  {
+    "source": "2013/HW3/HW3(有程式碼).docx",
+    "sha256": "8d3f2d3c84be6960905364b11f92a38ec9352efe779f74ceb5ff9c4824bf4285",
+    "bytes": 74331,
+    "role": "reference_answer_or_background"
+  },
+  {
+    "source": "2013/HW3/HW3.docx",
+    "sha256": "2a9844753b530c52f586ab651533bfb7bfd23a87db07e474a13c6d2c2c1ba5ec",
+    "bytes": 70442,
+    "role": "reference_answer_or_background"
+  },
+  {
+    "source": "2013/HW3/HW3.pdf",
+    "bytes": 9098,
+    "role": "original_printed_prompt",
+    "archive_copy": "assignments/homework3.pdf",
+    "exact_byte_copy_verified": true
+  }
+]

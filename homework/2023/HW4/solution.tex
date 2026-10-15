@@ -1,0 +1,49 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=20mm]{geometry}\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage{amsmath,booktabs,hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
+\title{2023 Homework 4\\Pre-layout SPICE deliverable}
+\author{EE3032 Introduction to VLSI Design}\date{13 October 2026}
+\begin{document}\maketitle
+\section*{Requested scope}
+The original HW4 asks for layout of the HW3 three-bit ripple-carry adder,
+extraction, post-layout delay/power and comparison. The user's explicitly
+narrower scope stops at the pre-layout \texttt{.sp} circuit. Therefore the
+deliverable is the complete HW3 circuit and independently rerun pre-layout
+testbench. No layout, DRC, LVS, PEX or post-layout measurement is claimed.
+\section*{Circuit and evidence}
+\texttt{rca.sp} is byte-equivalent after text line-ending normalization to
+the verified HW3 netlist: three 28T full adders, 84 transistors total,
+static CMOS with pMOS bodies at VDD and nMOS bodies at ground.
+Channel length is $0.18\,\mu$m and the size groups are those in the HW3
+report. The four external outputs each drive 1 fF.
+\texttt{testbench.sp} uses CIC018 TT, 1.8 V, $25^\circ$C, 20 ps input slew,
+2 ps maximum timestep, and the 128-vector, 384 ns HW3 workload.
+\texttt{reproduce.py} verifies the netlist hash and launches a separate HSPICE
+run. All 128 arithmetic states and output voltage bands pass again.
+\begin{center}\begin{tabular}{lr}
+\toprule Quantity&Pre-layout result\\\midrule
+Verified input states&128/128\\
+Worst single-input delay from HW3&833.526988 ps\\
+Independently rerun VDD power&177.082000 $\mu$W\\
+Independently rerun 384 ns energy&67999.487960 fJ\\\bottomrule
+\end{tabular}\end{center}
+The delay value comes from HW3's exhaustive 896-transition characterization;
+the independent HW4 rerun verifies the functional workload and power.
+It does not masquerade as a second exhaustive delay sweep.
+\section*{Reference comparison}
+The supplied 2023 HW4 reports and pre-layout files of Lin (110501558),
+Liao (110501512), Jian (109501570) and Lin (111501559) were inspected.
+Their layouts and extracted parasitics belong to their different designs.
+The valid full-adder architecture and rail-body connections are useful
+references; their post-layout statistics cannot be used as results of this
+netlist. A physical comparison would require a new layout and extraction,
+outside the requested scope. The compact independent circuit and exhaustive
+HW3 proof are retained instead of copying an unrelated PEX file.
+\section*{Reproduction and files}
+Run \texttt{python reproduce.py --work PATH}; override \texttt{--model PATH}
+and \texttt{--hspice PATH} as needed. \texttt{vectors.csv} contains all
+four measured output voltages, expected/observed integer and pass flag.
+\texttt{validation.json} records the separate run and the shared netlist
+SHA256. The local \texttt{D:/cic018.l} model is not redistributed.
+\end{document}

@@ -1,0 +1,5 @@
+evaluation_fraction,max_evaluation_us,minimum_frequency_kHz
+1/4,117/50,12500/117
+1/2,117/50,25000/117
+3/4,117/50,12500/39
+1,117/50,50000/117

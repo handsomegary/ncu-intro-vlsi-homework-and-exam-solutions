@@ -1,0 +1,7 @@
+{
+  "actual_TikZ_metal_routes_checked": 18,
+  "cross_net_same_Metal1_intersections": [],
+  "contact_netlist_is_checked_separately": true,
+  "important_source_feature": "upper/lower final u drain stubs connect through continuous u poly with two contacts; no metal bridge across O feed",
+  "status": "passed"
+}

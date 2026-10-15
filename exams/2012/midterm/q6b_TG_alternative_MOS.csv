@@ -1,0 +1,9 @@
+name,kind,drain,gate,source,body,vt
+IXP,P,xb,x,VDD,VDD,L
+IXN,N,xb,x,VSS,VSS,L
+IYP,P,yb,y,VDD,VDD,L
+IYN,N,yb,y,VSS,VSS,L
+TY_P,P,f,x,y,VDD,L
+TY_N,N,f,xb,y,VSS,L
+TYB_P,P,f,xb,yb,VDD,L
+TYB_N,N,f,x,yb,VSS,L

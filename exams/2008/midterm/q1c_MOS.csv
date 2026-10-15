@@ -1,0 +1,11 @@
+name,kind,drain,gate,source,body,vt
+QN1,N,f,x,QNj1,VSS,L
+QN2,N,QNj1,y,VSS,VSS,L
+QN3,N,f,u,QNj2,VSS,L
+QN4,N,f,v,QNj2,VSS,L
+QN5,N,QNj2,w,VSS,VSS,L
+QP1,P,f,x,QPj1,VDD,L
+QP2,P,f,y,QPj1,VDD,L
+QP3,P,QPj1,u,QPj2,VDD,L
+QP4,P,QPj2,v,VDD,VDD,L
+QP5,P,QPj1,w,VDD,VDD,L

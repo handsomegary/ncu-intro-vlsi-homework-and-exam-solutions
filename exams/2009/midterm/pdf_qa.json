@@ -1,0 +1,67 @@
+{
+  "status": "ready",
+  "scope": "All six original Fall 2009 questions, 105 printed points",
+  "exam_pages": 3,
+  "solution_pages": 7,
+  "original_pages": 3,
+  "builtin_compiler": "both latest standalone sources success",
+  "local_compiler": "MiKTeX pdfLaTeX two passes each",
+  "all_final_pages_visually_checked": true,
+  "box_warnings": 0,
+  "raster_images_in_typeset_pdfs": 0,
+  "original_JPEG_integrity": [
+    {
+      "panel": 1,
+      "bytes_preserved": true
+    },
+    {
+      "panel": 2,
+      "bytes_preserved": true
+    },
+    {
+      "panel": 3,
+      "bytes_preserved": true
+    }
+  ],
+  "Q6_independent_audit": "General formulas checked against 192 independently parameterized nodal systems; another agent independently confirms equal-R/channel-cap limiting example.",
+  "csv_row_counts": {
+    "q1_full_CMOS_truth.csv": 16,
+    "q3_declared_overlap_comparison.csv": 3,
+    "q3_literal_slews.csv": 8,
+    "q4_actual_load_delays.csv": 5,
+    "q4_conditional_VT_examples.csv": 3,
+    "q4_full_CMOS_truth.csv": 32,
+    "q4_literal_MOS.csv": 28,
+    "q4_physical_path_delays.csv": 6,
+    "q4_settled_charging_events.csv": 4,
+    "q6_full_nodal_moment_checks.csv": 192,
+    "q6_literal_majority_truth.csv": 8,
+    "q6_literal_MOS.csv": 10
+  },
+  "artifact_sha256": {
+    "coverage-entry.json": "e1db0768c54f3199f2ad068eeed0a92262870bb129eeb82105f9f4ddf8389735",
+    "device-netlists.json": "5bc632da005f05436be2235064a566426fec8d68a4eacdcf3af268a18c26b576",
+    "exam.pdf": "72eb6fcc1a933c30f2fbe86b7d397e2f2044702cfaf6b6f741c900ef2167ce28",
+    "exam.tex": "b12d2eb2aa39d5dd0dae0c3df31cada2cab012406c9439340fe19141e1778660",
+    "q1_full_CMOS_truth.csv": "00be636dee4edb86cbad65baf80e679ace4440885acc44d8650248931ee6d976",
+    "q3_declared_overlap_comparison.csv": "b64fdbadffb9d4347478132e7ccc39522fe1eefe725bd5758f7d22212b2d1d85",
+    "q3_literal_slews.csv": "84a0f3599ab2fcd7521f372eed869bc57101af45f8a2b2d38cfa74ff5134b681",
+    "q4_actual_load_delays.csv": "c0e779d49cd533c26d8d96d4e525d9e327049b143c45adb9ef18958c8589a57e",
+    "q4_conditional_VT_examples.csv": "46b43560d004b8586afe43796fef540ea1d9ea57c58870662afdad3c1901406d",
+    "q4_full_CMOS_truth.csv": "015ecaa1cb8aaf3241492a8e998d2f1da38f18f9cffc01890a7e7085d921e27b",
+    "q4_literal_MOS.csv": "e6210ebe8eae8c59af557d9df94ff0c73e668bf63d6c5d6b7f677dfc7e039d97",
+    "q4_physical_path_delays.csv": "7c672c22c6d02692df0ca28d5e74760ea7127ec23a6b5b1c3cfba5a3816790db",
+    "q4_settled_charging_events.csv": "c685704600e34023300e580d0f8f9cfce9d639890782bde973efa840f994239e",
+    "q6_full_nodal_moment_checks.csv": "2b7873bbe100766e92a45485c436429fb22c29572a893db17d0cc581f13bdc94",
+    "q6_literal_majority_truth.csv": "d2b9fa89dc024d5c2dda3968ed8600cb139c4aa62212368d5cca6935bc832046",
+    "q6_literal_MOS.csv": "b25ff6ffd67557c706037cc340f2b9228dcf45a7dd45e086b0e3341a191c7b47",
+    "README.md": "a163ca7ffe2d9edda55db577ec6f7e5bec4a408bd1a3ed14118b480ef014d831",
+    "solution.pdf": "b7b6901bed93c909d557aeb9184328e73ffd281d9cb2054f2754ffab794bb19b",
+    "solution.tex": "6444cee3b741047718ddd56d3eaa1183d1fb9dcb928148ec0be5458d3eacafe1",
+    "sources.json": "92056c8feb0b877c4cd42c105763aa4f3e115f6e917ca5edab3b61cd522e4c53",
+    "SOURCES.md": "ba558ff63e9061a782ad0665d494ce26e1005255ac1e15b7e2bfd074c74bec22",
+    "verification.json": "36303e3203b03d563217b398813a29829acf40a3e37ad04b1f1089e7d3d000ff",
+    "verify.py": "a45d7029da35d883297e1e744513e38cee3683431670027522e4bb70e6462b41"
+  },
+  "artifact_hash_convention": "SHA256 of exact binary bytes; text artifacts normalized to LF, matching Git archive and MANIFEST.json."
+}

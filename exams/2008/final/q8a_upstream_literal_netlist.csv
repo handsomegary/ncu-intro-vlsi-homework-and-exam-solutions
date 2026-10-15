@@ -1,0 +1,7 @@
+device,type,left_channel,right_channel,gate,source_W_over_L
+PA,p,VDD,p_ab,A,2
+PB,p,p_ab,U,B,2
+PC,p,VDD,U,C,2
+NC,n,U,n_ab,C,1
+NA,n,n_ab,VSS,A,1
+NB,n,n_ab,VSS,B,1

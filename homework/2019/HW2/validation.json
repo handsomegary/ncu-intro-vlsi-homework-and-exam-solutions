@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "original_questions": 4,
+  "rc_fanins": 8,
+  "slew_cases": 2,
+  "fast_input_output_fall_ps": 71.47904701,
+  "slow_input_output_fall_ps": 230.6420093,
+  "matched_threshold_mu_ratio": 2,
+  "node_x_Cg_ratio": 2.6666666666666665,
+  "rc_scope": "fixed-size equal pi device caps; first-moment vs 10-90 distinguished; falling chain isolated case",
+  "mobility_limit": "ratio2 assumes equal threshold magnitudes and equal Cox",
+  "gate_cap_limit": "equalL and worst-case one-on NOR sizing"
+}

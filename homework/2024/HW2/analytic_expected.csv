@@ -1,0 +1,7 @@
+model,case,quantity,value,unit,provenance
+constant_leakage,illustrative,v_initial,1.35,V,closed_form
+constant_leakage,illustrative,retention,0.012600000000000004,s,closed_form
+constant_resistance,00,vout,1.8,V,closed_form
+constant_resistance,01,vout,0.36,V,closed_form
+constant_resistance,10,vout,0.36,V,closed_form
+constant_resistance,11,vout,0.2,V,closed_form

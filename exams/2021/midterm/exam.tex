@@ -1,0 +1,98 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=18mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array,enumitem}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage{tikz}\usetikzlibrary{shapes.gates.logic.US,positioning,arrows.meta}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
+\setlength{\emergencystretch}{2em}
+\newcommand{\VDD}{V_{DD}}
+\newcommand{\mos}[4]{\begin{scope}[shift={(#1,#2)}]
+\draw (0,.24)--(0,-.24);\draw (0,.20)--(.25,.20)--(.25,.5);
+\draw (0,-.20)--(.25,-.20)--(.25,-.5);\draw (-.16,.23)--(-.16,-.23);
+\ifnum#4=1\draw (-.26,0) circle (.06);\draw (-.75,0)--(-.32,0);\else\draw (-.75,0)--(-.16,0);\fi
+\node[anchor=east,font=\scriptsize] at (-.76,0) {$#3$};\end{scope}}
+\newcommand{\ground}[2]{\draw (#1,#2)--(#1,{#2-.12});\draw ({#1-.17},{#2-.12})--({#1+.17},{#2-.12});\draw ({#1-.11},{#2-.20})--({#1+.11},{#2-.20});}
+\newcommand{\rail}[3]{\draw (#1,#2)--(#1,{#2+.14});\node[above,font=\scriptsize] at (#1,{#2+.14}) {$#3$};}
+
+\usetikzlibrary{calc,patterns}
+\newcommand{\hm}[4]{\begin{scope}[shift={(#1,#2)}]
+\draw(-.24,0)--(.24,0);\draw(-.2,0)--(-.2,-.25)--(-.5,-.25);
+\draw(.2,0)--(.2,-.25)--(.5,-.25);\draw(-.23,.16)--(.23,.16);
+\ifnum#4=1\draw(0,.26)circle(.06);\draw(0,.32)--(0,.75);\else\draw(0,.16)--(0,.75);\fi
+\node[font=\scriptsize,above right]at(.30,.05){$#3$};\end{scope}}
+\newcommand{\tg}[3]{\draw(#1-.24,#2-.13)rectangle(#1+.24,#2+.13);\node[above,font=\tiny,inner sep=2pt]at(#1,#2+.13){$e=#3$};}
+\begin{document}
+\begin{center}{\large\bfseries EE3032 Introduction to VLSI -- Midterm}\end{center}
+\textbf{1. (35 points)} Answer the following questions briefly.
+\begin{enumerate}[label=(\alph*),leftmargin=7mm,itemsep=2pt,topsep=2pt]
+\item List the process for transferring the mask pattern to the surface of a silicon region. (3 points)
+\item List two approaches for alleviating the crosstalk effect of two parallel interconnects. (2 points)
+\item What silicon on insulator process is and explain how it can reduce the leakage current? (4 points)
+\item List two methods for the oxidation in silicon. (2 points)
+\item List two features of static CMOS circuit. (2 points)
+\item List two components of CMOS circuit, which result in static power. (2 points)
+\item In a logic gate, we usually implement the pull-up network with PMOS transistors and the pull-down network with NMOS transistors. Why? (2 points)
+\item List two through-silicon via (TSV) process technologies. (2 points)
+\item In a CMOS gate, the transistors connected to the gate output suffer from the severest body effect. Why? (2 points)
+\item What is antenna effect? List two design methods for the fixing of antenna effect violation. (6 points)
+\item List three bonding technologies for 3D ICs. (3 points)
+\item The output capacitance of a CMOS logic gate in a CMOS circuit is comprised of three components. List the three components. (3 points)
+\item List two types of FinFET structures. (2 points)
+\end{enumerate}
+\textbf{2. (15 points)} (a) Design an 8:1 multiplexers using transmission gate. (10 points) (b) Design a 3-input NAND gate using an 8:1 multiplexer. (5 points)
+
+\textbf{3. (15 points)} Find CMOS realizations of the truth table shown in Table 1, where ABCD are the inputs and $F$ is the output.
+\begin{center}\begin{tabular}{ccccc}\toprule $A$&$B$&$C$&$D$&$F$\\\midrule
+0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0\\
+0 & 0 & 1 & 0 & 0\\
+0 & 0 & 1 & 1 & 1\\
+0 & 1 & 0 & 0 & 0\\
+0 & 1 & 0 & 1 & 1\\
+0 & 1 & 1 & 0 & 0\\
+0 & 1 & 1 & 1 & 1\\
+1 & 0 & 0 & 0 & 0\\
+1 & 0 & 0 & 1 & 1\\
+1 & 0 & 1 & 0 & 1\\
+1 & 0 & 1 & 1 & 1\\
+1 & 1 & 0 & 0 & 0\\
+1 & 1 & 0 & 1 & 1\\
+1 & 1 & 1 & 0 & 1\\
+1 & 1 & 1 & 1 & 1\\\bottomrule\end{tabular}\\Table 1: Truth table.\end{center}\vfill\small Archive attribution: 2021. The photographs do not print a date. Editable reconstruction of the complete two-page paper; original wording and point labels are retained.
+\newpage
+\begin{center}\begin{tikzpicture}[x=.85cm,y=.85cm,font=\scriptsize]
+\draw[dashed](.15,4.5)rectangle(1.65,5.4);\node[align=center]at(.9,4.95){P\\network};\draw(.9,5.4)--(.9,5.8);\node[above]at(.9,5.8){1.2 V};
+\draw(.9,4.5)--(.9,4.1)--(1.25,4.1)--(1.25,3.5);\mos{1}{3}{N3}{0}
+\draw(1.25,2.5)--(1.25,2);\mos{1}{1.5}{N1}{0};\ground{1.25}{1}
+\draw(-.75,2.25)--(.05,2.25)--(.05,3)--(.25,3);\draw(.05,2.25)--(.05,1.5)--(.25,1.5);\fill(-.75,2.25)circle(.045);\node[left]at(-.75,2.25){$V_{in}$};
+\draw(1.25,4.1)--(4.6,4.1);\fill(4.6,4.1)circle(.045);\node[right]at(4.6,4.1){$V_{out}$};
+\hm{3.25}{2.25}{N2}{0};\draw(1.25,2.25)--(2.75,2);\fill(1.25,2.25)circle(.035);\draw(3.75,2)--(4.1,2)--(4.1,2.6);\node[above]at(4.1,2.6){1.2 V};\draw(3.25,3)--(3.25,4.1);\fill(3.25,4.1)circle(.03);\node at(2.2,.25){(a)};
+\begin{scope}[shift={(7.2,1.6)},x=.85cm,y=1.7cm]
+\draw[->](0,0)--(4.25,0)node[right]{$t$};\draw[->](0,0)--(0,1.65)node[above]{Voltage};
+\draw[thick](0,1.2)--(1.65,1.2)--(2.85,0)--(4,0);\node at(.75,1.36){$V_{out}$};
+\draw[thick](1.1,0)--(2.55,1.2)--(4,1.2);\node at(3.7,1.4){$V_{in}$};
+\draw[dashed](0,.4)--(1.58,.4)--(1.58,0);\draw[dashed](0,.8)--(2.07,.8)--(2.07,0);\node[left]at(0,.4){0.4 V};\node[left]at(0,1.2){1.2 V};\node[below]at(1.58,0){$t_1$};\node[below]at(2.07,0){$t_2$};\node at(2.07,.9){$x$};\end{scope}
+\node at(8.75,.25){(b)};
+\end{tikzpicture}\\Figure 1: (a) A CMOS logic gate (b) waveforms of $V_{in}$ and $V_{out}$.\end{center}
+\textbf{4. (15 points)} Fig. 1(a) shows a CMOS logic gate. Assume that the threshold voltage of the NMOS transistor is 0.4 V; the turn on resistance of N1, N2, and N3 is $R$, $2R$, and $R$, respectively.
+\begin{enumerate}[label=(\alph*),leftmargin=7mm]
+\item If the initial voltage of the output $V_{out}$ is 1.2 V and an input stimulus $(0\to1.2\text{ V})$ as shown in Fig. 1(b) is applied, how much voltage of the input stimulus ($V_{in}$) at $x$ is? (9 points)
+\item Identify the operation region of the transistors N1, N2, and N3 from $t_1$ to $t_2$. (6 points)
+\end{enumerate}
+\textbf{5. (10 points)} What function does the circuit shown in Fig. 2 realize? Does it have limitations?
+\begin{center}\begin{tikzpicture}[x=.9cm,y=.9cm,font=\small]
+\mos{3}{3}{\phantom{B}}{1}\mos{3}{1.5}{\phantom{B}}{0}
+\draw(3.25,3.5)--(3.25,4)--(.15,4)node[left]{$A$};\draw(3.25,1)--(3.25,.5)--(.15,.5)node[left]{$\bar A$};
+\draw(3.25,2.5)--(3.25,2)--(4,2)node[right]{$y$};\draw(3.25,2)--(3.25,2);\draw(3.25,2)--(3.25,2);\draw(3.25,2)--(3.25,2);\draw(3.25,2)--(3.25,2);
+\draw(.15,2)--(1.28,2);\node[left]at(.15,2){$B$};\draw(1.28,1.76)rectangle(1.78,2.24);\draw(1.78,2)--(3.25,2);
+\draw(1.53,2.24)--(1.53,2.65);\draw(1.53,2.76)circle(.055);\draw(1.53,2.82)--(1.53,4);\draw(1.53,1.76)--(1.53,.5);
+\draw(.65,2)--(.65,1.25)--(2.1,1.25)--(2.1,3)--(2.25,3);\draw(2.1,1.5)--(2.25,1.5);\fill(.65,2)circle(.03);\fill(2.1,1.5)circle(.03);\fill(3.25,2)circle(.03);
+\end{tikzpicture}\\Figure 2: A CMOS circuit.\end{center}
+\textbf{6. (10 points)} Complete the following questions.
+\begin{enumerate}[label=(\alph*),leftmargin=7mm]
+\item Implement the following Boolean function: $F=X(Y+Z)+XW$ using CMOS logic. Draw the schematic diagram. (5 points)
+\item We have a CMOS logic gate realizing $F=\overline{X(Y+Z)}$ and the sizes of all the NMOS and PMOS transistors of the CMOS logic gate are $W/L$. Design an equivalent inverter for analyzing the rise time ($t_r$) and fall time ($t_f$) of the logic gate with input transistors $XYZ:101\to100\to101$. (5 points)
+\end{enumerate}
+\vfill\small The six printed question totals sum to 100 points. Figures are redrawn without changing connectivity; Fig. 1(b) is qualitative.
+\end{document}

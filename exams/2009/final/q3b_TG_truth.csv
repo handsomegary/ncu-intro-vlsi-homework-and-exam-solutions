@@ -1,0 +1,5 @@
+X,C,Cbar,p_pass_on,n_pass_on,Y_after_phase,full_low_path_via_nMOS,full_high_path_via_pMOS
+0,0,1,True,True,0,True,False
+0,1,0,False,False,isolated; previous capacitive state unspecified,False,False
+1,0,1,True,True,1,False,True
+1,1,0,False,False,isolated; previous capacitive state unspecified,False,False

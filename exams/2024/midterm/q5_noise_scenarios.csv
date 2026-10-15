@@ -1,0 +1,5 @@
+ABCD,A,B,C,D,G1_NAND_output,G2_NOR_output,G3_NAND_output,G2_branch_sensitized_to_G1_noise,G2_intended_comparison,G3_intended_comparison,G2_specific_input_note,G3_specific_input_note
+0011,0,0,1,1,1,0,0,True,NML<NMH,NML>NMH,A=0 sensitizes the G1-driven NOR input,D=1 sensitizes the G1-driven NAND input
+0101,0,1,0,1,1,0,0,True,NML<NMH,NML>NMH,A=0 sensitizes the G1-driven NOR input,D=1 sensitizes the G1-driven NAND input
+1101,1,1,0,1,1,0,0,False,NML<NMH,NML>NMH,A=1 masks noise on only the G1-driven NOR input,D=1 sensitizes the G1-driven NAND input
+1001,1,0,0,1,1,0,0,False,NML<NMH,NML>NMH,A=1 masks noise on only the G1-driven NOR input,D=1 sensitizes the G1-driven NAND input

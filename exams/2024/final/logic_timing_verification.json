@@ -1,0 +1,986 @@
+{
+  "status": "PASS",
+  "method": "Standard-library ideal MOS switch graphs, exhaustive truth tables and analytical timing",
+  "Q1i": {
+    "cases": 8,
+    "function": "f=NOT(x1*x2+x3)",
+    "core_MOS": 10,
+    "complementary_inputs": "x1bar,x2bar,x3bar assumed available; 3 static inverters add6MOS",
+    "includes_level_restoration": true,
+    "graph": [
+      {
+        "name": "NF1",
+        "kind": "N",
+        "drain": "f",
+        "gate": "x1",
+        "source": "uf",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NF0",
+        "kind": "N",
+        "drain": "f",
+        "gate": "xb1",
+        "source": "xb3",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NF11",
+        "kind": "N",
+        "drain": "uf",
+        "gate": "x2",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NF10",
+        "kind": "N",
+        "drain": "uf",
+        "gate": "xb2",
+        "source": "xb3",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NG1",
+        "kind": "N",
+        "drain": "g",
+        "gate": "x1",
+        "source": "ug",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NG0",
+        "kind": "N",
+        "drain": "g",
+        "gate": "xb1",
+        "source": "x3",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NG11",
+        "kind": "N",
+        "drain": "ug",
+        "gate": "x2",
+        "source": "VDD",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NG10",
+        "kind": "N",
+        "drain": "ug",
+        "gate": "xb2",
+        "source": "x3",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "PFrestore",
+        "kind": "P",
+        "drain": "f",
+        "gate": "g",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "level_restorer",
+        "weak": true
+      },
+      {
+        "name": "PGrestore",
+        "kind": "P",
+        "drain": "g",
+        "gate": "f",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "level_restorer",
+        "weak": true
+      }
+    ]
+  },
+  "Q2": {
+    "input_cases": 128,
+    "phase_cases": 256,
+    "core_MOS": 22,
+    "equation": "c[i+1]=g[i] OR(p[i] AND c[i])",
+    "shared_element": "one common clocked NMOS footer/evaluation rail",
+    "propagation": "positive inverter carry outputs drive subsequent NMOS gates",
+    "no_propagate_generate_exclusivity_assumption": true,
+    "input_protocol": "c0,p0..2,g0..2 stable before and throughout evaluate; carries rise monotonically from precharge0",
+    "keeper_scope": "weak keepers; final stable switch connectivity verified, contention strength requires analogue sizing",
+    "graph": [
+      {
+        "name": "Nfooter",
+        "kind": "N",
+        "drain": "eval",
+        "gate": "phi",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "evaluation",
+        "weak": false
+      },
+      {
+        "name": "Ppre0",
+        "kind": "P",
+        "drain": "d1",
+        "gate": "phi",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "precharge",
+        "weak": false
+      },
+      {
+        "name": "Ng0",
+        "kind": "N",
+        "drain": "d1",
+        "gate": "g0",
+        "source": "eval",
+        "body": "VSS",
+        "role": "evaluation",
+        "weak": false
+      },
+      {
+        "name": "Np0",
+        "kind": "N",
+        "drain": "d1",
+        "gate": "p0",
+        "source": "u0",
+        "body": "VSS",
+        "role": "evaluation",
+        "weak": false
+      },
+      {
+        "name": "Nc0",
+        "kind": "N",
+        "drain": "u0",
+        "gate": "c0",
+        "source": "eval",
+        "body": "VSS",
+        "role": "evaluation",
+        "weak": false
+      },
+      {
+        "name": "Pkeep0",
+        "kind": "P",
+        "drain": "d1",
+        "gate": "c1",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "keeper",
+        "weak": true
+      },
+      {
+        "name": "Icarry0P",
+        "kind": "P",
+        "drain": "c1",
+        "gate": "d1",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "Icarry0N",
+        "kind": "N",
+        "drain": "c1",
+        "gate": "d1",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "Ppre1",
+        "kind": "P",
+        "drain": "d2",
+        "gate": "phi",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "precharge",
+        "weak": false
+      },
+      {
+        "name": "Ng1",
+        "kind": "N",
+        "drain": "d2",
+        "gate": "g1",
+        "source": "eval",
+        "body": "VSS",
+        "role": "evaluation",
+        "weak": false
+      },
+      {
+        "name": "Np1",
+        "kind": "N",
+        "drain": "d2",
+        "gate": "p1",
+        "source": "u1",
+        "body": "VSS",
+        "role": "evaluation",
+        "weak": false
+      },
+      {
+        "name": "Nc1",
+        "kind": "N",
+        "drain": "u1",
+        "gate": "c1",
+        "source": "eval",
+        "body": "VSS",
+        "role": "evaluation",
+        "weak": false
+      },
+      {
+        "name": "Pkeep1",
+        "kind": "P",
+        "drain": "d2",
+        "gate": "c2",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "keeper",
+        "weak": true
+      },
+      {
+        "name": "Icarry1P",
+        "kind": "P",
+        "drain": "c2",
+        "gate": "d2",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "Icarry1N",
+        "kind": "N",
+        "drain": "c2",
+        "gate": "d2",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "Ppre2",
+        "kind": "P",
+        "drain": "d3",
+        "gate": "phi",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "precharge",
+        "weak": false
+      },
+      {
+        "name": "Ng2",
+        "kind": "N",
+        "drain": "d3",
+        "gate": "g2",
+        "source": "eval",
+        "body": "VSS",
+        "role": "evaluation",
+        "weak": false
+      },
+      {
+        "name": "Np2",
+        "kind": "N",
+        "drain": "d3",
+        "gate": "p2",
+        "source": "u2",
+        "body": "VSS",
+        "role": "evaluation",
+        "weak": false
+      },
+      {
+        "name": "Nc2",
+        "kind": "N",
+        "drain": "u2",
+        "gate": "c2",
+        "source": "eval",
+        "body": "VSS",
+        "role": "evaluation",
+        "weak": false
+      },
+      {
+        "name": "Pkeep2",
+        "kind": "P",
+        "drain": "d3",
+        "gate": "c3",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "keeper",
+        "weak": true
+      },
+      {
+        "name": "Icarry2P",
+        "kind": "P",
+        "drain": "c3",
+        "gate": "d3",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "Icarry2N",
+        "kind": "N",
+        "drain": "c3",
+        "gate": "d3",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "inverter",
+        "weak": false
+      }
+    ]
+  },
+  "Q5": {
+    "cases": 8,
+    "physical_MOS": 14,
+    "functional_MOS": 10,
+    "off_isolation_MOS": 4,
+    "physical_columns_per_row": 7,
+    "function": "z=NOT(a) OR b OR c",
+    "stages": [
+      "x=NOT(a)",
+      "w=NOR(x,b,c)",
+      "z=NOT(w)"
+    ],
+    "p_diffusion_nodes_left_to_right": [
+      "VDD",
+      "x",
+      "VDD",
+      "p1",
+      "p2",
+      "w",
+      "VDD",
+      "z"
+    ],
+    "n_diffusion_nodes_left_to_right": [
+      "VSS",
+      "x",
+      "VSS",
+      "w",
+      "VSS",
+      "w",
+      "VSS",
+      "z"
+    ],
+    "p_gates_left_to_right": [
+      "a",
+      "VDD",
+      "x",
+      "b",
+      "c",
+      "VDD",
+      "w"
+    ],
+    "n_gates_left_to_right": [
+      "a",
+      "VSS",
+      "x",
+      "b",
+      "c",
+      "VSS",
+      "w"
+    ],
+    "graph": [
+      {
+        "name": "Pcol1",
+        "kind": "P",
+        "drain": "VDD",
+        "gate": "a",
+        "source": "x",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "Pcol2",
+        "kind": "P",
+        "drain": "x",
+        "gate": "VDD",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "off_isolation",
+        "weak": false
+      },
+      {
+        "name": "Pcol3",
+        "kind": "P",
+        "drain": "VDD",
+        "gate": "x",
+        "source": "p1",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "Pcol4",
+        "kind": "P",
+        "drain": "p1",
+        "gate": "b",
+        "source": "p2",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "Pcol5",
+        "kind": "P",
+        "drain": "p2",
+        "gate": "c",
+        "source": "w",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "Pcol6",
+        "kind": "P",
+        "drain": "w",
+        "gate": "VDD",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "off_isolation",
+        "weak": false
+      },
+      {
+        "name": "Pcol7",
+        "kind": "P",
+        "drain": "VDD",
+        "gate": "w",
+        "source": "z",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "Ncol1",
+        "kind": "N",
+        "drain": "VSS",
+        "gate": "a",
+        "source": "x",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "Ncol2",
+        "kind": "N",
+        "drain": "x",
+        "gate": "VSS",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "off_isolation",
+        "weak": false
+      },
+      {
+        "name": "Ncol3",
+        "kind": "N",
+        "drain": "VSS",
+        "gate": "x",
+        "source": "w",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "Ncol4",
+        "kind": "N",
+        "drain": "w",
+        "gate": "b",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "Ncol5",
+        "kind": "N",
+        "drain": "VSS",
+        "gate": "c",
+        "source": "w",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "Ncol6",
+        "kind": "N",
+        "drain": "w",
+        "gate": "VSS",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "off_isolation",
+        "weak": false
+      },
+      {
+        "name": "Ncol7",
+        "kind": "N",
+        "drain": "VSS",
+        "gate": "w",
+        "source": "z",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      }
+    ]
+  },
+  "Q6_original": {
+    "cases": 8,
+    "gates": [
+      "XOR(A,B)",
+      "NAND(A,B)",
+      "NAND(X,C)",
+      "NOR(NAND(A,B),NAND(X,C))",
+      "XOR(X,C)"
+    ],
+    "y1": "AB*(A XOR B)*C=0",
+    "y2": "A XOR B XOR C",
+    "primary_input_upset_cases": 24,
+    "y1_changed_cases": 0,
+    "y2_changed_cases": 24,
+    "internal_x_upset_cases": 8,
+    "internal_x_y1_changed_cases": 1,
+    "internal_x_y2_changed_cases": 8,
+    "internal_x_y1_unmasked_word": "111",
+    "SER_limit": "Logical sensitivity only; physical SER also depends on strike sites, capacitance, pulse width, masking and register characteristics"
+  },
+  "Q6_NP": {
+    "input_cases": 8,
+    "phase_cases": 16,
+    "MOS_including_input_inverters_and_keepers": 32,
+    "y1_implementation": "VSS constant, from independently derived original function",
+    "y2_implementation": "N-type dual-rail XOR raw nodes, directly followed by P-type parity stage",
+    "clock_protocol": "phi0/phib1: Nprecharge HIGH, Preset LOW; phi1/phib0: evaluate; stable A/B/C and complements",
+    "monotonicity": "Nraw_x/Nraw_xb only fall; the Pstage y2 only rises during evaluate",
+    "synthesis_scope": "Part6(c) functional reimplementation; its sizing/timing is not the original part6(a) gate-delay network",
+    "keeper_scope": "Weak side-branch feedback keepers; final stable connectivity only, not transient contention sizing",
+    "graph": [
+      {
+        "name": "IinputaP",
+        "kind": "P",
+        "drain": "ab",
+        "gate": "a",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "IinputaN",
+        "kind": "N",
+        "drain": "ab",
+        "gate": "a",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "IinputbP",
+        "kind": "P",
+        "drain": "bb",
+        "gate": "b",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "IinputbN",
+        "kind": "N",
+        "drain": "bb",
+        "gate": "b",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "IinputcP",
+        "kind": "P",
+        "drain": "cb",
+        "gate": "c",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "IinputcN",
+        "kind": "N",
+        "drain": "cb",
+        "gate": "c",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "Nnpfooter",
+        "kind": "N",
+        "drain": "en",
+        "gate": "phi",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "n_evaluation",
+        "weak": false
+      },
+      {
+        "name": "Ppre_raw_x",
+        "kind": "P",
+        "drain": "raw_x",
+        "gate": "phi",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "precharge",
+        "weak": false
+      },
+      {
+        "name": "raw_xN00",
+        "kind": "N",
+        "drain": "raw_x",
+        "gate": "a",
+        "source": "raw_x_u0",
+        "body": "VSS",
+        "role": "n_evaluation",
+        "weak": false
+      },
+      {
+        "name": "raw_xN01",
+        "kind": "N",
+        "drain": "raw_x_u0",
+        "gate": "b",
+        "source": "en",
+        "body": "VSS",
+        "role": "n_evaluation",
+        "weak": false
+      },
+      {
+        "name": "raw_xN10",
+        "kind": "N",
+        "drain": "raw_x",
+        "gate": "ab",
+        "source": "raw_x_u1",
+        "body": "VSS",
+        "role": "n_evaluation",
+        "weak": false
+      },
+      {
+        "name": "raw_xN11",
+        "kind": "N",
+        "drain": "raw_x_u1",
+        "gate": "bb",
+        "source": "en",
+        "body": "VSS",
+        "role": "n_evaluation",
+        "weak": false
+      },
+      {
+        "name": "Ifb_raw_xP",
+        "kind": "P",
+        "drain": "kx",
+        "gate": "raw_x",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "Ifb_raw_xN",
+        "kind": "N",
+        "drain": "kx",
+        "gate": "raw_x",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "Pkeep_raw_x",
+        "kind": "P",
+        "drain": "raw_x",
+        "gate": "kx",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "keeper",
+        "weak": true
+      },
+      {
+        "name": "Ppre_raw_xb",
+        "kind": "P",
+        "drain": "raw_xb",
+        "gate": "phi",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "precharge",
+        "weak": false
+      },
+      {
+        "name": "raw_xbN00",
+        "kind": "N",
+        "drain": "raw_xb",
+        "gate": "ab",
+        "source": "raw_xb_u0",
+        "body": "VSS",
+        "role": "n_evaluation",
+        "weak": false
+      },
+      {
+        "name": "raw_xbN01",
+        "kind": "N",
+        "drain": "raw_xb_u0",
+        "gate": "b",
+        "source": "en",
+        "body": "VSS",
+        "role": "n_evaluation",
+        "weak": false
+      },
+      {
+        "name": "raw_xbN10",
+        "kind": "N",
+        "drain": "raw_xb",
+        "gate": "a",
+        "source": "raw_xb_u1",
+        "body": "VSS",
+        "role": "n_evaluation",
+        "weak": false
+      },
+      {
+        "name": "raw_xbN11",
+        "kind": "N",
+        "drain": "raw_xb_u1",
+        "gate": "bb",
+        "source": "en",
+        "body": "VSS",
+        "role": "n_evaluation",
+        "weak": false
+      },
+      {
+        "name": "Ifb_raw_xbP",
+        "kind": "P",
+        "drain": "kxb",
+        "gate": "raw_xb",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "Ifb_raw_xbN",
+        "kind": "N",
+        "drain": "kxb",
+        "gate": "raw_xb",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "Pkeep_raw_xb",
+        "kind": "P",
+        "drain": "raw_xb",
+        "gate": "kxb",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "keeper",
+        "weak": true
+      },
+      {
+        "name": "Pnpheader",
+        "kind": "P",
+        "drain": "ep",
+        "gate": "phib",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "p_evaluation",
+        "weak": false
+      },
+      {
+        "name": "NresetY",
+        "kind": "N",
+        "drain": "y2",
+        "gate": "phib",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "reset",
+        "weak": false
+      },
+      {
+        "name": "PY00",
+        "kind": "P",
+        "drain": "ep",
+        "gate": "raw_xb",
+        "source": "yp0",
+        "body": "VDD",
+        "role": "p_evaluation",
+        "weak": false
+      },
+      {
+        "name": "PY01",
+        "kind": "P",
+        "drain": "yp0",
+        "gate": "c",
+        "source": "y2",
+        "body": "VDD",
+        "role": "p_evaluation",
+        "weak": false
+      },
+      {
+        "name": "PY10",
+        "kind": "P",
+        "drain": "ep",
+        "gate": "raw_x",
+        "source": "yp1",
+        "body": "VDD",
+        "role": "p_evaluation",
+        "weak": false
+      },
+      {
+        "name": "PY11",
+        "kind": "P",
+        "drain": "yp1",
+        "gate": "cb",
+        "source": "y2",
+        "body": "VDD",
+        "role": "p_evaluation",
+        "weak": false
+      },
+      {
+        "name": "Ifb_yP",
+        "kind": "P",
+        "drain": "ky",
+        "gate": "y2",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "Ifb_yN",
+        "kind": "N",
+        "drain": "ky",
+        "gate": "y2",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "Nkeep_y",
+        "kind": "N",
+        "drain": "y2",
+        "gate": "ky",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "keeper",
+        "weak": true
+      }
+    ]
+  },
+  "Q6_timing": {
+    "path_count": 8,
+    "configurations": 5,
+    "row_count": 40,
+    "tpcq_ns": 0.2,
+    "tccq_ns": 0.1,
+    "setup_ns": 0.2,
+    "hold_ns": 0.2,
+    "inverter_delay_ns": 0.3,
+    "setup_equation": "T >= t_launch+tpcq+tlogic+tsetup-t_capture",
+    "hold_equation": "t_launch+tccq+t_cd >= t_capture+thold",
+    "hold_scope": "t_cd of each logic gate is unspecified; reported hold results are conditional on using stated scalar gate delays as minimum delays too",
+    "literal_original_hold_requirements_ns": {
+      "any_launch_to_R4": 0.7,
+      "any_launch_to_R5": 0.1
+    },
+    "balanced_tree_hold_requirement_ns": 0.1,
+    "ambiguity": "Figure places delay on R4 capture branch, but classroom answer treats +0.6 as adverse; both preserved with explicit sign",
+    "literal_redesign": "Add2inverters to each launch clockR1/R2/R3 AND toR5capture; R4alreadyhas0.6ns delay; all arrivals0.6ns",
+    "classroom_redesign": "Normalize adverse reading to launch/R5 arrivals0.6ns andR4arrival0; add2inverters(0.6ns) toR4branch, making all arrivals0.6ns",
+    "structural_path_scope": "Use printed primitive-gate path delays; do not reuse these delays for optimized NP synthesis",
+    "results": {
+      "literal_positive_R4_capture_delay": {
+        "clock_arrival_ns": {
+          "R1": 0,
+          "R2": 0,
+          "R3": 0,
+          "R4": 0.6,
+          "R5": 0
+        },
+        "minimum_period_ns": 2.4000000000000004,
+        "maximum_frequency_MHz": 416.66666666666663,
+        "meets_400MHz": true,
+        "conditional_min_hold_slack_ns": 0.30000000000000016,
+        "conditional_hold_pass": true
+      },
+      "classroom_adverse_R4_capture_skew": {
+        "clock_arrival_ns": {
+          "R1": 0.6,
+          "R2": 0.6,
+          "R3": 0.6,
+          "R4": 0,
+          "R5": 0.6
+        },
+        "minimum_period_ns": 3.0000000000000004,
+        "maximum_frequency_MHz": 333.33333333333326,
+        "meets_400MHz": false,
+        "conditional_min_hold_slack_ns": 0.9000000000000001,
+        "conditional_hold_pass": true
+      },
+      "literal_student_launch_only_insertion": {
+        "clock_arrival_ns": {
+          "R1": 0.6,
+          "R2": 0.6,
+          "R3": 0.6,
+          "R4": 0.6,
+          "R5": 0
+        },
+        "minimum_period_ns": 3.0000000000000004,
+        "maximum_frequency_MHz": 333.33333333333326,
+        "meets_400MHz": false,
+        "conditional_min_hold_slack_ns": 0.9000000000000001,
+        "conditional_hold_pass": true
+      },
+      "literal_balanced_clock_redesign": {
+        "clock_arrival_ns": {
+          "R1": 0.6,
+          "R2": 0.6,
+          "R3": 0.6,
+          "R4": 0.6,
+          "R5": 0.6
+        },
+        "minimum_period_ns": 2.4000000000000004,
+        "maximum_frequency_MHz": 416.66666666666663,
+        "meets_400MHz": true,
+        "conditional_min_hold_slack_ns": 0.9000000000000001,
+        "conditional_hold_pass": true
+      },
+      "classroom_add_two_inverters_to_R4_capture": {
+        "clock_arrival_ns": {
+          "R1": 0.6,
+          "R2": 0.6,
+          "R3": 0.6,
+          "R4": 0.6,
+          "R5": 0.6
+        },
+        "minimum_period_ns": 2.4000000000000004,
+        "maximum_frequency_MHz": 416.66666666666663,
+        "meets_400MHz": true,
+        "conditional_min_hold_slack_ns": 0.9000000000000001,
+        "conditional_hold_pass": true
+      }
+    }
+  }
+}

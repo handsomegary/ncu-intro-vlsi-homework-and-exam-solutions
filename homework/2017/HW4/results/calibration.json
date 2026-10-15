@@ -1,0 +1,68 @@
+[
+  {
+    "kind": "mirror",
+    "iteration": 0,
+    "parameters": {
+      "WOSS": 2.69712,
+      "WOSC": 2.01665
+    },
+    "statistics": {
+      "S": {
+        "tr_ps": 55.34450395515478,
+        "tf_ps": 54.73790672894552,
+        "imbalance_percent": 1.0960387804736331,
+        "worst_delay_ps": 256.23328107877796
+      },
+      "Cout": {
+        "tr_ps": 47.48721236956044,
+        "tf_ps": 47.457087129203046,
+        "imbalance_percent": 0.06343863717025229,
+        "worst_delay_ps": 141.25443359125
+      }
+    }
+  },
+  {
+    "kind": "mirror",
+    "iteration": 1,
+    "parameters": {
+      "WOSS": 2.72701,
+      "WOSC": 2.01793
+    },
+    "statistics": {
+      "S": {
+        "tr_ps": 55.4027623279012,
+        "tf_ps": 54.9561062364603,
+        "imbalance_percent": 0.80619823393889,
+        "worst_delay_ps": 256.20547668791005
+      },
+      "Cout": {
+        "tr_ps": 47.48423625233045,
+        "tf_ps": 47.466843949734994,
+        "imbalance_percent": 0.03662752940371884,
+        "worst_delay_ps": 141.2537424388276
+      }
+    }
+  },
+  {
+    "kind": "domino",
+    "iteration": 0,
+    "parameters": {
+      "WPSS": 3.10827,
+      "WPSC": 2.49524
+    },
+    "statistics": {
+      "S": {
+        "tr_ps": 51.086451498244756,
+        "tf_ps": 51.597484921089176,
+        "imbalance_percent": 0.9904231255185622,
+        "worst_delay_ps": 123.1945398394565
+      },
+      "Cout": {
+        "tr_ps": 47.556835732237346,
+        "tf_ps": 47.79169990116827,
+        "imbalance_percent": 0.4914329672654829,
+        "worst_delay_ps": 90.28376668210569
+      }
+    }
+  }
+]

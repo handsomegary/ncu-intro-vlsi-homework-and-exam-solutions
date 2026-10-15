@@ -1,0 +1,25 @@
+{
+  "year": 2007,
+  "exam": "midterm",
+  "printed_term": "Fall 2007",
+  "original_pages": 3,
+  "question_allocation": [
+    40,
+    10,
+    20,
+    10,
+    10,
+    10,
+    10
+  ],
+  "points_sum": 110,
+  "student_sources": [
+    "2007/midterm/answer.pdf",
+    "2007/midterm/answer (1).jpg",
+    "2007/midterm/answer (2).jpg",
+    "2007/midterm/answer (3).jpg"
+  ],
+  "student_sources_redistributed": false,
+  "reviewed_student_pages": 5,
+  "student_sets_distinct": true
+}

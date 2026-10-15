@@ -1,0 +1,15 @@
+polarity,hypothetical_eta_Vt_over_VDD,feedback_beta_over_main_beta,feedback_W_over_L,main_current_over_beta_main_VDD2,feedback_current_over_beta_main_VDD2,source_numeric_threshold
+n,0,49/9,196/9,49/200,49/200,NOT GIVEN
+p,0,49/9,98/3,49/200,49/200,NOT GIVEN
+n,1/10,4,16,9/50,9/50,NOT GIVEN
+p,1/10,4,24,9/50,9/50,NOT GIVEN
+n,1/5,25/9,100/9,1/8,1/8,NOT GIVEN
+p,1/5,25/9,50/3,1/8,1/8,NOT GIVEN
+n,3/10,16/9,64/9,2/25,2/25,NOT GIVEN
+p,3/10,16/9,32/3,2/25,2/25,NOT GIVEN
+n,2/5,1,4,9/200,9/200,NOT GIVEN
+p,2/5,1,6,9/200,9/200,NOT GIVEN
+n,1/2,4/9,16/9,1/50,1/50,NOT GIVEN
+p,1/2,4/9,8/3,1/50,1/50,NOT GIVEN
+n,3/5,1/9,4/9,1/200,1/200,NOT GIVEN
+p,3/5,1/9,2/3,1/200,1/200,NOT GIVEN

@@ -1,0 +1,17 @@
+{
+  "physical_devices_a": 12,
+  "physical_devices_b": 12,
+  "a_final_pair": "P6: gate X, channel X/VDD; N6: gate X, channel X/VSS",
+  "a_binary_conflict": "At X=0 P6 conducts VDD into X; at X=1 N6 conducts X to VSS. Literal pair is self-connected; no standard digital latch assertion.",
+  "b_off_devices": [
+    "P1",
+    "N1",
+    "P2",
+    "N2",
+    "P6",
+    "N6"
+  ],
+  "b_function": "Z=NOT(a OR b OR c)",
+  "b_truth_cases": 8,
+  "comparison": "2013 Figure 4 and 2012 Figure 5 contact topology agree. 2016 Q4a agrees with (a), but 2016 Q4b differs from (b)."
+}

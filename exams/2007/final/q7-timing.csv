@@ -1,0 +1,3 @@
+model,tpcq_ns,tpd_ns,tsetup_ns,Tmin_ns,fmax_MHz,hold_margin_ns
+printed setup bound,2,15,3,20,50,not established from propagation-only data
+fixed max=min delay interpretation,2,15,3,20,50,16

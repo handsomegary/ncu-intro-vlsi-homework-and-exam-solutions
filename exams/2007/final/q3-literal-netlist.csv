@@ -1,0 +1,11 @@
+device,type,gate,terminal_1,terminal_2,body,source_column
+P_D,P,D,dbar,VDD,VDD,left D
+N_D,N,D,dbar,VSS,VSS,left D
+P_T,P,CLKB,u,dbar,VDD,first internal upper split poly
+N_T,N,CLK,u,dbar,VSS,first internal lower split poly
+P_C,P,CLK,CLKB,VDD,VDD,central CLK
+N_C,N,CLK,CLKB,VSS,VSS,central CLK
+P_S,P,u,O,VDD,VDD,second internal continuous U poly
+N_S,N,u,O,VSS,VSS,second internal continuous U poly
+P_F,P,O,u,VDD,VDD,right O
+N_F,N,O,u,VSS,VSS,right O

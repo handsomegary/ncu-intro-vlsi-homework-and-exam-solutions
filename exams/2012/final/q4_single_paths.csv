@@ -1,0 +1,31 @@
+scheme,path,R_over_Rp1,exact
+correct_equal_single_path,X1 -> N1,1.0,1
+correct_equal_single_path,X2 -> X3 -> N1,1.0,1
+correct_equal_single_path,X2 -> X6 -> N1,1.0,1
+correct_equal_single_path,X4 -> X5 -> X3 -> N1,1.0,1
+correct_equal_single_path,X4 -> X5 -> X6 -> N1,1.0,1
+correct_uniform_8,X1 -> N1,0.5,1/2
+correct_uniform_8,X2 -> X3 -> N1,0.75,3/4
+correct_uniform_8,X2 -> X6 -> N1,0.75,3/4
+correct_uniform_8,X4 -> X5 -> X3 -> N1,1.0,1
+correct_uniform_8,X4 -> X5 -> X6 -> N1,1.0,1
+student_A_a,X1 -> N1,0.75,3/4
+student_A_a,X2 -> X3 -> N1,0.9166666666666666,11/12
+student_A_a,X2 -> X6 -> N1,0.8333333333333334,5/6
+student_A_a,X4 -> X5 -> X3 -> N1,1.0833333333333333,13/12
+student_A_a,X4 -> X5 -> X6 -> N1,1.0,1
+student_B_a,X1 -> N1,0.75,3/4
+student_B_a,X2 -> X3 -> N1,0.8333333333333334,5/6
+student_B_a,X2 -> X6 -> N1,0.8333333333333334,5/6
+student_B_a,X4 -> X5 -> X3 -> N1,1.0,1
+student_B_a,X4 -> X5 -> X6 -> N1,1.0,1
+student_A_b_readable_widths,X1 -> N1,0.8333333333333334,5/6
+student_A_b_readable_widths,X2 -> X3 -> N1,1.0,1
+student_A_b_readable_widths,X2 -> X6 -> N1,0.8888888888888888,8/9
+student_A_b_readable_widths,X4 -> X5 -> X3 -> N1,1.1111111111111112,10/9
+student_A_b_readable_widths,X4 -> X5 -> X6 -> N1,1.0,1
+student_B_b_footer_8,X1 -> N1,0.5,1/2
+student_B_b_footer_8,X2 -> X3 -> N1,0.75,3/4
+student_B_b_footer_8,X2 -> X6 -> N1,0.75,3/4
+student_B_b_footer_8,X4 -> X5 -> X3 -> N1,1.0,1
+student_B_b_footer_8,X4 -> X5 -> X6 -> N1,1.0,1

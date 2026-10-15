@@ -1,0 +1,132 @@
+{
+  "status": "PASS",
+  "year": 2007,
+  "exam": "final",
+  "question": 3,
+  "all_independent_checks_passed": true,
+  "check_scope": "Independent contact graph and ideal circuit equilibria.",
+  "physical_MOS": 10,
+  "device_types": {
+    "P": 5,
+    "N": 5
+  },
+  "inverters": 4,
+  "transmission_gates": 1,
+  "source_columns": [
+    "D input inverter",
+    "split CLKB / CLK transmission gate",
+    "CLK inverter",
+    "continuous u storage inverter",
+    "O feedback inverter"
+  ],
+  "devices": [
+    {
+      "device": "P_D",
+      "type": "P",
+      "gate": "D",
+      "terminal_1": "dbar",
+      "terminal_2": "VDD",
+      "body": "VDD",
+      "source_column": "left D"
+    },
+    {
+      "device": "N_D",
+      "type": "N",
+      "gate": "D",
+      "terminal_1": "dbar",
+      "terminal_2": "VSS",
+      "body": "VSS",
+      "source_column": "left D"
+    },
+    {
+      "device": "P_T",
+      "type": "P",
+      "gate": "CLKB",
+      "terminal_1": "u",
+      "terminal_2": "dbar",
+      "body": "VDD",
+      "source_column": "first internal upper split poly"
+    },
+    {
+      "device": "N_T",
+      "type": "N",
+      "gate": "CLK",
+      "terminal_1": "u",
+      "terminal_2": "dbar",
+      "body": "VSS",
+      "source_column": "first internal lower split poly"
+    },
+    {
+      "device": "P_C",
+      "type": "P",
+      "gate": "CLK",
+      "terminal_1": "CLKB",
+      "terminal_2": "VDD",
+      "body": "VDD",
+      "source_column": "central CLK"
+    },
+    {
+      "device": "N_C",
+      "type": "N",
+      "gate": "CLK",
+      "terminal_1": "CLKB",
+      "terminal_2": "VSS",
+      "body": "VSS",
+      "source_column": "central CLK"
+    },
+    {
+      "device": "P_S",
+      "type": "P",
+      "gate": "u",
+      "terminal_1": "O",
+      "terminal_2": "VDD",
+      "body": "VDD",
+      "source_column": "second internal continuous U poly"
+    },
+    {
+      "device": "N_S",
+      "type": "N",
+      "gate": "u",
+      "terminal_1": "O",
+      "terminal_2": "VSS",
+      "body": "VSS",
+      "source_column": "second internal continuous U poly"
+    },
+    {
+      "device": "P_F",
+      "type": "P",
+      "gate": "O",
+      "terminal_1": "u",
+      "terminal_2": "VDD",
+      "body": "VDD",
+      "source_column": "right O"
+    },
+    {
+      "device": "N_F",
+      "type": "N",
+      "gate": "O",
+      "terminal_1": "u",
+      "terminal_2": "VSS",
+      "body": "VSS",
+      "source_column": "right O"
+    }
+  ],
+  "equilibrium_cases": 16,
+  "stable_equilibria": 6,
+  "write_cases": 8,
+  "operation": {
+    "CLK0": "TG off; two complementary static loop states retain old O.",
+    "CLK1": "TG on; ideal consistent equilibrium is u = NOT D and O = D.",
+    "changed_write": "Old O opposite D activates opposing input and permanent-feedback drivers. Numerical ratios are absent; successful analog overwrite is conditional.",
+    "scope": "No transient or process simulation; no guaranteed write margin or frequency claimed."
+  },
+  "contact_trace": [
+    "First internal poly has separated p/n segments: upper bends to CLK inverter drain contact around source x510,y540; lower bends along bottom to named CLK poly.",
+    "Central CLK poly is continuous across both active rows; right p/n terminals contact VDD/VSS, while left drains generate CLKB.",
+    "Second internal poly is continuous across p/n; upper and lower U arms contact rightmost O inverter left drains u.",
+    "Second internal inverter right drains join Metal1 that contacts named O poly in the middle gap.",
+    "The u Metal1 bridge crosses CLK active without a contact; it does not short to CLKB. Simple cross-layer overlaps are not contacts.",
+    "No complementary clock is externally assumed and no second feedback TG is hidden: its two absent devices are not invented.",
+    "Rightmost upper/lower u drain Metal1 stubs are separate across the central O-feed route. Their common u connection is through the continuous U-poly and its two contacts."
+  ]
+}

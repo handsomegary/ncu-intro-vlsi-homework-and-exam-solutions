@@ -1,0 +1,7 @@
+device,width_nm,length_nm,R_over_R,pass
+N1,100,40,1.0,True
+N2,100,40,1.0,True
+N3,100,40,1.0,True
+P1,200,40,1.0,True
+P2,200,40,1.0,True
+P3,200,40,1.0,True

@@ -1,0 +1,9 @@
+stage,launch,capture,path,logic_prop_ns,setup_min_period_ns,target_period_ns,conditional_min_equals_printed_prop_hold_pass,passed
+stage1,R1/R2,Pbottom,"XNOR,INV,AND",1.1,1.5,1.5,True,True
+stage1,R3,Pbottom,AND,0.5,0.9,1.5,True,True
+stage1,R2/R3,Ptop,AND,0.5,0.9,1.5,True,True
+stage1,R1/R2,Pu,XNOR,0.4,0.8,1.5,True,True
+stage1,R3,Pq3,"INV,INV",0.4,0.8,1.5,True,True
+stage2,Ptop/Pbottom,R5,OR,0.5,0.9,1.5,True,True
+stage2,Pu/Pq3,R6,XNOR,0.4,0.8,1.5,True,True
+stage2,Pq3,R4,"INV,INV",0.4,0.8,1.5,True,True

@@ -1,0 +1,29 @@
+{
+  "builtin_compiler": "both standalone documents successful",
+  "local_compiler": "pdfLaTeX two passes each",
+  "box_warnings": 0,
+  "missing_glyph_warnings": 0,
+  "render_dpi": 120,
+  "total_pages_inspected": 11,
+  "records": [
+    {
+      "file": "exam.pdf",
+      "pages": 3,
+      "sha256": "b3854d971b5828105e183ec19d632e50275aaec4a0109fd154630aa3716cd5fc",
+      "all_pages_rendered_and_visually_inspected": true
+    },
+    {
+      "file": "solution.pdf",
+      "pages": 8,
+      "sha256": "2947171b7b83ca17d8afb201c292bba732c8769a61135a99176bfbcf3f047379",
+      "all_pages_rendered_and_visually_inspected": true
+    }
+  ],
+  "visual_adjustments": [
+    "moved inverter P/N size labels above/below devices and spaced the chain to avoid wire/text collisions",
+    "used mathematical labels and arrows consistently",
+    "kept the entire Q4 voltage/body-effect/region explanation together",
+    "drawn parasitic SCR feedback wires without bypassing the substrate resistor"
+  ],
+  "status": "passed"
+}

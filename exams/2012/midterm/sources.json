@@ -1,0 +1,186 @@
+{
+  "year": 2012,
+  "exam": "midterm",
+  "original": {
+    "status": "Complete original question panels; no printed year visible in the crops",
+    "attribution": "The 2012 archive folder supplies the year; the photographed panels do not expose a printed date.",
+    "pages": 6,
+    "printed_pages": 3,
+    "preservation": "Each source JPEG panel is embedded byte-for-byte on one proportional PDF page, without cropping, recoloring, rotation or perspective correction.",
+    "panels": [
+      {
+        "filename": "2012\\midterm\\midterm (1).JPG",
+        "sha256": "f6e5f927a2a50ba24ec7bb3056b8848b0094e2da6d00029ce51dfec88007502c",
+        "source_pixels": [
+          1724,
+          1404
+        ],
+        "original_pdf_page": 1,
+        "printed_page": 1,
+        "questions": "Q1(a–j)"
+      },
+      {
+        "filename": "2012\\midterm\\midterm (2).jpg",
+        "sha256": "3762234ffe4b34e621c7cc92dda39cbe9b8ac8f4dd9e03461cbc0dcf34476366",
+        "source_pixels": [
+          2412,
+          1916
+        ],
+        "original_pdf_page": 2,
+        "printed_page": 1,
+        "questions": "Q2(a,b)"
+      },
+      {
+        "filename": "2012\\midterm\\midterm (3).jpg",
+        "sha256": "8ab6c9a062d4a0bed27744e7f3f35589839c14da5ddffcaff3a11536e40e22fa",
+        "source_pixels": [
+          2780,
+          1476
+        ],
+        "original_pdf_page": 3,
+        "printed_page": 2,
+        "questions": "Q3"
+      },
+      {
+        "filename": "2012\\midterm\\midterm (4).JPG",
+        "sha256": "44a800d217e14bee773e12450fbbf48fa871ed0637c32ca1cd673c1e915b56f2",
+        "source_pixels": [
+          1468,
+          876
+        ],
+        "original_pdf_page": 4,
+        "printed_page": 2,
+        "questions": "Q4(a,b)"
+      },
+      {
+        "filename": "2012\\midterm\\midterm (5).JPG",
+        "sha256": "dc717f11e0c5a9584e6a203d90be5cc2edd47cdaad5034ca6a53667733d48752",
+        "source_pixels": [
+          1614,
+          686
+        ],
+        "original_pdf_page": 5,
+        "printed_page": 2,
+        "questions": "Q5"
+      },
+      {
+        "filename": "2012\\midterm\\midterm (6).JPG",
+        "sha256": "a62b06125d3c24ea84f94a4da762a110c64021688f40d4d8ddbbea949ab21efb",
+        "source_pixels": [
+          1571,
+          855
+        ],
+        "original_pdf_page": 6,
+        "printed_page": 3,
+        "questions": "Q6(a,b);Q7(a–c)"
+      }
+    ]
+  },
+  "local_reference": {
+    "status": "Six matching graded student answer panels have identical copies under 2013. Directory duplication does not establish a second dated exam.",
+    "published": false,
+    "identity": "Student identity remains local and is not transcribed.",
+    "panels": [
+      {
+        "filename": "2012\\midterm\\answer (1).JPG",
+        "sha256": "f89ea4459d5e207a4964ac0896a85528e4939893da0d754ed7d8094dec721dc0",
+        "published": false,
+        "byte_identical_other_year": "2013\\2013_mid_sol_1.JPG",
+        "comparison": "Q1a–h: methods/noise margins consistent; unqualified2x width needs mobility/threshold assumptions; crosstalk approaches scoped."
+      },
+      {
+        "filename": "2012\\midterm\\answer (2).JPG",
+        "sha256": "1398f2772b078e543c699bc527d54aa0c1bf40abf5c885d9be052639f94354a8",
+        "published": false,
+        "byte_identical_other_year": "2013\\2013_mid_sol_2.JPG",
+        "comparison": "Q1i,j andQ2: same majority circuit; full-credit firstmoment omits output-attached opposite-network caps. Internal power expression correct forcharging-event activity."
+      },
+      {
+        "filename": "2012\\midterm\\answer (3).JPG",
+        "sha256": "294cd03f66138c013cb65e5f8f8904ea04bef8aa0a280e2c88478f243e7c8148",
+        "published": false,
+        "byte_identical_other_year": "2013\\2013_mid_sol_3.JPG",
+        "comparison": "Q3/Q5:24MOS circuit matches. Conservative14L/10H dualVt relies on an assumed gate-delay normalization and unprovided highVt penalty. Q5sameT8RC andalpha1/3 roots;alpha1choice agrees."
+      },
+      {
+        "filename": "2012\\midterm\\answer (4).JPG",
+        "sha256": "678b9dd68ff4d9789abc667762a39c9500a533a3d5463e05f9e4c85a509e3076",
+        "published": false,
+        "byte_identical_other_year": "2013\\2013_mid_sol_4.JPG",
+        "comparison": "Q6/Q7a: Q6a8MOS correct; Q6b10MOS NAND+compound circuit reducesconstant0. Fulladder truth table agrees."
+      },
+      {
+        "filename": "2012\\midterm\\answer (5).JPG",
+        "sha256": "3f9d2bcae17af714e2af1701d39ae657bcbc43f9e2c00b68f964cc817d815249",
+        "published": false,
+        "byte_identical_other_year": "2013\\2013_mid_sol_5.JPG",
+        "comparison": "Q7b,c: Boolean truth/SOP consistent; complement-literal carry PDN can give truecarry, but generators forcomplemented primaryinputs are omitted. Complete28MOS independent implementation supplied."
+      },
+      {
+        "filename": "2012\\midterm\\answer (6).JPG",
+        "sha256": "87fbc4e2667a7dbb3c5d3c65c85bc25571a41a1d2a02ac9c9f1fc9db275145ed",
+        "published": false,
+        "byte_identical_other_year": "2013\\2013_mid_sol_6.JPG",
+        "comparison": "Q4: exact1.8/.4 premises match;Y1V/Z1.4V levels andm1bothregions/m2..6linear classification agree with stated constantthreshold/no-bodyeffect scope."
+      }
+    ],
+    "match_basis": "Question functions, circuit edges and numerical premises were independently matched; the score records provenance only."
+  },
+  "scope": {
+    "questions": 7,
+    "original_points": 100,
+    "original_gaps": [],
+    "scan_ambiguities": [],
+    "semantic_conditions": [
+      "The archive year is not printed, but all seven questions are covered by the six original panels.",
+      "Q1(h): mobility and threshold ratios are not provided. Use the general current-matching equation without inventing a two-times width.",
+      "Q2: complete final ON-graph first moments include attached opposite-network capacitors. The full-level constant-R model is declared; a 10–90 conversion is a one-pole estimate.",
+      "Q2: alpha01 means charging probability; activity counting both edges needs a factor of one-half. Internal nodes only.",
+      "Q3: high-Vt delay penalties and leakage weights are absent. The 24-MOS candidate has conditional 12L/12H marking and explicit slack bounds, with no unconditional optimum or speed guarantee.",
+      "Q4: constant threshold is 0.4 V. Body-effect parameters are absent; qualitative levels are not measured dynamic waveforms.",
+      "Q5: exactly 8RC; alpha=1 and 3 are feasible, and 1 minimizes modeled power. The first-two-stage bracket excludes the third external load.",
+      "Q6: conventional single complementary-gate XOR uses 12 MOS; broader static TG XOR uses 8. Style and minimum scope are explicit.",
+      "Q7: the complete 28-MOS implementation uses only true primary inputs; the reference omits complement generators."
+    ]
+  },
+  "primary_references": [
+    {
+      "id": "ncu-fabrication",
+      "url": "https://www.ee.ncu.edu.tw/jfli/public_html/VLSI/lecture/ch03.pdf",
+      "authority": "Li, National Central University; official course lecture",
+      "locators": "slides 8, 37–41",
+      "questions": [
+        "Q1a,b,c",
+        "Q3"
+      ],
+      "access": "Official PDF text opened and relevant passages read."
+    },
+    {
+      "id": "berkeley-doublegate",
+      "url": "https://www2.eecs.berkeley.edu/Colloquium/Archives/11-12/Fall2011/kingliu-presentation.pdf",
+      "authority": "Tsu-Jae King Liu, UC Berkeley, 2011 colloquium",
+      "locators": "slide 19: Double-Gate FinFET",
+      "questions": [
+        "Q1i"
+      ],
+      "access": "The indexed primary search result describes the double-gate structure. Direct PDF access returned 403; the full PDF was not read."
+    },
+    {
+      "id": "intel-trigate",
+      "url": "https://www.intc.com/news-events/press-releases/detail/655/intel-reinvents-transistors-using-new-3-d-structure",
+      "authority": "Intel Corporation, May 4, 2011 primary announcement",
+      "locators": "Three controlled fin surfaces: two sidewalls and the top",
+      "questions": [
+        "Q1i"
+      ],
+      "access": "Primary search result read; geometry description verified."
+    }
+  ],
+  "reconstruction": {
+    "language": "English",
+    "standalone_editable_vectors": true,
+    "source_wording": "Printed English is preserved with typeset units and equations. The Q6 letter w was confirmed directly in an enlarged native crop.",
+    "figures": "Inline TikZ preserves original MOS polarities and joins, low/high threshold symbols, the upper degraded-gate pass connection and the first-two-stage delay bracket."
+  },
+  "no_process_measurement": true
+}

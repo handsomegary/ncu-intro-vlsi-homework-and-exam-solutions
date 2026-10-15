@@ -1,0 +1,48 @@
+{
+  "simulator": "PrimeSim HSPICE S-2021.09 WIN64",
+  "model_corner": "CIC018 TT",
+  "temperature_C": 25,
+  "vdd_V": 1.8,
+  "load_fF": 1,
+  "input_slew_ps": 20,
+  "transitions": 6,
+  "simulator_runs": 18,
+  "all_logic_levels_pass": true,
+  "maximum_timestep_difference_ps": 0.12895764799999654,
+  "worst_delays": [
+    {
+      "transition": "00->11",
+      "node": "f",
+      "direction": "HL",
+      "slew_ps": 20,
+      "step_ps": 1,
+      "delay_ps": 29.493193004000002
+    },
+    {
+      "transition": "11->10",
+      "node": "f",
+      "direction": "LH",
+      "slew_ps": 20,
+      "step_ps": 1,
+      "delay_ps": 41.856888389000005
+    },
+    {
+      "transition": "11->10",
+      "node": "z",
+      "direction": "HL",
+      "slew_ps": 20,
+      "step_ps": 1,
+      "delay_ps": 63.700048028
+    },
+    {
+      "transition": "00->11",
+      "node": "z",
+      "direction": "LH",
+      "slew_ps": 20,
+      "step_ps": 1,
+      "delay_ps": 47.681499173
+    }
+  ],
+  "circuit_sha256": "165ab9624034030cf03d8ae082cea8484cb57d812a9f6caad2d2035315384405",
+  "circuit_hash_normalization": "UTF-8 LF"
+}

@@ -1,0 +1,13 @@
+# Fall 2007 final Q3 independent contact audit
+
+The authentic first-page symbolic layout has ten physical MOS crossings, arranged in five columns. Only three columns have external printed labels (D, CLK, O); the two internal columns also cross active. This was independently checked with the packet owner before drawing the graph.
+
+The first internal gate is split between the active rows. Its upper poly bends right into the central inverter's left drain contact near source coordinates (510,540), generating CLKB. Its lower poly turns along the bottom into the named CLK poly. Thus this column is a complementary transmission gate, P gate CLKB and N gate CLK. The central named CLK column is a normal inverter: right p/n terminals reach the supply rails, and left drains generate CLKB.
+
+The second internal gate is continuous. Its two U return arms contact the rightmost O-column left p/n drain net, named u. Its own right p/n drains join the mid-gap Metal1 route and contact the named O poly. Thus it is an inverter u -> O, followed by a permanently connected inverter O -> u. The left D inverter generates dbar and drives u through the clocked TG.
+
+The complete graph is therefore four inverters plus one TG (ten MOS). The upper u Metal1 bridge crosses the central clock-active region without a contact. It must not be joined to CLKB just because those shapes overlap on the drawing. The normalized vector preserves this by putting the CLKB and O metal drain contacts below the bridge and the central supply metal contact above it. The final upper/lower u drain metal stubs are separate across the middle O-feed route; they share u through the continuous U-poly and its two contacts. Drawing one vertical metal here would create a false O/u short.
+
+CLK = 0 disconnects the input and holds either complementary u/O state. CLK = 1 enables both TG devices, with ideal consistent equilibrium u = NOT D, O = D. If the old O differs from D, the enabled input driver and permanent feedback inverter oppose one another. The original gives no transistor sizes, so actual overwrite success, write margin and speed cannot be guaranteed from topology alone. No second clocked feedback TG is present.
+
+`q3-literal-netlist.csv` supplies all ten devices. `verify_layout.py` reproduces the 16-state equilibrium CSV and eight hold/write-contention cases, then records JSON evidence. These are ideal switch/Boolean checks, not analog measurements. The two reusable vector macros are inlined into the standalone `exam.tex` and `solution.tex`; both documents have been compiled and every rendered page inspected. `verify_layout_geometry.py` parses the actual restored Metal1 routes and rejects differently named nets that intersect on the same layer.

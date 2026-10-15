@@ -1,0 +1,17 @@
+Vin,A,B,C,VF_component,VF_to_VDD,VF_to_VSS,mode
+0,0,0,0,VDD VF,True,False,precharge clamped to VDD; not isolated sharing
+0,0,0,1,VDD VF,True,False,precharge clamped to VDD; not isolated sharing
+0,0,1,0,VDD VF,True,False,precharge clamped to VDD; not isolated sharing
+0,0,1,1,VDD VF,True,False,precharge clamped to VDD; not isolated sharing
+0,1,0,0,VDD VF u1,True,False,precharge clamped to VDD; not isolated sharing
+0,1,0,1,VDD VF u1,True,False,precharge clamped to VDD; not isolated sharing
+0,1,1,0,VDD VF u1 u2,True,False,precharge clamped to VDD; not isolated sharing
+0,1,1,1,VDD VF u1 u2 u3,True,False,precharge clamped to VDD; not isolated sharing
+1,0,0,0,VF,False,False,isolated charge-sharing component
+1,0,0,1,VF,False,False,isolated charge-sharing component
+1,0,1,0,VF,False,False,isolated charge-sharing component
+1,0,1,1,VF,False,False,isolated charge-sharing component
+1,1,0,0,VF u1,False,False,isolated charge-sharing component
+1,1,0,1,VF u1,False,False,isolated charge-sharing component
+1,1,1,0,VF u1 u2,False,False,isolated charge-sharing component
+1,1,1,1,VF VSS u1 u2 u3,False,True,legitimate AND discharge to VSS; not isolated sharing

@@ -1,0 +1,5 @@
+interval,from_word,nodes_charged,visible_Ci,with_internal_Ci
+0,01001,r1,0,1
+1,11011,d,2,2
+2,11100,O1,2,2
+3,01101,,0,0

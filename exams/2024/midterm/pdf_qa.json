@@ -1,0 +1,18 @@
+{
+  "exam_pages": 2,
+  "solution_pages": 6,
+  "all_final_pages_visually_checked": true,
+  "builtin_compiler": "success for both final standalone TeX sources",
+  "local_export": "MiKTeX pdfLaTeX, two successful final passes per document",
+  "overfull_boxes": 0,
+  "underfull_boxes": 0,
+  "typeset_raster_image_count": 0,
+  "original_page_content_and_images_verified_unchanged": true,
+  "artifact_sha256": {
+    "exam.tex": "61c71a3c6bf7e14c6746ad89e3ee3d158fe84c52000541dc3f23cca595ee47d3",
+    "exam.pdf": "430a6e0e18643c92a3e017539ef1eeae2e8c55cb9b63f7a916cb0afb08b275a1",
+    "solution.tex": "83d6f3581ec28253e51ea3fafdbfc68db4df2922f4c903bfdfac21ccb2dbe0e5",
+    "solution.pdf": "29dccc98b8d3c5a7f88e305bb226df34baf4aa685263f0946bd4e28dfd46435f"
+  },
+  "artifact_hash_convention": "SHA256 of exact binary bytes; text artifacts normalized to LF, matching Git archive and MANIFEST.json."
+}

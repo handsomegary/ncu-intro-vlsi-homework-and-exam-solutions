@@ -1,0 +1,100 @@
+{
+  "source_complete_questions": [
+    5,
+    6,
+    7
+  ],
+  "source_complete_point_total": 35,
+  "Q4_answer_status": "omitted: opening with thresholds and resistances is missing",
+  "Q5": {
+    "qualitative_assumption": "Standard matched-threshold static CMOS VTC, ideal rails; width/mobility ratio determines pull-strength bias",
+    "source_quantitative_margins": null,
+    "single_transistor_beta_n_equals_beta_p": true,
+    "NAND_sensitized_beta_p_over_beta_n": 2,
+    "NOR_sensitized_beta_p_over_beta_n": 0.5,
+    "masked_input_contexts": "G2 at1101; G3 at1110; a single-input switching VTC is not sensitized",
+    "rows": [
+      {
+        "ABCD": "0011",
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G1_conventional_margin": "NML>NMH",
+        "G2_conventional_margin": "NML<NMH",
+        "G3_conventional_margin": "NML>NMH",
+        "G2_any_single_input_masked": false,
+        "G3_any_single_input_masked": false
+      },
+      {
+        "ABCD": "0101",
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G1_conventional_margin": "NML>NMH",
+        "G2_conventional_margin": "NML<NMH",
+        "G3_conventional_margin": "NML>NMH",
+        "G2_any_single_input_masked": false,
+        "G3_any_single_input_masked": false
+      },
+      {
+        "ABCD": "1101",
+        "G1": 1,
+        "G2": 0,
+        "G3": 0,
+        "G1_conventional_margin": "NML>NMH",
+        "G2_conventional_margin": "NML<NMH",
+        "G3_conventional_margin": "NML>NMH",
+        "G2_any_single_input_masked": true,
+        "G3_any_single_input_masked": false
+      },
+      {
+        "ABCD": "1110",
+        "G1": 0,
+        "G2": 0,
+        "G3": 1,
+        "G1_conventional_margin": "NML>NMH",
+        "G2_conventional_margin": "NML<NMH",
+        "G3_conventional_margin": "NML>NMH",
+        "G2_any_single_input_masked": false,
+        "G3_any_single_input_masked": true
+      }
+    ]
+  },
+  "Q6": {
+    "Cg_definition": "Gate capacitance of ONE W/L nMOS or pMOS",
+    "NAND_sizes_relative_W_over_L": {
+      "nMOS_each": 2,
+      "pMOS_each": 2
+    },
+    "inverter_sizes_relative_W_over_L": {
+      "nMOS": 1,
+      "pMOS": 2
+    },
+    "inverter_input_cap_over_Cg": 3,
+    "output_load_over_Cg": 4,
+    "worst_delay_over_RCg": 7,
+    "strictly_below_8_RCg": true,
+    "model": "ON-resistance RC sum with no parasitics; no process simulation"
+  },
+  "Q7": {
+    "truth_rows_checked": 32,
+    "PDN_PUN_complementarity": true,
+    "a": {
+      "factorization": "X(Y+Z+W)",
+      "core": "U=not[X(Y+Z+W)]",
+      "output_inverter": true,
+      "transistor_count": 10
+    },
+    "b": {
+      "core": "F=not[X(Y+Z)]",
+      "output_inverter": false,
+      "transistor_count": 6
+    },
+    "c": {
+      "factorization": "Y(X+Z)",
+      "core": "U=not[Y(X+Z)]",
+      "output_inverter": true,
+      "transistor_count": 8
+    }
+  }
+}

@@ -1,0 +1,137 @@
+[
+  {
+    "homework": 2,
+    "source_relative": "HW2/109501570_簡肇亨_hw2.pdf",
+    "sha256": "ec393a2877d4a6d78315d29d777a9f07362dfbafd64f9ab4b9ebe6781895172a"
+  },
+  {
+    "homework": 2,
+    "source_relative": "HW2/110501512_廖柏森_hw2_3(b)不是最小logic 0為0.1vdd的情況.pdf",
+    "sha256": "9307a11dd58e6b86196ca4219e518186122b8f876a3d649096bb2e20572fe800"
+  },
+  {
+    "homework": 2,
+    "source_relative": "HW2/110501558_林意盛_hw2.pdf",
+    "sha256": "8110ee1f2a6438ebb24551c4cf58a56b43fc8774a25756e4c20a1b182b9bd542"
+  },
+  {
+    "homework": 3,
+    "source_relative": "HW3/109501570_簡肇亨_hw3/109501570_簡肇亨_hw3.pdf",
+    "sha256": "e55a1f9f2ca30500a2e26f99570b4abcc0fb3220c4ceff378632407cd7e62eb0"
+  },
+  {
+    "homework": 3,
+    "source_relative": "HW3/109501570_簡肇亨_hw3/109501570_簡肇亨_hw3.sp",
+    "sha256": "7df5150ff55a16667861414ae28835e8dcfd4d8fc6f9b9b43c4c4fba7b6e4225"
+  },
+  {
+    "homework": 3,
+    "source_relative": "HW3/110501512_廖柏森_hw3/110501512_廖柏森_hw3.pdf",
+    "sha256": "a34947117339ede94792e8dc7618417b9dff5a19d738cd70ccc6f1f6821bc49e"
+  },
+  {
+    "homework": 3,
+    "source_relative": "HW3/110501512_廖柏森_hw3/FullAdder.cir",
+    "sha256": "1b437afa772bce74393ade720b581a7fbc1fdad4221e42c530410eea4fff599b"
+  },
+  {
+    "homework": 3,
+    "source_relative": "HW3/110501512_廖柏森_hw3/RCA.sp",
+    "sha256": "caaf50757883247b68ad8d5df69771180adb86988f240b582426f417ca74ed13"
+  },
+  {
+    "homework": 3,
+    "source_relative": "HW3/110501512_廖柏森_hw3/RCA_worstcase_delay.sp",
+    "sha256": "f96caf5614e743b92a92d7bdef0343add0761c9f1d7e99a6dae2933ce84140cd"
+  },
+  {
+    "homework": 3,
+    "source_relative": "HW3/110501558_林意盛_hw3/110501558_林意盛_hw3.pdf",
+    "sha256": "d9918ea2365a17a870c27ae436ea526c81ffe288fb95ae36674c5e7a69fd8c62"
+  },
+  {
+    "homework": 3,
+    "source_relative": "HW3/110501558_林意盛_hw3/110501558_林意盛_hw3.sp",
+    "sha256": "12f401ee2b2a86e68fd85f63608630f92cf4a694b97c8b8812360c8ef6464ead"
+  },
+  {
+    "homework": 3,
+    "source_relative": "HW3/111501559_林祐震_hw3/111501559_林祐震_hw3.pdf",
+    "sha256": "7bc1b8265926292d5f5ebdf19dc2de9323ea79d473e4624516f70899b6d7fb72"
+  },
+  {
+    "homework": 3,
+    "source_relative": "HW3/111501559_林祐震_hw3/111501559_林祐震_hw3.sp",
+    "sha256": "83691aa03f417379b1d4bbd5518c054048fd4bc23c41a1cb81ecec13bed8af1e"
+  },
+  {
+    "homework": 4,
+    "source_relative": "HW4/109501570_簡肇亨_hw4/109501570_簡肇亨_hw4.pdf",
+    "sha256": "aa3df549a7933d88df78b555a83c70cdc442c8348e1d1ecdb0d93d9fa92bb722"
+  },
+  {
+    "homework": 4,
+    "source_relative": "HW4/109501570_簡肇亨_hw4/hw3.sp",
+    "sha256": "187ce167ece8781c44c8033ed7b2af77634c00b6841501a80113bec1eb8da286"
+  },
+  {
+    "homework": 4,
+    "source_relative": "HW4/109501570_簡肇亨_hw4/hw4.sp",
+    "sha256": "350a757fac7a0e895bdbe3c42c16c5150b27a550c70f2f913efac21d0b241c1b"
+  },
+  {
+    "homework": 4,
+    "source_relative": "HW4/110501512_廖柏森_hw4/110501512_廖柏森_hw4.pdf",
+    "sha256": "de94e1ff025f114105b6987e6fff87b1e90b443e3f6a4ab44da63ef4e4b43322"
+  },
+  {
+    "homework": 4,
+    "source_relative": "HW4/110501512_廖柏森_hw4/RCA_hw3.sp",
+    "sha256": "91717dc81760f6685fd2221ec7378b2a9db51bef60ed5d83f44cf2889fc5f908"
+  },
+  {
+    "homework": 4,
+    "source_relative": "HW4/110501512_廖柏森_hw4/RCA_hw4.sp",
+    "sha256": "0865abec47e609359189283b048a7e82628ba57752a2a8e7a1b92dadf76e0892"
+  },
+  {
+    "homework": 4,
+    "source_relative": "HW4/110501512_廖柏森_hw4/RCA_worstcase_delay_hw3.sp",
+    "sha256": "938c99c5460d737d943c91d282b81eba1917de24083fafe5b62b7179cea3baad"
+  },
+  {
+    "homework": 4,
+    "source_relative": "HW4/110501512_廖柏森_hw4/RCA_worstcase_delay_hw4.sp",
+    "sha256": "1b24d8e67d4749eb680efd17bbb38a6a271f113bcdcd0ea40a662275bfbf03e3"
+  },
+  {
+    "homework": 4,
+    "source_relative": "HW4/110501558_林意盛_hw4/110501558_林意盛_hw4.pdf",
+    "sha256": "72a111dfbe69ba66fe4f22cc77ee02462d705ede3b2a508807f03c992ea2fb91"
+  },
+  {
+    "homework": 4,
+    "source_relative": "HW4/110501558_林意盛_hw4/fa_ckt.sp",
+    "sha256": "c8be76c3dbba696c42e13446c2a078a29543942160b8aeedb367a72e797c2dee"
+  },
+  {
+    "homework": 4,
+    "source_relative": "HW4/111501559_林祐震_hw4/111501559_林祐震_hw4.pdf",
+    "sha256": "c374f5e138839c9486fec42312e9696f632c5bc65622f7b6f677cc6fdfdb12be"
+  },
+  {
+    "homework": 4,
+    "source_relative": "HW4/111501559_林祐震_hw4/adder_pre.sp",
+    "sha256": "a8d54f9506361ebd576594688bb4f31f65180134414e1f28e6570d18e4e2547f"
+  },
+  {
+    "homework": 4,
+    "source_relative": "HW4/111501559_林祐震_hw4/test_adder.sp",
+    "sha256": "d4b978da66f57830f220e1dab3def4e92f07f08a9f138edb42a85248dd7a5f4d"
+  },
+  {
+    "homework": 4,
+    "source_relative": "HW4/111501559_林祐震_hw4/test_adder_delay.sp",
+    "sha256": "0ace256aac486dde2a0a67a615c1ede780e255044e849381d109a61421de0c05"
+  }
+]

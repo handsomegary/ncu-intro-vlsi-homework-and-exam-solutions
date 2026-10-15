@@ -1,0 +1,13 @@
+{
+  "year": 2009,
+  "exam": "final",
+  "canonical_source": "2009/final/final.pdf",
+  "duplicate_sources": [
+    "2009/2009/final/final.pdf",
+    "2009/2009期末考-1.pdf"
+  ],
+  "year_evidence": "Original Fall2009 footer",
+  "student_answer_status": "No corresponding student answer located in supplied2009 directory",
+  "question7_overbar": "Covers entireAB+C+DE, visually verified; bare OCR text is incorrect",
+  "reference_scope": "Original source controls all connectivity. No cross-year student answers used."
+}

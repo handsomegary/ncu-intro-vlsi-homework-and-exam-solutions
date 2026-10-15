@@ -1,0 +1,20 @@
+{
+  "NPN": {
+    "emitter": "VSS",
+    "base": "S",
+    "collector": "W"
+  },
+  "PNP": {
+    "emitter": "VDD",
+    "base": "W",
+    "collector": "S"
+  },
+  "Rwell": [
+    "VDD",
+    "W"
+  ],
+  "Rsub": [
+    "S",
+    "VSS"
+  ]
+}

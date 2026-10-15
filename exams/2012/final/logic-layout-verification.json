@@ -1,0 +1,108 @@
+{
+  "all_checks_passed": true,
+  "source": {
+    "exam": "2012 final",
+    "printed_footer": "Fall 2012",
+    "Q2_page": "3-1",
+    "Q7_Q8_page": "3-3",
+    "method": "Independent native-original visual transcription; exact switch and square-law checks."
+  },
+  "Q2": {
+    "printed_function": "NOT(A*(B+C)+C)",
+    "simplified_function": "NOT(A*B+C)",
+    "complement_function": "Cbar*(Abar+Bbar)",
+    "truth_rows": 8,
+    "dynamic_phase_rows": 16,
+    "differential_candidate_rows": 32,
+    "unique_complementary_differential_state_per_input": true,
+    "transistor_counts": {
+      "dynamic": {
+        "pMOS": 1,
+        "nMOS": 4,
+        "total": 5
+      },
+      "differential_core": {
+        "pMOS": 2,
+        "nMOS": 6,
+        "total": 8
+      },
+      "differential_original_inputs_complete": {
+        "pMOS": 5,
+        "nMOS": 9,
+        "total": 14
+      }
+    },
+    "scope": "Dynamic evaluation starts from high precharge; undischarged output retains charge. Differential count includes explicit A/B/C complement generators for complete design."
+  },
+  "Q7": {
+    "literal_netlists_verified": {
+      "q7a_literal_netlist.csv": "1f137ae246dfe02fd791594ef385c2d77c3b8dc3671b33c985a2d81731eca90e",
+      "q7b_literal_netlist.csv": "fcee65aaac73d7bfd2935420a0de7757b8e7b11bcd1ac21b9d39841db1e2d084"
+    },
+    "a": {
+      "device_counts": {
+        "pMOS": 6,
+        "nMOS": 6,
+        "total": 12
+      },
+      "full_switch_assignments_checked": 64,
+      "clock_phase_rows": 2,
+      "input_TG_on_C": 0,
+      "feedback_TG_on_C": 1,
+      "self_connected_pair": [
+        "P6",
+        "N6"
+      ],
+      "self_connected_gate_and_output": "X",
+      "ideal_rail_consistent_X_assignments": 0,
+      "scope": "Literal 12-MOS extraction. P6 opposes an assumed X=0; N6 opposes X=1. This ideal switch countercheck does not prove absence of analog equilibria or determine real logic levels; device strengths and analog characterization are unprovided."
+    },
+    "b": {
+      "device_counts": {
+        "pMOS": 6,
+        "nMOS": 6,
+        "total": 12
+      },
+      "functional_MOS": 6,
+      "OFF_isolation_MOS": 6,
+      "OFF_devices": [
+        "N1",
+        "N2",
+        "N6",
+        "P1",
+        "P2",
+        "P6"
+      ],
+      "truth_rows": 8,
+      "function": "Z=NOT(a+b+c)",
+      "exactly_one_output_rail_for_each_input": true,
+      "floating_stubs": [
+        "n0",
+        "n1",
+        "n6",
+        "p0",
+        "p1",
+        "p6"
+      ],
+      "scope": "All 12 devices retained. Columns 1/2/6 are split, supply-tied OFF isolation; no input inverter precedes a."
+    }
+  },
+  "Q8": {
+    "source_values_V": {
+      "VDD": 1.8,
+      "VT_plus": 1.2,
+      "Vtn": 0.6
+    },
+    "pre_switch_Vout_V": 1.8,
+    "internal_N2_source_V": 0.6,
+    "N1_VDS_V": 0.6,
+    "N3_VDS_V": 1.2,
+    "N1_current_coefficient_Id_over_beta_V2": "9/50",
+    "N3_current_coefficient_Id_over_beta_V2": "9/50",
+    "betaN1_over_betaN3": "1",
+    "balance_candidates_checked": 3,
+    "model": "Fixed Vtn=0.6 V; pre-switch Vout=VDD; N2 at threshold onset; long-channel saturation Id=beta*(VGS-Vtn)^2/2. Body effect and channel-length modulation omitted because no parameters are supplied. No absolute beta or other threshold is assigned.",
+    "student_resistor_ratio_2": "Not the square-law result: N3 has VDS=1.2 V and is saturated; constant ON-resistor division at the trip point is unjustified."
+  },
+  "limitations": "Boolean/switch and square-law analytical verification only. No process-model simulation, layout DRC, or timing characterization."
+}

@@ -1,0 +1,9 @@
+{
+  "all_checks_passed": true,
+  "scope": "source-defined analytical models, no SPICE claim",
+  "reports": [
+    "numerical-verification.json",
+    "q5-verification.json",
+    "logic-layout-verification.json"
+  ]
+}

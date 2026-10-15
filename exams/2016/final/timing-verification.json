@@ -1,0 +1,87 @@
+{
+  "original,s=-0.5ns": {
+    "setup_period_ns": 2.5,
+    "setup_bound_MHz": 400.0,
+    "hold_violations": [],
+    "valid_at_setup_bound": true
+  },
+  "original,s=+0.0ns": {
+    "setup_period_ns": 2.0,
+    "setup_bound_MHz": 500.0,
+    "hold_violations": [
+      "R1 -> R4wire -> R4"
+    ],
+    "valid_at_setup_bound": false
+  },
+  "original,s=+0.5ns": {
+    "setup_period_ns": 1.5,
+    "setup_bound_MHz": 666.6666666666666,
+    "hold_violations": [
+      "R1 -> XV -> R6",
+      "R1 -> XNOR -> R5",
+      "R1 -> R4wire -> R4",
+      "R3 -> XV -> R6"
+    ],
+    "valid_at_setup_bound": false
+  },
+  "zero_skew,s=-0.5ns": {
+    "setup_period_ns": 2.5,
+    "setup_bound_MHz": 400.0,
+    "hold_violations": [],
+    "valid_at_setup_bound": true
+  },
+  "zero_skew,s=+0.0ns": {
+    "setup_period_ns": 2.0,
+    "setup_bound_MHz": 500.0,
+    "hold_violations": [],
+    "valid_at_setup_bound": true
+  },
+  "zero_skew,s=+0.5ns": {
+    "setup_period_ns": 1.5,
+    "setup_bound_MHz": 666.6666666666666,
+    "hold_violations": [
+      "R1 -> XV -> R6",
+      "R1 -> XNOR -> R5",
+      "R1 -> R4wire -> R4",
+      "R3 -> XV -> R6"
+    ],
+    "valid_at_setup_bound": false
+  },
+  "skew_safe,s=-0.5ns": {
+    "setup_period_ns": 2.5,
+    "setup_bound_MHz": 400.0,
+    "hold_violations": [],
+    "valid_at_setup_bound": true
+  },
+  "skew_safe,s=+0.0ns": {
+    "setup_period_ns": 2.0,
+    "setup_bound_MHz": 500.0,
+    "hold_violations": [],
+    "valid_at_setup_bound": true
+  },
+  "skew_safe,s=+0.5ns": {
+    "setup_period_ns": 1.5,
+    "setup_bound_MHz": 666.6666666666666,
+    "hold_violations": [],
+    "valid_at_setup_bound": true
+  },
+  "Q6": {
+    "forward_path_nominal_setup_ns": 0.3,
+    "TG_phase_table": {
+      "CLK=0": {
+        "master_input": "on",
+        "master_feedback": "off",
+        "slave_input": "off"
+      },
+      "CLK=1": {
+        "master_input": "off",
+        "master_feedback": "on",
+        "slave_input": "on"
+      }
+    },
+    "low_write_condition": "R_P2 > R_TG + R_N1",
+    "high_write_condition": "R_N2 > R_TG + R_P1",
+    "divider_cases_checked": 243,
+    "model_limit": "Linear ON-resistor / fixed-threshold approximation, not SPICE or a physical setup characterization."
+  }
+}

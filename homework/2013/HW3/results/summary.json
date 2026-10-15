@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "simulator": "PrimeSim HSPICE S-2021.09",
+  "corner": "TT",
+  "VDD_V": 1.8,
+  "temperature_C": 25,
+  "TG_dimensions_um": {
+    "WN": 10,
+    "WP": 20,
+    "L": 0.18
+  },
+  "mux_output_load_fF": 10,
+  "mux_input_slew_ps": 20,
+  "maximum_timestep_ps": 1,
+  "logic_cases": 2048,
+  "mux_electrical_transition_cases": 16,
+  "mux_measured_output_delays": 32,
+  "baseline_transistors": 54,
+  "tree_transistors": 34,
+  "baseline_worst_delay_ps": 220.5072553,
+  "tree_worst_delay_ps": 76.19143257,
+  "worst_delay_improvement_percent": 65.44719924687212,
+  "inverter_load_cases": 5,
+  "inverter_input_rise_fall_ns": 3,
+  "inverter_period_ns": 20,
+  "averaging_window_ns": [
+    23,
+    43
+  ],
+  "Psc_method": "VDD times cycle-average nonnegative minimum of positive intrinsic LX4 PMOS/NMOS channel IDS; explicit overlap estimator, not total transistor dissipation",
+  "model_sha256": "f0e41de8109a0f0152891268b9b46ff4fb386a5d0807f410b075e1a051cf86fd",
+  "mux_sha256": "554b59ed57c6baa8011efb7384f10e5a0a8bfaf4d8f1d1923bb5afdd38786802"
+}

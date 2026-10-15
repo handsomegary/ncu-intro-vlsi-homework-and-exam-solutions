@@ -1,0 +1,25 @@
+{
+  "year": 2011,
+  "exam": "midterm",
+  "printed_question_points": [
+    20,
+    20,
+    20,
+    20,
+    20,
+    10
+  ],
+  "total_points": 110,
+  "source_physical_pages": 3,
+  "original_photo_panels": 6,
+  "student_solutions_found": false,
+  "sources": [],
+  "approved_reconstruction_assumption": "User selected the faint Figure3 common-gate bus connected toVDD, with explicit note.",
+  "limitations": [
+    "Q2 printed short-circuit voltage polynomial is preserved; physical overlap correction shown",
+    "Q2 e=2 approximation separated from exact discrete taper minimum",
+    "Q3 high-VT penalties/leakage models not supplied: conditional feasibility only",
+    "Q4 parta body effect andinitialYcharge not quantified",
+    "Q5 calibrateduniformlumpedRCmodel; finite TG delay differs from continuumwire approximation"
+  ]
+}

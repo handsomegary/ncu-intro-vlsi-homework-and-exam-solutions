@@ -1,0 +1,187 @@
+{
+  "Q3": {
+    "switching_gate_load_coefficient": 42,
+    "short_circuit_coefficient": 86,
+    "input_slews_in_tau0": [
+      2,
+      6,
+      6,
+      6
+    ],
+    "uses_exam_VDD_minus_Vt_not_2Vt": true
+  },
+  "Q4": {
+    "correct_equal_single_path": {
+      "worst_R_over_Rp1": 1.0,
+      "exact_worst": "1",
+      "clock_power_over_fCVDD2": 3.0,
+      "power_limit_pass": false,
+      "single_paths": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    "correct_uniform_8": {
+      "worst_R_over_Rp1": 1.0,
+      "exact_worst": "1",
+      "clock_power_over_fCVDD2": 3.0,
+      "power_limit_pass": false,
+      "single_paths": [
+        "1/2",
+        "3/4",
+        "3/4",
+        "1",
+        "1"
+      ]
+    },
+    "student_A_a": {
+      "worst_R_over_Rp1": 1.0833333333333333,
+      "exact_worst": "13/12",
+      "clock_power_over_fCVDD2": 3.0,
+      "power_limit_pass": false,
+      "single_paths": [
+        "3/4",
+        "11/12",
+        "5/6",
+        "13/12",
+        "1"
+      ]
+    },
+    "student_B_a": {
+      "worst_R_over_Rp1": 1.0,
+      "exact_worst": "1",
+      "clock_power_over_fCVDD2": 3.0,
+      "power_limit_pass": false,
+      "single_paths": [
+        "3/4",
+        "5/6",
+        "5/6",
+        "1",
+        "1"
+      ]
+    },
+    "student_A_b_readable_widths": {
+      "worst_R_over_Rp1": 1.1111111111111112,
+      "exact_worst": "10/9",
+      "clock_power_over_fCVDD2": 2.5,
+      "power_limit_pass": false,
+      "single_paths": [
+        "5/6",
+        "1",
+        "8/9",
+        "10/9",
+        "1"
+      ]
+    },
+    "student_B_b_footer_8": {
+      "worst_R_over_Rp1": 1.0,
+      "exact_worst": "1",
+      "clock_power_over_fCVDD2": 3.0,
+      "power_limit_pass": false,
+      "single_paths": [
+        "1/2",
+        "3/4",
+        "3/4",
+        "1",
+        "1"
+      ]
+    }
+  },
+  "Q4b_proof": {
+    "clock_limit_requires_footer_W_um": "<1",
+    "finite_equal_timing_requires_footer_W_um": ">2",
+    "finite_clock_power_lower_bound_coefficient": ">1.5",
+    "feasible": false
+  },
+  "Q6": {
+    "ab_unspecified_wire,s=-0.5ns": {
+      "setup_period_ns": 4.0,
+      "setup_frequency_MHz": 250.0,
+      "hold_violations": [],
+      "pairwise_envelope_checks_pass": true
+    },
+    "ab_unspecified_wire,s=+0.0ns": {
+      "setup_period_ns": 3.5,
+      "setup_frequency_MHz": 285.7142857142857,
+      "hold_violations": [
+        "R3 -> R4"
+      ],
+      "pairwise_envelope_checks_pass": false
+    },
+    "ab_unspecified_wire,s=+0.5ns": {
+      "setup_period_ns": 3.0,
+      "setup_frequency_MHz": 333.3333333333333,
+      "hold_violations": [
+        "R1 -> INV -> R3",
+        "R3 -> R4"
+      ],
+      "pairwise_envelope_checks_pass": false
+    },
+    "c_wire_0p05,s=-0.5ns": {
+      "setup_period_ns": 4.0,
+      "setup_frequency_MHz": 250.0,
+      "hold_violations": [],
+      "pairwise_envelope_checks_pass": true
+    },
+    "c_wire_0p05,s=+0.0ns": {
+      "setup_period_ns": 3.5,
+      "setup_frequency_MHz": 285.7142857142857,
+      "hold_violations": [
+        "R3 -> R4"
+      ],
+      "pairwise_envelope_checks_pass": false
+    },
+    "c_wire_0p05,s=+0.5ns": {
+      "setup_period_ns": 3.0,
+      "setup_frequency_MHz": 333.3333333333333,
+      "hold_violations": [
+        "R1 -> INV -> R3",
+        "R3 -> R4"
+      ],
+      "pairwise_envelope_checks_pass": false
+    },
+    "c_repaired,s=-0.5ns": {
+      "setup_period_ns": 4.0,
+      "setup_frequency_MHz": 250.0,
+      "hold_violations": [],
+      "pairwise_envelope_checks_pass": true
+    },
+    "c_repaired,s=+0.0ns": {
+      "setup_period_ns": 3.5,
+      "setup_frequency_MHz": 285.7142857142857,
+      "hold_violations": [],
+      "pairwise_envelope_checks_pass": true
+    },
+    "c_repaired,s=+0.5ns": {
+      "setup_period_ns": 3.0,
+      "setup_frequency_MHz": 333.3333333333333,
+      "hold_violations": [
+        "R1 -> INV -> R3"
+      ],
+      "pairwise_envelope_checks_pass": false
+    },
+    "skew_safe,s=-0.5ns": {
+      "setup_period_ns": 4.0,
+      "setup_frequency_MHz": 250.0,
+      "hold_violations": [],
+      "pairwise_envelope_checks_pass": true
+    },
+    "skew_safe,s=+0.0ns": {
+      "setup_period_ns": 3.5,
+      "setup_frequency_MHz": 285.7142857142857,
+      "hold_violations": [],
+      "pairwise_envelope_checks_pass": true
+    },
+    "skew_safe,s=+0.5ns": {
+      "setup_period_ns": 3.0,
+      "setup_frequency_MHz": 333.3333333333333,
+      "hold_violations": [],
+      "pairwise_envelope_checks_pass": true
+    }
+  },
+  "Q6_skew_scope": "Signs are pairwise bounds, not a uniform physical clock distribution; setup ceilings require reported hold repairs.",
+  "model_scope": "Analytical fixed gate delays and linear ON resistances. No transistor simulation."
+}

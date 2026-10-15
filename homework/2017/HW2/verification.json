@@ -1,0 +1,29 @@
+{
+  "provenance": "analytical, declared example values",
+  "inputs": {
+    "rn": 1000,
+    "rp": 2000,
+    "cf_ff": 10,
+    "cz_ff": 5,
+    "vdd": 1.8,
+    "vtn": 0.4,
+    "vtp_abs": 0.4,
+    "beta_p_over_n": 1
+  },
+  "elmore_time_constant_ps": {
+    "F_HL": 20.000000000000004,
+    "F_LH": 20.000000000000004,
+    "Z_HL": 25.000000000000004,
+    "Z_LH": 30.0
+  },
+  "approx_50_percent_delay_ps": {
+    "F_HL": 13.862943611198906,
+    "F_LH": 13.862943611198906,
+    "Z_HL": 17.328679513998637,
+    "Z_LH": 20.79441541679836
+  },
+  "mu_n_over_mu_p": 2.0,
+  "Cx_over_Cg": 2.6666666666666665,
+  "matched_thresholds": true,
+  "balanced_inverter": true
+}

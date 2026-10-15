@@ -1,0 +1,25 @@
+case,event,CLK,X,b,m,d,Y
+0,CLK=1 tracking,1,0,1,0,0,0
+0,"CLK falls, slave captures master",0,0,1,0,0,0
+0,X changes while CLK=0,0,0,1,0,0,0
+1,CLK=1 tracking,1,0,1,0,0,0
+1,"CLK falls, slave captures master",0,0,1,0,0,0
+1,X changes while CLK=0,0,1,1,0,0,0
+2,CLK=1 tracking,1,1,0,1,0,0
+2,"CLK falls, slave captures master",0,1,0,1,1,1
+2,X changes while CLK=0,0,0,0,1,1,1
+3,CLK=1 tracking,1,1,0,1,0,0
+3,"CLK falls, slave captures master",0,1,0,1,1,1
+3,X changes while CLK=0,0,1,0,1,1,1
+4,CLK=1 tracking,1,0,1,0,1,1
+4,"CLK falls, slave captures master",0,0,1,0,0,0
+4,X changes while CLK=0,0,0,1,0,0,0
+5,CLK=1 tracking,1,0,1,0,1,1
+5,"CLK falls, slave captures master",0,0,1,0,0,0
+5,X changes while CLK=0,0,1,1,0,0,0
+6,CLK=1 tracking,1,1,0,1,1,1
+6,"CLK falls, slave captures master",0,1,0,1,1,1
+6,X changes while CLK=0,0,0,0,1,1,1
+7,CLK=1 tracking,1,1,0,1,1,1
+7,"CLK falls, slave captures master",0,1,0,1,1,1
+7,X changes while CLK=0,0,1,0,1,1,1

@@ -1,0 +1,54 @@
+{
+  "year": 2012,
+  "exam": "final",
+  "source_year_evidence": "Fall 2012 original footer, pages3-1 through3-3",
+  "originals": [
+    {
+      "relative_archive_path": "2012/final/final (1).jpg",
+      "sha256": "91cffec4caf7de44d1cfcf73c8d27565a9a2890d7dfe7d8d937498e65896419b",
+      "dimensions": [
+        2940,
+        3920
+      ]
+    },
+    {
+      "relative_archive_path": "2012/final/final (2).jpg",
+      "sha256": "28afc6e3c401b608ecb5119c8f0e63c2ed5defaa4fa7deab6489bfbbfab8eb8e",
+      "dimensions": [
+        2940,
+        3920
+      ]
+    },
+    {
+      "relative_archive_path": "2012/final/final (3).jpg",
+      "sha256": "c67f77a857e9ca25499898e54112b3822d33792f8ff2f83f3649576d7fd33d57",
+      "dimensions": [
+        2940,
+        3920
+      ]
+    }
+  ],
+  "student_answers": {
+    "sha256": {
+      "answerA\\answer (1).jpg": "a9b586a72522fd48e1b0d095483e742af4ca8ba0865e4078ffc6bc694f12e5f9",
+      "answerA\\answer (2).jpg": "db4a248baeed7d419346ecc3d253401a5f9f72123d12f6f02a0b9536db6edf33",
+      "answerA\\answer (3).jpg": "1f68f3db1c355155ccf440beabb7337a1550ea97fc3da0029523acdedb064cf1",
+      "answerA\\answer (4).jpg": "2737faa9da752c005340a335e3c3268d5a102b84c9390f3add26a841937d9612",
+      "answerB\\answer (1).jpg": "af2dcfa0e19a7358021f7ba2b0bffac270297eb21be4890ca360da68564e06e1",
+      "answerB\\answer (2).jpg": "6f40dc770e26b189de124651c6ef4a3860d0c2f83cec8609af2fc5c7b9e18f57",
+      "answerB\\answer (3).jpg": "6f8a2c09c8eb0d3cd6c689cc982e4c61f847b316651d6d72088ca45067107889",
+      "answerB\\answer (4).jpg": "4a8f988eae861daa9a88e2007b2583daaf9923986fa07c13bd6b869f8531f1f5"
+    },
+    "within_A_B_duplicates": [],
+    "identical_2013_image_matches": [],
+    "scope": "No student names, IDs, or grades transcribed."
+  },
+  "student_scope": "Two local sets, four images each, independently compared after source derivation. Identities and marks are not reproduced.",
+  "references": [
+    {
+      "title": "NCU Introduction to VLSI ch06, combinational circuits",
+      "url": "https://www.ee.ncu.edu.tw/jfli/public_html/VLSI/lecture/ch06.pdf",
+      "use": "Primary conceptual reference only; source controls actual circuit connectivity."
+    }
+  ]
+}

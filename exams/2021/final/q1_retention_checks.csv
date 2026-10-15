@@ -1,0 +1,3 @@
+gate,dynamic_cap_fF,conservative_I_nA,evaluation_ns,droop_bound_V,retained_high_lower_V,logic_high_threshold_V,leakage_only_retention_ns,pass
+AND,2.2,7,5.5,0.0175,1.7825,1.3,157.14285714285717,True
+OR,2.3,7,5.5,0.01673913043478261,1.7832608695652175,1.3,164.28571428571428,True

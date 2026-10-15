@@ -1,0 +1,4 @@
+deck,status,exit_code,detail,measurement_files
+q1_constant_leakage.sp,completed,0,HSPICE completed; measurements exported,q1_constant_leakage_measurements.csv
+q2_constant_resistance.sp,completed,0,HSPICE completed; measurements exported,q2_constant_resistance_measurements.csv
+q2_cic018_tt.sp,completed,0,HSPICE completed; measurements exported,q2_cic018_tt_measurements.csv

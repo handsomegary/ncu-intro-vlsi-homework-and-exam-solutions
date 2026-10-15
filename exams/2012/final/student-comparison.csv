@@ -1,0 +1,9 @@
+question,student_A,student_B,final
+1,Useful definitions/bounce mitigation; switching/short-circuit and leakage explanation corrected,Output/internal switching distinction retained; qualify logic and glitch statements,"Source-specific conceptual answers, external/internal capacitive switching"
+2,Logic concept retained with absorption and explicit complements,Logic concept retained with complete cross-coupled loads,"5-MOS dynamic; 8-MOS differential core, 14 with input complements"
+3,"Correct switching, wrong outgoing slew in short-circuit sum","Correct switching, wrong strength scaling and coefficient11",42Cg+CL switching; coefficient86 short-circuit
+4,Part a path13/12Rp; part b footer6 violatespower,Part a valid worst-case widths; part b footer8 violatespower,Compact balanced widths; fixed-P1 part b impossible
+5,Incompatible controls and omitted bypass; pooled x+y incorrect,Pooled x+y incorrect sharing scenario,"Reachable mean-delay [8/3,10]RC; z+y sharing1.2V"
+6,Setup/adverse250/holdrepair useful with qualifications; middle gate corrected,Hold-side reciprocal incorrectly called maxfrequency; shortbranch missed,Setup ceiling285.714MHz; holdrepair required; conservative skew250MHz
+7,Incomplete a; NOR core only in b,Clean-latch guess changes lastpair; NOR core only in b,Literal12MOS each; self-connected X pair and6OFF devices retained
+8,Constant-resistance beta ratio2 incorrect,Constant-resistance beta ratio2 incorrect,Square-law onset equaloverdrives beta ratio1

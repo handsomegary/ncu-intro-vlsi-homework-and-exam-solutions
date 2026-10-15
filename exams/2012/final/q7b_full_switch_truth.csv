@@ -1,0 +1,9 @@
+a,b,c,Z_to_VDD,Z_to_VSS,Z,expected_NOR3,fixed_gate_OFF_devices,ON_devices
+0,0,0,True,False,1,1,N1 N2 N6 P1 P2 P6,P3 P4 P5
+0,0,1,False,True,0,0,N1 N2 N6 P1 P2 P6,P3 P4 N5
+0,1,0,False,True,0,0,N1 N2 N6 P1 P2 P6,P3 N4 P5
+0,1,1,False,True,0,0,N1 N2 N6 P1 P2 P6,P3 N4 N5
+1,0,0,False,True,0,0,N1 N2 N6 P1 P2 P6,N3 P4 P5
+1,0,1,False,True,0,0,N1 N2 N6 P1 P2 P6,N3 P4 N5
+1,1,0,False,True,0,0,N1 N2 N6 P1 P2 P6,N3 N4 P5
+1,1,1,False,True,0,0,N1 N2 N6 P1 P2 P6,N3 N4 N5

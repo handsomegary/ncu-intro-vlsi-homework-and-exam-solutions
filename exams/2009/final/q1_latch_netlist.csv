@@ -1,0 +1,11 @@
+device,type,gate,left,right
+PC,p,CLK,VDD,CLKB
+NC,n,CLK,CLKB,GND
+P1,p,D,VDD,dbar
+N1,n,D,dbar,GND
+PT,p,CLKB,dbar,s
+NT,n,CLK,dbar,s
+PF,p,s,VDD,Q
+NF,n,s,Q,GND
+P2,p,Q,VDD,s
+N2,n,Q,s,GND

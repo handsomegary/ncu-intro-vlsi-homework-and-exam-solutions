@@ -1,0 +1,138 @@
+{
+  "mirror": {
+    "all_logic_pass": true,
+    "output_Wp_Wn_CO": 4.505250734796756,
+    "output_Wp_Wn_S": 6.274919876775619,
+    "fine_step_balance": {
+      "co": {
+        "worst_rise_ps": 47.959201885999995,
+        "worst_fall_ps": 47.456448084,
+        "relative_difference": 0.010482947635264028,
+        "ratio": 1.0105940040247028
+      },
+      "s": {
+        "worst_rise_ps": 56.5234284,
+        "worst_fall_ps": 55.422084659,
+        "relative_difference": 0.019484729999144936,
+        "ratio": 1.0198719291736558
+      }
+    },
+    "worst_delays": [
+      {
+        "case": 5,
+        "inputs_before": "000",
+        "inputs_after": "110",
+        "node": "co",
+        "direction": "LH",
+        "delay_ps": 151.76333972999998,
+        "slew_10_90_ps": 47.537782909,
+        "step_ps": 0.2
+      },
+      {
+        "case": 46,
+        "inputs_before": "110",
+        "inputs_after": "100",
+        "node": "co",
+        "direction": "HL",
+        "delay_ps": 117.18542605000002,
+        "slew_10_90_ps": 40.650546824,
+        "step_ps": 0.2
+      },
+      {
+        "case": 22,
+        "inputs_before": "011",
+        "inputs_after": "001",
+        "node": "s",
+        "direction": "LH",
+        "delay_ps": 246.98358749000002,
+        "slew_10_90_ps": 54.734448422999996,
+        "step_ps": 0.2
+      },
+      {
+        "case": 19,
+        "inputs_before": "010",
+        "inputs_after": "110",
+        "node": "s",
+        "direction": "HL",
+        "delay_ps": 256.85289611,
+        "slew_10_90_ps": 44.097239996,
+        "step_ps": 0.2
+      }
+    ],
+    "max_delay_timestep_difference_ps": 0.15269821200000422,
+    "netlist_SHA256_UTF8_LF": "e48c299f2b24e7461b1bf930704750787a50d3571f31a90cd7759a71807e44b3",
+    "device_count": 28,
+    "truth_checks": 112,
+    "timing_rows": 64
+  },
+  "domino": {
+    "all_logic_pass": true,
+    "output_Wp_Wn_CO": 3.4060443769523325,
+    "output_Wp_Wn_S": 2.6544715309014397,
+    "fine_step_balance": {
+      "co": {
+        "worst_rise_ps": 46.147379407,
+        "worst_fall_ps": 46.30487624,
+        "relative_difference": 0.0034013012405795856,
+        "ratio": 0.9965986987594204
+      },
+      "s": {
+        "worst_rise_ps": 50.214594074999994,
+        "worst_fall_ps": 51.022450803,
+        "relative_difference": 0.015833357968616128,
+        "ratio": 0.9841666420313838
+      }
+    },
+    "worst_delays": [
+      {
+        "case": 5,
+        "input_bits": "101",
+        "node": "co",
+        "direction": "LH",
+        "delay_ps": 91.112891528,
+        "slew_10_90_ps": 46.147379407,
+        "step_ps": 0.2
+      },
+      {
+        "case": 7,
+        "input_bits": "111",
+        "node": "co",
+        "direction": "HL",
+        "delay_ps": 110.79860423000001,
+        "slew_10_90_ps": 46.30487624,
+        "step_ps": 0.2
+      },
+      {
+        "case": 4,
+        "input_bits": "100",
+        "node": "s",
+        "direction": "LH",
+        "delay_ps": 168.41051228,
+        "slew_10_90_ps": 50.214594074999994,
+        "step_ps": 0.2
+      },
+      {
+        "case": 7,
+        "input_bits": "111",
+        "node": "s",
+        "direction": "HL",
+        "delay_ps": 114.78739578,
+        "slew_10_90_ps": 51.022450803,
+        "step_ps": 0.2
+      }
+    ],
+    "max_delay_timestep_difference_ps": 0.1415472000000193,
+    "netlist_SHA256_UTF8_LF": "a88844d0c8cefe942c825c43796c039df8c07496ab93c5b6be9e84c7404eb935",
+    "device_count": 38,
+    "truth_checks": 24,
+    "timing_rows": 24
+  },
+  "corner": "CIC018 TT",
+  "VDD_V": 1.8,
+  "temperature_C": 25,
+  "input_clock_slew_ps": 20,
+  "output_load_fF": 1,
+  "slew_definition": "worst10to90rise versus worst90to10fall, eachoutput, tolerance3percent",
+  "domino_delay_definition": "clock50tooutput50; precharge/resetreportedseparately",
+  "scope": "pre-layoutonly"
+}

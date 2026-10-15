@@ -1,0 +1,8 @@
+P3_width_relative_N1,P3_width_relative_N1_exact,output_cap_over_C,fall_lower_bound_over_RC,rise_lower_bound_over_RC,worst_lower_bound_over_RC,note
+0.5,1/2,1.6428571428571428,1.6428571428571428,7.510204081632653,7.510204081632653,Infimum as N2/P2 widths go to infinity; finite devices are slower
+1.0,1,2.142857142857143,2.142857142857143,4.8979591836734695,4.8979591836734695,Infimum as N2/P2 widths go to infinity; finite devices are slower
+1.8571428571428572,13/7,3.0,3.0,3.6923076923076925,3.6923076923076925,Infimum as N2/P2 widths go to infinity; finite devices are slower
+2.2857142857142856,16/7,3.4285714285714284,3.4285714285714284,3.4285714285714284,3.4285714285714284,Infimum as N2/P2 widths go to infinity; finite devices are slower
+3.0,3,4.142857142857143,4.142857142857143,3.1564625850340136,4.142857142857143,Infimum as N2/P2 widths go to infinity; finite devices are slower
+3.657142857142857,128/35,4.8,4.8,3.0,4.8,Infimum as N2/P2 widths go to infinity; finite devices are slower
+5.0,5,6.142857142857143,6.142857142857143,2.8081632653061224,6.142857142857143,Infimum as N2/P2 widths go to infinity; finite devices are slower

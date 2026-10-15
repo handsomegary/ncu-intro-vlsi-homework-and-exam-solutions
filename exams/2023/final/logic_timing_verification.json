@@ -1,0 +1,1288 @@
+{
+  "exam": "EE3032 Fall2023 final",
+  "status": "PASS",
+  "method": "ideal MOS switch graphs, exhaustive logic and analytic timing/charge checks; no transistor simulation",
+  "Q2": {
+    "truth_cases": 16,
+    "MOS_phase_node_cases": 128,
+    "graph": [
+      {
+        "name": "PRE1",
+        "kind": "P",
+        "drain": "d1",
+        "gate": "phi",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "N10",
+        "kind": "N",
+        "drain": "d1",
+        "gate": "A",
+        "source": "s11",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "N11",
+        "kind": "N",
+        "drain": "s11",
+        "gate": "B",
+        "source": "s12",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "N12",
+        "kind": "N",
+        "drain": "s12",
+        "gate": "C",
+        "source": "e1",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "FOOT1",
+        "kind": "N",
+        "drain": "e1",
+        "gate": "phi",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "OUT1P",
+        "kind": "P",
+        "drain": "u",
+        "gate": "d1",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "OUT1N",
+        "kind": "N",
+        "drain": "u",
+        "gate": "d1",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "KEEP1",
+        "kind": "P",
+        "drain": "d1",
+        "gate": "u",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "keeper",
+        "weak": true
+      },
+      {
+        "name": "PRE2",
+        "kind": "P",
+        "drain": "d2",
+        "gate": "phi",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "N20",
+        "kind": "N",
+        "drain": "d2",
+        "gate": "u",
+        "source": "s21",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "N21",
+        "kind": "N",
+        "drain": "s21",
+        "gate": "D",
+        "source": "e2",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "FOOT2",
+        "kind": "N",
+        "drain": "e2",
+        "gate": "phi",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "OUT2P",
+        "kind": "P",
+        "drain": "Y",
+        "gate": "d2",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "OUT2N",
+        "kind": "N",
+        "drain": "Y",
+        "gate": "d2",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "KEEP2",
+        "kind": "P",
+        "drain": "d2",
+        "gate": "Y",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "keeper",
+        "weak": true
+      }
+    ],
+    "core_with_keepers_MOS": 15,
+    "input_sequence": [
+      "0000",
+      "1110"
+    ],
+    "evaluate_ns": 5,
+    "concurrent_precharge_ns": 1,
+    "adjustable_duty_min_period_ns": 6,
+    "adjustable_duty_max_MHz": 166.66666666666666,
+    "adjustable_duty_evaluate_fraction": 0.8333333333333334,
+    "duty50_min_period_ns": 10,
+    "duty50_max_MHz": 100,
+    "graded_duty_evidence": "No matching graded answer identified in the supplied mixed-year study compilation.",
+    "waveform": "each AND has one-unit response; u resets one unit after phi falls; Y remains0 because D=0"
+  },
+  "Q3": {
+    "input_cases": 8,
+    "phase_node_cases": 48,
+    "graph": [
+      {
+        "name": "PRE",
+        "kind": "P",
+        "drain": "d",
+        "gate": "phi",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "precharge",
+        "weak": false
+      },
+      {
+        "name": "A1",
+        "kind": "N",
+        "drain": "d",
+        "gate": "A",
+        "source": "x",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "B1",
+        "kind": "N",
+        "drain": "x",
+        "gate": "B",
+        "source": "e",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "C1",
+        "kind": "N",
+        "drain": "d",
+        "gate": "C",
+        "source": "y",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "A2",
+        "kind": "N",
+        "drain": "y",
+        "gate": "A",
+        "source": "e",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "B2",
+        "kind": "N",
+        "drain": "y",
+        "gate": "B",
+        "source": "e",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "FOOT",
+        "kind": "N",
+        "drain": "e",
+        "gate": "phi",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "YMIDP",
+        "kind": "P",
+        "drain": "Ybar",
+        "gate": "d",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "YMIDN",
+        "kind": "N",
+        "drain": "Ybar",
+        "gate": "d",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "XHEAD",
+        "kind": "P",
+        "drain": "ex",
+        "gate": "phib",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "XDATA",
+        "kind": "P",
+        "drain": "X",
+        "gate": "d",
+        "source": "ex",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "XRESET",
+        "kind": "N",
+        "drain": "X",
+        "gate": "phib",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "precharge",
+        "weak": false
+      }
+    ],
+    "original_graph": [
+      {
+        "name": "PRE",
+        "kind": "P",
+        "drain": "d",
+        "gate": "phi",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "precharge",
+        "weak": false
+      },
+      {
+        "name": "A1",
+        "kind": "N",
+        "drain": "d",
+        "gate": "A",
+        "source": "x",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "B1",
+        "kind": "N",
+        "drain": "x",
+        "gate": "B",
+        "source": "e",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "C1",
+        "kind": "N",
+        "drain": "d",
+        "gate": "C",
+        "source": "y",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "A2",
+        "kind": "N",
+        "drain": "y",
+        "gate": "A",
+        "source": "e",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "B2",
+        "kind": "N",
+        "drain": "y",
+        "gate": "B",
+        "source": "e",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "FOOT",
+        "kind": "N",
+        "drain": "e",
+        "gate": "phi",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "YPRE",
+        "kind": "P",
+        "drain": "Ybar",
+        "gate": "phib",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "precharge",
+        "weak": false
+      },
+      {
+        "name": "YDATA",
+        "kind": "N",
+        "drain": "Ybar",
+        "gate": "d",
+        "source": "ey",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "YFOOT",
+        "kind": "N",
+        "drain": "ey",
+        "gate": "phib",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "XHEAD",
+        "kind": "P",
+        "drain": "ex",
+        "gate": "phib",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "XDATA",
+        "kind": "P",
+        "drain": "X",
+        "gate": "d",
+        "source": "ex",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "XRESET",
+        "kind": "N",
+        "drain": "X",
+        "gate": "phib",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "precharge",
+        "weak": false
+      }
+    ],
+    "original_phi_graph": [
+      {
+        "name": "PRE",
+        "kind": "P",
+        "drain": "d",
+        "gate": "phi",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "precharge",
+        "weak": false
+      },
+      {
+        "name": "A1",
+        "kind": "N",
+        "drain": "d",
+        "gate": "A",
+        "source": "x",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "B1",
+        "kind": "N",
+        "drain": "x",
+        "gate": "B",
+        "source": "e",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "C1",
+        "kind": "N",
+        "drain": "d",
+        "gate": "C",
+        "source": "y",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "A2",
+        "kind": "N",
+        "drain": "y",
+        "gate": "A",
+        "source": "e",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "B2",
+        "kind": "N",
+        "drain": "y",
+        "gate": "B",
+        "source": "e",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "FOOT",
+        "kind": "N",
+        "drain": "e",
+        "gate": "phi",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "YPRE",
+        "kind": "P",
+        "drain": "Ybar",
+        "gate": "phi",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "precharge",
+        "weak": false
+      },
+      {
+        "name": "YDATA",
+        "kind": "N",
+        "drain": "Ybar",
+        "gate": "d",
+        "source": "ey",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "YFOOT",
+        "kind": "N",
+        "drain": "ey",
+        "gate": "phi",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "XHEAD",
+        "kind": "P",
+        "drain": "ex",
+        "gate": "phib",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "XDATA",
+        "kind": "P",
+        "drain": "X",
+        "gate": "d",
+        "source": "ex",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "XRESET",
+        "kind": "N",
+        "drain": "X",
+        "gate": "phib",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "precharge",
+        "weak": false
+      }
+    ],
+    "source_clock_legibility": "Middle glyph's top stroke touches gate wire; phi_bar selected transcription, phi alternate tested; graph cannot resolve printed pixels",
+    "original_failure": "Printed middle clock is phi_bar: phi0 gives raw d1 and middle Ybar0; phi1 forcibly precharges middle Ybar1 independently of the input function",
+    "modified_function": "Primary static-middle repair gives X=AB+C(A+B), Ybar=X",
+    "primary_repair": "Reconnect upper middle pMOS gate to d and remove its clocked footer; 12MOS remain",
+    "alternate_graph": [
+      {
+        "name": "PRE",
+        "kind": "P",
+        "drain": "d",
+        "gate": "phi",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "precharge",
+        "weak": false
+      },
+      {
+        "name": "A1",
+        "kind": "N",
+        "drain": "d",
+        "gate": "A",
+        "source": "x",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "B1",
+        "kind": "N",
+        "drain": "x",
+        "gate": "B",
+        "source": "e",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "C1",
+        "kind": "N",
+        "drain": "d",
+        "gate": "C",
+        "source": "y",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "A2",
+        "kind": "N",
+        "drain": "y",
+        "gate": "A",
+        "source": "e",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "B2",
+        "kind": "N",
+        "drain": "y",
+        "gate": "B",
+        "source": "e",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "FOOT",
+        "kind": "N",
+        "drain": "e",
+        "gate": "phi",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "YPRE",
+        "kind": "P",
+        "drain": "Ybar",
+        "gate": "phi",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "precharge",
+        "weak": false
+      },
+      {
+        "name": "YDATA",
+        "kind": "N",
+        "drain": "Ybar",
+        "gate": "q",
+        "source": "ey",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "YFOOT",
+        "kind": "N",
+        "drain": "ey",
+        "gate": "phi",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "XHEAD",
+        "kind": "P",
+        "drain": "ex",
+        "gate": "phib",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "XDATA",
+        "kind": "P",
+        "drain": "X",
+        "gate": "d",
+        "source": "ex",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "XRESET",
+        "kind": "N",
+        "drain": "X",
+        "gate": "phib",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "precharge",
+        "weak": false
+      },
+      {
+        "name": "BUFP",
+        "kind": "P",
+        "drain": "q",
+        "gate": "d",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "BUFN",
+        "kind": "N",
+        "drain": "q",
+        "gate": "d",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "inverter",
+        "weak": false
+      }
+    ],
+    "alternate_cases": 8,
+    "original_phase_cases": 16,
+    "alternate_repair": "Change BOTH middle precharge/footer clock to phi and insert an input inverter; yields X=M,Ybar=NOT(M),15MOS",
+    "node_labels": "Original x is A/B internal junction; d is an added analysis name for raw output.",
+    "capacitor_primary": "1.3fF/1.1fF are supplied TOTAL internal-node parasitic caps",
+    "capacitor_alternatives": "wire-only caps plus every junction, or literal drain-only Cd; all remain above VDD/2",
+    "primary_worst_ratio": 0.717391304347826,
+    "minimum_alternative_ratio": 0.6875
+  },
+  "Q4": {
+    "dynamic_dpl_cases": 8,
+    "dynamic_phase_cases": 16,
+    "np_phase_cases": 8,
+    "dynamic_core_MOS": 5,
+    "DPL_core_MOS": 10,
+    "DPL_complement_inputs": "Provided externally; 3 inverters add6MOS if needed",
+    "NP_core_MOS": 9,
+    "NP_with_two_keepers_MOS": 15,
+    "dynamic_graph": [
+      {
+        "name": "Ppre",
+        "kind": "P",
+        "drain": "f",
+        "gate": "phi",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "Nx1",
+        "kind": "N",
+        "drain": "f",
+        "gate": "x1",
+        "source": "u",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "Nx2",
+        "kind": "N",
+        "drain": "u",
+        "gate": "x2",
+        "source": "e",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "Nx3",
+        "kind": "N",
+        "drain": "f",
+        "gate": "x3",
+        "source": "e",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "Nfoot",
+        "kind": "N",
+        "drain": "e",
+        "gate": "phi",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      }
+    ],
+    "DPL_graph": [
+      {
+        "name": "NF1",
+        "kind": "N",
+        "drain": "f",
+        "gate": "x1",
+        "source": "uf",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NF0",
+        "kind": "N",
+        "drain": "f",
+        "gate": "xb1",
+        "source": "xb3",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NF11",
+        "kind": "N",
+        "drain": "uf",
+        "gate": "x2",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NF10",
+        "kind": "N",
+        "drain": "uf",
+        "gate": "xb2",
+        "source": "xb3",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NG1",
+        "kind": "N",
+        "drain": "g",
+        "gate": "x1",
+        "source": "ug",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NG0",
+        "kind": "N",
+        "drain": "g",
+        "gate": "xb1",
+        "source": "x3",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NG11",
+        "kind": "N",
+        "drain": "ug",
+        "gate": "x2",
+        "source": "VDD",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NG10",
+        "kind": "N",
+        "drain": "ug",
+        "gate": "xb2",
+        "source": "x3",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "PFrestore",
+        "kind": "P",
+        "drain": "f",
+        "gate": "g",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "restorer",
+        "weak": true
+      },
+      {
+        "name": "PGrestore",
+        "kind": "P",
+        "drain": "g",
+        "gate": "f",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "restorer",
+        "weak": true
+      }
+    ],
+    "NP_graph": [
+      {
+        "name": "NPRE",
+        "kind": "P",
+        "drain": "n",
+        "gate": "phi",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NX1",
+        "kind": "N",
+        "drain": "n",
+        "gate": "x1",
+        "source": "en",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NX2",
+        "kind": "N",
+        "drain": "n",
+        "gate": "x2",
+        "source": "en",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "NFOOT",
+        "kind": "N",
+        "drain": "en",
+        "gate": "phi",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "PHEAD",
+        "kind": "P",
+        "drain": "ep",
+        "gate": "phib",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "PN",
+        "kind": "P",
+        "drain": "ef",
+        "gate": "n",
+        "source": "ep",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "PX1",
+        "kind": "P",
+        "drain": "f",
+        "gate": "x1",
+        "source": "ef",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "PX2",
+        "kind": "P",
+        "drain": "f",
+        "gate": "x2",
+        "source": "ef",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "PRESET",
+        "kind": "N",
+        "drain": "f",
+        "gate": "phib",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "KNINVP",
+        "kind": "P",
+        "drain": "nb",
+        "gate": "n",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "KNINVN",
+        "kind": "N",
+        "drain": "nb",
+        "gate": "n",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "KN",
+        "kind": "P",
+        "drain": "n",
+        "gate": "nb",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "keeper",
+        "weak": true
+      },
+      {
+        "name": "KFINVP",
+        "kind": "P",
+        "drain": "fb",
+        "gate": "f",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "KFINVN",
+        "kind": "N",
+        "drain": "fb",
+        "gate": "f",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "inverter",
+        "weak": false
+      },
+      {
+        "name": "KF",
+        "kind": "N",
+        "drain": "f",
+        "gate": "fb",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "keeper",
+        "weak": true
+      }
+    ],
+    "NP_equation": "n=NOT(x1+x2); f=NOT(n)*(NOT(x1)+NOT(x2)) = x1 XOR x2",
+    "NP_protocol": "x1,x2 stable for evaluate; n falls monotonically from1, f rises from0"
+  },
+  "Q5": {
+    "model": "classroom fixed external capacitor C",
+    "widths_nm": {
+      "N1": 160.0,
+      "N2": 80.0,
+      "N3": 182.85714285714286,
+      "P1": 320.0,
+      "P2": 160.0,
+      "P3": 365.7142857142857
+    },
+    "all_lengths_nm": 40,
+    "RP1_choice_R": 1,
+    "nonunique_p_family": "a=RP1/R,0<a<3; WP1=320/a,WP2=320/(3-a),WP3=2560/(7a) nm",
+    "thresholds_off_V": [
+      0.5,
+      1.0
+    ],
+    "thresholds_on_equal_added_V": [
+      0.2565217391304348,
+      1.2434782608695651
+    ],
+    "literal_capacitance_model": "Cout/C=15/7+16/(7a), because output drives N3 and P3 gates",
+    "literal_positive_N2_requires_a_gt": 2.6666666666666665,
+    "literal_positive_P2_requires_a_lt": 0.3333333333333333,
+    "literal_feasible": false,
+    "switch_power": "Lower feedback resistance increases overlap current at a fixed input bias; numerical cycle-average power needs a waveform/device model."
+  },
+  "Q6": {
+    "cases": 8,
+    "physical_MOS": 14,
+    "functional_MOS": 10,
+    "off_isolation_MOS": 4,
+    "p_active_nodes": [
+      "VDD",
+      "x",
+      "VDD",
+      "p1",
+      "p2",
+      "w",
+      "VDD",
+      "z"
+    ],
+    "n_active_nodes": [
+      "VSS",
+      "x",
+      "VSS",
+      "w",
+      "VSS",
+      "w",
+      "VSS",
+      "z"
+    ],
+    "p_gates": [
+      "a",
+      "VDD",
+      "x",
+      "b",
+      "c",
+      "VDD",
+      "w"
+    ],
+    "n_gates": [
+      "a",
+      "VSS",
+      "x",
+      "b",
+      "c",
+      "VSS",
+      "w"
+    ],
+    "function": "z=NOT(a)+b+c",
+    "graph": [
+      {
+        "name": "P1",
+        "kind": "P",
+        "drain": "x",
+        "gate": "a",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "P2",
+        "kind": "P",
+        "drain": "VDD",
+        "gate": "VDD",
+        "source": "x",
+        "body": "VDD",
+        "role": "isolation",
+        "weak": false
+      },
+      {
+        "name": "P3",
+        "kind": "P",
+        "drain": "p1",
+        "gate": "x",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "P4",
+        "kind": "P",
+        "drain": "p2",
+        "gate": "b",
+        "source": "p1",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "P5",
+        "kind": "P",
+        "drain": "w",
+        "gate": "c",
+        "source": "p2",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "P6",
+        "kind": "P",
+        "drain": "VDD",
+        "gate": "VDD",
+        "source": "w",
+        "body": "VDD",
+        "role": "isolation",
+        "weak": false
+      },
+      {
+        "name": "P7",
+        "kind": "P",
+        "drain": "z",
+        "gate": "w",
+        "source": "VDD",
+        "body": "VDD",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "N1",
+        "kind": "N",
+        "drain": "x",
+        "gate": "a",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "N2",
+        "kind": "N",
+        "drain": "VSS",
+        "gate": "VSS",
+        "source": "x",
+        "body": "VSS",
+        "role": "isolation",
+        "weak": false
+      },
+      {
+        "name": "N3",
+        "kind": "N",
+        "drain": "w",
+        "gate": "x",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "N4",
+        "kind": "N",
+        "drain": "VSS",
+        "gate": "b",
+        "source": "w",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "N5",
+        "kind": "N",
+        "drain": "w",
+        "gate": "c",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      },
+      {
+        "name": "N6",
+        "kind": "N",
+        "drain": "VSS",
+        "gate": "VSS",
+        "source": "w",
+        "body": "VSS",
+        "role": "isolation",
+        "weak": false
+      },
+      {
+        "name": "N7",
+        "kind": "N",
+        "drain": "z",
+        "gate": "w",
+        "source": "VSS",
+        "body": "VSS",
+        "role": "logic",
+        "weak": false
+      }
+    ],
+    "contact_rule": "Crossing metal/poly without a black contact square is insulated"
+  },
+  "Q7": {
+    "truth_cases": 16,
+    "physical_paths": 12,
+    "path_skew_cases": 24,
+    "unchanged_constant_output": "R8 D=v*NOT(q4)=0; preserve physical reconvergent paths for timing",
+    "actual_hazard_case": "q2=q3=1, q4 falls at.2ns: R8_D rises at.7ns and settles low at1.9ns under printed transport delays",
+    "delayed_capture_registers": [
+      "R5",
+      "R6"
+    ],
+    "undelayed_capture_registers": [
+      "R7",
+      "R8"
+    ],
+    "direct_hold_fail_ns": {
+      "delta0": 0.1,
+      "delta0.3": 0.4
+    },
+    "modified_longest_logic_ns": 1.7,
+    "modified_min_period_ns": 2.1,
+    "conditional_ideal_latch_max_MHz": 476.19047619047615,
+    "latch_setup_inequality": "T/2+delta >= t_pd_latch+0.2ns (launch data ready before opening)",
+    "latch_hold_inequality": "T/2+t_cd_latch >= delta+0.2ns",
+    "latch_own_hold_requirement": "t_hold_latch <= 0.1ns for simultaneous launch FF edge/latch closing edge",
+    "no_unconditional_latch_timing_claim": true
+  }
+}

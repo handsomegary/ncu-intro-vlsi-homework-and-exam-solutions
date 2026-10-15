@@ -1,0 +1,14 @@
+# 2020 HW4
+
+HW3 circuit packaged as the requested pre-layout .sp-only deliverable.
+
+- `solution.tex` is standalone English LaTeX; `solution.pdf` is its rendered counterpart.
+- Original assignment PDFs are in `../assignments`.
+- Existing supplied answers were reviewed before the independent derivation; see `../SOURCES.md` and the report comparison.
+
+```text
+python simulate.py --model D:/cic018.l --raw-dir <scratch>
+```
+
+Requires Python 3 and licensed HSPICE (default `C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com`); the CIC018 model is local and is not distributed. Keep raw simulator output in a scratch directory. Pass `--hspice <path>` to override the executable.
+HW4 intentionally stops at schematic SPICE; no layout/extraction is claimed. Its checked-in result data are the identical-circuit HW3 measurements, explicitly recorded in `provenance.json`.

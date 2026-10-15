@@ -1,0 +1,9 @@
+A,B,C,z,X,w,Y,z_evaluation_R_over_R,w_evaluation_R_over_R,z_mean_delay_RC,w_mean_delay_RC
+0,0,0,1,0,1,0,OFF,13/3,NA,8/3
+0,0,1,1,0,0,1,OFF,OFF,NA,NA
+0,1,0,1,0,0,1,OFF,OFF,NA,NA
+0,1,1,0,1,1,0,3,3,8,2
+1,0,0,1,0,0,1,OFF,OFF,NA,NA
+1,0,1,0,1,1,0,3,3,8,2
+1,1,0,0,1,1,0,3,3,8,2
+1,1,1,0,1,0,1,13/7,OFF,40/7,NA

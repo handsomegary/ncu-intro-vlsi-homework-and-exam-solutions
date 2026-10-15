@@ -1,0 +1,11 @@
+device,type,left_channel,right_channel,gate
+NA,n,F,ab,A
+NB,n,ab,VSS,B
+NC,n,F,VSS,C
+ND,n,F,de,D
+NE,n,de,VSS,E
+PA,p,VDD,p1,A
+PB,p,VDD,p1,B
+PC,p,p1,p2,C
+PD,p,p2,F,D
+PE,p,p2,F,E

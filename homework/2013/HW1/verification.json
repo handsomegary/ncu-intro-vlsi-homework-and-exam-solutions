@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "truth_table_cases": 32,
+  "q3_cases": 8,
+  "q4a_cases": 16,
+  "q4b_cases": 8,
+  "unequal_length_current_points": 80800,
+  "maximum_normalized_current_error": 3.885780586188048e-16,
+  "q4a_transistors": 12,
+  "q4b_transistors": 10,
+  "model_scope": "ideal MOS switches and long-channel square law, no body effect or channel-length modulation"
+}

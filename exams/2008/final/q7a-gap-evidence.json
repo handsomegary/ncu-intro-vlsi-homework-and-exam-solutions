@@ -1,0 +1,18 @@
+{
+  "native_source": "source-native-2.tiff",
+  "native_dimensions": [
+    1648,
+    2338
+  ],
+  "separating_white_rectangle_xyxy_exclusive": [
+    455,
+    1690,
+    465,
+    1709
+  ],
+  "pixels": 190,
+  "all_pixels_white": true,
+  "gap_role": "Separates the left Y metal stripe from the independent right clock/poly contact stripe; column 2 p gate is C, not Y.",
+  "resize_method": "faithful nearest neighbor only, no threshold or manual removal",
+  "independent_reader_confirmation": true
+}

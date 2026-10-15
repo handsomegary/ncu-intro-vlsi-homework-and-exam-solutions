@@ -1,0 +1,7 @@
+gate,input_loads,load_Ci,rise,fall,mean
+"A NOR(I1,I2)","B,D",2,4,2,3
+"B NOR(I0,a)",C,1,2,1,1.5
+C INV(b),E,1,1,1,1
+"D NAND(a,I3)","E,G",2,2,4,3
+"E+F OR(c,d)",2Ci external; internal Ci,2,3,4,3.5
+"G+H AND(d,I4)",2Ci external; internal Ci,2,4,3,3.5

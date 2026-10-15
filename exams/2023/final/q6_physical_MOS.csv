@@ -1,0 +1,15 @@
+name,kind,drain,gate,source,body,role,weak
+P1,P,x,a,VDD,VDD,logic,False
+P2,P,VDD,VDD,x,VDD,isolation,False
+P3,P,p1,x,VDD,VDD,logic,False
+P4,P,p2,b,p1,VDD,logic,False
+P5,P,w,c,p2,VDD,logic,False
+P6,P,VDD,VDD,w,VDD,isolation,False
+P7,P,z,w,VDD,VDD,logic,False
+N1,N,x,a,VSS,VSS,logic,False
+N2,N,VSS,VSS,x,VSS,isolation,False
+N3,N,w,x,VSS,VSS,logic,False
+N4,N,VSS,b,w,VSS,logic,False
+N5,N,w,c,VSS,VSS,logic,False
+N6,N,VSS,VSS,w,VSS,isolation,False
+N7,N,z,w,VSS,VSS,logic,False

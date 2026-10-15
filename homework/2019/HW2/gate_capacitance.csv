@@ -1,0 +1,2 @@
+inverter_gate_units,NOR_input_gate_units,total_node_x_units,Cx_over_Cg,assumption
+3,5,8,2.6666666666666665,equalL; worst-case one-NMOS-on NOR strength

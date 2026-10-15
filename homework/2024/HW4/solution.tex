@@ -1,0 +1,129 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\title{EE3032 Introduction to VLSI Design\\2024 Homework 4: Pre-layout SPICE Deliverable}
+\author{Independent reconstruction and verification}
+\date{13 October 2026}
+\begin{document}
+\maketitle
+
+\section{Requested scope and relation to the original assignment}
+The original Homework 4 asks for layout, extracted netlists and a pre-/post-layout
+comparison. This deliverable follows the user's explicit request to stop at the
+\texttt{.sp} stage. It provides a transistor-level schematic netlist and a runnable
+testbench. No layout, DRC, LVS, PEX or post-layout simulation is claimed.
+
+The final Homework 3 netlist is copied without modifying transistor connections
+or dimensions. The copied file is \texttt{four\_bit\_multbased\_adder.sp}; its hash
+and the new testbench hash are recorded in \texttt{statistics.json}. This makes
+the correspondence between the verified design and the Homework 4 deliverable
+explicit.
+
+\section{Function and interface}
+For bit $i$, define the equality signal $e_i=\overline{x_i\oplus y_i}$. The cell
+implements the two XNOR blocks and carry multiplexer in the assignment figure:
+\[
+ s_i=\overline{e_i\oplus c_i}=x_i\oplus y_i\oplus c_i,\qquad
+ c_{i+1}=e_i y_i+\overline{e_i}c_i.
+\]
+If $x_i=y_i$, the carry is $y_i$; if $x_i\ne y_i$, the carry is $c_i$.
+Four cells implement
+\[
+ \{\mathrm{COUT},S_3,S_2,S_1,S_0\}=X+Y+\mathrm{CIN}.
+\]
+The public subcircuit pin order is
+\begin{center}\small
+\texttt{CIN X0 X1 X2 X3 Y0 Y1 Y2 Y3 S0 S1 S2 S3 COUT}.
+\end{center}
+The least significant bits are \texttt{X0}, \texttt{Y0}, \texttt{S0}.
+The testbench defines global rails \texttt{vdd} and \texttt{vss}.
+
+\section{Simulation and numerical checks}
+The external process file is the user's \texttt{D:/cic018.l}, TT corner,
+$V_{DD}=1.8$ V and $T=25^\circ$C. The model is not included in the repository.
+The testbench preserves the instructor's PWL sources and CIN=0, simulating
+0--9 ns with no extra output load. The sampling points are 1.8, 2.8, $\ldots$,
+8.8 ns, after each input vector has completed its transition.
+
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+Sample (ns)&$X$&$Y$&Expected $\{C_{out},S\}$ (decimal)\\
+\midrule
+1.8&1&5&6\\2.8&15&13&28\\3.8&11&9&20\\4.8&4&8&12\\
+5.8&3&7&10\\6.8&12&14&26\\7.8&2&15&17\\8.8&6&10&16\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The runnable verification records all five output voltages for all eight vectors.
+For an expected zero it checks $-0.02\le V\le0.2$ V; for an expected one it checks
+$1.6\le V\le1.82$ V. These tolerance bands allow small numerical overshoot while
+requiring output levels near both rails. The complete voltages are in
+\texttt{vectors.csv}; this numerical test does not use a GUI screenshot.
+
+HSPICE's \texttt{power} includes dissipation and changes in stored energy. It is
+the negative sum of the powers absorbed by all independent sources, including
+the PWL input drivers. VDD-only power is measured separately as
+$-V(\mathrm{vdd})I(\mathrm{vvdd})$. The measured total energy must satisfy
+\[
+ E=\int_0^{9\,\mathrm{ns}}P(t)\,dt
+   =P_{\mathrm{avg}}\,(9\,\mathrm{ns}).
+\]
+The file \texttt{statistics.json} records power, energy, pass counts,
+simulator version and source hashes. Homework 3 documents delay and exhaustive
+input checks for the same netlist. These are pre-layout results only.
+
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Final netlist, independently rerun for this folder & Result\\
+\midrule
+Transistor count & 64\\
+All widths / all lengths & $0.47/0.18\,\mu$m\\
+$\sum_i W_iL_i$ (schematic WL metric) & $5.4144\,\mu\mathrm{m}^2$\\
+Total average HSPICE power & $69.558498\,\mu$W\\
+Supply-delivered average power & $37.4328403\,\mu$W\\
+Total energy over 9 ns & $626.026482$ fJ\\
+Assigned-vector checks & 8 / 8 pass\\
+\bottomrule
+\end{tabular}
+\end{center}
+The power and energy values above use a 1 ps maximum timestep. Homework 3
+separately records the original 0.1 ns-output-step grading testbench and its
+slightly different adaptive-step numerical results. Its full 512-case
+transient check applies to the identical transistor netlist supplied here.
+
+\section{Review of the existing Homework 4 answer}
+The supplied previous answer contains a 64-transistor schematic and extracted
+parasitic files. Its schematic was rerun as a separate DUT using the exact
+instructor stimulus. It also passed all 512 DC combinations of
+$(X,Y,\mathrm{CIN})$ using the 0.2/1.6 V output criteria. This is evidence that
+the reference is functional under the tested conditions. The refined energy,
+delay and area comparison, using a 1 ps maximum timestep, is given in Homework 3.
+No unmeasured corner or load robustness is inferred.
+
+The previous report reverses the pre-/post-layout labels: the extracted circuit
+with parasitics is the post-layout circuit. Its testbench simultaneously
+instantiates the schematic and the extracted design on a shared supply;
+\texttt{avg power} therefore combines both DUTs. The report's energy and
+layout area cannot be reused as measurements of the current design. The current
+testbench instantiates exactly one schematic DUT. The design comparison and
+selection are recorded in the Homework 3 report and statistics tables.
+
+\section{Reproduction and area distinction}
+Run \texttt{python reproduce.py} in this folder, or set \texttt{--hspice} and
+\texttt{--model} to the local simulator and process paths. Simulator raw outputs
+remain in \texttt{run\_artifacts/}; the small statistics files are published.
+Licensed access to HSPICE and access to the external process file are required.
+
+Homework 3 uses $A_{\mathrm{WL}}=\sum_i W_iL_i$. Homework 4's physical layout
+area is the rectangle covering all layout materials. These measures are not
+interchangeable. Since this scope includes no physical layout, no physical
+area or post-layout delay/power is reported.
+\end{document}

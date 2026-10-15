@@ -1,0 +1,9 @@
+device,type,gate,left,right
+PA,p,A,VDD,v
+PB,p,B,v,w
+PC,p,C,w,F
+PD,p,D,w,v
+NA,n,A,GND,F
+NB,n,B,F,u
+NC,n,C,F,GND
+ND,n,D,GND,u

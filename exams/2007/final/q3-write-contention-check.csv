@@ -1,0 +1,9 @@
+D,CLK,old_O,old_u,TG_on,opposing_input_and_feedback_drivers,conditional_next_O,condition,checked
+0,0,0,1,False,False,0,ideal stable Boolean state,True
+0,0,1,0,False,False,1,ideal stable Boolean state,True
+0,1,0,1,True,False,0,ideal stable Boolean state,True
+0,1,1,0,True,True,0,write must overcome permanent feedback,True
+1,0,0,1,False,False,0,ideal stable Boolean state,True
+1,0,1,0,False,False,1,ideal stable Boolean state,True
+1,1,0,1,True,True,1,write must overcome permanent feedback,True
+1,1,1,0,True,False,1,ideal stable Boolean state,True

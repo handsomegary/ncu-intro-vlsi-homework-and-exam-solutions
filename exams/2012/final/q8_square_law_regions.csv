@@ -1,0 +1,3 @@
+device,VGS_V,VDS_V,Vtn_V,overdrive_V,region,Id_over_beta_V2
+N1,1.2,0.6,0.6,0.6,triode/saturation boundary,9/50
+N3,1.2,1.2,0.6,0.6,saturation,9/50

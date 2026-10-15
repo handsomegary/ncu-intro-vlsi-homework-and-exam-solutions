@@ -1,0 +1,3 @@
+node,initial_V,error_threshold_V,adverse_leak_direction,allowed_delta_V,critical_hold_us
+z,1.8,1.0,discharge high,0.8,2.88
+w,0,1.0,charge low,1.0,2.6

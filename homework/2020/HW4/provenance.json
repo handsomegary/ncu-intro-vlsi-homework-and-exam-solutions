@@ -1,0 +1,7 @@
+{
+  "scope": "pre-layout only",
+  "measurements_source": "2020/HW3 actual HSPICE runs",
+  "same_circuit": true,
+  "netlist_sha256": "165ab9624034030cf03d8ae082cea8484cb57d812a9f6caad2d2035315384405",
+  "hash_normalization": "UTF-8 LF"
+}

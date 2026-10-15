@@ -1,0 +1,64 @@
+{
+  "status": "pass",
+  "printed_points": [
+    20,
+    8,
+    10,
+    15,
+    15,
+    10,
+    12,
+    30
+  ],
+  "printed_total": 120,
+  "Q1": {
+    "common_time_sizes": {
+      "N1": 2,
+      "N2": 2,
+      "P1": 2,
+      "P2": 4,
+      "P3": 4,
+      "output_footer": 1
+    },
+    "common_time_period_over_RC": 16,
+    "common_time_clock_cap_over_C": 9,
+    "per_node_balance_family": "P1=N1=N2=n, P2=P3=4; T=(8+16/n)RC; no finite optimized minimum without a sizing bound"
+  },
+  "Q2": {
+    "deducible_lower_trip_V": 0.6,
+    "beta_P1_over_P3": 1,
+    "beta_N1_over_N3": "((1.8-VTH)/(VTH-.6))^2, with upper trip unspecified",
+    "scope": "The1.2 V input noise peak occurs while Vout is LOW; it does not determine the rising-input trip"
+  },
+  "Q3": {
+    "clock_gate_cap_over_C": 9,
+    "one_balanced_path_solution": {
+      "P1": 3,
+      "N7": 6,
+      "N1": 2,
+      "N2": 4,
+      "N3": 4,
+      "N4": 8,
+      "N5": 8,
+      "N6": 4
+    },
+    "non_unique": true,
+    "all_lengths_um": 0.18,
+    "width_unit_um": 2
+  },
+  "Q4": {
+    "physical_MOS_a": 12,
+    "physical_MOS_b": 12,
+    "b_function": "a AND NOT b AND NOT c",
+    "a_scope": "Literal12MOS extraction contains final gate/output self-connection at X; do not assume an ideal clean latch transfer",
+    "b_isolation_MOS": 4
+  },
+  "Q7": {
+    "function": "NOT((A+B*C)*D)",
+    "dynamic_MOS": 6,
+    "fully_differential_core_MOS": 10,
+    "DSL_core_MOS": 12,
+    "complement_input_generator_MOS": 8
+  },
+  "method": "Ideal conduction/connectivity plus source-given RC and timing; no SPICE or invented physical parameters"
+}

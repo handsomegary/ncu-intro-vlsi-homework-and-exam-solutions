@@ -1,0 +1,5 @@
+hypothetical_NOT_source_given_tccq_ns,required_tcd_ns,condition
+0.0,1.0,tccq+tcd>=1 ns
+0.25,0.75,tccq+tcd>=1 ns
+0.5,0.5,tccq+tcd>=1 ns
+1.0,0.0,tccq+tcd>=1 ns

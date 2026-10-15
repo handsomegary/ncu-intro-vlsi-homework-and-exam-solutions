@@ -1,0 +1,9 @@
+ABC,stable_z,X,w,Y,X_mean_delay_over_RC,Y_mean_delay_over_RC,Y_route
+000,1,0,1,0,,8/3,primary ABC bypass -> w -> Y
+001,1,0,0,1,,,no evaluation output transition
+010,1,0,0,1,,,no evaluation output transition
+011,0,1,1,0,8,10,z -> w -> Y
+100,1,0,0,1,,,no evaluation output transition
+101,0,1,1,0,8,10,z -> w -> Y
+110,0,1,1,0,8,10,z -> w -> Y
+111,0,1,0,1,40/7,,no evaluation output transition

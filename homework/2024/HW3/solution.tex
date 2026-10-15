@@ -1,0 +1,299 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=19mm]{geometry}
+\emergencystretch=2em
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\renewcommand{\arraystretch}{1.12}
+\newcommand{\um}{\ensuremath{\,\mu\mathrm{m}}}
+\newcommand{\uW}{\ensuremath{\,\mu\mathrm{W}}}
+\title{2024 Introduction to VLSI Design\\Homework 3: 4-bit Multiplexer-based Adder}
+\author{Reconstructed and electrically verified solution}
+\date{Simulation: 13 October 2026}
+\begin{document}
+\maketitle
+\section{Task and final design}
+Implement Figure 1 of the assignment using CIC018 TT, $V_{DD}=1.8$ V,
+$W\geq0.47\um$, and $L\geq0.18\um$. Preserve the supplied pin order,
+input PWL waveforms, $C_{IN}=0$, eight ordered vectors, and 9 ns power window.
+Report the worst delay for those vectors, average power, energy, and
+$\sum W_iL_i$. No layout or extracted parasitics enter this HW3 result.
+
+The selected design contains \textbf{64 MOSFETs}, all $W=0.47\um$,
+$L=0.18\um$. Define
+\begin{align}
+e_i&=\overline{X_i\oplus Y_i},\\
+S_i&=\overline{e_i\oplus C_i}=X_i\oplus Y_i\oplus C_i,\\
+C_{i+1}&=e_iY_i+\overline{e_i}C_i.
+\end{align}
+When $X_i=Y_i$, carry must equal $Y_i$; otherwise carry equals the incoming
+$C_i$. Thus the mux equation implements the full-adder carry exactly.
+All upper XNORs evaluate in parallel, while carry traverses four serial muxes.
+This follows the assignment's serial-parallel diagram; it has no clocked
+bit-serial operation or lookahead carry network.
+
+\begin{center}
+\setlength{\unitlength}{0.95pt}
+\begin{picture}(470,100)
+\put(4,43){$C_{IN}$}
+\put(30,46){\vector(1,0){20}}
+\put(50,28){\framebox(65,36){bit 0}}
+\put(115,46){\vector(1,0){40}}
+\put(124,52){$C_1$}
+\put(155,28){\framebox(65,36){bit 1}}
+\put(220,46){\vector(1,0){40}}
+\put(229,52){$C_2$}
+\put(260,28){\framebox(65,36){bit 2}}
+\put(325,46){\vector(1,0){40}}
+\put(334,52){$C_3$}
+\put(365,28){\framebox(65,36){bit 3}}
+\put(430,46){\vector(1,0){20}}
+\put(452,43){$C_{OUT}$}
+\put(65,83){$X_0,Y_0$}\put(82,80){\vector(0,-1){16}}
+\put(170,83){$X_1,Y_1$}\put(187,80){\vector(0,-1){16}}
+\put(275,83){$X_2,Y_2$}\put(292,80){\vector(0,-1){16}}
+\put(380,83){$X_3,Y_3$}\put(397,80){\vector(0,-1){16}}
+\put(82,28){\vector(0,-1){15}}\put(75,0){$S_0$}
+\put(187,28){\vector(0,-1){15}}\put(180,0){$S_1$}
+\put(292,28){\vector(0,-1){15}}\put(285,0){$S_2$}
+\put(397,28){\vector(0,-1){15}}\put(390,0){$S_3$}
+\end{picture}
+\end{center}
+
+\subsection*{Cell structure and area}
+Each bit uses a 4T upper XNOR, a 2T inverter producing $\overline e_i$,
+a 2T inverter producing $\overline C_i$, two 2T transmission gates for sum,
+and two 2T transmission gates for carry: $4+2+2+4+4=16$ transistors.
+\[
+A_{\rm gate}=4(16)(0.47)(0.18)=\boxed{5.4144\,\mu\mathrm m^2}.
+\]
+This is the specified gate-area proxy, not a placed-and-routed footprint.
+For comparison, the supplied HW3 88T, $L=0.24\um$ topology has
+$A=88(0.47)(0.24)=9.9264\,\mu\mathrm m^2$.
+
+\newpage
+\section{Transistor implementation}
+The compact upper XNOR can have a threshold-degraded \emph{internal} high
+when $X=Y=1$. The lower XNOR uses $C_i/\overline C_i$ as its \emph{data}
+and $e_i/\overline e_i$ as its \emph{select}; it does not pass the degraded
+$e_i$ directly to $S_i$. The complementary CMOS inverter and PMOS/NMOS
+transmission-gate pair allow the external outputs to approach the rails.
+The actual TT electrical results, rather than an ideal Boolean assumption,
+establish the output levels below. This design has not been characterized
+for other corners, supplies, loads, or mismatch.
+
+The following complete DUT source is included separately as
+\path{four_bit_multbased_adder.sp}. The testbench provides global rails
+and loads the licensed model library; the model is not part of the repository.
+
+{\footnotesize\begin{verbatim}
+* Figure 1 serial-parallel multiplexer-based adder, 64 MOSFETs.
+* Dimensions in micrometres; global rails vdd/vss provided by testbench.
+.param WN=0.47u WP=0.47u WT=0.47u LG=0.18u
+.subckt inv a z
+MP z a vdd vdd P_18 W=WP L=LG
+MN z a vss vss N_18 W=WN L=LG
+.ends inv
+.subckt tg a z s sb
+MP z sb a vdd P_18 W=WT L=LG
+MN z s a vss N_18 W=WT L=LG
+.ends tg
+.subckt mux_fa x y ci s co
+* Compact 4T upper XNOR: e can be threshold-degraded internally.
+MPU0 ep x vdd vdd P_18 W=WP L=LG
+MPU1 e y ep vdd P_18 W=WP L=LG
+MNU0 e y x vss N_18 W=WN L=LG
+MNU1 e x y vss N_18 W=WN L=LG
+XI2 e en inv
+XI3 ci cib inv
+* Lower XNOR uses ci/cib as DATA; e/en as SELECT.
+* This choice restores the external sum even when compact e is degraded.
+XT2 ci s e en tg
+XT3 cib s en e tg
+* Carry: co = e ? y : ci. Shared complementary select.
+XT4 y co e en tg
+XT5 ci co en e tg
+.ends mux_fa
+.subckt four_bit_multbased_adder cin x0 x1 x2 x3 y0 y1 y2 y3 s0 s1 s2 s3 cout
+XF0 x0 y0 cin s0 c1 mux_fa
+XF1 x1 y1 c1 s1 c2 mux_fa
+XF2 x2 y2 c2 s2 c3 mux_fa
+XF3 x3 y3 c3 s3 cout mux_fa
+.ends four_bit_multbased_adder
+\end{verbatim}}
+
+\newpage
+\section{Measurement definitions and required-vector results}
+All results use PrimeSim HSPICE S-2021.09 win64, CIC018 TT, 25$^\circ$C,
+and 1.8 V, with no added output capacitors. Power includes the complete
+0--9 ns interval, including the initial zero-vector interval and glitches.
+\[
+P_{\rm total}=\operatorname{AVG}(\texttt{POWER}),\quad
+P_{VDD}=\operatorname{AVG}[-V(vdd)I(vvdd)],\quad E_9=P_{\rm total}(9\,\mathrm{ns}).
+\]
+HSPICE's total circuit POWER is the negative sum of the powers of all
+independent sources. Input PWL drivers can supply energy through TG data
+paths, so $P_{\rm total}$ differs from $P_{VDD}$. The assignment's
+\texttt{.meas tran pwr avg power} uses total power; substituting the smaller
+VDD-only value would change the grading metric.
+
+\begin{center}\small
+\begin{tabular}{lrrr}\toprule
+Measurement setting & $P_{\rm total}$ ($\mu$W) & $P_{VDD}$ ($\mu$W) & $E_9$ (fJ)\\\midrule
+Original \texttt{.tran 0.1ns 9n} & 69.002216 & 37.998479 & 621.019943\\
+Refined: 1 ps print / maximum step & 69.558498 & 37.432840 & 626.026482\\\bottomrule
+\end{tabular}\end{center}
+The original deck leaves DELMAX automatic. Refined measurements use
+\texttt{.tran 1p 9n} and \texttt{.option delmax=1p}; the 0.806\% total-energy
+difference is reported explicitly. Candidate comparisons and delays use
+the same refined setting. No PWL input time or voltage is changed.
+
+\begin{center}\small
+\begin{tabular}{rrrrrl}\toprule
+Vector & $X$ & $Y$ & Expected $\{C_{OUT},S_3,S_2,S_1,S_0\}$ & Measured & Result\\\midrule
+1 & 1 & 5 & 00110 & 00110 & pass \\
+2 & 15 & 13 & 11100 & 11100 & pass \\
+3 & 11 & 9 & 10100 & 10100 & pass \\
+4 & 4 & 8 & 01100 & 01100 & pass \\
+5 & 3 & 7 & 01010 & 01010 & pass \\
+6 & 12 & 14 & 11010 & 11010 & pass \\
+7 & 2 & 15 & 10001 & 10001 & pass \\
+8 & 6 & 10 & 10000 & 10000 & pass \\
+\bottomrule\end{tabular}\end{center}
+At 0.8 ns after each vector endpoint, all eight vectors pass
+$V_L\leq0.2$ V and $V_H\geq1.6$ V. The maximum sampled low is
+0.00396849 V and minimum high is 1.7910275 V. These are actual finite-time
+voltage readings, not an assertion of mathematically exact 0/1.8 V outputs.
+
+\subsection*{Causal delay and glitches}
+For vector $k$, all changed input ramps run from $k-0.1$ to $k$ ns;
+their 50\% crossings occur at $k-0.05$ ns. For every output whose expected
+bit changes, use its \emph{last} 0.9 V crossing in that vector interval:
+\[
+t_{pd}=t_{\rm out,last\ 50\%}-(k-0.05\,\mathrm{ns}).
+\]
+The maximum is \textbf{152.910320 ps}, from $(2,15)\rightarrow(6,10)$,
+$S_0$ falling: $t_{in}=7.950$ ns and $t_{out}=8.102910320$ ns.
+This is the worst observed delay for the required sequence, not a global
+maximum over all possible input transitions. The output data contain 12
+extra 50\% crossings from glitches. The conservative 1 ps sampled bound
+for all outputs to settle in the correct 0.2/1.6 V bands is 394 ps relative
+to the common input 50\% event; it is a different metric from $t_{pd}$.
+
+\newpage
+\section{Delay evidence and sizing comparison}
+\begin{center}\small
+\begin{tabular}{rllrrr}\toprule
+Vector & Output & Edge & Input 50\% (ns) & Last output 50\% (ns) & Delay (ps)\\\midrule
+1 & S1 & rise & 0.950 & 0.985495 & 35.495 \\
+1 & S2 & rise & 0.950 & 1.041877 & 91.877 \\
+2 & S1 & fall & 1.950 & 2.053628 & 103.628 \\
+2 & S3 & rise & 1.950 & 2.088414 & 138.414 \\
+2 & COUT & rise & 1.950 & 1.956704 & 6.704 \\
+3 & S3 & fall & 2.950 & 3.020838 & 70.838 \\
+4 & S3 & rise & 3.950 & 4.044057 & 94.057 \\
+4 & COUT & fall & 3.950 & 4.067813 & 117.813 \\
+5 & S1 & rise & 4.950 & 4.981098 & 31.098 \\
+5 & S2 & fall & 4.950 & 5.030657 & 80.657 \\
+6 & COUT & rise & 5.950 & 5.956614 & 6.614 \\
+7 & S0 & rise & 6.950 & 7.040801 & 90.801 \\
+7 & S1 & fall & 6.950 & 7.079615 & 129.615 \\
+7 & S3 & fall & 6.950 & 7.057709 & 107.709 \\
+8 & S0 & fall & 7.950 & 8.102910 & 152.910 \\
+\bottomrule\end{tabular}\end{center}
+
+The original 88T design uses independent select inverters in its lower
+XNOR and carry mux. Sharing the complement reduces this to 80T. An 8T
+full-swing upper XNOR is retained in the 80T candidates. A second family
+uses the compact 4T upper XNOR from the supplied 2024 HW4 schematic idea,
+reducing the total to 64T. All six candidates pass the eight required
+vectors electrically under the same refined measurement conditions.
+
+\begin{center}\small
+\begin{tabular}{lrrrr}\toprule
+Candidate & $\sum WL$ ($\mu$m$^2$) & $E_9$ (fJ) & $t_{pd}$ (ps) & $P t_{pd}$ (fJ)\\\midrule
+88T reference-equivalent & 9.9264 & 1005.327 & 247.239 & 27.617 \\
+80T minimum & 6.7680 & 824.288 & 137.009 & 12.548 \\
+80T inverter P=0.94 & 8.1216 & 947.745 & 133.867 & 14.097 \\
+80T TG W=0.70 & 8.7552 & 1055.585 & 161.400 & 18.930 \\
+64T minimum (selected) & 5.4144 & 626.026 & 152.910 & 10.636 \\
+64T P=0.70 & 6.0768 & 676.239 & 149.882 & 11.262 \\
+\bottomrule\end{tabular}\end{center}
+The selected minimum-size 64T circuit has the smallest area, energy,
+and power--delay product in this finite candidate set. Relative to the
+reference-equivalent 88T circuit, energy decreases by 37.73\%, area by
+45.45\%, and measured delay by 38.15\%. The minimum-size 80T circuit is
+faster than the 64T circuit, but consumes more energy and area and has a
+higher power--delay product. Increasing PMOS or TG sizes does not improve
+the final combined choice. This comparison does not establish a global
+optimum over all transistor networks or continuous sizes.
+
+\newpage
+\section{Electrical exhaustive verification and reproduction}
+In addition to the supplied sequence, the selected transistor circuit was
+simulated for all $16\times16\times2=\textbf{512}$ combinations of $X$, $Y$,
+and $C_{IN}$. Each vector occupies 2 ns, with 0.1 ns input ramps;
+voltages are sampled 1.8 ns after the endpoint. All \textbf{512/512} cases
+produce the arithmetic result $X+Y+C_{IN}$ and satisfy $V_L\leq0.2$ V,
+$V_H\geq1.6$ V on all five external outputs. Across those samples,
+$\max V_L=0.002939216$ V and $\min V_H=1.79601867$ V.
+This is transistor-level transient sampling of every settled input
+combination, not just Boolean software evaluation. It does not exhaust
+all $512^2$ transitions or prove global worst delay.
+
+\texttt{simulate.py} generates six candidate decks, runs licensed HSPICE,
+exports measured values, selects the 64T circuit, verifies the 512 electrical
+cases, and runs the original instructor testbench separately. Set
+\texttt{CIC018\_MODEL} or \texttt{--model} to the licensed library and
+\texttt{HSPICE} or \texttt{--hspice} to the simulator executable.
+\begin{verbatim}
+python simulate.py --model D:/cic018.l --work .simulation --results results
+\end{verbatim}
+The default Windows HSPICE installation is supplied in the script and can
+be overridden. All transistor netlists use the required
+\texttt{P\_18}/\texttt{N\_18} models and the exact assignment subcircuit pin order.
+The standalone original testbench changes only the model path from the
+instructor's Linux path to \texttt{D:/cic018.l}.
+
+\begin{center}\small
+\begin{tabular}{p{0.35\linewidth}p{0.57\linewidth}}\toprule
+Output file & Evidence or purpose\\\midrule
+\texttt{results/candidates.csv} & Dimensions, device count, area, total and supply power, energy, delay, objective products.\\
+\texttt{results/vectors.csv} & Eight required vector results with five actual output voltages.\\
+\texttt{results/delays.csv} & Causal input and output crossing times for every expected-changing output.\\
+\texttt{results/settling.csv} & Per-vector output crossing counts and sampled band-settling bounds.\\
+\texttt{results/exhaustive\_512.csv} & All input combinations, arithmetic result, actual voltages, pass flags.\\
+\texttt{results/waveform.csv} & 1 ps sampled output voltages and signed VDD current; GUI screenshots are unnecessary.\\
+\texttt{results/summary.json} & Conditions, model SHA256 identity, limits and result summary.\\
+\texttt{results/instructor\_exact.json} & Original 100 ps print-step / automatic DELMAX power result.\\\bottomrule
+\end{tabular}\end{center}
+
+\newpage
+\section*{Sources reviewed and integration decisions}
+\begin{enumerate}
+\item NCU, \emph{EE3032 Introduction to VLSI Design,
+Homework 3}, Fall 2024; supplied Figure 1, original testbench and explanatory
+notes determine the topology, stimuli, minimum width, and grading window.
+\item User-supplied 2024 HW3 reference by Chih-Hua Chang, archive containing
+\path{four_bit_multbased_adder.sp} and report. Its 88T TG design is
+reconstructed for equal-condition baseline comparison; misleading XOR
+comments in that source do not change its actual XNOR wiring.
+\item User-supplied 2024 HW4 reference by Chih-Hua Chang, schematic
+\path{four_bit_multbased_adder.sp}. Its compact upper-XNOR idea is
+integrated after new electrical validation; neither its old measurements
+nor extracted layout parasitics are reused as HW3 results.
+\item Public source: \href{https://github.com/dOwOb1212/NCU_VLSI_Design_2023_HW/blob/main/hw1/CLA_cmos.sp}{dOwOb1212, NCU\_VLSI\_Design\_2023\_HW, hw1/CLA\_cmos.sp}.
+Despite its CLA label, carry is passed serially through muxes. The source
+is 8-bit, uses widths below the 2024 minimum, and has different stimuli;
+it is an architectural cross-check, not a valid drop-in 2024 submission.
+\item Local Synopsys S-2021.09 documentation: \emph{Selecting Simulation
+Output Parameters}, \texttt{.OPTION DELMAX}, and \texttt{.OPTION LIS\_NEW}.
+These define total POWER, internal time-step control, and machine-readable
+\texttt{.printtr0} output.
+\end{enumerate}
+All numerical results above were newly simulated on 13 October 2026.
+The public repository contains derived statistics and source only; the
+licensed process library, student original reports, and raw license logs
+remain local.
+\end{document}

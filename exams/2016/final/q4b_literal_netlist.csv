@@ -1,0 +1,13 @@
+device,type,left_channel,right_channel,gate
+P1,p,VDD,u,a
+N1,n,VSS,u,a
+P2,p,u,VDD,VDD
+N2,n,u,VSS,VSS
+P3,p,VDD,s1,u
+N3,n,VSS,Z,u
+P4,p,s1,s2,b
+N4,n,Z,VSS,b
+P5,p,s2,Z,c
+N5,n,VSS,Z,c
+P6,p,Z,fp,VDD
+N6,n,Z,fn,VSS

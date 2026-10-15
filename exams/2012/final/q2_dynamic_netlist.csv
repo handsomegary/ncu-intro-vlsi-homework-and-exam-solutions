@@ -1,0 +1,6 @@
+device,type,left_channel,right_channel,gate
+Ppre,p,VDD,F,phi
+Nfoot,n,foot,VSS,phi
+NA,n,F,ab,A
+NB,n,ab,foot,B
+NC,n,F,foot,C

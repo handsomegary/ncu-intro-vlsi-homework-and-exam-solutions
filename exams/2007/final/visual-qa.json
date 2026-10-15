@@ -1,0 +1,31 @@
+{
+  "builtin_compiler": "both standalone documents successful",
+  "local_compiler": "pdfLaTeX two passes each",
+  "box_warnings": 0,
+  "missing_glyph_warnings": 0,
+  "render_dpi": 120,
+  "total_pages_inspected": 8,
+  "records": [
+    {
+      "file": "exam.pdf",
+      "pages": 2,
+      "sha256": "e16343c2c08129f3f95b4a12397f639506922fb0c7631eea6872d9455fb0c278",
+      "all_pages_rendered_and_visually_inspected": true
+    },
+    {
+      "file": "solution.pdf",
+      "pages": 6,
+      "sha256": "a87fd1e16e18085335c8cd28c6d5e541ab85707b999f4dc530099b2b2fd0e93f",
+      "all_pages_rendered_and_visually_inspected": true
+    }
+  ],
+  "diagram_method": "editable TikZ; source Q3 layer geometry normalized while preserving contacts and disconnected split polys",
+  "analytical_limits": [
+    "Q2 low levels require adequate ratioed device strengths",
+    "Q3 writing must override fixed feedback; no widths are supplied",
+    "Q4 frequency depends on the unspecified evaluation duty; exact window limit is primary",
+    "Q5 final static inversion after N-domino explicitly restores requested negative polarity",
+    "Q7 minimum contamination delays are not supplied"
+  ],
+  "status": "passed"
+}

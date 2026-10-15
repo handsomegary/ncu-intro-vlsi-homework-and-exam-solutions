@@ -1,0 +1,5 @@
+case,Vd,Vs,Vg,Vt,region
+m1_early_ramp,1,1/5,9/5,2/5,linear
+m1_late_ramp,9/5,1,9/5,2/5,saturation
+m2_to_m6_intermediate,6/5,3/5,9/5,2/5,linear
+m2_to_m6_high_boundary,7/5,7/5,9/5,2/5,cutoff/boundary

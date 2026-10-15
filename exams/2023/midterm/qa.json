@@ -1,0 +1,15 @@
+{
+  "exam": {
+    "pages": 2,
+    "embedded_raster_images": 0
+  },
+  "solution": {
+    "pages": 5,
+    "embedded_raster_images": 0
+  },
+  "built_in_compilation": "success for both standalone sources",
+  "local_pdf_export": "success",
+  "latex_warnings": [],
+  "visual_review": "All seven pages inspected; final Figure3 labels and Q6/Q7 paragraph separation corrected; no clipping or overlap",
+  "analytical_checks": "Q5 four contexts,Q6four logicstates/twoRCpaths,Q7 32 graph/truth cases pass"
+}

@@ -1,0 +1,5 @@
+high_over_low_delay,low_critical_delay_RC,high_O1_worst_RC,no_speed_loss,scope,passed
+1,11,6.0,True,"illustrative homogeneous gate scale, student normalized delay model;not processdata",True
+3/2,11,9.0,True,"illustrative homogeneous gate scale, student normalized delay model;not processdata",True
+11/6,11,11.0,True,"illustrative homogeneous gate scale, student normalized delay model;not processdata",True
+2,11,12.0,False,"illustrative homogeneous gate scale, student normalized delay model;not processdata",True

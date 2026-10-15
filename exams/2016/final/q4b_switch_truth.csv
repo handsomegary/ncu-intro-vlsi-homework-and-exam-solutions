@@ -1,0 +1,9 @@
+a,b,c,u,Z_VDD_path,Z_VSS_path,Z,expected_a_bbar_cbar
+0,0,0,1,False,True,0,0
+0,0,1,1,False,True,0,0
+0,1,0,1,False,True,0,0
+0,1,1,1,False,True,0,0
+1,0,0,0,True,False,1,1
+1,0,1,0,False,True,0,0
+1,1,0,0,False,True,0,0
+1,1,1,0,False,True,0,0

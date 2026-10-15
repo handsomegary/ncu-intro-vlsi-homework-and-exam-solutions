@@ -1,0 +1,3 @@
+alpha,delay_over_RC,first_two_gate_load_over_C,selected,passed
+1.0,6.0,4.0,True,True
+2.0,6.0,6.0,False,True

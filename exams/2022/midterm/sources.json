@@ -1,0 +1,71 @@
+{
+  "printed_original_pages": [
+    1,
+    2
+  ],
+  "printed_page_labels": [
+    "2-1",
+    "2-2"
+  ],
+  "graded_answer_pages": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "separator_page": 7,
+  "supplement_notes_pages": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "year_basis": "Fall2022 printed footer plus111 academic-year filename",
+  "complete_questions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "question_points": [
+    35,
+    20,
+    10,
+    15,
+    10,
+    10
+  ],
+  "total_points": 100,
+  "Q1_subpart_points": [
+    3,
+    4,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    6,
+    3,
+    3,
+    2
+  ],
+  "extraction": "Container rebuilt for originalpages1–2; all embedded photographs verified byte-identical",
+  "reconstruction": "StandaloneEnglishLaTeX with editableTikZ; no scans in typeset exam/solution; handwriting removed from question constraints",
+  "interpretations": [
+    "Q1(c) literal dry/wet oxidation distinguished from growth/CVD oxide formation",
+    "Q1(k) bonding orientation and assembly granularity distinguished",
+    "Q2 mux selector index explicitly4s0+2s1+s2; printed completionstubs are blank",
+    "Q3(b) fixednMOS and doubledpMOS raises firstbufferload to1.5Cg; finalCL fixed",
+    "Q4 uses givenconstantONresistance estimate",
+    "Q6(b) Rp/Rn and Co keptsymbolic; anymobilityratio conditional"
+  ],
+  "verification": "Source-derived graph/truth and analyticalRC; no processsimulation"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "q1_inputs": 8,
+  "q2_mux_data_select_cases": 2048,
+  "q2_xor_inputs": 4,
+  "q3_occupancy_independent_inputs": true,
+  "q3_activity_requires_extra_temporal_assumption": true,
+  "q4_noise_V": 0.6,
+  "q5_model": "Literal widths, inverse-width RC slews, square-law overlap current approximation; finite-load physical power not asserted",
+  "q5_downstream_S_a": 21.618182281980022,
+  "q5_downstream_S_b": 21.8532470182743,
+  "q5_b_minus_a": 0.2350647362942766,
+  "q6_wire_ps": 0.52,
+  "q6_buffered_min_ps": 0.46,
+  "q7_full_graph_cases": 16,
+  "q7_fixed_channel_length_lambda": 2,
+  "q7_worst_p_and_n_relative_resistance": 1,
+  "printed_total_percent": 110
+}

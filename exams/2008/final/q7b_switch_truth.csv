@@ -1,0 +1,9 @@
+abc,Z_NAND3,PUN_conducts,PDN_conducts,physical_MOS,OFF_devices
+000,1,True,False,12,6
+001,1,True,False,12,6
+010,1,True,False,12,6
+011,1,True,False,12,6
+100,1,True,False,12,6
+101,1,True,False,12,6
+110,1,True,False,12,6
+111,0,False,True,12,6

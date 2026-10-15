@@ -1,0 +1,3 @@
+alpha,first_two_delay_over_RC,first_two_clocked_cap_over_C,chosen_for_min_power,passed
+1.0,8.0,4.0,True,True
+3.0,8.0,8.0,False,True

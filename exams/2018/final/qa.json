@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "standalone_tex": true,
+  "inline_vector_figures": true,
+  "pdf_page_counts": {
+    "exam.pdf": 4,
+    "solution.pdf": 12
+  },
+  "csv_file_count": 21,
+  "csv_data_rows": 964,
+  "csv_row_counts": {
+    "q2_domino_truth.csv": 8,
+    "q2_phase_checks.csv": 64,
+    "q2_retention.csv": 2,
+    "q3_classroom_sizing.csv": 6,
+    "q3_overlap_model.csv": 2,
+    "q4_DSL_netlist.csv": 12,
+    "q4_dynamic_phase_checks.csv": 32,
+    "q4_logic_checks.csv": 16,
+    "q5_balanced_sizing.csv": 12,
+    "q5_clock_loading.csv": 4,
+    "q5_NP_phase_checks.csv": 512,
+    "q5_NP_truth.csv": 128,
+    "q6_conditional_events.csv": 24,
+    "q6_layout_states.csv": 16,
+    "q6_physical_MOS.csv": 20,
+    "q7_ratio_bounds_examples.csv": 2,
+    "q7_register_states.csv": 16,
+    "q8_pipeline_consecutive_samples.csv": 64,
+    "q8_pipeline_paths.csv": 8,
+    "q8_truth.csv": 8
+  },
+  "verification_status": "PASS",
+  "compile": {
+    "builtin": "Both source documents compiled successfully",
+    "local": "MiKTeX pdfLaTeX;2passes;no overfull/underfull warnings"
+  },
+  "visual_review": {
+    "original": 3,
+    "exam": 4,
+    "solution": 12,
+    "status": "All19pages viewed; readable text, correct overbars/labels/contacts, no clipping. Last solution10/11 vector repairs rerendered and reviewed."
+  },
+  "analytical_only": true,
+  "no_process_measurement": true,
+  "artifact_sha256": {
+    "exam.tex": "7f75b9fc59cac8bcd683a6e88454e524ad34faab3c836470667795137b1af6c9",
+    "exam.pdf": "537075ca0f11b4438df77dc4f6c4cc0599e3f80b0b135fd2634072c97932790a",
+    "solution.tex": "1d261315cb3cc095dc4581042b66f8868149a0070f3188ae8baae9f6b4642fc2",
+    "solution.pdf": "d55c1dd6d128194b8a646e0f48d0aa1d8be272be77baec5e1a1be1d74c7c6b87",
+    "verify_logic_timing.py": "42e7d22ef662dabd1e80eecd5900ef5b2170e1dfa8803be3b3c3b6830475be4d"
+  },
+  "artifact_hash_convention": "SHA256 of exact binary bytes; text artifacts normalized to LF, matching Git archive and MANIFEST.json."
+}

@@ -1,0 +1,33 @@
+{
+  "all_checks_passed": true,
+  "Q1": {
+    "physical_MOS": 10,
+    "latch": "positive-level noninverting",
+    "write1": "RP2 > RN1+RTG",
+    "write0": "RN2 > RP1+RTG",
+    "divider_checks": 72,
+    "scope": "normalized algebra samples, no process resistance assigned"
+  },
+  "Q2": {
+    "physical_MOS": 12,
+    "register": "negative-edge noninverting dynamic",
+    "phase_histories": 8,
+    "static_replacement": "positive-level master +negative-level slave, complete Q1 latch cells"
+  },
+  "Q4": {
+    "physical_MOS": 20,
+    "X": "AB+AC+BC carry",
+    "Y": "A XOR B XOR C sum",
+    "phase_truth_rows": 8,
+    "source_outputs": "static output inverters",
+    "domino_design": "carry SOP6 data nMOS +pre/footer+CMOS INV=10; sum SOP12 data nMOS +pre/footer+CMOS INV=16;3 complement INV=6, total32"
+  },
+  "Q6": {
+    "physical_MOS": 8,
+    "function": "NOT(A+C+B*D)",
+    "literal_PUN": "A-series-(B parallel D)-series-C",
+    "literal_PDN": "A parallel C parallel (B-series-D)",
+    "truth_rows": 16
+  },
+  "scope": "ideal switch graphs, phase histories and linear ON-resistor divider; no transistor simulation"
+}

@@ -1,0 +1,55 @@
+{
+  "year": 2013,
+  "scope": "Solve only homework with an identified original prompt",
+  "available_original_homeworks": [
+    1,
+    2,
+    3
+  ],
+  "completed_homeworks": [
+    1,
+    2,
+    3
+  ],
+  "homeworks": [
+    {
+      "homework": 1,
+      "status": "complete",
+      "original_prompt": "assignments/homework1.pdf",
+      "original_questions": 4,
+      "report": "HW1/solution.tex",
+      "pdf": "HW1/solution.pdf",
+      "verification": "HW1/verification.json",
+      "prompt_storage": "public",
+      "public_prompt_sha256": "df588a11fc9dee41657c6ced8a322fc4115a770374e47d4a5ddd992054933af5"
+    },
+    {
+      "homework": 2,
+      "status": "complete",
+      "original_prompt": "assignments/homework2.pdf",
+      "original_questions": 4,
+      "report": "HW2/solution.tex",
+      "pdf": "HW2/solution.pdf",
+      "verification": "HW2/verification.json",
+      "prompt_storage": "public",
+      "public_prompt_sha256": "90c52ec202882899c9af4632ea904c73bd5693981992ff5e1f3dd5efb4c1dbd0"
+    },
+    {
+      "homework": 3,
+      "status": "complete",
+      "original_prompt": "assignments/homework3.pdf",
+      "original_questions": 2,
+      "report": "HW3/solution.tex",
+      "pdf": "HW3/solution.pdf",
+      "verification": "HW3/results/summary.json",
+      "prompt_storage": "public",
+      "public_prompt_sha256": "b1adac1d0ce341ddefc23ee8b60583d5898bde9a93b7622bd53c83087ed1bca1"
+    },
+    {
+      "homework": 4,
+      "status": "skipped_original_prompt_missing",
+      "reason": "No original HW4 prompt or identifiable HW4 assets are supplied for2013; no task is invented."
+    }
+  ],
+  "2012_note": "Student-only report/archive tasks omitted at user request; no2012 reconstructed deliverables published."
+}

@@ -1,0 +1,17 @@
+A,B,C,D,h,f,dynamic_evaluate_f,DSL_p_ground_path,DSL_q_ground_path,pass
+0,0,0,0,0,1,1,False,True,True
+0,0,0,1,0,1,1,False,True,True
+0,0,1,0,0,1,1,False,True,True
+0,0,1,1,0,1,1,False,True,True
+0,1,0,0,0,1,1,False,True,True
+0,1,0,1,0,1,1,False,True,True
+0,1,1,0,0,1,1,False,True,True
+0,1,1,1,0,1,1,False,True,True
+1,0,0,0,0,1,1,False,True,True
+1,0,0,1,0,1,1,False,True,True
+1,0,1,0,0,1,1,False,True,True
+1,0,1,1,0,1,1,False,True,True
+1,1,0,0,0,1,1,False,True,True
+1,1,0,1,1,0,0,True,False,True
+1,1,1,0,1,0,0,True,False,True
+1,1,1,1,1,0,0,True,False,True

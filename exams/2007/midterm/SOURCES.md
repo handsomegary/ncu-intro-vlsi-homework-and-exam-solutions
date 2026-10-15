@@ -1,0 +1,5 @@
+# Source review
+
+The printed Fall2007 original has3 pages; Q7's diagram is on page3. The local two-page handwritten PDF and the three photographed answer pages are different student sets. Every supplied page was reviewed. The PDF leaves Q3/Q5 blank; the photographed set attempts them, but mixes probability/activity and omits overlap-strength weights. No graded marking is treated as proof.
+
+Preserve the original110% allocation and printed0.13ps/0.2ps units. Probability occupancy is not transition activity without a temporal model. Q5 asks short-circuit power, not switched-load power; the p/n width pairs are unbalanced under the printed mobility ratio. Q7's channel length is fixed at2λ, so PDF-set length multiplication is rejected. The photographed set's pMOS B=10λ leaves the A--B path4/3 slower; B=15λ repairs it. The answer gives a valid width family member with all minimal charge/discharge paths matching reference current. The photo set's XOR is static CMOS rather than the requested transmission-gate implementation.

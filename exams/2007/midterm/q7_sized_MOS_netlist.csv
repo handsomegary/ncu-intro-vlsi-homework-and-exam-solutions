@@ -1,0 +1,9 @@
+device,type,gate,left,right,width_lambda,length_lambda,R_over_reference
+PA,p,A,VDD,pA,30,2,1/3
+PB,p,B,pA,F,15,2,2/3
+PC,p,C,pA,pC,30,2,1/3
+PD,p,D,pC,F,30,2,1/3
+NA,n,A,F,GND,4,2,1
+NB,n,B,F,nB,8,2,1/2
+NC,n,C,nB,GND,8,2,1/2
+ND,n,D,nB,GND,8,2,1/2

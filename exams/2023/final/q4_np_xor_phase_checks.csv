@@ -1,0 +1,9 @@
+x1,x2,phase,n,f,rail_exclusive,passed
+0,0,precharge,1,0,True,True
+0,0,evaluate,1,0,True,True
+0,1,precharge,1,0,True,True
+0,1,evaluate,0,1,True,True
+1,0,precharge,1,0,True,True
+1,0,evaluate,0,1,True,True
+1,1,precharge,1,0,True,True
+1,1,evaluate,0,0,True,True

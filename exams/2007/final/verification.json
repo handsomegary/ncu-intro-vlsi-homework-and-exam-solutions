@@ -1,0 +1,28 @@
+{
+  "all_checks_passed": true,
+  "all_independent_checks_passed": true,
+  "all_nonlayout_checks_passed": true,
+  "check_scope": "Independent mathematical and circuit checks.",
+  "q2_cases": 4,
+  "q3": {
+    "status": "contact graph and conditional switch states passed",
+    "physical_MOS": 10,
+    "inverters": 4,
+    "transmission_gates": 1,
+    "stable_loop_cases_tested": 8,
+    "opposite_data_write_contention_cases": 2,
+    "write_strength_unspecified": true,
+    "conditional_transparency": "CLK=1: O=D if input path overrides feedback",
+    "opaque_phase": "CLK=0: stored O retained"
+  },
+  "q4_truth_states": 8,
+  "q4_governing_evaluation_us": "117/50",
+  "q4_minimum_frequency_depends_on_duty": true,
+  "q5_binary_cases": 32,
+  "q6_physical_MOS": 12,
+  "q6_phase_events": 24,
+  "q6_active_capture_edge": "falling",
+  "q7_setup_period_ns": 20,
+  "q7_minimum_hold_data_absent": true,
+  "printed_percentage_total": 105
+}

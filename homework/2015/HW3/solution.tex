@@ -1,0 +1,100 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=21mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,frame=single}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{1.5em}
+\newcommand{\mos}[4]{\begin{scope}[shift={(#1,#2)}]
+\draw (0,.24)--(0,-.24);
+\draw (0,.20)--(.25,.20)--(.25,.5);
+\draw (0,-.20)--(.25,-.20)--(.25,-.5);
+\draw (-.16,.23)--(-.16,-.23);
+\ifnum#4=1\draw (-.26,0) circle (.06);\draw (-.75,0)--(-.32,0);\else\draw (-.75,0)--(-.16,0);\fi
+\node[anchor=east,font=\small] at (-.76,0) {$#3$};
+\end{scope}}
+\newcommand{\ground}[2]{\draw (#1,#2)--(#1,{#2-.12});\draw ({#1-.17},{#2-.12})--({#1+.17},{#2-.12});\draw ({#1-.11},{#2-.20})--({#1+.11},{#2-.20});}
+\newcommand{\rail}[3]{\draw (#1,#2)--(#1,{#2+.15});\node[above,font=\small] at (#1,{#2+.15}) {$#3$};}
+\newcommand{\outputnode}[3]{\fill (#1,#2) circle (.04);\draw (#1,#2)--({#1+.7},#2) node[right] {$#3$};}
+\begin{document}
+\begin{center}{\Large\bfseries Introduction to VLSI Design, 2015}\par{\large Homework 3: equal-size AND and short-circuit load sweep}\end{center}
+\section*{1. Equal-size AND circuit}
+The original Fig. 1 is a NAND followed by an inverter: $F=\overline{AB}$ is the intermediate node and $Z=AB$ the final output. \emph{All six MOSFETs} use $W=0.47\,\mu$m and $L=0.18\,\mu$m. NMOS bodies are grounded; PMOS bodies use $V_{DD}$. No external capacitor is specified in Q1, so no external load is added. Declared source/drain diffusion extensions are $0.18\,\mu$m; the model and these schematic parasitics supply the electrical capacitance.
+
+\begin{center}\begin{tikzpicture}[scale=.83]
+\mos{0}{2.5}{A}{1}\mos{2}{2.5}{B}{1}\draw (.25,3)--(2.25,3);\rail{1.25}{3}{V_{DD}}\draw (.25,2)--(2.25,2);
+\mos{0}{1.5}{A}{0}\mos{0}{.5}{B}{0}\ground{.25}{0}
+\draw (2.25,2)--(3.8,2);\node[below] at (2.8,2){$F$};\draw (3.8,1)--(3.8,2.5);\draw (3.8,1)--(4.75,1);\draw (3.8,2.5)--(4.75,2.5);
+\mos{5.5}{2.5}{}{1}\mos{5.5}{1}{}{0}\draw (5.75,1.5)--(5.75,2);\rail{5.75}{3}{V_{DD}}\ground{5.75}{.5}\outputnode{5.75}{1.75}{Z}
+\end{tikzpicture}\end{center}
+HSPICE S-2021.09 uses CIC018 TT at 1.8 V and 25 C. Each input-changing case settles for 2 ns, then ramps over 20 ps; simultaneous changing inputs have identical 50-percent times. Delay is input 0.9 V to output 0.9 V. All six output-changing transitions are covered in both directions, rather than only transitions into 11.
+\begin{center}\begin{tabular}{lccrr}\toprule Input transition&F direction&Z direction&F delay (ps)&Z delay (ps)\\\midrule
+$00\to11$&HL&LH&27.7459&49.4809\\
+$01\to11$&HL&LH&21.9282&43.6645\\
+$10\to11$&HL&LH&27.8276&49.5629\\
+$11\to00$&LH&HL&21.4842&31.8878\\
+$11\to01$&LH&HL&35.6526&45.8006\\
+$11\to10$&LH&HL&49.1245&58.0260\\
+\bottomrule\end{tabular}\end{center}
+The separate worst cases are:
+\begin{center}\begin{tabular}{lclr}\toprule Node&Direction&Transition&Delay (ps)\\\midrule
+F&HL&\texttt{10->11}&27.8276\\
+F&LH&\texttt{11->10}&49.1245\\
+Z&HL&\texttt{11->10}&58.0260\\
+Z&LH&\texttt{10->11}&49.5629\\
+\bottomrule\end{tabular}\end{center}
+All settled levels pass the 1.6 V high / 0.2 V low limits. Tightening the maximum solver step from 1 ps to 0.2 ps changes any measured AND delay by at most 0.089401 ps. The other directed binary-input transitions do not change the settled output and therefore have no ordinary propagation delay to tabulate.
+
+\newpage\section*{2. Short-circuit power versus load}
+The specified 3 ns input rise and fall ramps are used. The inverter is $W_n=0.47\,\mu$m, $W_p=1.88\,\mu$m, $L_n=L_p=0.18\,\mu$m, matching the supplied relevant code's dimensions. Loads are exactly 0.1, 0.3, 0.5, 0.7, and 1 pF (``0.5pdf'' in the prompt is a unit typo).
+
+The 100 ns period gives 47 ns high and low plateaus. Every load, including 1 pF, reaches both rails before the next edge. With a 20 ns period, these devices can leave the largest load incompletely settled, mixing load dependence with incomplete output swing. The reported curve averages the settled third cycle, from 200 to 300 ns.
+
+\textbf{Operational definition.} HSPICE's $LX4(MP)$ and $LX4(MN)$ report positive intrinsic channel drain currents under the normal device biases. These exclude the displacement currents in total drain-terminal currents. Define the intrinsic-channel overlap estimator
+\[
+I_{sc}(t)=\max\{0,\min[I_{p,ch}(t),I_{n,ch}(t)]\},\qquad
+P_{sc}=\frac{V_{DD}}{T}\int_{200\mathrm{ns}}^{300\mathrm{ns}}I_{sc}(t)dt.
+\]
+This selects the smaller simultaneous channel current, separating overlap from the large unmatched current charging/discharging the external load. It is an explicitly defined channel-overlap estimator, rather than total transistor dissipation. HSPICE integrates it directly and a separate sampled-channel integration checks the exported value. The clipping enforces nonnegative overlap; drain-terminal displacement spikes are not counted as channel short-circuit conduction.
+
+The external switching reference is $P_{sw}=C_LV_{DD}^2/T$. Actual supply power is measured separately; its residual after subtracting external switching includes overlap, internal switching, and leakage, and is not silently equated to pure $P_{sc}$.
+\begin{center}\begin{tabular}{rrrrr}\toprule $C_L$ (pF)&Overlap $P_{sc}$ ($\mu$W)&$P_{sw}$ ($\mu$W)&Supply ($\mu$W)&Residual ($\mu$W)\\\midrule
+0.1&0.909336&3.240000&4.292911&1.052911\\
+0.3&0.537173&9.720000&10.406653&0.686653\\
+0.5&0.388729&16.200000&16.741779&0.541779\\
+0.7&0.306202&22.680000&23.141460&0.461460\\
+1.0&0.233065&32.400000&32.790371&0.390371\\
+\bottomrule\end{tabular}\end{center}
+The overlap power decreases with increasing load under these fixed input and device conditions. During a rising input, a larger load keeps the output high longer, reducing PMOS $V_{SD}$ while the NMOS becomes strong; during a falling input, it keeps the output low longer and reduces NMOS $V_{DS}$. The smaller branch current therefore decreases. Meanwhile external switching energy increases linearly with capacitance. Larger load does not imply smaller total dynamic power, and this trend should not be extrapolated across different input slews or sizing.
+
+\newpage\section*{Measured load-dependence curve}
+\begin{center}\begin{tikzpicture}[x=6cm,y=3.6cm]
+\draw[->] (0,0)--(1.1,0) node[right]{$C_L$ (pF)};\draw[->] (0,0)--(0,1.25) node[above]{$P_{sc}$ ($\mu$W)};
+\foreach \x in {.1,.3,.5,.7,1}{\draw (\x,0)--(\x,-.015) node[below,font=\small]{$\x$};}
+\foreach \y in {.2,.4,.6,.8,1}{\draw (0,\y)--(-.015,\y) node[left,font=\small]{$\y$};}
+\draw[blue,thick] plot coordinates {(0.100,0.909336) (0.300,0.537173) (0.500,0.388729) (0.700,0.306202) (1.000,0.233065)};
+\fill[blue] (0.100,0.909336) circle (1.3pt);
+\fill[blue] (0.300,0.537173) circle (1.3pt);
+\fill[blue] (0.500,0.388729) circle (1.3pt);
+\fill[blue] (0.700,0.306202) circle (1.3pt);
+\fill[blue] (1.000,0.233065) circle (1.3pt);
+\end{tikzpicture}\end{center}
+The CSV also records separate overlap energies for the two 3 ns input ramps and total full-cycle overlap energy. Full-cycle energy also includes small channel-current tails outside the input ramps. HSPICE integration is checked against its 2 ps sampled intrinsic-current trace. The exported visualization trace is sampled every 50 ps, and both high and low settled voltages are recorded for every load.
+
+\section*{Comparison with supplied answers}
+\path{VLSI-HW3.docx} and the 3-1/3-2 archives are J.-W. Liu's 2015 work (102501556). The equal 0.47 $\mu$m widths and six-transistor topology are retained. However, its delay statements use F as the trigger for Z and thus measure only the last inverter, not full A/B-to-Z delay. Its listed transient interval is 1 ns and the shown cases only enter 11. The new measurements use the actual primary input and include both output directions with a convergence check.
+
+The load-sweep source's threshold-window current averages mix different rising/falling windows and are not full-cycle power. Its numerical values therefore cannot be combined with the present curve by choosing a smaller entry. The dimensions and qualitative decrease are retained, while the intrinsic-channel definition and integration window are stated explicitly. The other \path{hw3.docx} contains an 8-to-1 MUX task and is mismatched to the authentic 2015 AND prompt; its MUX solution is not substituted for Q1.
+
+\section*{Reproduction}
+\begin{lstlisting}
+python reproduce.py --model D:/cic018.l --raw-dir <scratch>
+\end{lstlisting}
+The script performs two AND timestep runs and one five-load inverter run, exports the real measurements, and preserves raw simulator data only in the scratch directory. Supply \texttt{--hspice <path>} if required. The two directly runnable decks are \path{and_testbench.sp} and \path{power_testbench.sp}; the library remains local.
+
+\end{document}

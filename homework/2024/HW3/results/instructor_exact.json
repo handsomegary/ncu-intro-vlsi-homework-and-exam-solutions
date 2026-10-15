@@ -1,0 +1,7 @@
+{
+  "pavg_total_uW": 69.0022159,
+  "pavg_supply_uW": 37.9984794,
+  "energy_9ns_fJ": 621.0199431,
+  "tstep_ps": 100,
+  "delmax": "HSPICE automatic"
+}

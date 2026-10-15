@@ -1,0 +1,13 @@
+device,type,left_channel,right_channel,gate
+P1,p,VDD,t1,I
+Pclock1,p,t1,A,phi
+N1,n,A,VSS,I
+P2,p,VDD,t2,A
+Pclock2,p,t2,B,phi
+N2,n,B,VSS,A
+P3,p,VDD,C,B
+Nclock3,n,C,t3,phi
+N3,n,t3,VSS,B
+P4,p,VDD,O,C
+Nclock4,n,O,t4,phi
+N4,n,t4,VSS,C

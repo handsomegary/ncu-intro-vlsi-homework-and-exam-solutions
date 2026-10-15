@@ -1,0 +1,4 @@
+technique,core,local_complement_devices,complete
+dynamic,7,2,9
+fully_differential,12,10,22
+static,10,2,12

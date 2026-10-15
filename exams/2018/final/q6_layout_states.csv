@@ -1,0 +1,17 @@
+X,CLK,b,m,d,s,Y,settled_consistent,mismatched_write_contention,mixed_components,passed
+0,0,0,1,0,1,0,False,True,"[[""VDD"", ""VSS"", ""Y"", ""a"", ""b"", ""c1"", ""c2"", ""d"", ""m"", ""s""]]",True
+0,0,0,1,1,0,1,True,False,[],True
+0,0,1,0,0,1,0,True,False,[],True
+0,0,1,0,1,0,1,False,True,"[[""VDD"", ""VSS"", ""Y"", ""a"", ""b"", ""c1"", ""c2"", ""d"", ""m"", ""s""]]",True
+0,1,0,1,0,1,0,False,True,"[[""VDD"", ""VSS"", ""Y"", ""a"", ""b"", ""c1"", ""c2"", ""d"", ""m"", ""s""]]",True
+0,1,0,1,1,0,1,False,True,"[[""VDD"", ""VSS"", ""Y"", ""a"", ""b"", ""c1"", ""c2"", ""d"", ""m"", ""s""]]",True
+0,1,1,0,0,1,0,True,False,[],True
+0,1,1,0,1,0,1,True,False,[],True
+1,0,0,1,0,1,0,False,True,"[[""VDD"", ""VSS"", ""Y"", ""a"", ""b"", ""c1"", ""c2"", ""d"", ""m"", ""s""]]",True
+1,0,0,1,1,0,1,True,False,[],True
+1,0,1,0,0,1,0,True,False,[],True
+1,0,1,0,1,0,1,False,True,"[[""VDD"", ""VSS"", ""Y"", ""a"", ""b"", ""c1"", ""c2"", ""d"", ""m"", ""s""]]",True
+1,1,0,1,0,1,0,True,False,[],True
+1,1,0,1,1,0,1,True,False,[],True
+1,1,1,0,0,1,0,False,True,"[[""VDD"", ""VSS"", ""Y"", ""a"", ""b"", ""c1"", ""c2"", ""d"", ""m"", ""s""]]",True
+1,1,1,0,1,0,1,False,True,"[[""VDD"", ""VSS"", ""Y"", ""a"", ""b"", ""c1"", ""c2"", ""d"", ""m"", ""s""]]",True

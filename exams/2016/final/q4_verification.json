@@ -1,0 +1,26 @@
+{
+  "q4b_12_device_switch_graph_rows": 8,
+  "q4b_all_checks_passed": true,
+  "q4b_function": "Z=a & ~b & ~c",
+  "q4b_off_isolation_MOS": [
+    "P2",
+    "N2",
+    "P6",
+    "N6"
+  ],
+  "q4a_literal_column6_countercheck": [
+    {
+      "assumed_X": 0,
+      "P6_on": true,
+      "N6_on": false,
+      "opposing_rail": "VDD"
+    },
+    {
+      "assumed_X": 1,
+      "P6_on": false,
+      "N6_on": true,
+      "opposing_rail": "VSS"
+    }
+  ],
+  "q4a_scope": "Literal extraction only. Analog levels/strengths are not characterized; normal rail-restoring latch behavior is not claimed."
+}

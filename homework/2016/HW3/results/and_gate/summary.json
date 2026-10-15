@@ -1,0 +1,59 @@
+{
+  "simulator": "PrimeSim HSPICE S-2021.09 win64",
+  "model": "CIC018 TT BSIM3 (local)",
+  "VDD_V": 1.8,
+  "temperature_C": 25,
+  "load_fF": 1.0,
+  "input_slew_0_to_100_ns": 0.1,
+  "max_time_step_ps": 2.0,
+  "delay_definition": "input and output 50 percent crossings; input-to-F and input-to-Z",
+  "cases": [
+    {
+      "case": "00",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "case": "01",
+      "status": "completed",
+      "exit_code": 0
+    },
+    {
+      "case": "10",
+      "status": "completed",
+      "exit_code": 0
+    }
+  ],
+  "functional_samples": 6,
+  "all_logic_levels_pass": true,
+  "worst_case": [
+    {
+      "initial_ab": "00",
+      "cycle": 1,
+      "node": "F",
+      "direction": "HL",
+      "delay_ps": 43.598978699999996
+    },
+    {
+      "initial_ab": "10",
+      "cycle": 3,
+      "node": "F",
+      "direction": "LH",
+      "delay_ps": 70.256045
+    },
+    {
+      "initial_ab": "10",
+      "cycle": 1,
+      "node": "Z",
+      "direction": "HL",
+      "delay_ps": 87.6060008
+    },
+    {
+      "initial_ab": "00",
+      "cycle": 1,
+      "node": "Z",
+      "direction": "LH",
+      "delay_ps": 76.7525094
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+step,CLK,D,master_M,output_Q,event
+0,0,0,0,0,initial low
+1,0,1,0,0,D changes while low
+2,1,1,1,0,rising edge
+3,1,0,0,0,D changes while high
+4,0,0,0,0,falling edge captures0
+5,0,1,0,0,D changes while low
+6,1,1,1,0,rising edge
+7,1,1,1,0,stable high
+8,0,1,1,1,falling edge captures1

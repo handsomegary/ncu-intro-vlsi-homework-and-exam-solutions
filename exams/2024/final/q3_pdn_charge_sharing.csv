@@ -1,0 +1,9 @@
+ABC,A,B,C,majority_F_AB_AC_BC,z_component,ground_path,internal_nodes_connected_to_z,case,CZ_fF,isolated_added_cap_fF,Vz_over_VDD_under_zero_initial_internal_charge,threshold_half_VDD_crossed_erroneously
+000,0,0,0,0,z,False,,no charge sharing,3.3,0.0,1.0,False
+001,0,0,1,0,y|z,False,y,isolated charge sharing,3.3,1.1,0.75,False
+010,0,1,0,0,z,False,,no charge sharing,3.3,0.0,1.0,False
+011,0,1,1,1,GND|w|x|y|z,True,x|y,legitimate full pull-down,3.3,0.0,0.0,False
+100,1,0,0,0,x|z,False,x,isolated charge sharing,3.3,1.3,0.717391304347826,False
+101,1,0,1,1,GND|w|x|y|z,True,x|y,legitimate full pull-down,3.3,0.0,0.0,False
+110,1,1,0,1,GND|w|x|y|z,True,x|y,legitimate full pull-down,3.3,0.0,0.0,False
+111,1,1,1,1,GND|w|x|y|z,True,x|y,legitimate full pull-down,3.3,0.0,0.0,False

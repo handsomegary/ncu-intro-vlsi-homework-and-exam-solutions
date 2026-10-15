@@ -1,0 +1,37 @@
+{
+  "simulator": "PrimeSim HSPICE S-2021.09 win64",
+  "model": "CIC018 TT BSIM3 (local)",
+  "VDD_V": 1.8,
+  "temperature_C": 25,
+  "rotator_cases": 64,
+  "all_rotator_pass": true,
+  "pseudo_nor": [
+    {
+      "A": 0,
+      "B": 0,
+      "Vout_V": 1.799999805,
+      "passed": true
+    },
+    {
+      "A": 0,
+      "B": 1,
+      "Vout_V": 0.0301646362,
+      "passed": true
+    },
+    {
+      "A": 1,
+      "B": 0,
+      "Vout_V": 0.0301223411,
+      "passed": true
+    },
+    {
+      "A": 1,
+      "B": 1,
+      "Vout_V": 0.0148216244,
+      "passed": true
+    }
+  ],
+  "dual_Vt_illustrative_cases": 8,
+  "all_dual_Vt_illustrative_logic_pass": true,
+  "dual_Vt_physical_measurement": "not available: no dual-Vt PDK provided"
+}

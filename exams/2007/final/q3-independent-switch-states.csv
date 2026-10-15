@@ -1,0 +1,9 @@
+D,CLK,old_O,u_before_write,input_driver_dbar,feedback_driver_not_O,transmission_gate_on,VDD_path_to_u,VSS_path_to_u,write_contention,interpretation
+0,0,0,1,1,1,0,True,False,False,binary-consistent state
+0,0,1,0,1,0,0,False,True,False,binary-consistent state
+0,1,0,1,1,1,1,True,False,False,binary-consistent state
+0,1,1,0,1,0,1,True,True,True,input must overcome fixed feedback
+1,0,0,1,0,1,0,True,False,False,binary-consistent state
+1,0,1,0,0,0,0,False,True,False,binary-consistent state
+1,1,0,1,0,1,1,True,True,True,input must overcome fixed feedback
+1,1,1,0,0,0,1,False,True,False,binary-consistent state

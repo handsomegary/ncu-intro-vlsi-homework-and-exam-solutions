@@ -1,0 +1,7 @@
+device,width_nm,length_nm,model,passed
+N1,160.0,40,fixed_external_C; choose_RP1=RN1,True
+N2,80.0,40,fixed_external_C; choose_RP1=RN1,True
+N3,182.85714285714286,40,fixed_external_C; choose_RP1=RN1,True
+P1,320.0,40,fixed_external_C; choose_RP1=RN1,True
+P2,160.0,40,fixed_external_C; choose_RP1=RN1,True
+P3,365.7142857142857,40,fixed_external_C; choose_RP1=RN1,True

@@ -1,0 +1,16 @@
+model,Vin_V,u_V,Vout_V,device,VGS_V,VGD_V,Vtn_V,region,pass
+course_frozen_u_pre_discharge,0.45,0.39999999999999997,1.2,N1,0.45,0.050000000000000044,0.4,saturation,True
+course_frozen_u_pre_discharge,0.45,0.39999999999999997,1.2,N2,0.8,0.0,0.4,saturation,True
+course_frozen_u_pre_discharge,0.45,0.39999999999999997,1.2,N3,0.050000000000000044,-0.75,0.4,cutoff,True
+course_frozen_u_pre_discharge,0.5,0.39999999999999997,1.2,N1,0.5,0.10000000000000003,0.4,saturation,True
+course_frozen_u_pre_discharge,0.5,0.39999999999999997,1.2,N2,0.8,0.0,0.4,saturation,True
+course_frozen_u_pre_discharge,0.5,0.39999999999999997,1.2,N3,0.10000000000000003,-0.7,0.4,cutoff,True
+course_frozen_u_pre_discharge,0.6,0.39999999999999997,1.2,N1,0.6,0.2,0.4,saturation,True
+course_frozen_u_pre_discharge,0.6,0.39999999999999997,1.2,N2,0.8,0.0,0.4,saturation,True
+course_frozen_u_pre_discharge,0.6,0.39999999999999997,1.2,N3,0.2,-0.6,0.4,cutoff,True
+course_frozen_u_pre_discharge,0.7,0.39999999999999997,1.2,N1,0.7,0.3,0.4,saturation,True
+course_frozen_u_pre_discharge,0.7,0.39999999999999997,1.2,N2,0.8,0.0,0.4,saturation,True
+course_frozen_u_pre_discharge,0.7,0.39999999999999997,1.2,N3,0.3,-0.5,0.4,cutoff,True
+course_frozen_u_pre_discharge,0.75,0.39999999999999997,1.2,N1,0.75,0.35000000000000003,0.4,saturation,True
+course_frozen_u_pre_discharge,0.75,0.39999999999999997,1.2,N2,0.8,0.0,0.4,saturation,True
+course_frozen_u_pre_discharge,0.75,0.39999999999999997,1.2,N3,0.35000000000000003,-0.44999999999999996,0.4,cutoff,True

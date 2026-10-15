@@ -1,0 +1,8 @@
+device,gate_V,terminal_a_V,terminal_b_V,region,scope,passed
+m1,1.8,1.8,0.5,saturation,admissible bias example;not simulated waveform or measured transition,True
+m1,1.8,0.8,0.2,linear,admissible bias example;not simulated waveform or measured transition,True
+m2,1.8,1.2,0.4,linear,admissible bias example;not simulated waveform or measured transition,True
+m3,1.8,1.0,0.4,linear,admissible bias example;not simulated waveform or measured transition,True
+m4,1.8,0.9,0.4,linear,admissible bias example;not simulated waveform or measured transition,True
+m5,1.8,0.8,0.4,linear,admissible bias example;not simulated waveform or measured transition,True
+m6,1.8,0.7,0.4,linear,admissible bias example;not simulated waveform or measured transition,True

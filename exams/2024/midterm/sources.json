@@ -1,0 +1,28 @@
+{
+  "year_basis": "113 academic-year filename, source archive 2024 folder and user selection",
+  "extraction": "Original page content and embedded photographs retained; PDF container rebuilt for the two prompt pages. It is not a byte-identical full-source copy.",
+  "reconstruction": "Text and every circuit/waveform redrawn as editable LaTeX/TikZ; no scan images used in typeset exam or solution. Original numbering, marks, equations and connections retained; perspective, annotations and spacing not reproduced.",
+  "question_points": [
+    30,
+    15,
+    10,
+    10,
+    10,
+    10,
+    15
+  ],
+  "question_1_part_points": [
+    4,
+    3,
+    2,
+    2,
+    2,
+    5,
+    4,
+    2,
+    3,
+    3
+  ],
+  "transcription_uncertainties": [],
+  "model_library_required": false
+}

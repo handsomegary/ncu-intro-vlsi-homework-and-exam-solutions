@@ -1,0 +1,4 @@
+capture_minus_launch_ns,logic_max_ns,min_buffer_count,earliest_direct_arrival_ns,direct_setup_requirement_ns
+-1/10,15/2,2,6/5,16/5
+0,38/5,2,6/5,16/5
+1/10,77/10,3,3/2,7/2

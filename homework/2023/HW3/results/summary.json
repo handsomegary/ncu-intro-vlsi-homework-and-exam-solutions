@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "simulator": "PrimeSim HSPICE S-2021.09",
+  "voltage_V": 1.8,
+  "temperature_C": 25,
+  "corner": "TT",
+  "output_load_fF": 1,
+  "input_slew_ps": 20,
+  "max_timestep_ps": 2,
+  "dc_states": 128,
+  "directed_single_input_transitions": 896,
+  "measured_output_transitions": 1552,
+  "worst_measured": {
+    "case": 498,
+    "old": 71,
+    "new": 70,
+    "input": "x0",
+    "output": "s2",
+    "direction": "rise",
+    "delay_ps": 833.5269883
+  },
+  "max_rise_ps": 833.5269883,
+  "max_fall_ps": 722.9031569,
+  "average_supply_power_uW": 177.0819999,
+  "energy_384ns_fJ": 67999.48796,
+  "power_workload": "states 0..127; x=state&7, y=(state>>3)&7, cin=state>>6; 3ns each",
+  "transistors": 84,
+  "sum_WL_um2": 53.46,
+  "netlist_sha256": "060385c1e07e0a3e8839bc4560618286ab5a541bcaf48be5ece82bfa4141c610",
+  "model_sha256": "f0e41de8109a0f0152891268b9b46ff4fb386a5d0807f410b075e1a051cf86fd",
+  "delay_scope": "all directed single-input transitions between settled inputs at specified TT, supply, load, slew; not a PVT bound or all simultaneous transitions"
+}

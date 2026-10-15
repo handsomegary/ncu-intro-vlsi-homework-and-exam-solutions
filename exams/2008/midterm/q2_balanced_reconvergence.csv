@@ -1,0 +1,3 @@
+a_transition,c_event,c_time_relative_a,d_event,d_time_relative_a,O0,passed
+0->1,rise,2,fall,4,stays 1; overlapping high inputs,True
+1->0,fall,3,rise,2,stays 1; overlapping high inputs,True

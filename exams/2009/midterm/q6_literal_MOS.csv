@@ -1,0 +1,11 @@
+device,type,gate,channel1,channel2
+P1,p,A,VDD,1
+P2,p,B,VDD,1
+P3,p,C,1,Y
+P4,p,A,1,2
+P5,p,B,2,Y
+N1,n,C,Y,3
+N2,n,A,3,GND
+N3,n,B,3,GND
+N4,n,B,Y,4
+N5,n,A,4,GND

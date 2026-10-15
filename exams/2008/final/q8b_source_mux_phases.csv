@@ -1,0 +1,5 @@
+source_latch,CLK,transparent,selected,triangle
+"upper, data port0",0,True,D,noninverting buffer
+"upper, data port0",1,False,feedback Q,noninverting buffer
+"lower, data port1",0,False,feedback Q,noninverting buffer
+"lower, data port1",1,True,D,noninverting buffer

@@ -1,0 +1,3 @@
+node,channel_end_devices,gate_load_devices,drain_count,gate_count,C_fF,allowed_deltaV,leakage_nA,retention_us
+cb,Ppre NA1 NC1,Pcarry Ncarry Pcb,3,3,18/5,9/10,1,81/25
+sb,Pcb PC2 Npre,Psum Nsum,3,2,13/5,9/10,1,117/50

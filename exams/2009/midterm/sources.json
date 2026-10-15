@@ -1,0 +1,43 @@
+{
+  "year": 2009,
+  "exam": "midterm",
+  "printed_term": "Fall 2009",
+  "originals": [
+    {
+      "archive_path": "2009/midterm/midterm (1).jpg",
+      "sha256": "72197bda99f21a651c6e5c7670060f3a3c48e73e6bf177168e49bbc0829dc634",
+      "dimensions": [
+        910,
+        1280
+      ]
+    },
+    {
+      "archive_path": "2009/midterm/midterm (2).jpg",
+      "sha256": "5b317f8c43f90bef3b5c5a3cea1cb28ac29440b080711e993841678bf86fb9bc",
+      "dimensions": [
+        910,
+        1280
+      ]
+    },
+    {
+      "archive_path": "2009/midterm/midterm (3).jpg",
+      "sha256": "97fed0e4c8c9d1f9c7ef067ea3d74b50c6bc54cb2dc87116a5151dbec943edc2",
+      "dimensions": [
+        910,
+        1280
+      ]
+    }
+  ],
+  "source_review": "All three printed pages and incidental notes read. Matching mixed compilation pages7-9 checked; only canonical photos redistributed.",
+  "student_comparison": "Incidental notes on originals; no separate matching graded answer found.",
+  "points": [
+    30,
+    10,
+    10,
+    30,
+    10,
+    15
+  ],
+  "total_points": 105,
+  "reference": "https://pubs.aip.org/avs/jva/article/38/3/031202/1023659/Tutorial-on-forming-through-silicon-vias"
+}

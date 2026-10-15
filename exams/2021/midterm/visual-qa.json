@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "scope": "2021 midterm complete Q1-Q6",
+  "original_photo_pages": 2,
+  "exam_pages": 2,
+  "solution_pages": 7,
+  "built_in_compiler": {
+    "exam.tex": "success",
+    "solution.tex": "success"
+  },
+  "local_compiler": "pdfLaTeX, two passes per standalone source",
+  "box_warnings": [],
+  "visual_review": "All 2 original-photo PDF pages, 2 reconstructed exam pages, and 7 solution pages rendered with Poppler and visually inspected. Final changes re-rendered and all reconstructed/solution pages inspected again.",
+  "checks": [
+    "Original question wording, 16-row truth table, positive/complemented function polarities, figures, and point labels compared with source photos.",
+    "Q4(b) zoom confirms 6 points, so Q4 subparts are 9+6=15.",
+    "TG select labels separated and readable; tree has seven MUX cells with two TG paths each.",
+    "Named-terminal MOS schematics readable; repeated labels denote connected nodes; each diagram is editable TikZ.",
+    "Q6(b) equivalent inverter and original load shown explicitly.",
+    "No clipped text, overlapping control captions, overfull boxes, blank extra pages, or raster circuit images in editable LaTeX."
+  ],
+  "limits": [
+    "Archive folder supplies year attribution; original photos do not print a date.",
+    "Q4 0.8 V follows the photographed lecture-board resistance approximation. Device-region conditions are derived separately for onset and conducting discharge; no exact transient is claimed.",
+    "Electrical verification is ideal logic/connectivity and algebra; no HSPICE simulation result is claimed."
+  ]
+}

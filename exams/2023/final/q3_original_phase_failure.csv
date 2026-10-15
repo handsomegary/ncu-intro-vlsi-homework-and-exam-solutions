@@ -1,0 +1,17 @@
+A,B,C,phi,d,Ybar,original_middle_clock,passed
+0,0,0,0,1,0,phi_bar,True
+0,0,0,1,1,1,phi_bar,True
+0,0,1,0,1,0,phi_bar,True
+0,0,1,1,1,1,phi_bar,True
+0,1,0,0,1,0,phi_bar,True
+0,1,0,1,1,1,phi_bar,True
+0,1,1,0,1,0,phi_bar,True
+0,1,1,1,0,1,phi_bar,True
+1,0,0,0,1,0,phi_bar,True
+1,0,0,1,1,1,phi_bar,True
+1,0,1,0,1,0,phi_bar,True
+1,0,1,1,0,1,phi_bar,True
+1,1,0,0,1,0,phi_bar,True
+1,1,0,1,0,1,phi_bar,True
+1,1,1,0,1,0,phi_bar,True
+1,1,1,1,0,1,phi_bar,True

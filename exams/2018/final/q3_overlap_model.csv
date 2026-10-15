@@ -1,0 +1,3 @@
+circuit,normalized_equivalent_R,normalized_supply_current,model
+STC_one_active_feedback_full_network,2.2,0.45454545454545453,R+(3R parallel 2R);matched main R;constant resistor overlap illustration
+feedback_removed_four_device_inverter,4,0.25,same main R;constant resistor overlap illustration

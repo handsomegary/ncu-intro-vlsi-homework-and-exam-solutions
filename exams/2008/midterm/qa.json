@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "builtin_compile": {
+    "exam": "success",
+    "solution": "success"
+  },
+  "local_compile": {
+    "engine": "MiKTeX pdflatex",
+    "passes_each": 2,
+    "exam": "success",
+    "solution": "success",
+    "overfull_underfull_warnings": 0
+  },
+  "pdf_pages": {
+    "original": 2,
+    "exam": 2,
+    "solution": 8
+  },
+  "visual_review": {
+    "renderer": "Poppler pdftoppm",
+    "all_pages_viewed": true,
+    "pages_viewed": 12,
+    "checks": "Printed polarities, gate fanout, all MOS terminal labels, equations, taper capacitances, table entries and page boundaries checked; no clipping or overlaps."
+  },
+  "original_preservation": [
+    {
+      "source_pdf_page": 1,
+      "extracted_page": 1,
+      "decoded_content_sha256": "92989685850878102ea9624fe0a5ecf9903aef19a9ea5120eddbed38c691bc89",
+      "image_count": 1,
+      "page_content_preserved": true
+    },
+    {
+      "source_pdf_page": 2,
+      "extracted_page": 2,
+      "decoded_content_sha256": "258d9ec93bc1b906251cd2dc74d606eb98bcbb432bda8d7d17f278322a65921a",
+      "image_count": 1,
+      "page_content_preserved": true
+    }
+  ],
+  "verification": {
+    "status": "PASS",
+    "csv_files": 14,
+    "csv_data_rows": 175,
+    "rows_by_file": {
+      "q1c_CMOS_truth.csv": 32,
+      "q1c_MOS.csv": 10,
+      "q2_balanced_gate_delays.csv": 6,
+      "q2_balanced_reconvergence.csv": 2,
+      "q2_conditional_vt_MOS.csv": 26,
+      "q2_general_resistance_delays.csv": 4,
+      "q2_highVt_slack_examples.csv": 4,
+      "q2_physical_path_delays.csv": 7,
+      "q2_truth.csv": 32,
+      "q3_even_buffer_optima.csv": 7,
+      "q3_integer_buffer_optima.csv": 7,
+      "q4_alpha_candidates.csv": 2,
+      "q5_full_adder_MOS.csv": 28,
+      "q5_full_adder_truth.csv": 8
+    },
+    "Q1_cases": 32,
+    "Q2_cases": 32,
+    "Q5_cases": 8,
+    "Q2_MOS": 26,
+    "Q5_MOS": 28,
+    "method": "Exhaustive ideal switch graphs and analytical timing/sizing calculations; no transistor or measured process claims."
+  },
+  "artifact_hashes": {
+    "exam.tex": "037cbd8a5340258be20326ca5d7fb2c15f05b2dd44baabdedf926d656f724011",
+    "exam.pdf": "6cab967dab0edafd4ee51771ef06586d6b39439c23d960e46aac2b04eb5d6686",
+    "solution.tex": "69400424d0ca5d86f8ce71990ad47fffd285f2e52719e27b10cf7c5359bda56a",
+    "solution.pdf": "3c677d5cb9130b99ae732b40a20a7b0104aea0d926ebc3f3f0f1ad54061dda61",
+    "verify_logic_timing.py": "5e92c44b22bf014c0335d85264077959ae21470772e6169b30d50edbafda7038",
+    "logic_timing_verification.json": "2b92f8bc4ae94ec7082e40a8d0b55bf7a3e0ce4eaf7b9160ecc9432bd2037ccc"
+  },
+  "artifact_hash_convention": "SHA256 of exact binary bytes; text artifacts normalized to LF, matching Git archive and MANIFEST.json."
+}

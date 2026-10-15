@@ -1,0 +1,7 @@
+model,non_discharging_pattern,output_cap_fF,internal_cap_fF,final_V_over_VDD,above_half_rail,passed
+supplied_total_node_caps,100,3.3,1.3,0.717391304347826,True,True
+supplied_total_node_caps,001,3.3,1.1,0.75,True,True
+wire_only_plus_all_diffusion_junctions,100,3.3,1.5,0.6875,True,True
+wire_only_plus_all_diffusion_junctions,001,3.3,1.4,0.7021276595744681,True,True
+wire_only_plus_literal_drain_terminals,100,3.3,1.4,0.7021276595744681,True,True
+wire_only_plus_literal_drain_terminals,001,3.3,1.3,0.717391304347826,True,True

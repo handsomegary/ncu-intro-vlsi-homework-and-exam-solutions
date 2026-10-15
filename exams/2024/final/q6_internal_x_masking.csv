@@ -1,0 +1,9 @@
+a,b,c,original_x,upset_x,original_y1,upset_y1,original_y2,upset_y2,y1_changed,y2_changed
+0,0,0,0,1,0,0,0,1,False,True
+0,0,1,0,1,0,0,1,0,False,True
+0,1,0,1,0,0,0,1,0,False,True
+0,1,1,1,0,0,0,0,1,False,True
+1,0,0,1,0,0,0,1,0,False,True
+1,0,1,1,0,0,0,0,1,False,True
+1,1,0,0,1,0,0,0,1,False,True
+1,1,1,0,1,0,1,1,0,True,True

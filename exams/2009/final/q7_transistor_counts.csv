@@ -1,0 +1,6 @@
+implementation,pMOS,nMOS,total
+static CMOS,5,5,10
+"domino core, complements supplied",2,7,9
+domino complete from A/B/C/D/E,7,12,19
+"fully differential core, complements supplied",2,10,12
+fully differential complete from A/B/C/D/E,7,15,22

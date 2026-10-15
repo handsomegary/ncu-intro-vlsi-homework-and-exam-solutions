@@ -1,0 +1,3 @@
+transition,NAND_delay_over_RCg,inverter_delay_over_RCg,total_over_RCg
+AND output rise,3,4,7
+AND output fall,3,4,7

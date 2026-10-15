@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=21mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,frame=single}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{1.5em}
+\newcommand{\mos}[4]{\begin{scope}[shift={(#1,#2)}]
+\draw (0,.24)--(0,-.24);
+\draw (0,.20)--(.25,.20)--(.25,.5);
+\draw (0,-.20)--(.25,-.20)--(.25,-.5);
+\draw (-.16,.23)--(-.16,-.23);
+\ifnum#4=1\draw (-.26,0) circle (.06);\draw (-.75,0)--(-.32,0);\else\draw (-.75,0)--(-.16,0);\fi
+\node[anchor=east,font=\small] at (-.76,0) {$#3$};
+\end{scope}}
+\newcommand{\ground}[2]{\draw (#1,#2)--(#1,{#2-.12});\draw ({#1-.17},{#2-.12})--({#1+.17},{#2-.12});\draw ({#1-.11},{#2-.20})--({#1+.11},{#2-.20});}
+\newcommand{\rail}[3]{\draw (#1,#2)--(#1,{#2+.15});\node[above,font=\small] at (#1,{#2+.15}) {$#3$};}
+\newcommand{\outputnode}[3]{\fill (#1,#2) circle (.04);\draw (#1,#2)--({#1+.7},#2) node[right] {$#3$};}
+\begin{document}
+\begin{center}{\Large\bfseries Introduction to VLSI Design, 2015}\par{\large Homework 2: all four analytical problems and code}\end{center}
+\section*{1. Input rise time and output fall time}
+With an initially high inverter output, the output capacitance discharges when the input rises. Its instantaneous equation is
+\[
+C_L\frac{dV_{out}}{dt}=I_p-I_n.
+\]
+The faster ramp (a) raises the NMOS overdrive more quickly and turns the PMOS off sooner. The slower ramp (b) leaves a weaker NMOS and a longer interval during which PMOS current opposes discharge. The net discharge current $I_n-I_p$ is therefore smaller during much of the output transition, so (b) has a longer output fall time. This is a load-current explanation; the output fall time is not simply equal to the input rise time. Once the input is fully high, the NMOS and $C_L$ set the remaining discharge rate.
+
+\section*{2. Clock-tree critical path}
+The root inverter contributes $\tau_g$ to every branch. B and D have one additional $\tau_g$ inverter; C has an additional $2\tau_g$ gate. Total route lengths are 650 $\mu$m for A--B/A--D and 400 $\mu$m for A--C. With the supplied estimate,
+\[
+\tau_w=\tfrac12(0.05)(30\times10^{-18})l^2\ \mathrm{s},\qquad4\tau_g=0.8\ \mathrm{ns}.
+\]
+\begin{center}\begin{tabular}{lrrr}\toprule Route&Length ($\mu$m)&$\tau_w$ (ps)&Gate delay (ns)\\\midrule
+A-B&650&0.316875&0.4\\
+A-C&400&0.120000&0.6\\
+A-D&650&0.316875&0.4\\
+\bottomrule\end{tabular}\end{center}
+Every wire estimate is much smaller than 0.8 ns and is neglected under the explicit rule. Therefore
+\[
+\boxed{\text{Critical path A--C; delay}=3\tau_g=0.6\ \mathrm{ns}.}
+\]
+This uses the problem's per-route $rc l^2/2$ approximation. A detailed branched Elmore-delay model would include shared wire capacitances, but is neither supplied nor required, and cannot change the conclusion under the given neglect rule.
+
+\section*{3. Mobility ratio}
+At $V_{in}=V_{out}=V_{DD}/2$, the conducting devices are saturated in the ideal long-channel model. Their currents must match:
+\[
+\mu_n C_{ox}(2)(V_{DD}/2-V_{tn})^2=\mu_p C_{ox}(4)(V_{DD}/2-|V_{tp}|)^2.
+\]
+Hence the general result is
+\[
+\frac{\mu_n}{\mu_p}=2\left(\frac{V_{DD}/2-|V_{tp}|}{V_{DD}/2-V_{tn}}\right)^2.
+\]
+Under the usual symmetric-threshold assumption $V_{tn}=|V_{tp}|$, the requested answer is $\boxed{\mu_n/\mu_p=2}$. The threshold equality is needed; midpoint operation alone would not identify mobility without it.
+
+\newpage\section*{4. Sizing for $NM_H>NM_L$}
+For rail-to-rail static inverter outputs,
+\[
+NM_H=V_{OH}-V_{IH}\approx V_{DD}-V_{IH},\qquad NM_L=V_{IL}-V_{OL}\approx V_{IL}.
+\]
+A stronger NMOS shifts the transfer curve left, decreasing both unity-slope input thresholds $V_{IL},V_{IH}$. This increases $NM_H$ and decreases $NM_L$. With equal threshold magnitudes the desired design is
+\[
+\boxed{\beta_n>\beta_p,\qquad\beta_n=\mu_n C_{ox}\frac{W_n}{L_n},\quad\beta_p=\mu_p C_{ox}\frac{W_p}{L_p}.}
+\]
+Increase $W_n/L_n$ relative to $W_p/L_p$ after accounting for mobility; equal geometric sizes do not imply equal strengths. The midpoint switching voltage follows
+\[
+V_M=\frac{V_{tn}+\sqrt{\beta_p/\beta_n}(V_{DD}-|V_{tp}|)}{1+\sqrt{\beta_p/\beta_n}}.
+\]
+The independent program also solves the two points where $dV_{out}/dV_{in}=-1$, using the correct saturation/linear current equations. For an illustrative ideal model ($V_{DD}=1.8$ V, $V_{tn}=|V_{tp}|=0.45$ V), it gives:
+\begin{center}\begin{tabular}{rrrrr}\toprule $\beta_p/\beta_n$&$V_M$ (V)&$V_{IL}$ (V)&$NM_L$ (V)&$NM_H$ (V)\\\midrule
+0.5&0.822792&0.688420&0.688420&0.889328\\
+1.0&0.900000&0.787500&0.787500&0.787500\\
+2.0&0.977208&0.889328&0.889328&0.688420\\
+4.0&1.050000&0.984360&0.984360&0.603557\\
+\bottomrule\end{tabular}\end{center}
+At strength ratio 0.5, the strong NMOS gives $NM_H>NM_L$. At ratio 2, the strong PMOS gives the opposite relation. These are square-law calculations, not process-model measurements; threshold asymmetry in a real library should be included in its actual VTC.
+
+\section*{Reconciliation and reproduction}
+The supplied handwritten \path{solution.jpg} was read before derivation. It agrees on the input-ramp explanation, the A--C critical path, and the mobility ratio under symmetric thresholds. Its noise-margin markings contain conflicting signs; the explicit definitions above settle the sign without relying on the correction marks. A right shift increases $V_{IH}$ and therefore reduces $NM_H$.
+
+Run \texttt{python verify.py}. It creates \path{clock_paths.csv}, \path{switching_points.csv}, and \path{verification.json}. The analytical calculations require only Python's standard library; the assignment does not require an electrical HSPICE run for these four questions.
+
+\end{document}

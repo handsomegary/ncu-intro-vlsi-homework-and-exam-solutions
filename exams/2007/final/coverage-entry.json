@@ -1,0 +1,18 @@
+{
+  "year": 2007,
+  "exam": "final",
+  "questions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "points": 105,
+  "printed_whole_paper_points": 105,
+  "status": "complete",
+  "scope_label": "Q1–Q7 (105 printed percentage points); duty, device-strength and minimum-timing assumptions qualified",
+  "missing": null
+}

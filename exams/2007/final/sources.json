@@ -1,0 +1,29 @@
+{
+  "year": 2007,
+  "exam": "final",
+  "printed_percentages": [
+    26,
+    10,
+    14,
+    20,
+    15,
+    10,
+    10
+  ],
+  "printed_total": 105,
+  "sources": [],
+  "notes": [
+    "Q4 duty cycle not supplied; evaluation-window bound and symbolic frequency are principal",
+    "Q5 full-expression complement requires explicit negative-output handling",
+    "Q7 separate minimum timing data absent",
+    "Source annotations are ungraded and do not override printed connections"
+  ],
+  "primary_references": [
+    {
+      "title": "NCU Introduction to VLSI Chapter 7: Sequential Circuits",
+      "url": "https://www.ee.ncu.edu.tw/jfli/public_html/VLSI/lecture/ch07.pdf",
+      "slide": 9,
+      "role": "qualitative fixed-feedback latch write-strength condition; original layout remains authoritative"
+    }
+  ]
+}

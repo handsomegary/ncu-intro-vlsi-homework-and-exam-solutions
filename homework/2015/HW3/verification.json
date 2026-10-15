@@ -1,0 +1,53 @@
+{
+  "all_levels_pass": true,
+  "and_same_size_W_um": 0.47,
+  "L_um": 0.18,
+  "and_no_external_load": true,
+  "input_slew_AND_ps": 20,
+  "input_slew_power_ns": 3,
+  "period_power_ns": 100,
+  "max_AND_timestep_difference_ps": 0.08940148199999953,
+  "power_loads_pF": [
+    0.1,
+    0.3,
+    0.5,
+    0.7,
+    1
+  ],
+  "AND_worst_delays": [
+    {
+      "transition": "10->11",
+      "node": "f",
+      "direction": "HL",
+      "step_ps": 1,
+      "delay_ps": 27.827580207
+    },
+    {
+      "transition": "11->10",
+      "node": "f",
+      "direction": "LH",
+      "step_ps": 1,
+      "delay_ps": 49.124512415
+    },
+    {
+      "transition": "11->10",
+      "node": "z",
+      "direction": "HL",
+      "step_ps": 1,
+      "delay_ps": 58.026046666999996
+    },
+    {
+      "transition": "10->11",
+      "node": "z",
+      "direction": "LH",
+      "step_ps": 1,
+      "delay_ps": 49.562943588
+    }
+  ],
+  "Psc_monotonic_decrease": true,
+  "Psc_definition": "VDD * cycle-average max(0,min(LX4(PMOS),LX4(NMOS))); positive intrinsic channel currents, displacement excluded",
+  "corner": "CIC018 TT",
+  "VDD_V": 1.8,
+  "temperature_C": 25,
+  "simulator": "HSPICE S-2021.09 WIN64"
+}

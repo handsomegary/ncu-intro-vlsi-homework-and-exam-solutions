@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "pdf_pages": {
+    "exam.pdf": 4,
+    "solution.pdf": 12
+  },
+  "questions": 7,
+  "original_points": 115,
+  "standalone_inline_vector_tex": true,
+  "built_in_compiler": "success for both documents",
+  "local_pdfLaTeX": "success; references finalized",
+  "render": "all18 PDF pages rendered at120dpi under scratch/render; all exam/solution pages visually reviewed and changed diagrams rechecked",
+  "visual_QA": "no clipping, overlapping terminal labels or omitted figures found",
+  "latex_overfull_count": 0,
+  "latex_nonfatal_warnings": [
+    "one underfull URL paragraph in solution"
+  ],
+  "independent_read_only_audit": "no remaining blockers in Q3,Q4,Q5,Q7 after clock-stroke qualification",
+  "verification_status": "PASS",
+  "verification_method": "ideal MOS switch graphs, exhaustive logic and analytic timing/charge checks; no transistor simulation",
+  "CSV_row_counts": {
+    "q2_MOS_phase_checks.csv": 128,
+    "q2_truth.csv": 16,
+    "q2_waveform.csv": 14,
+    "q3_alternate_repair_checks.csv": 8,
+    "q3_charge_sharing.csv": 6,
+    "q3_majority_checks.csv": 8,
+    "q3_original_phase_failure.csv": 16,
+    "q3_phase_checks.csv": 48,
+    "q3_same_phase_counterexample.csv": 8,
+    "q4_dynamic_dpl_checks.csv": 8,
+    "q4_dynamic_phase_checks.csv": 16,
+    "q4_np_xor_phase_checks.csv": 8,
+    "q5_hysteresis.csv": 2,
+    "q5_sizing.csv": 6,
+    "q6_layout_checks.csv": 8,
+    "q6_physical_MOS.csv": 14,
+    "q7_latch_bounds.csv": 2,
+    "q7_path_timing.csv": 24,
+    "q7_reconvergent_hazard.csv": 7,
+    "q7_truth.csv": 16
+  },
+  "CSV_files": 20,
+  "total_CSV_rows_including_device_tables_and_waveform_events": 363,
+  "known_conditions": [
+    "Q2 numerical duty absent: both6ns adjustable and10ns50percent shown",
+    "Q3 supplied internal node capacitances: totals primary, wire-only alternatives",
+    "Q5 fixed-output-C vs literal feedback-gate-capacitance model",
+    "Q7 latch and gate minimum delays not provided; clock high phase H unspecified: general bounds and explicit50percent conditional ideal-latch limit"
+  ],
+  "scan_ambiguities": [
+    "Q3 middle clock glyph top stroke touches footer gate wire: phi_bar selected transcription; phi alternate explicitly covered; primary static-middle repair works under both"
+  ],
+  "artifact_sha256": {
+    "exam.pdf": "86811b2a35c34c51ab46a3555cb918620876e83ee15098f79dda933602f72726",
+    "exam.tex": "4d4d4d565a06ac369cb7a994c410797d9f103ed042d2ab984ee7b768994ceea0",
+    "solution.pdf": "4b530465400fed9c66dc804a02c9fa2a3696dce861f094b7ff04ca49cf83604b",
+    "solution.tex": "997b155b4f4facc9edc349ddb55bc1cbcdeaa36d947fef62976dc53a9dad2436",
+    "verify_logic_timing.py": "b6503de54158bae64b31a77fc6593c2671410f3fb9e897201a8b6d0dcf941aac"
+  },
+  "artifact_hash_convention": "SHA256 of exact binary bytes; text artifacts normalized to LF, matching Git archive and MANIFEST.json."
+}

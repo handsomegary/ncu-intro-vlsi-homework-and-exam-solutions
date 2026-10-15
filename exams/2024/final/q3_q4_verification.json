@@ -1,0 +1,844 @@
+{
+  "exam": "2024 Introduction to VLSI Final",
+  "method": "Analytical source-derived checks; no process simulation",
+  "Q3": {
+    "source_pages": {
+      "printed": 1,
+      "student_Q3": 5
+    },
+    "source_clocks": {
+      "left_N_dynamic": "phi",
+      "middle_pMOS_and_footer": "bar(phi)",
+      "right_P_dynamic_precharge_evaluation": "bar(phi)"
+    },
+    "middle_clock_scan_limit": "The possible overbar touches the footer gate wire; bar(phi) is the selected transcription. An unbarred phi reading is also analyzed. The static repair is valid for both.",
+    "left_PDN_function": "F=AB+C(A+B)=AB+AC+BC (three-input majority)",
+    "left_dynamic_node": "z=not(F) after evaluation, precharged high",
+    "original_outputs_at_settled_evaluation": "X=F; original middle Ybar is forced high while phi=1, independent of F",
+    "part_a_repair": "Rewire middle pMOS gate from bar(phi) to z AND remove/tie-ON footer; both inverter gates use z",
+    "right_branch": "Keep its pMOS input on raw z; falling input is the correct P-dynamic monotonicity",
+    "repaired_outputs": "X=Ybar=F; both reset low and can only rise during evaluation",
+    "student_part_a": "Student input inverter plus changing middle clock to phi is a valid alternate N-domino repair giving Ybar=not(F); its polarity differs from the selected static repair",
+    "CZ_count_before_part_c": {
+      "drains": [
+        "left precharge pMOS",
+        "top nMOS A",
+        "top nMOS C"
+      ],
+      "gates": [
+        "middle static-inverter nMOS",
+        "middle static-inverter pMOS",
+        "right input pMOS"
+      ],
+      "Cd_per_device_fF": 0.1,
+      "Cg_per_device_fF": 1.0,
+      "CZ_fF": 3.3
+    },
+    "source_internal_node_caps_fF": {
+      "x": 1.3,
+      "y": 1.1
+    },
+    "node_cap_interpretation": "Use the explicitly given x,y NODE capacitances as totals; no extra diffusion capacitance is double-counted",
+    "sharing_initial_conditions": "z initially VDD and the isolated internal node initially zero; switch the enabling input on after precharge, a conservative worst case",
+    "worst_sharing_ratio": "33/46 VDD for ABC=100; ABC=001 gives 3/4 VDD",
+    "part_b_conclusion": "Sharing-only cases remain strictly above VDD/2 and therefore do not falsely switch a following gate under the stipulated model",
+    "student_part_b_error": "ABC=101 has the real C-A path to ground; pooling x+y and using 3.3/(3.3+1.3+1.1) is not a charge-sharing-only test",
+    "optional_additional_wire_cap_reading": {
+      "note": "Only if 1.3/1.1 fF meant EXTRA wire capacitances rather than total node values; source does not say wire",
+      "x_total_including_two_diffusions_fF": 1.5,
+      "y_total_including_three_diffusions_fF": 1.4,
+      "x_sharing_ratio": 0.6875,
+      "y_sharing_ratio": 0.702127659574468,
+      "conclusion": "Still above VDD/2; qualitative answer unchanged"
+    },
+    "part_c_cause": "Leakage eventually changes floating z-high and X-low evaluation states when the clock is stopped",
+    "part_c_feedback_keepers": {
+      "z_high_keeper": {
+        "device": "weak pMOS",
+        "drain": "z",
+        "source_body": "VDD",
+        "gate": "Ybar",
+        "feedback": "Ybar=not(z) from repaired middle static inverter"
+      },
+      "X_low_keeper": {
+        "device": "weak nMOS",
+        "drain": "X",
+        "source_body": "GND",
+        "gate": "XB",
+        "feedback": "XB=not(X) from an added static inverter"
+      },
+      "Ybar": "No keeper needed after both pMOS gate rewiring and footer removal; output statically driven"
+    },
+    "keeper_requirements": "Overcome leakage but remain weaker than evaluation networks; no numeric sizing or hold-time is determined by the paper",
+    "hold_scope": "Correct logic under a prolonged phase with stable valid inputs; dynamic primary inputs must still obey evaluation monotonicity",
+    "student_part_c": "Weak rail keepers are a useful idea; feedback gating avoids permanent contention and both dynamic polarities require restoration",
+    "part_c_new_caps": "Added keeper drains/feedback gates alter capacitance; part(b) numbers belong to the repair before keepers",
+    "truth_and_sharing_rows": [
+      {
+        "ABC": "000",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "majority_F_AB_AC_BC": 0,
+        "z_component": "z",
+        "ground_path": false,
+        "internal_nodes_connected_to_z": "",
+        "case": "no charge sharing",
+        "CZ_fF": 3.3,
+        "isolated_added_cap_fF": 0.0,
+        "Vz_over_VDD_under_zero_initial_internal_charge": 1.0,
+        "threshold_half_VDD_crossed_erroneously": false
+      },
+      {
+        "ABC": "001",
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "majority_F_AB_AC_BC": 0,
+        "z_component": "y|z",
+        "ground_path": false,
+        "internal_nodes_connected_to_z": "y",
+        "case": "isolated charge sharing",
+        "CZ_fF": 3.3,
+        "isolated_added_cap_fF": 1.1,
+        "Vz_over_VDD_under_zero_initial_internal_charge": 0.75,
+        "threshold_half_VDD_crossed_erroneously": false
+      },
+      {
+        "ABC": "010",
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "majority_F_AB_AC_BC": 0,
+        "z_component": "z",
+        "ground_path": false,
+        "internal_nodes_connected_to_z": "",
+        "case": "no charge sharing",
+        "CZ_fF": 3.3,
+        "isolated_added_cap_fF": 0.0,
+        "Vz_over_VDD_under_zero_initial_internal_charge": 1.0,
+        "threshold_half_VDD_crossed_erroneously": false
+      },
+      {
+        "ABC": "011",
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "majority_F_AB_AC_BC": 1,
+        "z_component": "GND|w|x|y|z",
+        "ground_path": true,
+        "internal_nodes_connected_to_z": "x|y",
+        "case": "legitimate full pull-down",
+        "CZ_fF": 3.3,
+        "isolated_added_cap_fF": 0.0,
+        "Vz_over_VDD_under_zero_initial_internal_charge": 0.0,
+        "threshold_half_VDD_crossed_erroneously": false
+      },
+      {
+        "ABC": "100",
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "majority_F_AB_AC_BC": 0,
+        "z_component": "x|z",
+        "ground_path": false,
+        "internal_nodes_connected_to_z": "x",
+        "case": "isolated charge sharing",
+        "CZ_fF": 3.3,
+        "isolated_added_cap_fF": 1.3,
+        "Vz_over_VDD_under_zero_initial_internal_charge": 0.717391304347826,
+        "threshold_half_VDD_crossed_erroneously": false
+      },
+      {
+        "ABC": "101",
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "majority_F_AB_AC_BC": 1,
+        "z_component": "GND|w|x|y|z",
+        "ground_path": true,
+        "internal_nodes_connected_to_z": "x|y",
+        "case": "legitimate full pull-down",
+        "CZ_fF": 3.3,
+        "isolated_added_cap_fF": 0.0,
+        "Vz_over_VDD_under_zero_initial_internal_charge": 0.0,
+        "threshold_half_VDD_crossed_erroneously": false
+      },
+      {
+        "ABC": "110",
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "majority_F_AB_AC_BC": 1,
+        "z_component": "GND|w|x|y|z",
+        "ground_path": true,
+        "internal_nodes_connected_to_z": "x|y",
+        "case": "legitimate full pull-down",
+        "CZ_fF": 3.3,
+        "isolated_added_cap_fF": 0.0,
+        "Vz_over_VDD_under_zero_initial_internal_charge": 0.0,
+        "threshold_half_VDD_crossed_erroneously": false
+      },
+      {
+        "ABC": "111",
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "majority_F_AB_AC_BC": 1,
+        "z_component": "GND|w|x|y|z",
+        "ground_path": true,
+        "internal_nodes_connected_to_z": "x|y",
+        "case": "legitimate full pull-down",
+        "CZ_fF": 3.3,
+        "isolated_added_cap_fF": 0.0,
+        "Vz_over_VDD_under_zero_initial_internal_charge": 0.0,
+        "threshold_half_VDD_crossed_erroneously": false
+      }
+    ],
+    "possible_repeat_cycle_trace": [
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "000",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "z and bar_phi pull down"
+      },
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "000",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 1,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "bar_phi precharges high"
+      },
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "001",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "z and bar_phi pull down"
+      },
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "001",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 1,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "bar_phi precharges high"
+      },
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "010",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "z and bar_phi pull down"
+      },
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "010",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 1,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "bar_phi precharges high"
+      },
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "011",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "z and bar_phi pull down"
+      },
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "011",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 0,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 1,
+        "right_X": 1,
+        "original_middle_condition": "bar_phi precharges high"
+      },
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "100",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "z and bar_phi pull down"
+      },
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "100",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 1,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "bar_phi precharges high"
+      },
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "101",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "z and bar_phi pull down"
+      },
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "101",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 0,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 1,
+        "right_X": 1,
+        "original_middle_condition": "bar_phi precharges high"
+      },
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "110",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "z and bar_phi pull down"
+      },
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "110",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 0,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 1,
+        "right_X": 1,
+        "original_middle_condition": "bar_phi precharges high"
+      },
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "111",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "z and bar_phi pull down"
+      },
+      {
+        "clock_reading": "bar(phi)",
+        "ABC": "111",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 0,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 1,
+        "right_X": 1,
+        "original_middle_condition": "bar_phi precharges high"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "000",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "precharge pMOS on"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "000",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 1,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "initial z=1 discharges Ybar; pMOS remains off"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "001",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "precharge pMOS on"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "001",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 1,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "initial z=1 discharges Ybar; pMOS remains off"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "010",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "precharge pMOS on"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "010",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 1,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "initial z=1 discharges Ybar; pMOS remains off"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "011",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "precharge pMOS on"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "011",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 0,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 1,
+        "right_X": 1,
+        "original_middle_condition": "initial z=1 discharges Ybar; pMOS remains off"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "100",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "precharge pMOS on"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "100",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 1,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "initial z=1 discharges Ybar; pMOS remains off"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "101",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "precharge pMOS on"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "101",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 0,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 1,
+        "right_X": 1,
+        "original_middle_condition": "initial z=1 discharges Ybar; pMOS remains off"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "110",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "precharge pMOS on"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "110",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 0,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 1,
+        "right_X": 1,
+        "original_middle_condition": "initial z=1 discharges Ybar; pMOS remains off"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "111",
+        "event": "precharge",
+        "phi": 0,
+        "bar_phi": 1,
+        "z": 1,
+        "original_middle_Ybar": 1,
+        "static_repair_Ybar": 0,
+        "right_X": 0,
+        "original_middle_condition": "precharge pMOS on"
+      },
+      {
+        "clock_reading": "phi (possible early-discharge order)",
+        "ABC": "111",
+        "event": "evaluation",
+        "phi": 1,
+        "bar_phi": 0,
+        "z": 0,
+        "original_middle_Ybar": 0,
+        "static_repair_Ybar": 1,
+        "right_X": 1,
+        "original_middle_condition": "initial z=1 discharges Ybar; pMOS remains off"
+      }
+    ]
+  },
+  "Q4": {
+    "source_pages": {
+      "printed": [
+        1,
+        2
+      ],
+      "student_Q4": [
+        5,
+        6
+      ]
+    },
+    "source_values": {
+      "VDD_V": 1.5,
+      "Vtn_V": 0.2,
+      "abs_Vtp_V": 0.2,
+      "mu_n_over_mu_p": 2,
+      "N1_width_nm": 160.0,
+      "common_length_nm": 40.0,
+      "R_definition": "N1 ON resistance",
+      "C_definition": "N1 gate capacitance",
+      "specified_tr_tf_over_RC": 3,
+      "drain_parasitics": "explicitly ignored"
+    },
+    "threshold_targets_from_original_waveform": {
+      "falling_input_output_rise_at_t2_VT_minus_V": 0.5,
+      "rising_input_output_fall_at_t4_VT_plus_V": 1.0,
+      "input_noise_lobes_between_thresholds": "do not switch output"
+    },
+    "threshold_equations": {
+      "VT_plus": "Vtn+VDD*RN1/(RN1+RN3)",
+      "VT_minus": "VDD*RP3/(RP1+RP3)-abs(Vtp)"
+    },
+    "derived_ratios": {
+      "RN3_over_RN1": "7/8",
+      "N3_width_over_N1": "8/7",
+      "RP1_over_RP3": "8/7",
+      "P3_width_over_P1": "8/7"
+    },
+    "classroom_model": {
+      "convention": "STIPULATE output load C, omit feedback gate-load scaling in delay",
+      "widths_exact_nm": {
+        "N1": "160",
+        "N2": "80",
+        "N3": "1280/7",
+        "P1": "320",
+        "P2": "160",
+        "P3": "2560/7"
+      },
+      "widths_nm": {
+        "N1": 160.0,
+        "N2": 80.0,
+        "N3": 182.85714285714286,
+        "P1": 320.0,
+        "P2": 160.0,
+        "P3": 365.7142857142857
+      },
+      "length_nm_all": 40,
+      "pull_up_down_resistance_over_R": 3,
+      "tr_tf_over_RC": 3,
+      "status": "Intended resistance-only answer, with the extra output-load convention made explicit"
+    },
+    "literal_gate_cap_model": {
+      "output_gate_loads": [
+        "N3 gate",
+        "P3 gate"
+      ],
+      "output_cap_over_C": "24/7",
+      "tr_tf_over_RC_for_classroom_widths": "72/7",
+      "target_3_RC_possible": false,
+      "a_definition": "a=WP3/WN1>0",
+      "c_definition": "c=Cout/C=8/7+a",
+      "rise_strict_lower_bound_over_RC": "16(8/7+a)/(7a)",
+      "fall_strict_lower_bound_over_RC": "8/7+a",
+      "optimal_a_for_joint_infimum": "16/7",
+      "joint_delay_infimum_over_RC": "24/7",
+      "necessary_fall_condition_for_target": "a<13/7",
+      "necessary_rise_condition_for_target": "a>128/35",
+      "reason_impossible": "The necessary intervals do not overlap; even ideal infinite N2/P2 widths cannot reduce joint worst delay below 24/7 RC"
+    },
+    "student_a": "Rounded widths agree with the classroom resistance choice; the graded 3RC delay does not include actual N3/P3 gate loading",
+    "switches_on_qualitative": "Stronger parallel feedback raises VT+, lowers VT-, widens hysteresis and increases noise tolerance",
+    "source_open_switch_caveat": "The drawing disconnects added MOS gates when sw is open and supplies no off-bias clamp. Floating gate charge is not specified; the intended comparison assumes P4/N4 disabled when open",
+    "switches_on_numeric_example_assumption": "Ideal switches, N4=N3 and P4=P3; these widths are NOT supplied by part(b)",
+    "switches_on_equal_device_results": {
+      "VT_plus_V": 1.2434782608695651,
+      "VT_minus_V": 0.2565217391304348,
+      "hysteresis_width_V": 0.9869565217391304,
+      "auxiliary_current_increase_ratio": 1.3043478260869565
+    },
+    "short_circuit_current_equations": {
+      "before_N_path": "VDD/(RN1+RN3)",
+      "after_equal_added_N_path": "VDD/(RN1+RN3/2)",
+      "before_P_path": "VDD/(RP1+RP3)",
+      "after_equal_added_P_path": "VDD/(RP1+RP3/2)"
+    },
+    "short_circuit_scope": "The auxiliary VDD-to-ground feedback paths carry more current when enabled; this supports the intended increased short-circuit-power answer for slow transitions. Exact total cycle energy/average power is not determined without device/slew/duty information and the newly added gate loads",
+    "student_b_correction": "The denominator after adding a parallel device must contain PLUS RN3/2, not a subtraction. Equal extra widths must be labeled an assumption; use exact thresholds1.2434782609/.2565217391 and hysteresis.9869565217 only for that example",
+    "delay_model_rows": [
+      {
+        "model": "classroom stipulated fixed output load C",
+        "output_cap_over_C": 1.0,
+        "pull_up_resistance_over_R": 3.0,
+        "pull_down_resistance_over_R": 3.0,
+        "tr_over_RC": 3.0,
+        "tf_over_RC": 3.0,
+        "meets_3_RC": true
+      },
+      {
+        "model": "literal output feedback gate capacitances",
+        "output_cap_over_C": 3.4285714285714284,
+        "pull_up_resistance_over_R": 3.0,
+        "pull_down_resistance_over_R": 3.0,
+        "tr_over_RC": 10.285714285714286,
+        "tf_over_RC": 10.285714285714286,
+        "meets_3_RC": false
+      }
+    ],
+    "width_rows": [
+      {
+        "transistor": "N1",
+        "exact_width_nm": "160",
+        "width_nm": 160.0,
+        "common_length_nm": 40.0,
+        "resistance_over_R": 1.0,
+        "gate_capacitance_over_C_N1": 1.0
+      },
+      {
+        "transistor": "N2",
+        "exact_width_nm": "80",
+        "width_nm": 80.0,
+        "common_length_nm": 40.0,
+        "resistance_over_R": 2.0,
+        "gate_capacitance_over_C_N1": 0.5
+      },
+      {
+        "transistor": "N3",
+        "exact_width_nm": "1280/7",
+        "width_nm": 182.85714285714286,
+        "common_length_nm": 40.0,
+        "resistance_over_R": 0.875,
+        "gate_capacitance_over_C_N1": 1.1428571428571428
+      },
+      {
+        "transistor": "P1",
+        "exact_width_nm": "320",
+        "width_nm": 320.0,
+        "common_length_nm": 40.0,
+        "resistance_over_R": 1.0,
+        "gate_capacitance_over_C_N1": 2.0
+      },
+      {
+        "transistor": "P2",
+        "exact_width_nm": "160",
+        "width_nm": 160.0,
+        "common_length_nm": 40.0,
+        "resistance_over_R": 2.0,
+        "gate_capacitance_over_C_N1": 1.0
+      },
+      {
+        "transistor": "P3",
+        "exact_width_nm": "2560/7",
+        "width_nm": 365.7142857142857,
+        "common_length_nm": 40.0,
+        "resistance_over_R": 0.875,
+        "gate_capacitance_over_C_N1": 2.2857142857142856
+      }
+    ],
+    "joint_lower_bound_rows": [
+      {
+        "P3_width_relative_N1": 0.5,
+        "P3_width_relative_N1_exact": "1/2",
+        "output_cap_over_C": 1.6428571428571428,
+        "fall_lower_bound_over_RC": 1.6428571428571428,
+        "rise_lower_bound_over_RC": 7.510204081632653,
+        "worst_lower_bound_over_RC": 7.510204081632653,
+        "note": "Infimum as N2/P2 widths go to infinity; finite devices are slower"
+      },
+      {
+        "P3_width_relative_N1": 1.0,
+        "P3_width_relative_N1_exact": "1",
+        "output_cap_over_C": 2.142857142857143,
+        "fall_lower_bound_over_RC": 2.142857142857143,
+        "rise_lower_bound_over_RC": 4.8979591836734695,
+        "worst_lower_bound_over_RC": 4.8979591836734695,
+        "note": "Infimum as N2/P2 widths go to infinity; finite devices are slower"
+      },
+      {
+        "P3_width_relative_N1": 1.8571428571428572,
+        "P3_width_relative_N1_exact": "13/7",
+        "output_cap_over_C": 3.0,
+        "fall_lower_bound_over_RC": 3.0,
+        "rise_lower_bound_over_RC": 3.6923076923076925,
+        "worst_lower_bound_over_RC": 3.6923076923076925,
+        "note": "Infimum as N2/P2 widths go to infinity; finite devices are slower"
+      },
+      {
+        "P3_width_relative_N1": 2.2857142857142856,
+        "P3_width_relative_N1_exact": "16/7",
+        "output_cap_over_C": 3.4285714285714284,
+        "fall_lower_bound_over_RC": 3.4285714285714284,
+        "rise_lower_bound_over_RC": 3.4285714285714284,
+        "worst_lower_bound_over_RC": 3.4285714285714284,
+        "note": "Infimum as N2/P2 widths go to infinity; finite devices are slower"
+      },
+      {
+        "P3_width_relative_N1": 3.0,
+        "P3_width_relative_N1_exact": "3",
+        "output_cap_over_C": 4.142857142857143,
+        "fall_lower_bound_over_RC": 4.142857142857143,
+        "rise_lower_bound_over_RC": 3.1564625850340136,
+        "worst_lower_bound_over_RC": 4.142857142857143,
+        "note": "Infimum as N2/P2 widths go to infinity; finite devices are slower"
+      },
+      {
+        "P3_width_relative_N1": 3.657142857142857,
+        "P3_width_relative_N1_exact": "128/35",
+        "output_cap_over_C": 4.8,
+        "fall_lower_bound_over_RC": 4.8,
+        "rise_lower_bound_over_RC": 3.0,
+        "worst_lower_bound_over_RC": 4.8,
+        "note": "Infimum as N2/P2 widths go to infinity; finite devices are slower"
+      },
+      {
+        "P3_width_relative_N1": 5.0,
+        "P3_width_relative_N1_exact": "5",
+        "output_cap_over_C": 6.142857142857143,
+        "fall_lower_bound_over_RC": 6.142857142857143,
+        "rise_lower_bound_over_RC": 2.8081632653061224,
+        "worst_lower_bound_over_RC": 6.142857142857143,
+        "note": "Infimum as N2/P2 widths go to infinity; finite devices are slower"
+      }
+    ],
+    "switch_rows": [
+      {
+        "case": "switches_off",
+        "added_feedback_conductance_ratio": 0.0,
+        "effective_N3_resistance_over_R": 0.875,
+        "effective_P3_resistance_over_R": 0.875,
+        "VT_plus_V": 1.0,
+        "VT_minus_V": 0.5,
+        "hysteresis_width_V": 0.5,
+        "N_aux_current_over_VDD_over_R": 0.5333333333333333,
+        "P_aux_current_over_VDD_over_R": 0.5333333333333333,
+        "extra_widths_assumption": "switches open AND added devices assumed disabled"
+      },
+      {
+        "case": "switches_on_equal_added_feedback_devices",
+        "added_feedback_conductance_ratio": 1.0,
+        "effective_N3_resistance_over_R": 0.4375,
+        "effective_P3_resistance_over_R": 0.4375,
+        "VT_plus_V": 1.2434782608695651,
+        "VT_minus_V": 0.2565217391304348,
+        "hysteresis_width_V": 0.9869565217391304,
+        "N_aux_current_over_VDD_over_R": 0.6956521739130435,
+        "P_aux_current_over_VDD_over_R": 0.6956521739130435,
+        "extra_widths_assumption": "N4=N3 and P4=P3"
+      }
+    ]
+  }
+}

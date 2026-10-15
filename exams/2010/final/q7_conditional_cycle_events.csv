@@ -1,0 +1,9 @@
+old_D,new_D,CLK,master_m,Q,condition
+0,0,1,1,0,slave_closed
+0,0,0,1,0,falling_edge_capture_after_settle
+0,1,1,0,0,slave_closed
+0,1,0,0,1,falling_edge_capture_after_settle
+1,0,1,1,1,slave_closed
+1,0,0,1,0,falling_edge_capture_after_settle
+1,1,1,0,1,slave_closed
+1,1,0,0,1,falling_edge_capture_after_settle

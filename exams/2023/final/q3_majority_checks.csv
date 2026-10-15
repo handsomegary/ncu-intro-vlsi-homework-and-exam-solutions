@@ -1,0 +1,9 @@
+A,B,C,d,q,X,Ybar,d_discharge_path,passed
+0,0,0,1,0,0,0,,True
+0,0,1,1,0,0,0,,True
+0,1,0,1,0,0,0,,True
+0,1,1,0,1,1,1,C1;B2;FOOT,True
+1,0,0,1,0,0,0,,True
+1,0,1,0,1,1,1,C1;A2;FOOT,True
+1,1,0,0,1,1,1,A1;B1;FOOT,True
+1,1,1,0,1,1,1,A1;B1;FOOT,True

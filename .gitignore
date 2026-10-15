@@ -1,0 +1,32 @@
+# Local process models and license material must stay on their owner machine.
+cic018.l
+models/*.l
+*.lic
+synopsys_lic.dat
+
+# Rebuild products and temporary simulator state.
+__pycache__/
+*.pyc
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.ic0
+*.pa0
+*.st0
+*.tr0
+*.sw0
+*.ac0
+*.lis
+*.console.log
+*.dp0
+*.mt0
+*.printtr0
+run_artifacts/
+.simulation/
+.run_testbench.sp
+.DS_Store
+

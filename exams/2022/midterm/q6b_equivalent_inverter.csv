@@ -1,0 +1,4 @@
+XYZ,F,active_path,path_resistance_over_own_type_R,equivalent_width_over_W
+101,0,nMOS X+Z in series,2,0.5
+100,1,pMOS Y+Z in series,2,0.5
+101,0,nMOS X+Z in series,2,0.5

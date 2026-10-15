@@ -1,0 +1,34 @@
+{
+  "all_checks_passed": true,
+  "Q2": {
+    "function": "NOT(A*(B+C)+D*E)",
+    "domino_core_MOS": 9,
+    "domino_complete_MOS": 19,
+    "differential_core_MOS": 12,
+    "differential_complete_MOS": 22,
+    "static_MOS": 10,
+    "truth_states": 32,
+    "differential_candidates": 128,
+    "domino_phases": 64
+  },
+  "Q3": {
+    "register": "positive-edge noninverting dynamic",
+    "physical_MOS": 12,
+    "phase_histories": 8
+  },
+  "Q7a": {
+    "physical_MOS": 8,
+    "topology": "2 TG+2 INV; first TG pCbar/nC, secondTG pC/nCbar; INVX->v,INVu->X",
+    "positive_level_inverting_latch": true,
+    "candidates": 32,
+    "source_gap_evidence": "190 native white pixels separate dataY metal from independent clockC strip; see q7a-gap-evidence.json"
+  },
+  "Q7b": {
+    "physical_MOS": 12,
+    "functional_MOS": 6,
+    "OFF_MOS": 6,
+    "function": "Z=NOT(a*b*c)",
+    "truth_states": 8
+  },
+  "scope": "source-derived ideal Boolean/MOS switch checks, no process simulation or DRC"
+}

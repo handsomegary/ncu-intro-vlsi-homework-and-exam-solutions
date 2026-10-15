@@ -1,0 +1,8 @@
+{
+  "all_checks_passed": true,
+  "reports": [
+    "logic-layout-verification.json",
+    "numerical-verification.json"
+  ],
+  "scope": "source-derived analytical models only"
+}

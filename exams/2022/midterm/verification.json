@@ -1,0 +1,65 @@
+{
+  "question_points": [
+    35,
+    20,
+    10,
+    15,
+    10,
+    10
+  ],
+  "point_total": 100,
+  "Q2": {
+    "mux_tree_TGs": 14,
+    "transistors_in_TGs": 28,
+    "select_complement_inverters": 3,
+    "total_including_select_generators": 34,
+    "index_convention": "4s0+2s1+s2",
+    "unbuffered_Elmore": "R_TG*Cint*N(N+1)/2 + N*R_TG*CL",
+    "Shannon_function": "F=not(B)*(C+D)+B*(A+D)"
+  },
+  "Q3": {
+    "source_Cg_fF": 1,
+    "source_CL_pF": 2.98,
+    "H": 2980.0,
+    "inverters": 8,
+    "index_range": "0 through7",
+    "optimal_equal_ratio_exact": 2.718172616714748,
+    "source_rounded_e": 2.7,
+    "unmodified_even_chain_both_direction_delays_over_R_Cg": 32.61807140057699,
+    "balanced_modified_both_direction_delays_over_R_Cg": 31.258985092219607,
+    "modified_formula": "[(3N-1)/2]*f R Cg",
+    "modified_rounded_e_estimate_over_R_Cg": 31.05,
+    "modified_first_input_cap_over_Cg": 1.5,
+    "constraint_note": "Doubling PMOS while NMOS fixed necessarily raises A output load from Cg to1.5Cg; part(b) cannot also retain the old input load without violating fixed NMOS"
+  },
+  "Q4": {
+    "source_Vtn_V": 0.4,
+    "source_R_N1_N2_N3": [
+      1,
+      2,
+      1
+    ],
+    "RC_divider_VX_V": 0.4,
+    "Vin_switch_onset_V": 0.8,
+    "open_t1_t2_regions": {
+      "N1": "saturation",
+      "N2": "saturation",
+      "N3": "cutoff"
+    },
+    "model": "Stated ON-resistance approximation, not exact device transient"
+  },
+  "Q5": {
+    "function": "A XOR B",
+    "weakness": "Finite pass/input-rail drive depends on input drivers; no independent fixed-rail restoring stage",
+    "not_claimed": "No driving ability whatsoever; all ideal static input states have correct full-rail paths"
+  },
+  "Q6": {
+    "a_count_including_output_inverter": 10,
+    "b_equivalent_n_width": "W/2",
+    "b_equivalent_p_width": "W/2",
+    "b_rise_delay": "2Rp*Co",
+    "b_fall_delay": "2Rn*Co",
+    "source_mobility_ratio_for_Q6": "unspecified; Rp/Rn kept symbolic"
+  },
+  "method": "Source-derived graph/truth and analytical RC checks; no SPICE simulation"
+}

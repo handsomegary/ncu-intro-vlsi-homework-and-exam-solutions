@@ -1,0 +1,7 @@
+device,type,left_channel,right_channel,gate
+P1,p,VDD,up,Vin
+P2,p,up,Vout,Vin
+P3,p,up,VSS,Vout
+N2,n,Vout,down,Vin
+N1,n,down,VSS,Vin
+N3,n,VDD,down,Vout

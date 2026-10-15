@@ -1,0 +1,145 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=21mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,frame=single}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\newcommand{\mos}[4]{\begin{scope}[shift={(#1,#2)}]
+\draw (0,.24)--(0,-.24);
+\draw (0,.20)--(.25,.20)--(.25,.5);
+\draw (0,-.20)--(.25,-.20)--(.25,-.5);
+\draw (-.16,.23)--(-.16,-.23);
+\ifnum#4=1\draw (-.26,0) circle (.06);\draw (-.75,0)--(-.32,0);\else\draw (-.75,0)--(-.16,0);\fi
+\node[anchor=east,font=\small] at (-.76,0) {$#3$};
+\end{scope}}
+\newcommand{\ground}[2]{\draw (#1,#2)--(#1,{#2-.12});\draw ({#1-.17},{#2-.12})--({#1+.17},{#2-.12});\draw ({#1-.11},{#2-.20})--({#1+.11},{#2-.20});}
+\newcommand{\rail}[3]{\draw (#1,#2)--(#1,{#2+.15});\node[above,font=\small] at (#1,{#2+.15}) {$#3$};}
+\newcommand{\outputnode}[3]{\fill (#1,#2) circle (.04);\draw (#1,#2)--({#1+.7},#2) node[right] {$#3$};}
+\begin{document}
+\begin{center}{\Large\bfseries Introduction to VLSI Design, 2020}\par{\large Homework 1: complete worked solution}\end{center}
+The Boolean expressions below were checked against the rendered assignment. In Q3(a), the overbar covers the entire expression; losing that bar changes the required circuit. All body terminals are tied to their normal rails unless the ideal theory explicitly neglects body effect.
+
+\section*{1. MOS theory}
+Let $u$ be the node between the two NMOS devices and $v$ the node between the two PMOS devices. $M_1$ is nearest ground, $M_2$ nearest the output; $M_4$ is nearest $V_{DD}$, $M_3$ nearest the output. All gates connect to $V_{in}$.
+\begin{center}\begin{tikzpicture}[scale=.85]
+\mos{0}{0}{V_{in}}{0}\mos{0}{1}{V_{in}}{0}\mos{0}{2.4}{V_{in}}{1}\mos{0}{3.4}{V_{in}}{1}
+\draw (.25,1.5)--(.25,1.9);\outputnode{.25}{1.7}{V_{out}}
+\rail{.25}{3.9}{V_{DD}}\ground{.25}{-.5}
+\node[right,font=\small] at (.35,0){$M_1$};\node[right,font=\small] at (.35,1){$M_2$};
+\node[right,font=\small] at (.35,2.4){$M_3$};\node[right,font=\small] at (.35,3.4){$M_4$};
+\node[left] at (-.05,.5){$u$};\node[left] at (-.05,2.9){$v$};
+\node at (3,1.7){$\Longrightarrow$};
+\mos{5}{.6}{V_{in}}{0}\mos{5}{2.8}{V_{in}}{1}
+\draw (5.25,1.1)--(5.25,2.3);\outputnode{5.25}{1.7}{V_{out}}
+\rail{5.25}{3.3}{V_{DD}}\ground{5.25}{.1}
+\node[right,font=\small] at (5.45,.6){$N_1$};\node[right,font=\small] at (5.45,2.8){$N_2$};
+\end{tikzpicture}\end{center}
+
+\textbf{(a) $M_1$ and $M_4$ cannot be saturated while their corresponding series paths carry nonzero current.}
+For $M_1$ to saturate, $u\ge V_{in}-V_{tn}$. Then
+\[
+ V_{GS,2}=V_{in}-u\le V_{tn},
+\]
+so $M_2$ is off (at equality, its ideal overdrive is zero). This contradicts nonzero series current. Thus conducting $M_1$ must be in the linear region. Likewise, saturation of $M_4$ requires
+\[
+ V_{DD}-v\ge V_{DD}-V_{in}-|V_{tp}| \quad\Longrightarrow\quad v\le V_{in}+|V_{tp}|.
+\]
+Then $V_{SG,3}=v-V_{in}\le |V_{tp}|$, so $M_3$ is off. Conducting $M_4$ must therefore be linear. $M_2$ and $M_3$, the devices adjacent to the output, can saturate. A cutoff device is not called a conducting saturated device here.
+
+\textbf{(b) Equivalent device sizes.} Two equal, common-gate series devices add their channel lengths in the ideal long-channel, body-effect-free model:
+\[
+ \boxed{(W/L)_{N_1}=(W/L)_{N_2}=\tfrac12(W/L).}
+\]
+For example, keep $W$ and use $2L$, or keep $L$ and use $W/2$. In the linear region the two voltage drops sum and yield half the single-device conductance; the same effective $\beta/2$ follows by eliminating the internal node in the square-law saturation equations. This is the ideal static characteristic equivalence intended by the problem. Internal diffusion capacitances and short-channel/body effects prevent a claim of identical physical transient behavior.
+
+\newpage
+\section*{2. Multiplexer-based design}
+Use $\operatorname{MUX}(s,d_0,d_1)=\bar{s}d_0+sd_1$. Shannon expansion on $x_1$ gives
+\[
+ f=\bar{x}_1(x_2x_3)+x_1(\bar{x}_2x_3+x_2\bar{x}_3).
+\]
+The following four 2-to-1 multiplexers implement the function using only true inputs and constants:
+\begin{align*}
+ n_3&=\operatorname{MUX}(x_3,1,0)=\bar{x}_3,\\
+ g_0&=\operatorname{MUX}(x_2,0,x_3)=x_2x_3,\\
+ g_1&=\operatorname{MUX}(x_2,x_3,n_3)=x_2\oplus x_3,\\
+ f&=\operatorname{MUX}(x_1,g_0,g_1).
+\end{align*}
+If $\bar{x}_3$ is already available, only the final three MUXes are required.
+\begin{center}\begin{tikzpicture}[x=1cm,y=1cm]
+\draw (0,2) rectangle (1.1,3.2);\node at (.55,2.6){MUX};
+\draw (-.6,2.3)--(0,2.3) node[pos=0,left]{$1$};\draw (-.6,2.9)--(0,2.9) node[pos=0,left]{$0$};
+\draw (.55,1.5)--(.55,2) node[pos=0,below]{$x_3$};
+\draw (2.5,2) rectangle (3.6,3.2);\node at (3.05,2.6){MUX};
+\draw (1.1,2.6)--(1.8,2.6)--(1.8,2.9)--(2.5,2.9) node[midway,above]{$n_3$};
+\draw (2,2.3)--(2.5,2.3) node[pos=0,left]{$x_3$};\draw (3.05,1.5)--(3.05,2) node[pos=0,below]{$x_2$};
+\draw (2.5,-.3) rectangle (3.6,.9);\node at (3.05,.3){MUX};
+\draw (2,0)--(2.5,0) node[pos=0,left]{$0$};\draw (2,.6)--(2.5,.6) node[pos=0,left]{$x_3$};
+\draw (3.05,-.8)--(3.05,-.3) node[pos=0,below]{$x_2$};
+\draw (5, .8) rectangle (6.1,2);\node at (5.55,1.4){MUX};
+\draw (3.6,2.6)--(4.3,2.6)--(4.3,1.7)--(5,1.7) node[pos=.2,above]{$g_1$};
+\draw (3.6,.3)--(4.3,.3)--(4.3,1.1)--(5,1.1) node[pos=.2,below]{$g_0$};
+\draw (5.55,.3)--(5.55,.8) node[pos=0,below]{$x_1$};\draw (6.1,1.4)--(6.7,1.4) node[right]{$f$};
+\node[font=\small] at (.55,3.5){$d_1$ upper, $d_0$ lower};
+\end{tikzpicture}\end{center}
+\begin{center}\begin{tabular}{ccc|c} \toprule $x_1$&$x_2$&$x_3$&$f$\\\midrule
+0&0&0&0\\0&0&1&0\\0&1&0&0\\0&1&1&1\\1&0&0&0\\1&0&1&1\\1&1&0&1\\1&1&1&0\\\bottomrule
+\end{tabular}\end{center}
+The output is 1 exactly when two of the three inputs are 1.
+
+\newpage
+\section*{3(a). Static CMOS: $f=\overline{w(x+y)+yz}$}
+The pull-down network (PDN) implements $G=w(x+y)+yz$. Its two parallel paths are $n_w$ in series with $(n_x\parallel n_y)$, and $n_y$ in series with $n_z$. The complementary pull-up network (PUN) is
+\[
+ \bar{G}=[\bar{w}+\bar{x}\bar{y}][\bar{y}+\bar{z}].
+\]
+Thus use $p_w\parallel(p_x\text{ series }p_y)$, in series with $p_y\parallel p_z$. All gate labels below are true inputs; PMOS devices turn on when their labeled input is 0. Repeated $y$ labels denote distinct transistors. There are 5 PMOS and 5 NMOS devices.
+\begin{center}\begin{tikzpicture}[scale=.93]
+% PUN top parallel group
+\mos{0}{4.1}{w}{1}\mos{2}{4.6}{x}{1}\mos{2}{3.6}{y}{1}
+\draw (.25,4.6)--(.25,5.1)--(2.25,5.1);\draw (.25,3.6)--(.25,3.1)--(2.25,3.1);
+\mos{0}{2.6}{y}{1}\mos{2}{2.6}{z}{1}
+\draw (.25,2.1)--(4.25,2.1);\rail{1.25}{5.1}{V_{DD}}\outputnode{4.25}{2.1}{f}
+% PDN left branch W then X/Y
+\mos{0}{1.6}{w}{0}\mos{0}{.6}{x}{0}\mos{2}{.6}{y}{0}
+\draw (.25,1.1)--(2.25,1.1);\draw (.25,.1)--(.25,-.25)--(4.25,-.25);
+\draw (2.25,.1)--(2.25,-.25);
+% PDN right branch Y then Z
+\mos{4}{1.6}{y}{0}\mos{4}{.6}{z}{0}\draw (4.25,.1)--(4.25,-.25);
+\ground{2.25}{-.25}
+\node[right,font=\small] at (4.8,4.2){PUN};\node[right,font=\small] at (4.8,.8){PDN};
+\end{tikzpicture}\end{center}
+Series connections implement AND in a conducting network and parallel connections implement OR. De Morgan's law makes the networks mutually exclusive for every binary input combination: if $G=1$, PDN conducts and PUN does not; if $G=0$, PUN conducts and PDN does not. No input inverter is needed.
+
+\newpage
+\section*{3(b). Static CMOS: $f=\bar{x}\bar{y}+\bar{x}\bar{z}+\bar{y}\bar{z}$}
+Only true literals are supplied, so form the complement of the desired function for the NMOS gates:
+\[
+ \bar f=(x+y)(x+z)(y+z)=xy+xz+yz.
+\]
+Use three series stages, each containing two parallel NMOS devices, for the PDN. The dual PUN has three parallel branches, each containing two series PMOS devices. It contains 6 PMOS and 6 NMOS devices and needs no external complemented inputs.
+\begin{center}\begin{tikzpicture}[scale=.93]
+\mos{0}{4}{x}{1}\mos{0}{3}{y}{1}
+\mos{2}{4}{x}{1}\mos{2}{3}{z}{1}
+\mos{4}{4}{y}{1}\mos{4}{3}{z}{1}
+\draw (.25,4.5)--(4.25,4.5);\rail{2.25}{4.5}{V_{DD}}
+\draw (.25,2.5)--(4.25,2.5);\outputnode{4.25}{2.5}{f}
+\draw (.25,2.5)--(.25,2);\draw (2.25,2.5)--(2.25,2);
+\mos{0}{1.5}{x}{0}\mos{2}{1.5}{y}{0}
+\mos{0}{.5}{x}{0}\mos{2}{.5}{z}{0}
+\mos{0}{-.5}{y}{0}\mos{2}{-.5}{z}{0}
+\draw (.25,1)--(2.25,1);\draw (.25,0)--(2.25,0);\draw (.25,-1)--(2.25,-1);\ground{1.25}{-1}
+\end{tikzpicture}\end{center}
+This function is 1 for input Hamming weight 0 or 1 and 0 for weight 2 or 3. The product-of-sums network follows the supplied handwritten solution. An alternative PDN is three parallel two-NMOS stacks ($xy,xz,yz$), with its dual PUN; both implement the same function and use 12 devices.
+
+\section*{Verification and source reconciliation}
+The supplied \texttt{HW1\_answer.pdf} is a two-page handwritten submission by J.-M. Wu (student ID 107501503). Its answers agree on $M_1/M_4$, the half-size equivalence, the Shannon construction, and the CMOS networks. The present report expands the saturation proof, distinguishes ideal static equivalence from real capacitance behavior, and supplies an all-MUX implementation of $\bar{x}_3$.
+
+Run \texttt{python verify\_logic.py}. It checks all 8 MUX cases, all 16 cases of Q3(a), and all 8 cases of Q3(b), including complementary PUN/PDN conduction. The checked truth table and summary are \texttt{truth\_tables.csv} and \texttt{verification.json}. This logic verification is not an electrical transistor simulation.
+
+\end{document}

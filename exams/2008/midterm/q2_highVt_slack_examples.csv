@@ -1,0 +1,5 @@
+high_delay_scale,upper_mean_path,baseline_mean_worst,no_mean_speed_loss,model,passed
+1,9.0,9.5,True,illustrative uniform upper B/C penalty; not provided process data,True
+6/5,9.5,9.5,True,illustrative uniform upper B/C penalty; not provided process data,True
+3/2,10.25,9.5,False,illustrative uniform upper B/C penalty; not provided process data,True
+2,11.5,9.5,False,illustrative uniform upper B/C penalty; not provided process data,True

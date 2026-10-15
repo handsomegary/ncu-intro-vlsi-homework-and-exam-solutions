@@ -1,0 +1,34 @@
+{
+  "simulator": "PrimeSim HSPICE S-2021.09 win64",
+  "model": "CIC018 BSIM3 TT, local model not redistributed",
+  "temperature_C": 25,
+  "voltage_V": 1.8,
+  "runs": [
+    {
+      "deck": "q1_constant_leakage.sp",
+      "status": "completed",
+      "exit_code": 0,
+      "detail": "HSPICE completed; measurements exported",
+      "measurement_files": "q1_constant_leakage_measurements.csv"
+    },
+    {
+      "deck": "q2_constant_resistance.sp",
+      "status": "completed",
+      "exit_code": 0,
+      "detail": "HSPICE completed; measurements exported",
+      "measurement_files": "q2_constant_resistance_measurements.csv"
+    },
+    {
+      "deck": "q2_cic018_tt.sp",
+      "status": "completed",
+      "exit_code": 0,
+      "detail": "HSPICE completed; measurements exported",
+      "measurement_files": "q2_cic018_tt_measurements.csv"
+    }
+  ],
+  "numerical_validation": {
+    "total": 43,
+    "passed": 43,
+    "failures": []
+  }
+}

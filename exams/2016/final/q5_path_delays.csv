@@ -1,0 +1,25 @@
+repair,path,data_delay_ns
+original,R1 -> XV -> IV -> NOR -> XNOR -> R5,1.4
+original,R1 -> XV -> R6,0.5
+original,R1 -> XNOR -> R5,0.4
+original,R1 -> R4wire -> R4,0.1
+original,R2 -> XU -> NOR -> XNOR -> R5,1.2
+original,R3 -> XU -> NOR -> XNOR -> R5,1.2
+original,R3 -> XV -> IV -> NOR -> XNOR -> R5,1.4
+original,R3 -> XV -> R6,0.5
+zero_skew,R1 -> XV -> IV -> NOR -> XNOR -> R5,1.4
+zero_skew,R1 -> XV -> R6,0.5
+zero_skew,R1 -> XNOR -> R5,0.4
+zero_skew,R1 -> R4wire -> R4,0.5
+zero_skew,R2 -> XU -> NOR -> XNOR -> R5,1.2
+zero_skew,R3 -> XU -> NOR -> XNOR -> R5,1.2
+zero_skew,R3 -> XV -> IV -> NOR -> XNOR -> R5,1.4
+zero_skew,R3 -> XV -> R6,0.5
+skew_safe,R1 -> XV -> IV -> NOR -> XNOR -> R5,1.4
+skew_safe,R1 -> XV -> R6,0.9
+skew_safe,R1 -> XNOR -> R5,0.8
+skew_safe,R1 -> R4wire -> R4,0.9
+skew_safe,R2 -> XU -> NOR -> XNOR -> R5,1.2
+skew_safe,R3 -> XU -> NOR -> XNOR -> R5,1.2
+skew_safe,R3 -> XV -> IV -> NOR -> XNOR -> R5,1.4
+skew_safe,R3 -> XV -> R6,0.9

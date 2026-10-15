@@ -1,0 +1,16 @@
+{
+  "all_pass": true,
+  "scope": "Published question PDF hashes and independent numerical checks.",
+  "public_question_PDFs": 4,
+  "standalone_reports": 4,
+  "HW1_boolean_cases": 32,
+  "HW2_analytical_checks": true,
+  "HW3_AND_delay_rows": 24,
+  "HW3_intrinsic_channel_power_loads": 5,
+  "HW4_mirror_transitions": 56,
+  "HW4_domino_evaluate_words": 8,
+  "HW4_worstcase_independent_waveform_checks": 8,
+  "max_waveform_delay_difference_ps": 0.00906709399527017,
+  "HW4_rise_fall_slew_balance_below_3_percent": true,
+  "model_not_distributed": true
+}

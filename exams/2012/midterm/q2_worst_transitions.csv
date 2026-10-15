@@ -1,0 +1,3 @@
+old,new,changing_input,edge,series_devices,main_internal_cap,attached_other_network_cap,first_moment,passed
+010,110,X rise,rise,"P4,P5",C2,C3 viaN1,Rp*(3*C+2*Cout),True
+110,010,X fall,fall,"N1,N2",C3,C2 viaP5,Rn*(3*C+2*Cout),True

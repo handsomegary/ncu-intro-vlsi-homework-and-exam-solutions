@@ -1,0 +1,102 @@
+{
+  "all_checks_passed": true,
+  "source": {
+    "paper": "2009 final",
+    "printed_footer": "Fall 2009",
+    "pages": 3,
+    "Q3_text_page": "1-1",
+    "Q3_figure_page": "1-2",
+    "Q5_Q7_page": "1-3",
+    "read_method": "Native vector original and full rendered pages. Q7 overbar verified visually."
+  },
+  "Q3a": {
+    "full_capacitance_map": {
+      "VF": {
+        "Cd_Cs_terms": 2,
+        "Cg_terms": 2
+      },
+      "u1": {
+        "Cd_Cs_terms": 2,
+        "Cg_terms": 0
+      },
+      "u2": {
+        "Cd_Cs_terms": 2,
+        "Cg_terms": 0
+      },
+      "u3": {
+        "Cd_Cs_terms": 2,
+        "Cg_terms": 0
+      }
+    },
+    "switch_cases": 16,
+    "maximum_floating_internal_C_over_Cd": 4,
+    "worst_case_data_controls": "A=B=1,C=0,Vin=1",
+    "worst_VF_over_VDD": "(2+2alpha)/(6+2alpha)",
+    "critical_alpha_boundary": 1,
+    "strict_safe_requirement": "alpha>1",
+    "alpha_equals_1": "VF=VDD/2, precisely the inverter switching point; no high-state margin.",
+    "scope": "Initially VF=VDD and connected internal nodes=0. Equal device sizes, source Cd=Cs. Three internal nodes are counted but the third is grounded in evaluation; all-data-ON is a real discharge, not isolated sharing."
+  },
+  "Q3b": {
+    "completion": "Add parallel nMOS controlled by explicit Cbar inverter; retain existing pMOS.",
+    "original_pass_MOS": 1,
+    "added_MOS": 3,
+    "complete_MOS": {
+      "pMOS": 2,
+      "nMOS": 2,
+      "total": 4
+    },
+    "truth_cases": 4,
+    "requested_X0_C0_result": "Y=0 via strong nMOS low path",
+    "scope": "No pass threshold or restore-inverter threshold is invented. Disabled TG leaves Y isolated; prior state unspecified."
+  },
+  "Q5": {
+    "frequency_MHz": 200.0,
+    "period_ns": 5.0,
+    "tpcq_ns": 0.5,
+    "tccq_ns": 0.2,
+    "tsetup_ns": 1.5,
+    "thold_ns": 1.0,
+    "maximum_allowed_propagation_delay_ns": 3.0,
+    "minimum_required_contamination_delay_ns": 0.8,
+    "conditions": "0.8 ns <= tcd <= tpd <= 3.0 ns under the source common-clock/no-skew model."
+  },
+  "Q7": {
+    "printed_function": "F=NOT(AB+C+DE)",
+    "overbar_entire_expression_confirmed": true,
+    "positive_complement_input_form": "(Abar+Bbar)*Cbar*(Dbar+Ebar)",
+    "truth_cases": 32,
+    "domino_phase_cases": 64,
+    "fully_differential_candidate_cases": 128,
+    "counts": {
+      "static": {
+        "pMOS": 5,
+        "nMOS": 5,
+        "total": 10
+      },
+      "domino_core": {
+        "pMOS": 2,
+        "nMOS": 7,
+        "total": 9
+      },
+      "domino_complete": {
+        "pMOS": 7,
+        "nMOS": 12,
+        "total": 19
+      },
+      "fully_differential_core": {
+        "pMOS": 2,
+        "nMOS": 10,
+        "total": 12
+      },
+      "fully_differential_complete": {
+        "pMOS": 7,
+        "nMOS": 15,
+        "total": 22
+      }
+    },
+    "domino_scope": "Input complement inverters are explicit. Complemented controls must be valid/stable before evaluation, or obey nondecreasing domino input transitions during evaluation. A PDN for bare AB+C+DE followed by a domino inverter would output the wrong polarity.",
+    "differential_scope": "Exactly one complementary rail pair is stable for every input in the ideal graph."
+  },
+  "model_limits": "Analytical lumped-capacitance and ideal MOS-switch checks only; no process model, threshold body-effect model, waveform simulation, or parasitic extraction."
+}

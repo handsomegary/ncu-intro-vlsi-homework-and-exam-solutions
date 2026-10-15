@@ -1,0 +1,8 @@
+{
+  "all_pass": true,
+  "critical_path": "A-C",
+  "critical_delay_ns": 0.6,
+  "mu_n_over_mu_p": 2,
+  "noise_margin_design": "beta_n > beta_p, assuming matched threshold magnitudes",
+  "threshold_symmetry_assumption_explicit": true
+}

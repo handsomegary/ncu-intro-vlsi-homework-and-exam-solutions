@@ -1,0 +1,17 @@
+X,Y,Z,W,core_U,PDN_conducts,PUN_conducts,F,expected
+0,0,0,0,1,False,True,0,0
+0,0,0,1,1,False,True,0,0
+0,0,1,0,1,False,True,0,0
+0,0,1,1,1,False,True,0,0
+0,1,0,0,1,False,True,0,0
+0,1,0,1,1,False,True,0,0
+0,1,1,0,1,False,True,0,0
+0,1,1,1,1,False,True,0,0
+1,0,0,0,1,False,True,0,0
+1,0,0,1,0,True,False,1,1
+1,0,1,0,0,True,False,1,1
+1,0,1,1,0,True,False,1,1
+1,1,0,0,0,True,False,1,1
+1,1,0,1,0,True,False,1,1
+1,1,1,0,0,True,False,1,1
+1,1,1,1,0,True,False,1,1

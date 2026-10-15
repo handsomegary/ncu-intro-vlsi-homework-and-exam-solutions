@@ -1,0 +1,5 @@
+A,B,a,b,out_under_ratioed_level_assumption,NMOS_output_ground_path
+0,0,1,1,1,False
+0,1,1,0,0,True
+1,0,0,1,0,True
+1,1,0,0,1,False

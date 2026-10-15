@@ -1,0 +1,18 @@
+{
+  "scope": "pre-layout only; no layout/PEX/post-layout",
+  "simulator": "PrimeSim HSPICE S-2021.09",
+  "corner": "TT",
+  "vdd_V": 1.8,
+  "temperature_C": 25,
+  "duration_ns": 9,
+  "added_output_capacitance_F": 0,
+  "model_sha256": "f0e41de8109a0f0152891268b9b46ff4fb386a5d0807f410b075e1a051cf86fd",
+  "netlist_sha256": "b128bd47dd6c608fa72bbf84987e1b04c831091f6aa180476f1162f84b037513",
+  "testbench_sha256": "888413e2e00d0c27b192a21f9278b8ff1e445420b3f694c833167f5d5956ab1b",
+  "assigned_vectors": 8,
+  "passed_vectors": 8,
+  "total_power_W": 6.9558498e-05,
+  "total_energy_J": 6.26026482e-13,
+  "supply_power_W": 3.74328403e-05,
+  "energy_identity_relative_error": 0.0
+}

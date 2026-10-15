@@ -1,0 +1,4 @@
+path,length_um,isolated_wire_estimate_ps,neglect_cutoff_ps,wire_neglected,gate_units,delay_ns
+A->B,650,0.316875,800,True,2,0.4
+A->C,400,0.12000000000000002,800,True,3,0.6000000000000001
+A->D,650,0.316875,800,True,2,0.4

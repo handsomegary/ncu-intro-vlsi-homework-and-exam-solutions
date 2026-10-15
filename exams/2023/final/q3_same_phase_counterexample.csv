@@ -1,0 +1,9 @@
+A,B,C,d_final,middle_state_after_early_discharge,intended_static_inverse_d,failing_delay_order_exists,claim
+0,0,0,1,0,0,False,"constructed relative-delay case, not all analogue orderings"
+0,0,1,1,0,0,False,"constructed relative-delay case, not all analogue orderings"
+0,1,0,1,0,0,False,"constructed relative-delay case, not all analogue orderings"
+0,1,1,0,0,1,True,"constructed relative-delay case, not all analogue orderings"
+1,0,0,1,0,0,False,"constructed relative-delay case, not all analogue orderings"
+1,0,1,0,0,1,True,"constructed relative-delay case, not all analogue orderings"
+1,1,0,0,0,1,True,"constructed relative-delay case, not all analogue orderings"
+1,1,1,0,0,1,True,"constructed relative-delay case, not all analogue orderings"

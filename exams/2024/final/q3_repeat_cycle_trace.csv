@@ -1,0 +1,33 @@
+clock_reading,ABC,event,phi,bar_phi,z,original_middle_Ybar,static_repair_Ybar,right_X,original_middle_condition
+bar(phi),000,precharge,0,1,1,0,0,0,z and bar_phi pull down
+bar(phi),000,evaluation,1,0,1,1,0,0,bar_phi precharges high
+bar(phi),001,precharge,0,1,1,0,0,0,z and bar_phi pull down
+bar(phi),001,evaluation,1,0,1,1,0,0,bar_phi precharges high
+bar(phi),010,precharge,0,1,1,0,0,0,z and bar_phi pull down
+bar(phi),010,evaluation,1,0,1,1,0,0,bar_phi precharges high
+bar(phi),011,precharge,0,1,1,0,0,0,z and bar_phi pull down
+bar(phi),011,evaluation,1,0,0,1,1,1,bar_phi precharges high
+bar(phi),100,precharge,0,1,1,0,0,0,z and bar_phi pull down
+bar(phi),100,evaluation,1,0,1,1,0,0,bar_phi precharges high
+bar(phi),101,precharge,0,1,1,0,0,0,z and bar_phi pull down
+bar(phi),101,evaluation,1,0,0,1,1,1,bar_phi precharges high
+bar(phi),110,precharge,0,1,1,0,0,0,z and bar_phi pull down
+bar(phi),110,evaluation,1,0,0,1,1,1,bar_phi precharges high
+bar(phi),111,precharge,0,1,1,0,0,0,z and bar_phi pull down
+bar(phi),111,evaluation,1,0,0,1,1,1,bar_phi precharges high
+phi (possible early-discharge order),000,precharge,0,1,1,1,0,0,precharge pMOS on
+phi (possible early-discharge order),000,evaluation,1,0,1,0,0,0,initial z=1 discharges Ybar; pMOS remains off
+phi (possible early-discharge order),001,precharge,0,1,1,1,0,0,precharge pMOS on
+phi (possible early-discharge order),001,evaluation,1,0,1,0,0,0,initial z=1 discharges Ybar; pMOS remains off
+phi (possible early-discharge order),010,precharge,0,1,1,1,0,0,precharge pMOS on
+phi (possible early-discharge order),010,evaluation,1,0,1,0,0,0,initial z=1 discharges Ybar; pMOS remains off
+phi (possible early-discharge order),011,precharge,0,1,1,1,0,0,precharge pMOS on
+phi (possible early-discharge order),011,evaluation,1,0,0,0,1,1,initial z=1 discharges Ybar; pMOS remains off
+phi (possible early-discharge order),100,precharge,0,1,1,1,0,0,precharge pMOS on
+phi (possible early-discharge order),100,evaluation,1,0,1,0,0,0,initial z=1 discharges Ybar; pMOS remains off
+phi (possible early-discharge order),101,precharge,0,1,1,1,0,0,precharge pMOS on
+phi (possible early-discharge order),101,evaluation,1,0,0,0,1,1,initial z=1 discharges Ybar; pMOS remains off
+phi (possible early-discharge order),110,precharge,0,1,1,1,0,0,precharge pMOS on
+phi (possible early-discharge order),110,evaluation,1,0,0,0,1,1,initial z=1 discharges Ybar; pMOS remains off
+phi (possible early-discharge order),111,precharge,0,1,1,1,0,0,precharge pMOS on
+phi (possible early-discharge order),111,evaluation,1,0,0,0,1,1,initial z=1 discharges Ybar; pMOS remains off

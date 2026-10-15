@@ -1,0 +1,9 @@
+a,b,c,x,w,z,expected,z_high_path,z_low_path,passed
+0,0,0,1,0,1,1,Pcol7,,True
+0,0,1,1,0,1,1,Pcol7,,True
+0,1,0,1,0,1,1,Pcol7,,True
+0,1,1,1,0,1,1,Pcol7,,True
+1,0,0,0,1,0,0,,Ncol7,True
+1,0,1,0,0,1,1,Pcol7,,True
+1,1,0,0,0,1,1,Pcol7,,True
+1,1,1,0,0,1,1,Pcol7,,True

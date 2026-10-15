@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "scope": "pre-layout SPICE only",
+  "independent_rerun_states": 128,
+  "netlist_sha256": "060385c1e07e0a3e8839bc4560618286ab5a541bcaf48be5ece82bfa4141c610",
+  "average_supply_power_uW": 177.0819999,
+  "energy_384ns_fJ": 67999.48796,
+  "post_layout_results_available": false
+}

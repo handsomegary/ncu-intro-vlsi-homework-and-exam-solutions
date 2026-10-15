@@ -1,0 +1,138 @@
+{
+  "status": "ready",
+  "scope": "All original Q1-Q7; printed weights90%",
+  "pdfs": {
+    "exam": {
+      "pages": 4,
+      "raster_images": 0
+    },
+    "solution": {
+      "pages": 8,
+      "raster_images": 0
+    },
+    "original-exam": {
+      "pages": 3,
+      "raster_images": 7
+    }
+  },
+  "compilation": {
+    "built_in": {
+      "exam": "success",
+      "solution": "success"
+    },
+    "local": {
+      "exam": {
+        "pages": 4,
+        "warnings": [],
+        "compiled": true
+      },
+      "solution": {
+        "pages": 8,
+        "warnings": [],
+        "compiled": true
+      }
+    }
+  },
+  "visual_qa": {
+    "exam_pages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "solution_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "original_pages": [
+      1,
+      2,
+      3
+    ],
+    "latest_changed_pages_rechecked": {
+      "exam": [
+        1
+      ],
+      "solution": [
+        1
+      ]
+    },
+    "result": "All12 reconstructed pages and all3 original pages inspected. Corrected feedback-gate routing to avoid channel/label crossings; exact clock bubble/edge polarities, native colored layout contacts, all MOS and Q7 overbar checked. No clipping or overlap."
+  },
+  "checks": "All source-derived analytical assertions passed; no process simulation",
+  "csv_row_counts": {
+    "q1_divider_cases.csv": 72,
+    "q1_latch_netlist.csv": 10,
+    "q2_dynamic_register_netlist.csv": 12,
+    "q2_phase_histories.csv": 8,
+    "q2_static_replacement_netlist.csv": 20,
+    "q3a_literal_netlist.csv": 7,
+    "q3a_node_capacitances.csv": 4,
+    "q3a_sharing_parameter_checks.csv": 42,
+    "q3a_switch_components.csv": 16,
+    "q3b_completed_TG_netlist.csv": 4,
+    "q3b_TG_truth.csv": 4,
+    "q4_domino_complete_netlist.csv": 32,
+    "q4_np_netlist.csv": 20,
+    "q4_phase_truth.csv": 8,
+    "q5_timing_bounds.csv": 5,
+    "q6_literal_netlist.csv": 8,
+    "q6_switch_truth.csv": 16,
+    "q7_differential_candidates.csv": 128,
+    "q7_domino_complete_netlist.csv": 19,
+    "q7_domino_phases.csv": 64,
+    "q7_fully_differential_complete_netlist.csv": 22,
+    "q7_static_CMOS_netlist.csv": 10,
+    "q7_transistor_counts.csv": 5,
+    "q7_truth.csv": 32
+  },
+  "csv_total_rows": 568,
+  "sha256": {
+    "coverage-entry.json": "d3f4e0d7467d215734f5db39be8ab4bb429a29f9274d94dce1f11de140c63b78",
+    "exam.pdf": "a942294dcde7acd11cec8370a3847779d2b25851023ba90def16bd9e973b9e5e",
+    "exam.tex": "0351f781e7111ca03881efdda90f5286c5c747eb6311673a54b45b65e6154c5c",
+    "layout-vector-paths.json": "152ec42a10988685869275bf69780179b1df31a4eeafd220e20b99855ba0bde4",
+    "numerical-verification.json": "b9195ecf284620f62fef32c05afc6d57d6d8717b6bd3004e54a14c6b081a98e8",
+    "q1_divider_cases.csv": "51d41e77047a86d8ec878e646c16689d8991994289098aad806a606cdc294979",
+    "q1_latch_netlist.csv": "cd3bc4fdc62d244f932d89aad80d3c6740c7f00f7bdf1b3d41df72cf57603fab",
+    "q2_dynamic_register_netlist.csv": "aff6cd7fa305b8ceedb193fda6c7f70763849edc3b319d3dc44ed77a884e1556",
+    "q2_phase_histories.csv": "3fc1f7809964723fba289a8962ce1caa3c0053254da596ce89bb308adf805868",
+    "q2_static_replacement_netlist.csv": "20f14ff55fe2229828a8e5ef159a842a1369eb655fb1ea726edee3e46c8a9cb2",
+    "q3a_literal_netlist.csv": "9c6ec69cdce52a964293c339f40a93ea23c217d19117b711c11e0864f7e0d352",
+    "q3a_node_capacitances.csv": "c8f69cacff35073a7c97d9ae43a16621e53e9d076d1217824e41ad8943148b27",
+    "q3a_sharing_parameter_checks.csv": "404710062a138be57832bf8ae28b5b00f9d85d6e4f4865f2a67cd357148af765",
+    "q3a_switch_components.csv": "ded4deee1ec7f265fd9fff6d66c8b9c6b0e23f17046be0c4fa7c124196c72a45",
+    "q3b_completed_TG_netlist.csv": "5b09b8bb9988539b37f99d14d213614fc01bf2407dfe9a68720beb3e3d3756b9",
+    "q3b_TG_truth.csv": "3bb91f0f1a38de79618d4f5c7c5baf91f521282681d1fc84c17cffe54af3ba75",
+    "q4_domino_complete_netlist.csv": "d9954a12737a556c90ee42bd2cf632433a97473edf45dcd9ff3eebd373734692",
+    "q4_np_netlist.csv": "564b37cd6a801ec38b1865d8499aea4fe1d7e4e482e5b04f60dea622b67fc775",
+    "q4_phase_truth.csv": "b6a42dc82dc13b4fb90793fcabed125943ff7a3496aedc882d1bf3465fe2bac4",
+    "q5_timing_bounds.csv": "7270ba8ff09ae9e24859a32f345880133a20888f2f91d56e0e680a441c7376f4",
+    "q6_literal_netlist.csv": "6cbcbb9bec07448206e910a240cebd406470d9496e52cca5fd76e65a1e048b46",
+    "q6_switch_truth.csv": "74f09163c154aa2417c2aa530a576d9bed0d65e9be0332a450034f6e3edf2f6c",
+    "q7_differential_candidates.csv": "7892093315903289b199444644ba041d26cf74da1ec59f22d59faf819ba726cd",
+    "q7_domino_complete_netlist.csv": "f7ed42a4efe7b14c42b3495e4d18b7ac9495d38d4487e94c9062a167156fe200",
+    "q7_domino_phases.csv": "82bc80c85730410df6de33f4a7a28c6d5649535a3483ae02e313b08482b5aea4",
+    "q7_fully_differential_complete_netlist.csv": "26c3479b7715a5c8413fac5446b726050fa7c02bd0ccdf89c7b3a796e9e92691",
+    "q7_static_CMOS_netlist.csv": "039018f9c0e7a9e2456f9d23f03b587a25d6c63afd617195dda8e70db2d57496",
+    "q7_transistor_counts.csv": "f014d1131815046345eff6a7f6cef58202c2558d98c6ab93e91fcd77a59df939",
+    "q7_truth.csv": "609bdc7b076dc83fde5dbc34f8a49dde4493cfb78862bc474fbc04a008566a3f",
+    "README.md": "627afe68314fb8b94f10736c46a338c51f12edbb64f3a653ec961809383d915a",
+    "register-layout-verification.json": "945b1b9e9f0d0a67f1fdfb75e68626319d0143a6842bf655862bf824cc400cbf",
+    "solution.pdf": "1934def0824f0be93b46d583f3e88800262b75e298ebc277a0f5197dbf8441c1",
+    "solution.tex": "d7ae2c9b1e43c03a94c8af1cd3f43cf588c162307f4d4aa0b632e78520e949bc",
+    "sources.json": "5c10cb596c176f4a8ea02740f4e6230c5f72cf8a04a820a19ff4df3a96065f67",
+    "SOURCES.md": "fa1344895536be20002ca3470f27a5d881128213b5ff252f400e3e24a5643311",
+    "verification.json": "a8a7c754529f3e58202032d58a9063fd32a41ba87a070871728c5e8479886281",
+    "verify.py": "24494163c78dbb61c9e10255d4332485266bb463cbe1f2b40e69894f439c4b51",
+    "verify_numerical.py": "fee5daff8b9ef844d54aa3227049743cb3d4dda800b8d871d58fc22ae6de31de",
+    "verify_register_layout.py": "63768205026b23dd5758fcb88204dd3460dccdedecc0daf9e722b89c06fa47d2"
+  },
+  "artifact_hash_convention": "SHA256 of exact binary bytes; text artifacts normalized to LF, matching Git archive and MANIFEST.json."
+}

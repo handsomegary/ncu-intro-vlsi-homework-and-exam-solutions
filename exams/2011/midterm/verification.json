@@ -1,0 +1,28 @@
+{
+  "all_checks_passed": true,
+  "all_independent_checks_passed": true,
+  "check_scope": "Independent mathematical and circuit checks.",
+  "q1_cmos_cases": 32,
+  "q2_switch_load_Cg": 42,
+  "q2_short_circuit_coefficient": "173/2",
+  "q2_exact_integer_stages": 4,
+  "q2_taper_counts_tested": 16,
+  "q3_cmos_cases": 16,
+  "q3_physical_MOS": 26,
+  "q3_sequence_transitions": 4,
+  "q3_glitch": "O1,1100->1011,falls1d/rises2d",
+  "q3_conditional_timing_cases": 5,
+  "q4_gate_junction": "user-approved VDD assumption",
+  "q4_constant_Vt_highs": {
+    "G": "1.4V",
+    "Y": "1.0V",
+    "Z": "1.4V"
+  },
+  "q5_buffer_subsets": 16,
+  "q5_discrete_unbuffered_ns": 45,
+  "q5_min_buffers_below_30": 1,
+  "q5_one_buffer_best_ns": 29,
+  "q5_global_min_ns": 19,
+  "q6_SCR_feedback_checked": true,
+  "printed_points": 110
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "printed_points": 105,
+  "Q1_truth_cases": 16,
+  "Q4_truth_cases": 32,
+  "Q4_physical_MOS": 28,
+  "Q4_max_settled_interval_Ci": 2,
+  "Q4_cycle_with_internal_Ci": 5,
+  "Q4_conservative_max_delay_units": "21/2",
+  "Q3_overlap_b_minus_a": 0.2350647362942766,
+  "Q6_truth_cases": 8,
+  "Q6_nodal_moment_checks": 192,
+  "Q6_model": "Elmore first moment of each final ON network, connected caps fully unsettled; no measured transient bound",
+  "limits": [
+    "Actual instantaneous/glitch power requires current/transition data",
+    "High-VT minimum leakage requires delay and leakage characterization",
+    "RC initial voltages not given"
+  ]
+}

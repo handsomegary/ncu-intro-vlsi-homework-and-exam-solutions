@@ -1,0 +1,288 @@
+{
+  "status": "verified literal source connectivity",
+  "source": "2021 final original Figure 3; source5.png, 1532x1149",
+  "device_count": 20,
+  "pMOS_count": 10,
+  "nMOS_count": 10,
+  "devices": [
+    {
+      "name": "P1",
+      "type": "p",
+      "gate": "X",
+      "terminal_1": "VDD",
+      "terminal_2": "a",
+      "physical_column": 1,
+      "approx_source_gate_x": 325,
+      "body_convention": "VDD",
+      "role": "input inverter"
+    },
+    {
+      "name": "N1",
+      "type": "n",
+      "gate": "X",
+      "terminal_1": "a",
+      "terminal_2": "GND",
+      "physical_column": 1,
+      "approx_source_gate_x": 325,
+      "body_convention": "GND",
+      "role": "input inverter"
+    },
+    {
+      "name": "P2",
+      "type": "p",
+      "gate": "c1",
+      "terminal_1": "a",
+      "terminal_2": "b",
+      "physical_column": 2,
+      "approx_source_gate_x": 450,
+      "body_convention": "VDD",
+      "role": "master input TG"
+    },
+    {
+      "name": "N2",
+      "type": "n",
+      "gate": "CLK",
+      "terminal_1": "a",
+      "terminal_2": "b",
+      "physical_column": 2,
+      "approx_source_gate_x": 450,
+      "body_convention": "GND",
+      "role": "master input TG"
+    },
+    {
+      "name": "P3",
+      "type": "p",
+      "gate": "CLK",
+      "terminal_1": "VDD",
+      "terminal_2": "c1",
+      "physical_column": 3,
+      "approx_source_gate_x": 576,
+      "body_convention": "VDD",
+      "role": "local clock inverter"
+    },
+    {
+      "name": "N3",
+      "type": "n",
+      "gate": "CLK",
+      "terminal_1": "c1",
+      "terminal_2": "GND",
+      "physical_column": 3,
+      "approx_source_gate_x": 576,
+      "body_convention": "GND",
+      "role": "local clock inverter"
+    },
+    {
+      "name": "P4",
+      "type": "p",
+      "gate": "b",
+      "terminal_1": "VDD",
+      "terminal_2": "m",
+      "physical_column": 4,
+      "approx_source_gate_x": 640,
+      "body_convention": "VDD",
+      "role": "master forward inverter"
+    },
+    {
+      "name": "N4",
+      "type": "n",
+      "gate": "b",
+      "terminal_1": "m",
+      "terminal_2": "GND",
+      "physical_column": 4,
+      "approx_source_gate_x": 640,
+      "body_convention": "GND",
+      "role": "master forward inverter"
+    },
+    {
+      "name": "P5",
+      "type": "p",
+      "gate": "m",
+      "terminal_1": "VDD",
+      "terminal_2": "b",
+      "physical_column": 5,
+      "approx_source_gate_x": 775,
+      "body_convention": "VDD",
+      "role": "master feedback inverter"
+    },
+    {
+      "name": "N5",
+      "type": "n",
+      "gate": "m",
+      "terminal_1": "b",
+      "terminal_2": "GND",
+      "physical_column": 5,
+      "approx_source_gate_x": 775,
+      "body_convention": "GND",
+      "role": "master feedback inverter"
+    },
+    {
+      "name": "P6",
+      "type": "p",
+      "gate": "c2",
+      "terminal_1": "m",
+      "terminal_2": "d",
+      "physical_column": 6,
+      "approx_source_gate_x": 918,
+      "body_convention": "VDD",
+      "role": "slave input TG"
+    },
+    {
+      "name": "N6",
+      "type": "n",
+      "gate": "CLKB",
+      "terminal_1": "m",
+      "terminal_2": "d",
+      "physical_column": 6,
+      "approx_source_gate_x": 918,
+      "body_convention": "GND",
+      "role": "slave input TG"
+    },
+    {
+      "name": "P7",
+      "type": "p",
+      "gate": "CLKB",
+      "terminal_1": "VDD",
+      "terminal_2": "c2",
+      "physical_column": 7,
+      "approx_source_gate_x": 1047,
+      "body_convention": "VDD",
+      "role": "local clock inverter"
+    },
+    {
+      "name": "N7",
+      "type": "n",
+      "gate": "CLKB",
+      "terminal_1": "c2",
+      "terminal_2": "GND",
+      "physical_column": 7,
+      "approx_source_gate_x": 1047,
+      "body_convention": "GND",
+      "role": "local clock inverter"
+    },
+    {
+      "name": "P8",
+      "type": "p",
+      "gate": "d",
+      "terminal_1": "VDD",
+      "terminal_2": "s",
+      "physical_column": 8,
+      "approx_source_gate_x": 1112,
+      "body_convention": "VDD",
+      "role": "slave forward inverter"
+    },
+    {
+      "name": "N8",
+      "type": "n",
+      "gate": "d",
+      "terminal_1": "s",
+      "terminal_2": "GND",
+      "physical_column": 8,
+      "approx_source_gate_x": 1112,
+      "body_convention": "GND",
+      "role": "slave forward inverter"
+    },
+    {
+      "name": "P9",
+      "type": "p",
+      "gate": "s",
+      "terminal_1": "VDD",
+      "terminal_2": "d",
+      "physical_column": 9,
+      "approx_source_gate_x": 1236,
+      "body_convention": "VDD",
+      "role": "slave feedback inverter"
+    },
+    {
+      "name": "N9",
+      "type": "n",
+      "gate": "s",
+      "terminal_1": "d",
+      "terminal_2": "GND",
+      "physical_column": 9,
+      "approx_source_gate_x": 1236,
+      "body_convention": "GND",
+      "role": "slave feedback inverter"
+    },
+    {
+      "name": "P10",
+      "type": "p",
+      "gate": "s",
+      "terminal_1": "VDD",
+      "terminal_2": "Y",
+      "physical_column": 10,
+      "approx_source_gate_x": 1360,
+      "body_convention": "VDD",
+      "role": "output inverter"
+    },
+    {
+      "name": "N10",
+      "type": "n",
+      "gate": "s",
+      "terminal_1": "Y",
+      "terminal_2": "GND",
+      "physical_column": 10,
+      "approx_source_gate_x": 1360,
+      "body_convention": "GND",
+      "role": "output inverter"
+    }
+  ],
+  "contacts": [
+    {
+      "net": "a",
+      "description": "First inverter right drains to first TG left diffusion; vertical M1 x355 joins p/n, then x419 branch."
+    },
+    {
+      "net": "b",
+      "description": "First TG right p/n diffusion joined at x485; upper M1 reaches x737. Poly x640 wraps continuously top to bottom and contacts x737 at y247 and y542, joining both feedback inverter drains."
+    },
+    {
+      "net": "c1",
+      "description": "M1 x547 joins left p/n diffusion of CLK column x576 and contacts upper x450 poly at y405."
+    },
+    {
+      "net": "CLK",
+      "description": "Continuous poly x576; lower x450 poly joins its lower stem at y585. M1 supply crossings have no poly contacts."
+    },
+    {
+      "net": "m",
+      "description": "Right p/n diffusion of x640 joins M1 x673; contacts x775 inverter gates at y405 and continues to second TG left diffusion at x890."
+    },
+    {
+      "net": "d",
+      "description": "Second TG right p/n diffusion x955; upper M1 reaches x1190. Continuous wrapping poly x1112 contacts x1190 at upper/lower positions, joining both second feedback inverter drains."
+    },
+    {
+      "net": "c2",
+      "description": "M1 x1018 joins left p/n diffusion of CLKB column x1047 and contacts upper x918 poly at y399."
+    },
+    {
+      "net": "CLKB",
+      "description": "Continuous poly x1047; lower x918 poly joins lower stem. Source external label is bar(CLK)."
+    },
+    {
+      "net": "s",
+      "description": "Right p/n diffusion of x1112 joins M1 x1140, then gate contacts x1236 and x1358; input wire ends at final gate contact."
+    },
+    {
+      "net": "Y",
+      "description": "Final inverter right p/n drains joined by M1 x1390, with separate rightward output segment. It does not join the final gate-input segment ending at x1358."
+    }
+  ],
+  "net_names": "a,c1,b,m,c2,d,s are analysis labels, absent from the original.",
+  "body_note": "Standard bulk CMOS body ties are shown as schematic conventions; explicit well/body tap extraction is not specified by this symbolic layout.",
+  "phases": {
+    "CLK=1": "master input TG on; slave input TG off",
+    "CLK=0": "master input TG off; slave input TG on"
+  },
+  "logic": "Conditional negative-edge noninverting data storage Y=X sampled on CLK falling edge, if the enabled input drive overrides the always-connected feedback inverter.",
+  "writeability": "Not proved: source has no device sizing or drive-strength data. These are ratioed input-TG latches, not switched-feedback 2-TG latches.",
+  "checks": {
+    "MOS_connectivity_states": 16,
+    "consistent_settled_states": 8,
+    "write_contention_states": 8,
+    "conditional_event_rows": 24,
+    "all_assertions_passed": true
+  },
+  "lecture_comparison": "NCU ch07 slide 9 top unconditional-feedback latch is the relevant circuit family. Slide 10 two-TG layout is not an exact contact match.",
+  "simulation": "No process-model simulation or electrical write-margin claim."
+}

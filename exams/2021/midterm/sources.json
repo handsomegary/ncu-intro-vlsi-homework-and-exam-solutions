@@ -1,0 +1,22 @@
+{
+  "exam": "2021 midterm",
+  "year_basis": "archive folder; paper has no printed date",
+  "original_pages": 2,
+  "questions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "printed_total": 100,
+  "q4_points": {
+    "printed_total": 15,
+    "printed_subparts": [
+      9,
+      6
+    ]
+  },
+  "sources": []
+}

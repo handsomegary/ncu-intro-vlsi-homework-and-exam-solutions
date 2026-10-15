@@ -1,0 +1,17 @@
+x1,x2,x3,phi,f,charge_storage,rail_exclusive,passed
+0,0,0,0,1,False,True,True
+0,0,0,1,1,True,True,True
+0,0,1,0,1,False,True,True
+0,0,1,1,0,False,True,True
+0,1,0,0,1,False,True,True
+0,1,0,1,1,True,True,True
+0,1,1,0,1,False,True,True
+0,1,1,1,0,False,True,True
+1,0,0,0,1,False,True,True
+1,0,0,1,1,True,True,True
+1,0,1,0,1,False,True,True
+1,0,1,1,0,False,True,True
+1,1,0,0,1,False,True,True
+1,1,0,1,0,False,True,True
+1,1,1,0,1,False,True,True
+1,1,1,1,0,False,True,True

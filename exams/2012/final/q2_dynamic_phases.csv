@@ -1,0 +1,17 @@
+A,B,C,phi,F_to_VDD,F_to_VSS,F_after_phase,mode
+0,0,0,0,True,False,1,precharge high
+0,0,0,1,False,False,1,"floating, retains precharged high"
+0,0,1,0,True,False,1,precharge high
+0,0,1,1,False,True,0,discharged
+0,1,0,0,True,False,1,precharge high
+0,1,0,1,False,False,1,"floating, retains precharged high"
+0,1,1,0,True,False,1,precharge high
+0,1,1,1,False,True,0,discharged
+1,0,0,0,True,False,1,precharge high
+1,0,0,1,False,False,1,"floating, retains precharged high"
+1,0,1,0,True,False,1,precharge high
+1,0,1,1,False,True,0,discharged
+1,1,0,0,True,False,1,precharge high
+1,1,0,1,False,True,0,discharged
+1,1,1,0,True,False,1,precharge high
+1,1,1,1,False,True,0,discharged

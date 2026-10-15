@@ -1,0 +1,5 @@
+node,Cd_or_Cs_terms,Cg_terms,diffusion_devices,gate_devices,capacitance_over_Cd
+VF,2,2,P_pre N_A,P_inv N_inv,2+2*alpha
+u1,2,0,N_A N_B,,2+0*alpha
+u2,2,0,N_B N_C,,2+0*alpha
+u3,2,0,N_C N_footer,,2+0*alpha

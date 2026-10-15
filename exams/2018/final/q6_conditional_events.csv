@@ -1,0 +1,25 @@
+case,event,CLK,X,b,m,d,Y,assumption,passed
+0,high_tracking,1,0,1,0,0,0,enabled write overrides feedback; source gives no strength values,True
+0,falling_capture,0,0,1,0,0,0,enabled write overrides feedback; source gives no strength values,True
+0,low_input_change,0,0,1,0,0,0,enabled write overrides feedback; source gives no strength values,True
+1,high_tracking,1,0,1,0,0,0,enabled write overrides feedback; source gives no strength values,True
+1,falling_capture,0,0,1,0,0,0,enabled write overrides feedback; source gives no strength values,True
+1,low_input_change,0,1,1,0,0,0,enabled write overrides feedback; source gives no strength values,True
+2,high_tracking,1,1,0,1,0,0,enabled write overrides feedback; source gives no strength values,True
+2,falling_capture,0,1,0,1,1,1,enabled write overrides feedback; source gives no strength values,True
+2,low_input_change,0,0,0,1,1,1,enabled write overrides feedback; source gives no strength values,True
+3,high_tracking,1,1,0,1,0,0,enabled write overrides feedback; source gives no strength values,True
+3,falling_capture,0,1,0,1,1,1,enabled write overrides feedback; source gives no strength values,True
+3,low_input_change,0,1,0,1,1,1,enabled write overrides feedback; source gives no strength values,True
+4,high_tracking,1,0,1,0,1,1,enabled write overrides feedback; source gives no strength values,True
+4,falling_capture,0,0,1,0,0,0,enabled write overrides feedback; source gives no strength values,True
+4,low_input_change,0,0,1,0,0,0,enabled write overrides feedback; source gives no strength values,True
+5,high_tracking,1,0,1,0,1,1,enabled write overrides feedback; source gives no strength values,True
+5,falling_capture,0,0,1,0,0,0,enabled write overrides feedback; source gives no strength values,True
+5,low_input_change,0,1,1,0,0,0,enabled write overrides feedback; source gives no strength values,True
+6,high_tracking,1,1,0,1,1,1,enabled write overrides feedback; source gives no strength values,True
+6,falling_capture,0,1,0,1,1,1,enabled write overrides feedback; source gives no strength values,True
+6,low_input_change,0,0,0,1,1,1,enabled write overrides feedback; source gives no strength values,True
+7,high_tracking,1,1,0,1,1,1,enabled write overrides feedback; source gives no strength values,True
+7,falling_capture,0,1,0,1,1,1,enabled write overrides feedback; source gives no strength values,True
+7,low_input_change,0,1,0,1,1,1,enabled write overrides feedback; source gives no strength values,True

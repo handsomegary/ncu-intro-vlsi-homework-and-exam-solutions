@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "standalone_tex": true,
+  "inline_vector_figures": true,
+  "pdf_page_counts": {
+    "exam.pdf": 3,
+    "solution.pdf": 10
+  },
+  "visual_review": {
+    "original": 6,
+    "exam": 3,
+    "solution": 10,
+    "total": 19,
+    "status": "All 19 pages rendered and viewed. Source w, Figure 1 spacing, Q3 intermediate c and the student carry comparison were corrected and rechecked. No clipping or overlapping labels."
+  },
+  "csv_file_count": 16,
+  "csv_data_rows": 203,
+  "csv_row_counts": {
+    "q2_elmore_coefficients.csv": 6,
+    "q2_majority_truth.csv": 8,
+    "q2_worst_transitions.csv": 2,
+    "q3_conditional_vt_netlist.csv": 24,
+    "q3_logic_truth.csv": 64,
+    "q3_slack_examples.csv": 4,
+    "q4_levels.csv": 2,
+    "q4_region_examples.csv": 7,
+    "q5_alpha_candidates.csv": 2,
+    "q6a_logic.csv": 16,
+    "q6a_MOS.csv": 8,
+    "q6b_complementary_MOS.csv": 12,
+    "q6b_logic_and_reference.csv": 4,
+    "q6b_TG_alternative_MOS.csv": 8,
+    "q7_full_adder_MOS.csv": 28,
+    "q7_full_adder_truth.csv": 8
+  },
+  "compile": {
+    "builtin": "Both final source files compiled successfully.",
+    "local": "MiKTeX pdfLaTeX; two passes; no overfull or underfull warnings."
+  },
+  "verification_status": "PASS",
+  "no_process_measurement": true,
+  "artifact_sha256": {
+    "exam.tex": "830bd1c6041efd9e22f5f0e39dc35b82d141a6653dd86bbbe8149c818449286f",
+    "exam.pdf": "6c348f5221da358997856bfa7f9c847ff8f31478a53bfd241374ca8fd8606317",
+    "solution.tex": "c35ce3d041e7bcfbee82f7d29e7c32f36cc9d751fa459949a3a9c80280dbc432",
+    "solution.pdf": "e358315840828a605d02b4037595563ec3ff4b02e17153644ea5f07a956f4c14",
+    "verify_logic_timing.py": "13847a23ed7548a398ba90eedc96ebff885140e417ead6e6d35859cecfed015c"
+  },
+  "artifact_hash_convention": "SHA256 of exact binary bytes; text artifacts normalized to LF, matching Git archive and MANIFEST.json."
+}

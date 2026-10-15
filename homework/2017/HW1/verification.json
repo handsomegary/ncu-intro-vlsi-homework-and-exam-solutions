@@ -1,0 +1,8 @@
+{
+  "boolean_cases": 48,
+  "all_pass": true,
+  "long_channel_points": 5050,
+  "max_normalized_current_error": 2.220446049250313e-16,
+  "body_effect": false,
+  "channel_length_modulation": false
+}

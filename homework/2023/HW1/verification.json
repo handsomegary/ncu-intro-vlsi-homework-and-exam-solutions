@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "model": "ideal on/off MOS switch connectivity",
+  "q1a_cases": 16,
+  "q1b_cases": 8,
+  "q3_cases": 4,
+  "q2_legal_control_data_cases": 64,
+  "q2_output_checks": 256,
+  "total_functional_output_checks": 284,
+  "q2_invalid_control_output_characterizations": 768,
+  "transistor_counts": {
+    "q1a": 10,
+    "q1b": 10,
+    "q2_including_control_inverters": 40,
+    "q3_including_input_inverters": 12
+  },
+  "checks": [
+    "Exact truth tables",
+    "Exactly one rail connected in every static CMOS state",
+    "Actual CMOS inverter topology used to generate complements",
+    "Each legal transmission-gate output reaches exactly the required data input"
+  ],
+  "limitations": [
+    "No analog voltage/timing/power simulation",
+    "Q2 assumes exactly one control is low",
+    "Unspecified control combinations are characterized, not declared correct"
+  ]
+}

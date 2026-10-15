@@ -1,0 +1,9 @@
+A,B,C,D_V,E_V,expected_D,expected_E,passed,provenance
+0,0,0,1.799999977,1.799999995,1,1,True,illustrative_LEVEL1_not_CIC018
+0,0,1,1.799999977,1.799999808,1,1,True,illustrative_LEVEL1_not_CIC018
+0,1,0,6.15562078e-06,1.799998201,0,1,True,illustrative_LEVEL1_not_CIC018
+0,1,1,2.6446554e-08,-2.42810094e-06,0,0,True,illustrative_LEVEL1_not_CIC018
+1,0,0,-3.28838313e-07,1.800003681,0,1,True,illustrative_LEVEL1_not_CIC018
+1,0,1,1.58399019e-08,1.799998522,0,1,True,illustrative_LEVEL1_not_CIC018
+1,1,0,1.799998913,1.800001145,1,1,True,illustrative_LEVEL1_not_CIC018
+1,1,1,1.799999983,1.56256422e-05,1,0,True,illustrative_LEVEL1_not_CIC018

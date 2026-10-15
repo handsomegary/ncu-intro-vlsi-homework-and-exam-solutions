@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "scope": "2021 final partial original; intact Q1-Q5 and Q7(a)-(c) solved",
+  "original_container_pages": 3,
+  "exam_pages": 3,
+  "solution_pages": 10,
+  "original_pdf_preservation": "byte-for-byte copy of supplied source",
+  "built_in_compiler": {
+    "exam.tex": "success",
+    "solution.tex": "success"
+  },
+  "local_compiler": "pdfLaTeX, two passes per standalone source",
+  "box_warnings": [],
+  "visual_review": "All 3 original-container pages, 3 final reconstructed exam pages, and 10 final solution pages rendered with Poppler and visually inspected. Layout extraction was independently traced and checked against the native original contacts before integration.",
+  "checks": [
+    "Original complete wording, complement polarity, 50 percent clock duty, external Schmitt C, series control devices, and point labels compared with native photos.",
+    "All readable Q6/Q7 fragments retained; missing original wording explicitly marked unanswerable and skipped, with typed Q7 supplement separated.",
+    "All 20 physical layout MOS drawn; final Y drain metal separated from gate-input metal; fixed feedback retained without invented second TG or weak sizing.",
+    "Clock aliases K=CLK and bar(K)=CLKB explained in the column schematic; labels are readable and the Figure 3 caption appears once.",
+    "Vhc control gates are wired separately from Vout; baseline and controlled Schmitt connectivity agrees with the source.",
+    "All 8 buffer inverter sizes shown in a chain and table; charging activity and all-transition activity distinguished.",
+    "Standalone diagrams use editable TikZ with no raster includegraphics or external input dependency.",
+    "No clipped text, overfull/underfull boxes, overlapping captions, blank extra pages, or pending placeholders in final sources."
+  ],
+  "limits": [
+    "Archive folder supplies year attribution; photographed original has no printed year.",
+    "Q6 timing assumptions and parts (a),(b) are absent, so no guessed numerical or register-insertion answer is provided.",
+    "Original Q7(d)-(f) is incomplete; conceptual supplement notes are conditional on an unverified secondary transcription.",
+    "Q4 writeability is not proved; 8 write-contention states expose the expected limitation of fixed-feedback ratioed latches.",
+    "Electrical verification is ideal logic/connectivity and analytical modeling, not HSPICE or DSL analog voltage simulation."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "all_checks_passed": true,
+  "all_independent_checks_passed": true,
+  "check_scope": "Independent mathematical and circuit checks.",
+  "q2_binary_cases": 16,
+  "q3_independent_and_student_paths": 9,
+  "q4_states": 8,
+  "q4_correlated_unloaded_delay_RC": {
+    "contamination": "8/3",
+    "propagation": "10"
+  },
+  "q5_signed_skew_path_checks": 15,
+  "q5_three_register_optimal_period_ns": "13/10",
+  "q5_aligned_frontiers": 6,
+  "q5_pipeline_events": 16,
+  "q6b_literal_switch_cases": 8,
+  "q6_physical_devices_each": 12,
+  "q6a_self_connected_pair_preserved": true,
+  "q7_distinct_upper_threshold_examples": 2,
+  "q7_unique_numeric_pair": false,
+  "q8_write_margin_examples": 4
+}

@@ -1,0 +1,17 @@
+ABCD,PUN_to_VDD,PDN_to_GND,F,no_DC_contention
+0000,True,False,1,True
+0001,True,False,1,True
+0010,False,True,0,True
+0011,False,True,0,True
+0100,True,False,1,True
+0101,False,True,0,True
+0110,False,True,0,True
+0111,False,True,0,True
+1000,False,True,0,True
+1001,False,True,0,True
+1010,False,True,0,True
+1011,False,True,0,True
+1100,False,True,0,True
+1101,False,True,0,True
+1110,False,True,0,True
+1111,False,True,0,True

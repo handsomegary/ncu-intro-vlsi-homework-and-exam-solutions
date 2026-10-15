@@ -1,0 +1,9 @@
+{
+  "rotator_cases": 64,
+  "rotator_output_bits": 256,
+  "dual_vt_boolean_cases": 8,
+  "pseudo_nor_cases": 4,
+  "all_pass": true,
+  "pseudo_nor_min_WN_over_WP": 4.5,
+  "high_vt_NAND_max_delay_units": 2
+}

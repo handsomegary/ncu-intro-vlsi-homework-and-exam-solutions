@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "baseline_select_paths": 8,
+  "tree_select_paths": 8,
+  "inverter_rail_cases": 2,
+  "transistor_counts": {
+    "baseline": 54,
+    "tree": 34
+  },
+  "exactly_one_correct_data_source_connected": true,
+  "all_body_ties_correct": true
+}

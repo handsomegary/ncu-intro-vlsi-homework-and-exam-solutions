@@ -1,0 +1,12 @@
+{
+  "year": 2013,
+  "exam": "final",
+  "original_points": 150,
+  "sources": [],
+  "printed_note": "Total number of points is 150, but the number of points you can get is smaller than 100.",
+  "limits": [
+    "Q4 external X/Y loads absent; literal unloaded limit and symbolic loads shown",
+    "Q5 separate gate minimum delays and signed skew absent; explicit timing model",
+    "Q7 upper Schmitt threshold not identifiable from shown falling waveform"
+  ]
+}

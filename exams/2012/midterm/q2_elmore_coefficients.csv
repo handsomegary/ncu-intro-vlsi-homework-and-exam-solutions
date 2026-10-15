@@ -1,0 +1,7 @@
+X,Y,Z,edge,R_unit,C1_weight,C2_weight,C3_weight,C4_weight,C_coefficient,Cout_coefficient,model,passed
+0,0,0,fall,Rn,0,0,2/7,3/7,5/7,6/7,complete final ON graph;first moment;all connected cap initial errors equal,True
+0,1,0,fall,Rn,0,2,1,0,3,2,complete final ON graph;first moment;all connected cap initial errors equal,True
+1,0,0,fall,Rn,0,0,1,2,3,2,complete final ON graph;first moment;all connected cap initial errors equal,True
+1,0,1,rise,Rp,1,0,0,2,3,2,complete final ON graph;first moment;all connected cap initial errors equal,True
+1,1,0,rise,Rp,0,1,2,0,3,2,complete final ON graph;first moment;all connected cap initial errors equal,True
+1,1,1,rise,Rp,2/7,3/7,0,0,5/7,6/7,complete final ON graph;first moment;all connected cap initial errors equal,True

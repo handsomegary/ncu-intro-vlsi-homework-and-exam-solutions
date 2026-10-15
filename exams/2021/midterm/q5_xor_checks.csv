@@ -1,0 +1,5 @@
+A,B,TG_enabled,inverter_P_drive,inverter_N_drive,Y,pass
+0,0,True,False,False,0,True
+0,1,True,False,False,1,True
+1,0,False,True,False,1,True
+1,1,False,False,True,0,True

@@ -1,0 +1,70 @@
+{
+  "simulator": "HSPICE S-2021.09",
+  "model": "CIC018 TT local",
+  "VDD_V": 1.8,
+  "temperature_C": 25,
+  "WP_um": 1.44,
+  "WN_um": 0.36,
+  "L_um": 0.18,
+  "input_rise_fall_ns": 3,
+  "period_ns": 86,
+  "averaging_interval_ns": [
+    91,
+    177
+  ],
+  "DELMAX_ps": 10,
+  "definition": "VDD * cycle-average max(0,min(LX4(PMOS),LX4(NMOS))); intrinsic channel currents",
+  "rows": [
+    {
+      "CL_pF": 0.1,
+      "Psc_uW": 0.7860142419999999,
+      "peak_Isc_uA": 26.9976083,
+      "Eshort_fJ": 67.5972248,
+      "Ptotal_uW": 4.68536285,
+      "Pload_switching_uW": 3.7674418604651168,
+      "Vhigh": 1.799999939,
+      "Vlow": 1.07343692e-08
+    },
+    {
+      "CL_pF": 0.3,
+      "Psc_uW": 0.442159599,
+      "peak_Isc_uA": 15.3386878,
+      "Eshort_fJ": 38.0257256,
+      "Ptotal_uW": 11.8822023,
+      "Pload_switching_uW": 11.30232558139535,
+      "Vhigh": 1.799999934,
+      "Vlow": 1.21277942e-08
+    },
+    {
+      "CL_pF": 0.5,
+      "Psc_uW": 0.313113787,
+      "peak_Isc_uA": 10.8286199,
+      "Eshort_fJ": 26.9277857,
+      "Ptotal_uW": 19.2909884,
+      "Pload_switching_uW": 18.837209302325583,
+      "Vhigh": 1.799999935,
+      "Vlow": 1.76901758e-08
+    },
+    {
+      "CL_pF": 0.7,
+      "Psc_uW": 0.243483722,
+      "peak_Isc_uA": 8.385560380000001,
+      "Eshort_fJ": 20.9396001,
+      "Ptotal_uW": 26.7579389,
+      "Pload_switching_uW": 26.372093023255815,
+      "Vhigh": 1.799999938,
+      "Vlow": 1.06263259e-08
+    },
+    {
+      "CL_pF": 1.0,
+      "Psc_uW": 0.18309413900000002,
+      "peak_Isc_uA": 6.27412978,
+      "Eshort_fJ": 15.746096000000001,
+      "Ptotal_uW": 38.0013783,
+      "Pload_switching_uW": 37.674418604651166,
+      "Vhigh": 1.799999936,
+      "Vlow": 3.20154154e-08
+    }
+  ],
+  "monotone_decreasing": true
+}

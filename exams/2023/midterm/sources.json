@@ -1,0 +1,84 @@
+{
+  "year_basis": "printed Fall2023 footer and112 academic-year filename",
+  "original_exam_pages": [
+    1
+  ],
+  "original_printed_page_label": "2-2",
+  "student_sets": {
+    "A": {
+      "source_pdf_pages": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "retained_question_answers": {
+        "Q5": [
+          4
+        ],
+        "Q6": [
+          4
+        ],
+        "Q7": [
+          5
+        ]
+      }
+    },
+    "B": {
+      "source_pdf_pages": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "retained_question_answers": {
+        "Q5": [
+          8
+        ],
+        "Q6": [],
+        "Q7": [
+          10
+        ]
+      },
+      "Q6_status": "No complete readable Q6 answer in the supplied set; a cropped neighboring-page edge is insufficient"
+    }
+  },
+  "image_stream_sha256_before": [
+    "852febfcaca32d7b8936a3a7b8ad77ef0d583f9ab74389472f6863693c065667"
+  ],
+  "image_stream_sha256_after": [
+    "852febfcaca32d7b8936a3a7b8ad77ef0d583f9ab74389472f6863693c065667"
+  ],
+  "extraction": "PDF container rebuilt for originalpage1; embedded photograph bytes verified identical",
+  "complete_questions": [
+    5,
+    6,
+    7
+  ],
+  "complete_question_points": [
+    10,
+    10,
+    15
+  ],
+  "complete_point_total": 35,
+  "fragment": "Q4 continuation andFig3 retained; missing opening means no answer supplied",
+  "unavailable_questions": [
+    1,
+    2,
+    3
+  ],
+  "unavailable_original_page": "2-1",
+  "reconstruction": "Standalone English LaTeX; all included diagrams editableTikZ, no scanimage embedded",
+  "qualified_assumptions": [
+    "Q5 structural inequalities use conventional matched-threshold ideal-rail VTC; no numericmargins",
+    "Q6 uses specified idealRC model"
+  ],
+  "question_7_exact_functions": [
+    "X(Y+Z)+XW",
+    "not[X(Y+Z)]",
+    "XY+YZ"
+  ],
+  "transcription_uncertainties": [],
+  "verification": "verify.py graph/truth checks and analyticalRC assertions; no processsimulation"
+}

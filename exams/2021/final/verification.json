@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "checks": {
+    "q1_input_cases": 8,
+    "q3_dynamic_and_complement_PDN_cases": 16,
+    "q1_retention_bounds": 2,
+    "q2_device_widths": 6,
+    "q2_control_sweep_cases": 5,
+    "q5_candidate_stage_counts": 13,
+    "q5_ideal_transition_timing_cases": 108,
+    "q5_skew_example_output_edges": 3
+  },
+  "q1_Tmin_ns": 11,
+  "q2_thresholds_V": {
+    "plus": 1.4,
+    "minus": 0.6
+  },
+  "q5_ratio": 2.718172616714748,
+  "q5_min_delay_over_tau": 21.745380933717986,
+  "q5_sum_output_cap_over_Cg": 4712.818809018168,
+  "q5_power_coefficient_per_step_f_V2_Cg": 1178.204702254542,
+  "q6_answer": "missing original timing premises; numerical/reg insertion answers skipped",
+  "limits": [
+    "No HSPICE result.",
+    "DSL test verifies complementary pull-down conditions, not analog reference/load ratios.",
+    "Q1 current bound intentionally overcounts leakage magnitudes.",
+    "Q5 ideal no-glitch claim assumes simultaneous steps and complete settling; skew example demonstrates equal NAND delays alone are insufficient."
+  ]
+}

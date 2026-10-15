@@ -1,0 +1,283 @@
+{
+  "exam": "2024 Introduction to VLSI Midterm",
+  "verification_type": "Reproducible analytical checks, not simulation",
+  "Q3": {
+    "model": "Ideal switch RC; no parasitics; equal n/p mobilities as in Q3",
+    "Cg_definition": "TOTAL input capacitance of A: one W/L nMOS plus one W/L pMOS",
+    "T_path": "Includes fixed inverter A and inserted inverters, ends at NAND D input",
+    "derived_nand_p_width_relative_W_over_L": 20.0,
+    "source_gap": "D nMOS width is not stated; per-input D capacitance is not unique",
+    "parameterized_input_cap_C_D_over_Cg": "(20 + w_n)/2",
+    "intended_convention": "Assume D nMOS and pMOS both 20W/L, hence C_D=20Cg",
+    "graded_answer": "A plus two inserted inverters, widths 1:e:e^2, T=3e R Cg",
+    "rounded_exam_e_sizes": [
+      1.0,
+      2.7,
+      7.2
+    ],
+    "rounded_exam_size_delay_T_over_R_Cg": 8.144444444444444,
+    "cases": [
+      {
+        "case": "intended_equal_width",
+        "nand_p_width": 20.0,
+        "nand_n_width": 20.0,
+        "input_cap_over_Cg": 20.0,
+        "best": {
+          "total_stages_including_A": 3,
+          "inserted_inverters": 2,
+          "inserted_buffer_noninverting": true,
+          "fanout_H_C_D_over_Cg": 20.0,
+          "equal_stage_ratio": 2.7144176165949063,
+          "widths_n_and_p_relative_W_over_L": [
+            1.0,
+            2.7144176165949063,
+            7.368062997280772
+          ],
+          "delay_T_over_R_Cg": 8.14325284978472
+        }
+      },
+      {
+        "case": "balanced_NAND",
+        "nand_p_width": 20.0,
+        "nand_n_width": 40.0,
+        "input_cap_over_Cg": 30.0,
+        "best": {
+          "total_stages_including_A": 3,
+          "inserted_inverters": 2,
+          "inserted_buffer_noninverting": true,
+          "fanout_H_C_D_over_Cg": 30.0,
+          "equal_stage_ratio": 3.1072325059538586,
+          "widths_n_and_p_relative_W_over_L": [
+            1.0,
+            3.1072325059538586,
+            9.654893846056297
+          ],
+          "delay_T_over_R_Cg": 9.321697517861576
+        }
+      },
+      {
+        "case": "minimum_nMOS_example",
+        "nand_p_width": 20.0,
+        "nand_n_width": 1.0,
+        "input_cap_over_Cg": 10.5,
+        "best": {
+          "total_stages_including_A": 3,
+          "inserted_inverters": 2,
+          "inserted_buffer_noninverting": true,
+          "fanout_H_C_D_over_Cg": 10.5,
+          "equal_stage_ratio": 2.1897595699439445,
+          "widths_n_and_p_relative_W_over_L": [
+            1.0,
+            2.1897595699439445,
+            4.795046974161089
+          ],
+          "delay_T_over_R_Cg": 6.569278709831834
+        }
+      },
+      {
+        "case": "wide_nMOS_example",
+        "nand_p_width": 20.0,
+        "nand_n_width": 88.0,
+        "input_cap_over_Cg": 54.0,
+        "best": {
+          "total_stages_including_A": 5,
+          "inserted_inverters": 4,
+          "inserted_buffer_noninverting": true,
+          "fanout_H_C_D_over_Cg": 54.0,
+          "equal_stage_ratio": 2.22064303492292,
+          "widths_n_and_p_relative_W_over_L": [
+            1.0,
+            2.22064303492292,
+            4.931255488551677,
+            10.950558154077703,
+            24.31728069337104
+          ],
+          "delay_T_over_R_Cg": 11.1032151746146
+        }
+      }
+    ]
+  },
+  "Q4": {
+    "model": "Constant ON resistances specified by the exam, not a MOS DC solver",
+    "assumed_pretransition_output_V": 1.2,
+    "threshold_V": 0.4,
+    "internal_node_divider_V": 0.39999999999999997,
+    "rising_input_switch_onset_V": 0.8,
+    "t1": "Vin=0.4 V: N1 reaches threshold",
+    "open_interval_t1_t2": {
+      "N1": "saturation",
+      "N2": "saturation",
+      "N3": "cutoff"
+    },
+    "t2": "Vin=0.8 V: N3 reaches threshold; N1 is at the saturation/triode boundary",
+    "scope": "The internal node is the ON-resistance approximation in the open interval; no assertion of a continuous transient or exact device switching threshold"
+  },
+  "Q5": {
+    "source_quantitative_noise_margins": null,
+    "source_gap": "Q5 supplies mobility/width ratios but no VDD or transistor thresholds",
+    "intended_qualitative_assumption": "Standard static-CMOS VTC with equal threshold magnitudes and ideal output rails",
+    "source_widths": {
+      "nMOS": "W/L",
+      "pMOS": "2W/L",
+      "mu_n_over_mu_p": 2
+    },
+    "equal_single_device_strength": "beta_n=beta_p=beta",
+    "sensitized_NOR_strengths": {
+      "beta_n": "beta",
+      "beta_p": "beta/2"
+    },
+    "sensitized_NAND_strengths": {
+      "beta_n": "beta/2",
+      "beta_p": "beta"
+    },
+    "graded_comparisons": {
+      "G2_NOR": "NML<NMH",
+      "G3_NAND": "NML>NMH"
+    },
+    "specific_input_caveat": "For A=1, G2 output is held low when only the G1 branch is disturbed; a unique switching VTC for that unsensitized input does not exist",
+    "illustrative_model": "Equivalent square-law inverter, constant series/parallel beta approximation, zero channel-length modulation, equal assumed thresholds, ideal rails; not SPICE or a fitted model",
+    "illustrative_only_margins": {
+      "NOR_sensitized_equivalent": {
+        "illustrative_only": true,
+        "assumed_VDD_V": 1.2,
+        "assumed_equal_threshold_magnitudes_V": 0.3,
+        "assumed_beta_p_over_beta_n": 0.5,
+        "VIL_V": 0.45894663844041306,
+        "VIH_V": 0.6071147352221452,
+        "NML_V_with_ideal_VOL_0": 0.45894663844041306,
+        "NMH_V_with_ideal_VOH_VDD": 0.5928852647778547
+      },
+      "NAND_sensitized_equivalent": {
+        "illustrative_only": true,
+        "assumed_VDD_V": 1.2,
+        "assumed_equal_threshold_magnitudes_V": 0.3,
+        "assumed_beta_p_over_beta_n": 2.0,
+        "VIL_V": 0.5928852647778547,
+        "VIH_V": 0.7410533615595871,
+        "NML_V_with_ideal_VOL_0": 0.5928852647778547,
+        "NMH_V_with_ideal_VOH_VDD": 0.45894663844041284
+      },
+      "NOR_tied_inputs_equivalent": {
+        "illustrative_only": true,
+        "assumed_VDD_V": 1.2,
+        "assumed_equal_threshold_magnitudes_V": 0.3,
+        "assumed_beta_p_over_beta_n": 0.25,
+        "VIL_V": 0.40237157840737997,
+        "VIH_V": 0.5437601569801842,
+        "NML_V_with_ideal_VOL_0": 0.40237157840737997,
+        "NMH_V_with_ideal_VOH_VDD": 0.6562398430198157
+      },
+      "NAND_tied_inputs_equivalent": {
+        "illustrative_only": true,
+        "assumed_VDD_V": 1.2,
+        "assumed_equal_threshold_magnitudes_V": 0.3,
+        "assumed_beta_p_over_beta_n": 4.0,
+        "VIL_V": 0.6562398430198157,
+        "VIH_V": 0.7976284215926197,
+        "NML_V_with_ideal_VOL_0": 0.6562398430198157,
+        "NMH_V_with_ideal_VOH_VDD": 0.40237157840738025
+      }
+    },
+    "functional_scenarios": [
+      {
+        "ABCD": "0011",
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "G1_NAND_output": 1,
+        "G2_NOR_output": 0,
+        "G3_NAND_output": 0,
+        "G2_branch_sensitized_to_G1_noise": true,
+        "G2_intended_comparison": "NML<NMH",
+        "G3_intended_comparison": "NML>NMH",
+        "G2_specific_input_note": "A=0 sensitizes the G1-driven NOR input",
+        "G3_specific_input_note": "D=1 sensitizes the G1-driven NAND input"
+      },
+      {
+        "ABCD": "0101",
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "G1_NAND_output": 1,
+        "G2_NOR_output": 0,
+        "G3_NAND_output": 0,
+        "G2_branch_sensitized_to_G1_noise": true,
+        "G2_intended_comparison": "NML<NMH",
+        "G3_intended_comparison": "NML>NMH",
+        "G2_specific_input_note": "A=0 sensitizes the G1-driven NOR input",
+        "G3_specific_input_note": "D=1 sensitizes the G1-driven NAND input"
+      },
+      {
+        "ABCD": "1101",
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "G1_NAND_output": 1,
+        "G2_NOR_output": 0,
+        "G3_NAND_output": 0,
+        "G2_branch_sensitized_to_G1_noise": false,
+        "G2_intended_comparison": "NML<NMH",
+        "G3_intended_comparison": "NML>NMH",
+        "G2_specific_input_note": "A=1 masks noise on only the G1-driven NOR input",
+        "G3_specific_input_note": "D=1 sensitizes the G1-driven NAND input"
+      },
+      {
+        "ABCD": "1001",
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "G1_NAND_output": 1,
+        "G2_NOR_output": 0,
+        "G3_NAND_output": 0,
+        "G2_branch_sensitized_to_G1_noise": false,
+        "G2_intended_comparison": "NML<NMH",
+        "G3_intended_comparison": "NML>NMH",
+        "G2_specific_input_note": "A=1 masks noise on only the G1-driven NOR input",
+        "G3_specific_input_note": "D=1 sensitizes the G1-driven NAND input"
+      }
+    ]
+  },
+  "Q6": {
+    "Cg_definition": "ONE W/L nMOS or pMOS transistor gate capacitance",
+    "model": "Ideal ON-resistance RC sum; no drain/wire parasitics; output load=4Cg",
+    "source_mu_n_over_mu_p": 2,
+    "student_drawing_read_from": "Original PDF page 5 embedded image; NAND p2/n1, inverter p2/n1",
+    "student_capacitance_error": "Student uses 1.5Cg for inverter input; Q6 units require (1+2)Cg=3Cg",
+    "student_design_recomputed": {
+      "nand_n_width_relative_W_over_L": 1,
+      "nand_p_width_relative_W_over_L": 2,
+      "inverter_n_width_relative_W_over_L": 1,
+      "inverter_p_width_relative_W_over_L": 2,
+      "inverter_input_cap_over_Cg": 3,
+      "NAND_pull_up_resistance_over_R": 1.0,
+      "NAND_pull_down_resistance_over_R": 2.0,
+      "INV_pull_up_resistance_over_R": 1.0,
+      "INV_pull_down_resistance_over_R": 1.0,
+      "AND_output_rise_delay_over_R_Cg": 10.0,
+      "AND_output_fall_delay_over_R_Cg": 7.0,
+      "worst_delay_over_R_Cg": 10.0,
+      "strictly_below_8_R_Cg": false
+    },
+    "corrected_design": {
+      "nand_n_width_relative_W_over_L": 2,
+      "nand_p_width_relative_W_over_L": 2,
+      "inverter_n_width_relative_W_over_L": 1,
+      "inverter_p_width_relative_W_over_L": 2,
+      "inverter_input_cap_over_Cg": 3,
+      "NAND_pull_up_resistance_over_R": 1.0,
+      "NAND_pull_down_resistance_over_R": 1.0,
+      "INV_pull_up_resistance_over_R": 1.0,
+      "INV_pull_down_resistance_over_R": 1.0,
+      "AND_output_rise_delay_over_R_Cg": 7.0,
+      "AND_output_fall_delay_over_R_Cg": 7.0,
+      "worst_delay_over_R_Cg": 7.0,
+      "strictly_below_8_R_Cg": true
+    },
+    "correction": "Double each NAND series nMOS to 2W/L; keep the two NAND pMOS 2W/L and inverter nMOS W/L, pMOS 2W/L",
+    "limitations": "This analytical 7RCg result is for the stipulated ideal RC model, not a process-dependent numerical delay"
+  }
+}

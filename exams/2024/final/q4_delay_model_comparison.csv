@@ -1,0 +1,3 @@
+model,output_cap_over_C,pull_up_resistance_over_R,pull_down_resistance_over_R,tr_over_RC,tf_over_RC,meets_3_RC
+classroom stipulated fixed output load C,1.0,3.0,3.0,3.0,3.0,True
+literal output feedback gate capacitances,3.4285714285714284,3.0,3.0,10.285714285714286,10.285714285714286,False

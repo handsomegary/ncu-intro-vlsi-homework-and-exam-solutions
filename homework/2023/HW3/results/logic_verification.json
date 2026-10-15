@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "full_adder_cases": 8,
+  "rca_cases": 128,
+  "transistors": 84,
+  "sum_WL_um2": 53.46,
+  "netlist_sha256": "060385c1e07e0a3e8839bc4560618286ab5a541bcaf48be5ece82bfa4141c610",
+  "model": "ideal on/off switch connectivity, not process-model simulation"
+}

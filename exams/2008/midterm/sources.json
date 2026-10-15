@@ -1,0 +1,62 @@
+{
+  "year": 2008,
+  "season": "Spring",
+  "exam": "midterm",
+  "course": "EE332 Introduction to VLSI",
+  "native_photo_crosschecks": [],
+  "graded_student_reference": {
+    "source": "2008期中考-1.pdf",
+    "pdf_pages": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "booklet_page_order": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "cover_pdf_page": 6,
+    "overall_mark": 67,
+    "matching_basis": "Question numbers, circuit, taper chain, sizing and full-adder table match the two original pages.",
+    "scope": "Fallible comparison only; grades do not establish correctness; student identity pages remain local."
+  },
+  "ungraded_student_reference": {
+    "duplicate_image_pairs": [
+      {
+        "byte_identical": true
+      },
+      {
+        "byte_identical": true
+      }
+    ],
+    "duplicate_pdfs": [],
+    "duplicate_pdf_bytes_identical": true,
+    "matching_basis": "Q1 function, Q2 circuit/fanout, Q3 taper metric, Q4 sizing and Q5 forward full-adder match.",
+    "corrections": "Preserve the correct fanout-aware delays and forward adder equations; qualify broad Q1 claims and supply full transistor expansion and integer-stage correction."
+  },
+  "primary_context": [
+    {
+      "title": "Li, Fabrication of CMOS Integrated Circuits, Chapter 3",
+      "url": "https://www.ee.ncu.edu.tw/jfli/public_html/VLSI/lecture/ch03.pdf",
+      "checked": "2026-10-14",
+      "slides": [
+        37,
+        41
+      ],
+      "use": "Antenna charging and qualitative threshold/leakage tradeoff only; no unprovided numerical process characterization."
+    }
+  ],
+  "source_decisions": [
+    "Printed footer establishes Spring 2008; the mixed-year compilation is never treated as one exam.",
+    "Q2 printed output gates are OR and AND with no output bubbles. O0 is steady constant 1; preserve the original physical network and distinguish physical path arc sums from sensitizable edges.",
+    "Q2 balanced numerical mean delays require Rp = Rn. General Rp/Rn formulas are included because Q2 does not state a mobility ratio. Dual-Vt selection is conditional on quantified slack and is not a unique global optimum.",
+    "Q3 uses the printed eta = (PT-PL)/PT, an intermediate-load overhead fraction. Integer N and recomputed beta preserve the actual load.",
+    "Q4 brackets the first two of three inverters. Alpha = 1 and 2 both meet T = 6RC; alpha = 1 minimizes the modeled switching power.",
+    "Q5 is a forward full adder. The printed final row is 111 -> s = 1, co = 1; the photo circle is annotation. The graded booklet instead solves an inverse relation and is corrected.",
+    "Q5 prints (10%), while the preceding questions total 90 points. Preserve the percentage mark and interpret it as the remaining ten points only for the coverage total."
+  ],
+  "publication": "Only the authentic two-page original, reconstructed exam, independent solutions and verification evidence are published; references remain local."
+}

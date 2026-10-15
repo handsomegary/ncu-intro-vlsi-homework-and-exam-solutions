@@ -1,0 +1,9 @@
+launch,capture,path,original_logic_prop_ns,fixed_logic_prop_ns,setup_min_period_ns,required_logic_contamination_ns,conditional_min_equals_printed_prop_hold_pass
+R3,R4,direct,0,0.4,0.8,0.1,True
+R1,R5,"XNOR,INV,AND,OR",1.6,1.6,2.0,0.1,True
+R2,R5,"XNOR,INV,AND,OR",1.6,1.6,2.0,0.1,True
+R2,R5,"AND,OR",1,1,1.4,0.1,True
+R3,R5,"AND,OR",1,1,1.4,0.1,True
+R1,R6,"XNOR,XNOR",0.8,0.8,1.2000000000000002,0.1,True
+R2,R6,"XNOR,XNOR",0.8,0.8,1.2000000000000002,0.1,True
+R3,R6,XNOR,0.4,0.4,0.8,0.1,True

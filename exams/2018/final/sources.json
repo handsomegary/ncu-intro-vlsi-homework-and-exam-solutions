@@ -1,0 +1,77 @@
+{
+  "year": 2018,
+  "exam": "final",
+  "original": {
+    "filename": "2018.pdf 的副本.pdf",
+    "sha256": "b95f18f9a6418d238bf91535124f39ff2fab3b6895570c9ea1987971acb1271f",
+    "pages": 5,
+    "extraction": "Original printed prompt only: source pages1–3 in F-1,F-2,F-3 order; source pages4–5 are handwritten notes and omitted. PDF container was rewritten by pypdf, not claimed byte-identical.",
+    "status": "Complete Fall 2018 paper; handwritten study annotations are excluded from the reconstructed questions."
+  },
+  "original_crosscheck": {
+    "filename": "2018_final.zip",
+    "sha256": "a3aeb7cb014bb804e242348d31883bdcd343765b339d21cde6c19c2b84a793c3",
+    "member": "2018_final.pdf",
+    "member_sha256": "aada47654cac303556ac5cbc2de1a68e382b257c97b2d58f027f2b721f2a04c7",
+    "pages": 3,
+    "actual_footer_order": [
+      "F-3",
+      "F-1",
+      "F-2"
+    ],
+    "rotation": "270degrees after joining native image strips; filename page indices are not footer order",
+    "matching_loose_original_pages": [
+      3,
+      1,
+      2
+    ],
+    "published": false
+  },
+  "local_reference": {
+    "filename": "2018答案.pdf 的副本.pdf",
+    "sha256": "b87ae2920172f355bc6f6995122f304e5eeca483e7970196cb98ea34425f1268",
+    "pages": 4,
+    "published": false,
+    "status": "Matched Fall2018 graded student booklet; student identity stays local; grading is provenance, not correctness.",
+    "page_comparison": {
+      "1": "Q1: retain cell-height/rail requirements and dynamic limitations; correct physical design versus fabrication and qualify masking explanations.",
+      "2": "Q2: final4ns correct, but positive-output/raw-edge explanation reversed; independent retention1.1us=1100ns. Begins Q3a.",
+      "3": "Q3a balanced100/200nm widths receive full credit; independently derive nonunique pMOS family. Q3b opposite power claim crossed out; use declared complete resistor-network overlap comparison and explain absent waveform model. Q4 complementary PDN has wrong Ab placement. Q5 function wrong, balanced widths and19C clock loading consistent.",
+      "4": "Q8b2ns correct; Q8c1.5ns/1.1ns arithmetic present but no completed aligned cut. Source Q6,Q7,Q8a solutions not available in this booklet."
+    }
+  },
+  "scope": {
+    "questions": 8,
+    "original_points": 115,
+    "original_gaps": [],
+    "scan_ambiguities": [],
+    "semantic_conditions": [
+      "Q2 explicitly50percent clock duty; minimum period4ns.",
+      "Q3 outputC has no stated CgateN1 equality; effective-load answer plus eta-parameterized literal gate loading.",
+      "Q3b new trip/supply parameters require feedback2R ratios; full cycle-average Psc not determined without waveform/device currents.",
+      "Q4 DSL Vref/device strengths unspecified; ideal proof checks complementary lower PDNs, not analogue margins.",
+      "Q6 literal permanent feedback20MOS; negative-edge Y=X behavior conditional on ratioed write strength.",
+      "Q7 setup0.25ns is classroom forward settling; two strict ratio inequalities determine weak feedback.",
+      "Q8 propagation values do not supply contamination delays; hold requirements explicit. Optional latch delay/duty bounds conditional.",
+      "Q8 target printed4/3, four aligned new registers plus separate two-inverter pairs on both new bypass paths."
+    ]
+  },
+  "primary_references": [
+    {
+      "id": "ncu-dsl",
+      "url": "https://www.ee.ncu.edu.tw/jfli/public_html/VLSI/lecture/ch06.pdf",
+      "authority": "Li, National Central University; official course lecture",
+      "locators": "slide32",
+      "questions": [
+        "Q4(3)"
+      ],
+      "access": "Official PDF opened; local cached slide32 rendered and viewed; reference clamp gatesVref, pMOS load gates opposite LOWER nodes verified."
+    }
+  ],
+  "reconstruction": {
+    "language": "English",
+    "source_wording": "Original printed English retained with typeset units/equations; no student notes inserted as premises.",
+    "figures": "Editable inline TikZ; normalized geometry and qualitative source waveforms. Layout contact template reused only after independent2018 native contact tracing confirmed all20crossings and joins."
+  },
+  "no_process_measurement": true
+}

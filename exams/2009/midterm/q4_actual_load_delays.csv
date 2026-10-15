@@ -1,0 +1,6 @@
+gate,implementation,external_Ci,internal_Ci,mean_units
+a,NOR2+INV,2,1,7/2
+b,NOR2,1,0,3/2
+d,NAND2,2,0,3
+O0,NOR3+INV,2,1,4
+O1,NAND2+INV,2,1,7/2

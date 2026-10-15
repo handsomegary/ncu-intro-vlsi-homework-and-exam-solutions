@@ -1,0 +1,9 @@
+previous_sample,input_before_falling_edge,input_after_edge_during_low,high_A,high_B,high_C,high_O_held,after_falling_O,low_A,low_B_held,low_C,low_O_held
+0,0,0,1,0,1,0,0,1,0,1,0
+0,0,1,1,0,1,0,0,1,0,1,0
+0,1,0,0,1,0,0,1,1,1,0,1
+0,1,1,0,1,0,0,1,0,1,0,1
+1,0,0,1,0,0,1,0,1,0,1,0
+1,0,1,1,0,0,1,0,1,0,1,0
+1,1,0,0,1,0,1,1,1,1,0,1
+1,1,1,0,1,0,1,1,0,1,0,1

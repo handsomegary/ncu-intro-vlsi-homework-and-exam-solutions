@@ -1,0 +1,112 @@
+{
+  "status": "ready",
+  "scope": "All complete original Q1-Q8;120 printed points",
+  "pdfs": {
+    "exam": {
+      "pages": 4,
+      "raster_images": 0
+    },
+    "solution": {
+      "pages": 9,
+      "raster_images": 0
+    },
+    "original-exam": {
+      "pages": 4,
+      "raster_images": 12
+    }
+  },
+  "compilation": {
+    "built_in": {
+      "exam": "success",
+      "solution": "success"
+    },
+    "local": {
+      "exam": {
+        "pages": 4,
+        "warnings": [],
+        "compiled": true
+      },
+      "solution": {
+        "pages": 9,
+        "warnings": [],
+        "compiled": true
+      }
+    }
+  },
+  "visual_qa": {
+    "exam_pages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "solution_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "latest_changed_pages_rechecked": {
+      "exam": [
+        1,
+        2,
+        4
+      ],
+      "solution": [
+        2
+      ]
+    },
+    "result": "All13 reconstructed pages inspected. Figure-label spacing, waveform trip placement, clock control polarity, literal source contacts and all MOS named nets checked."
+  },
+  "checks": "All analytic/graph assertions passed; no process simulation",
+  "csv_row_counts": {
+    "q1_balancing_family.csv": 6,
+    "q1_phase_truth.csv": 2,
+    "q2_threshold_family.csv": 4,
+    "q3_balanced_paths.csv": 25,
+    "q4a_literal_netlist.csv": 12,
+    "q4a_literal_phase_checks.csv": 16,
+    "q4b_contact_truth.csv": 8,
+    "q4b_literal_netlist.csv": 12,
+    "q4b_switch_truth.csv": 8,
+    "q5_boolean_truth.csv": 8,
+    "q5_path_delays.csv": 24,
+    "q6_divider_cases.csv": 243,
+    "q7_dual_network_truth.csv": 16
+  },
+  "sha256": {
+    "coverage-entry.json": "cae070d2734454b1f8e8caf3ee142702a25eb7bad1c4fe48497fc5d6716e87a2",
+    "exam.pdf": "e1102e447187825fe7b6825c46aad4c2806a18e3a80c3f95df107149e4bc5b0e",
+    "exam.tex": "7cb20521cec8f4e547f386eb2ac13eb00e35cfaa16d10e176a8bab518c254bcd",
+    "q1_balancing_family.csv": "36a93141e62973faf67f808bb254c6744d30aa35f7f0732ffac402a2b80670b2",
+    "q1_phase_truth.csv": "64357554c554f8b54714fa440011349c817fa934fd0215e6e85b78c1d6db643f",
+    "q2_threshold_family.csv": "22fd267980365658e15d586b1c68a5b0b66002420267afefb7c9b4e2406dcf41",
+    "q3_balanced_paths.csv": "dfd3ecb597fb44ddef6d2e756eee27414ff570f7b1da4ab16bd1da51cd061946",
+    "q4_verification.json": "e6b965070484cb3ffd211910a518d13c11648f3197db5adac9e48e8d6e5b6084",
+    "q4a_literal_netlist.csv": "f5c2da461c7d3afc3265d269319c87ab78b76d488ad9d861a32a099cad38e74b",
+    "q4a_literal_phase_checks.csv": "1f6ddb6947c28d908d0d2d882e817cace9d8bc9677c207afee39307abf7e496c",
+    "q4b_contact_truth.csv": "3ec91b9659bc25376c2c4b3d4a86c257ba7b9f205251d02cf43ab2e4bb1fadaa",
+    "q4b_literal_netlist.csv": "b3e5600485b1614d4b3edde9be92335c8beb5d68e8bdd51e93c40a1cd42cf1a7",
+    "q4b_switch_truth.csv": "2c45f70dbb66a164c1e96cc1588d443127e8e4813f31da0a11592b65680dc8c7",
+    "q5_boolean_truth.csv": "a75d3fbb495f5dcdd78671f46c63e442af5c947d5f368539048606fd8ebc7435",
+    "q5_path_delays.csv": "704577faf509de6e0a710bb2889d0225c7282da9f4f9de9faf0f84ba50b4115c",
+    "q6_divider_cases.csv": "7fd60075a3de437619f305c17d9342cbd78afff49e539580f031929ee0b62e15",
+    "q7_dual_network_truth.csv": "6ac0e11aa304e81d0df95c1145ca090f172b8ae5a3f30c2a7ea63dba62457381",
+    "README.md": "655ca4ce520d029f87283a454b461d8efe680ec0f433c7f046e6d170de8e7ffb",
+    "solution.pdf": "481087795b68fc57d4b2fb4ee445a2315e123b03d962964a0046752c3ebaf337",
+    "solution.tex": "e07442ab5d91993522f7a31cb70d06f55738c83ebd74d45e2a8deaa4b2c92a19",
+    "sources.json": "c8d1411228fb5051189660d7e436cda77adce2dbb6d0bac7af00c6d319c615d8",
+    "SOURCES.md": "ac34c1a458fa90f3fe7ce096fb51a2081d6dc8ff01a4656df31afe8963595f5d",
+    "timing-verification.json": "29b4cd13a167f18e7ec7b9df4148152265a7cb6b07aa66f568335fb2f1a0ea73",
+    "verification.json": "df3b442e09b5f55d36624828a037d50caf495beef25b3fc90caabe062e6eba2f",
+    "verify.py": "4ee3f69869eb20ae716a3145854a331ac698231bffd3805e17a5be40dc2ef920",
+    "verify_layout.py": "d467e400be6b3dcf8b971b3b9a064a11af7ed9b267ac29b2e21eb12c63f72a6d",
+    "verify_timing.py": "d40d01a99c6e14c5631ff43473b82476dbfb710fc95e4b6c8438ae82f92d1e66"
+  },
+  "artifact_hash_convention": "SHA256 of exact binary bytes; text artifacts normalized to LF, matching Git archive and MANIFEST.json."
+}

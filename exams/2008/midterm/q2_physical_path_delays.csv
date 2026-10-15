@@ -1,0 +1,8 @@
+launch,capture,physical_path,mean_units,input_rise_arc_sum,input_fall_arc_sum,sensitization,passed
+I1/I2,O0,"A,B,C,E+F",9,9,9,"O0 is steady constant 1; conservative physical arc sum, not an observed output edge",True
+I1/I2,O0,"A,D,E+F",9.5,7,12,"O0 is steady constant 1; conservative physical arc sum, not an observed output edge",True
+I1/I2,O1,"A,D,G+H",9.5,8,11,sensitizable logic path,True
+I0,O0,"B,C,E+F",6,5,7,"O0 is steady constant 1; conservative physical arc sum, not an observed output edge",True
+I3,O0,"D,E+F",6.5,8,5,"O0 is steady constant 1; conservative physical arc sum, not an observed output edge",True
+I3,O1,"D,G+H",6.5,7,6,sensitizable logic path,True
+I4,O1,G+H,3.5,4,3,sensitizable logic path,True

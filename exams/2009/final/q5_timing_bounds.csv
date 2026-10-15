@@ -1,0 +1,6 @@
+candidate_tcd_ns,candidate_tpd_ns,setup_slack_ns,hold_slack_ns,valid
+0.79,3.0,0.0,-0.01,False
+0.8,3.0,0.0,0.0,True
+0.81,3.0,0.0,0.01,True
+0.8,3.01,-0.01,0.0,False
+0.8,2.99,0.01,0.0,True

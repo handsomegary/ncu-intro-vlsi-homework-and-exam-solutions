@@ -1,0 +1,40 @@
+{
+  "stable_functions": {
+    "z": "NOT majority(A,B,C)",
+    "X": "majority(A,B,C)",
+    "w": "NOT XOR3(A,B,C)",
+    "Y": "XOR3(A,B,C)"
+  },
+  "loads": {
+    "z_in_C": 4,
+    "w_in_C": 1,
+    "X_output_in_C": 0,
+    "Y_output_in_C": 0
+  },
+  "source_average_convention": {
+    "X_tcd_over_RC": "40/7",
+    "X_tpd_over_RC": "8",
+    "Y_tcd_over_RC": "8/3",
+    "Y_tpd_over_RC": "10",
+    "whole_tcd_over_RC": "8/3",
+    "whole_tpd_over_RC": "10"
+  },
+  "independent_stage_envelope": {
+    "w_tcd_over_RC": "37/24",
+    "w_tpd_over_RC": "8/3",
+    "sum_min_not_jointly_reachable": "1219/168",
+    "sum_max_not_jointly_reachable": "32/3"
+  },
+  "charge_sharing_counterexample": {
+    "ABC": "001",
+    "initial_y_V": 0,
+    "initial_z_V": 1.8,
+    "connected_caps_pF": [
+      1.6,
+      0.8
+    ],
+    "shared_z_V": 1.2,
+    "p_turnon_threshold_V": 1.3
+  },
+  "scope": "Exact linear ON-resistance / source average-delay convention. No external X/Y load is drawn and drain caps are neglected. Initial internal node voltages must be stated for sharing."
+}

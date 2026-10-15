@@ -1,0 +1,10 @@
+{
+  "all_pass": true,
+  "HW1_Boolean_cases": 32,
+  "HW2_electrical_cases": 64,
+  "HW3_HSPICE_delay_rows": 36,
+  "HW3_independent_waveform_checks": 12,
+  "max_waveform_measurement_difference_ps": 0.004901600226556724,
+  "HW4_identical_netlist_and_explicit_result_reuse": true,
+  "PDF_reports": 4
+}

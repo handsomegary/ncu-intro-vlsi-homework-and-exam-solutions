@@ -1,0 +1,30 @@
+{
+  "year": 2024,
+  "exam": "final",
+  "question_points": [
+    45,
+    5,
+    15,
+    11,
+    10,
+    24
+  ],
+  "question_1_part_points": [
+    6,
+    6,
+    6,
+    4,
+    6,
+    4,
+    4,
+    4,
+    5
+  ],
+  "printed_total_points": 110,
+  "transcription": "Original numbered questions, symbols, full complement bar and connections retained; photos redrawn as editable vectors and page spacing normalized. Incidental annotations excluded.",
+  "confirmed_user_decisions": {
+    "Q4": "Both classroom fixed-output-C convention and literal feedback-gate-capacitance limitation",
+    "Q6": "Both literal positive R4 capture-clock delay and adverse-skew classroom convention; preserve original diagram"
+  },
+  "process_model_required": false
+}

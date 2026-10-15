@@ -1,0 +1,14 @@
+footer_W_um,clock_coefficient,footer_R_over_Rp1,clock_under_1p25,necessary_balance_condition_pass
+0.1,1.025,20.0,True,False
+0.25,1.0625,8.0,True,False
+0.5,1.125,4.0,True,False
+0.75,1.1875,2.6666666666666665,True,False
+0.99,1.2475,2.0202020202020203,True,False
+1.0,1.25,2.0,False,False
+1.5,1.375,1.3333333333333333,False,False
+2.0,1.5,1.0,False,False
+2.01,1.5025,0.9950248756218906,False,True
+4.0,2.0,0.5,False,True
+6.0,2.5,0.3333333333333333,False,True
+8.0,3.0,0.25,False,True
+100.0,26.0,0.02,False,True

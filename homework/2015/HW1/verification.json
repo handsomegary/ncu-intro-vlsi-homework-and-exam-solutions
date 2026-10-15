@@ -1,0 +1,7 @@
+{
+  "all_pass": true,
+  "Q3_cases": 8,
+  "Q4a_cases": 16,
+  "Q4b_cases": 8,
+  "Q4a_expression": "NOT[w*NOT(x+y)+y*z]"
+}

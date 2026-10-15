@@ -1,0 +1,518 @@
+{
+  "q1a": [
+    {
+      "name": "N1",
+      "kind": "n",
+      "gate": "w",
+      "a": "OUT",
+      "b": "n1"
+    },
+    {
+      "name": "N2",
+      "kind": "n",
+      "gate": "x",
+      "a": "n1",
+      "b": "GND"
+    },
+    {
+      "name": "N3",
+      "kind": "n",
+      "gate": "y",
+      "a": "n1",
+      "b": "GND"
+    },
+    {
+      "name": "N4",
+      "kind": "n",
+      "gate": "y",
+      "a": "OUT",
+      "b": "n2"
+    },
+    {
+      "name": "N5",
+      "kind": "n",
+      "gate": "z",
+      "a": "n2",
+      "b": "GND"
+    },
+    {
+      "name": "P1",
+      "kind": "p",
+      "gate": "w",
+      "a": "VDD",
+      "b": "p1"
+    },
+    {
+      "name": "P2",
+      "kind": "p",
+      "gate": "x",
+      "a": "VDD",
+      "b": "p2"
+    },
+    {
+      "name": "P3",
+      "kind": "p",
+      "gate": "y",
+      "a": "p2",
+      "b": "p1"
+    },
+    {
+      "name": "P4",
+      "kind": "p",
+      "gate": "y",
+      "a": "p1",
+      "b": "OUT"
+    },
+    {
+      "name": "P5",
+      "kind": "p",
+      "gate": "z",
+      "a": "p1",
+      "b": "OUT"
+    }
+  ],
+  "q1b": [
+    {
+      "name": "N1",
+      "kind": "n",
+      "gate": "x",
+      "a": "OUT",
+      "b": "n1"
+    },
+    {
+      "name": "N2",
+      "kind": "n",
+      "gate": "y",
+      "a": "n1",
+      "b": "GND"
+    },
+    {
+      "name": "N3",
+      "kind": "n",
+      "gate": "z",
+      "a": "n1",
+      "b": "GND"
+    },
+    {
+      "name": "N4",
+      "kind": "n",
+      "gate": "y",
+      "a": "OUT",
+      "b": "n2"
+    },
+    {
+      "name": "N5",
+      "kind": "n",
+      "gate": "z",
+      "a": "n2",
+      "b": "GND"
+    },
+    {
+      "name": "P1",
+      "kind": "p",
+      "gate": "x",
+      "a": "VDD",
+      "b": "p1"
+    },
+    {
+      "name": "P2",
+      "kind": "p",
+      "gate": "y",
+      "a": "VDD",
+      "b": "p2"
+    },
+    {
+      "name": "P3",
+      "kind": "p",
+      "gate": "z",
+      "a": "p2",
+      "b": "p1"
+    },
+    {
+      "name": "P4",
+      "kind": "p",
+      "gate": "y",
+      "a": "p1",
+      "b": "OUT"
+    },
+    {
+      "name": "P5",
+      "kind": "p",
+      "gate": "z",
+      "a": "p1",
+      "b": "OUT"
+    }
+  ],
+  "q3_xor": [
+    {
+      "name": "N1",
+      "kind": "n",
+      "gate": "A",
+      "a": "OUT",
+      "b": "n1"
+    },
+    {
+      "name": "N2",
+      "kind": "n",
+      "gate": "B",
+      "a": "n1",
+      "b": "GND"
+    },
+    {
+      "name": "N3",
+      "kind": "n",
+      "gate": "Abar",
+      "a": "OUT",
+      "b": "n2"
+    },
+    {
+      "name": "N4",
+      "kind": "n",
+      "gate": "Bbar",
+      "a": "n2",
+      "b": "GND"
+    },
+    {
+      "name": "P1",
+      "kind": "p",
+      "gate": "A",
+      "a": "VDD",
+      "b": "p1"
+    },
+    {
+      "name": "P2",
+      "kind": "p",
+      "gate": "B",
+      "a": "VDD",
+      "b": "p1"
+    },
+    {
+      "name": "P3",
+      "kind": "p",
+      "gate": "Abar",
+      "a": "p1",
+      "b": "OUT"
+    },
+    {
+      "name": "P4",
+      "kind": "p",
+      "gate": "Bbar",
+      "a": "p1",
+      "b": "OUT"
+    }
+  ],
+  "q3_inverters": [
+    {
+      "name": "IAN",
+      "kind": "n",
+      "gate": "A",
+      "a": "Abar",
+      "b": "GND"
+    },
+    {
+      "name": "IAP",
+      "kind": "p",
+      "gate": "A",
+      "a": "Abar",
+      "b": "VDD"
+    },
+    {
+      "name": "IBN",
+      "kind": "n",
+      "gate": "B",
+      "a": "Bbar",
+      "b": "GND"
+    },
+    {
+      "name": "IBP",
+      "kind": "p",
+      "gate": "B",
+      "a": "Bbar",
+      "b": "VDD"
+    }
+  ],
+  "q2_tg_bank": [
+    {
+      "name": "T00N",
+      "kind": "n",
+      "gate": "c3bar",
+      "a": "a0",
+      "b": "z0"
+    },
+    {
+      "name": "T00P",
+      "kind": "p",
+      "gate": "c3",
+      "a": "a0",
+      "b": "z0"
+    },
+    {
+      "name": "T01N",
+      "kind": "n",
+      "gate": "c2bar",
+      "a": "a3",
+      "b": "z0"
+    },
+    {
+      "name": "T01P",
+      "kind": "p",
+      "gate": "c2",
+      "a": "a3",
+      "b": "z0"
+    },
+    {
+      "name": "T02N",
+      "kind": "n",
+      "gate": "c1bar",
+      "a": "a2",
+      "b": "z0"
+    },
+    {
+      "name": "T02P",
+      "kind": "p",
+      "gate": "c1",
+      "a": "a2",
+      "b": "z0"
+    },
+    {
+      "name": "T03N",
+      "kind": "n",
+      "gate": "c0bar",
+      "a": "a1",
+      "b": "z0"
+    },
+    {
+      "name": "T03P",
+      "kind": "p",
+      "gate": "c0",
+      "a": "a1",
+      "b": "z0"
+    },
+    {
+      "name": "T10N",
+      "kind": "n",
+      "gate": "c3bar",
+      "a": "a1",
+      "b": "z1"
+    },
+    {
+      "name": "T10P",
+      "kind": "p",
+      "gate": "c3",
+      "a": "a1",
+      "b": "z1"
+    },
+    {
+      "name": "T11N",
+      "kind": "n",
+      "gate": "c2bar",
+      "a": "a0",
+      "b": "z1"
+    },
+    {
+      "name": "T11P",
+      "kind": "p",
+      "gate": "c2",
+      "a": "a0",
+      "b": "z1"
+    },
+    {
+      "name": "T12N",
+      "kind": "n",
+      "gate": "c1bar",
+      "a": "a3",
+      "b": "z1"
+    },
+    {
+      "name": "T12P",
+      "kind": "p",
+      "gate": "c1",
+      "a": "a3",
+      "b": "z1"
+    },
+    {
+      "name": "T13N",
+      "kind": "n",
+      "gate": "c0bar",
+      "a": "a2",
+      "b": "z1"
+    },
+    {
+      "name": "T13P",
+      "kind": "p",
+      "gate": "c0",
+      "a": "a2",
+      "b": "z1"
+    },
+    {
+      "name": "T20N",
+      "kind": "n",
+      "gate": "c3bar",
+      "a": "a2",
+      "b": "z2"
+    },
+    {
+      "name": "T20P",
+      "kind": "p",
+      "gate": "c3",
+      "a": "a2",
+      "b": "z2"
+    },
+    {
+      "name": "T21N",
+      "kind": "n",
+      "gate": "c2bar",
+      "a": "a1",
+      "b": "z2"
+    },
+    {
+      "name": "T21P",
+      "kind": "p",
+      "gate": "c2",
+      "a": "a1",
+      "b": "z2"
+    },
+    {
+      "name": "T22N",
+      "kind": "n",
+      "gate": "c1bar",
+      "a": "a0",
+      "b": "z2"
+    },
+    {
+      "name": "T22P",
+      "kind": "p",
+      "gate": "c1",
+      "a": "a0",
+      "b": "z2"
+    },
+    {
+      "name": "T23N",
+      "kind": "n",
+      "gate": "c0bar",
+      "a": "a3",
+      "b": "z2"
+    },
+    {
+      "name": "T23P",
+      "kind": "p",
+      "gate": "c0",
+      "a": "a3",
+      "b": "z2"
+    },
+    {
+      "name": "T30N",
+      "kind": "n",
+      "gate": "c3bar",
+      "a": "a3",
+      "b": "z3"
+    },
+    {
+      "name": "T30P",
+      "kind": "p",
+      "gate": "c3",
+      "a": "a3",
+      "b": "z3"
+    },
+    {
+      "name": "T31N",
+      "kind": "n",
+      "gate": "c2bar",
+      "a": "a2",
+      "b": "z3"
+    },
+    {
+      "name": "T31P",
+      "kind": "p",
+      "gate": "c2",
+      "a": "a2",
+      "b": "z3"
+    },
+    {
+      "name": "T32N",
+      "kind": "n",
+      "gate": "c1bar",
+      "a": "a1",
+      "b": "z3"
+    },
+    {
+      "name": "T32P",
+      "kind": "p",
+      "gate": "c1",
+      "a": "a1",
+      "b": "z3"
+    },
+    {
+      "name": "T33N",
+      "kind": "n",
+      "gate": "c0bar",
+      "a": "a0",
+      "b": "z3"
+    },
+    {
+      "name": "T33P",
+      "kind": "p",
+      "gate": "c0",
+      "a": "a0",
+      "b": "z3"
+    }
+  ],
+  "q2_control_inverters": [
+    {
+      "name": "IC0N",
+      "kind": "n",
+      "gate": "c0",
+      "a": "c0bar",
+      "b": "GND"
+    },
+    {
+      "name": "IC0P",
+      "kind": "p",
+      "gate": "c0",
+      "a": "c0bar",
+      "b": "VDD"
+    },
+    {
+      "name": "IC1N",
+      "kind": "n",
+      "gate": "c1",
+      "a": "c1bar",
+      "b": "GND"
+    },
+    {
+      "name": "IC1P",
+      "kind": "p",
+      "gate": "c1",
+      "a": "c1bar",
+      "b": "VDD"
+    },
+    {
+      "name": "IC2N",
+      "kind": "n",
+      "gate": "c2",
+      "a": "c2bar",
+      "b": "GND"
+    },
+    {
+      "name": "IC2P",
+      "kind": "p",
+      "gate": "c2",
+      "a": "c2bar",
+      "b": "VDD"
+    },
+    {
+      "name": "IC3N",
+      "kind": "n",
+      "gate": "c3",
+      "a": "c3bar",
+      "b": "GND"
+    },
+    {
+      "name": "IC3P",
+      "kind": "p",
+      "gate": "c3",
+      "a": "c3bar",
+      "b": "VDD"
+    }
+  ]
+}

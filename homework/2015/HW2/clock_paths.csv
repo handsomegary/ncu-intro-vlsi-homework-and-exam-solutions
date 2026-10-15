@@ -1,0 +1,4 @@
+path,length_um,wire_s,gate_delay_s,wire_neglected,specified_delay_s
+A-B,650,3.16875e-13,4e-10,True,4e-10
+A-C,400,1.2000000000000002e-13,6e-10,True,6e-10
+A-D,650,3.16875e-13,4e-10,True,4e-10

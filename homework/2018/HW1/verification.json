@@ -1,0 +1,11 @@
+{
+  "Q2_cases": 8,
+  "Q3_cases": 8,
+  "Q4a_cases": 16,
+  "Q4b_cases": 8,
+  "boolean_cases": 40,
+  "square_law_points": 5050,
+  "max_current_error": 2.220446049250313e-16,
+  "all_pass": true,
+  "complementary_networks_mutually_exclusive": true
+}

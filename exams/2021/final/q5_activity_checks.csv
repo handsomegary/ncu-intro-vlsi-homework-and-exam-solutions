@@ -1,0 +1,5 @@
+node,cycle_steps,total_transitions,charging_transitions,alpha_all,alpha_01,pass
+u,4,2,1,0.5,0.25,True
+v,4,2,1,0.5,0.25,True
+w,4,2,1,0.5,0.25,True
+o,4,2,1,0.5,0.25,True

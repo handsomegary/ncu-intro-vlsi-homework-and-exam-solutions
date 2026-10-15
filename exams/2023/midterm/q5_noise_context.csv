@@ -1,0 +1,5 @@
+ABCD,G1,G2,G3,G1_conventional_margin,G2_conventional_margin,G3_conventional_margin,G2_any_single_input_masked,G3_any_single_input_masked
+0011,1,0,0,NML>NMH,NML<NMH,NML>NMH,False,False
+0101,1,0,0,NML>NMH,NML<NMH,NML>NMH,False,False
+1101,1,0,0,NML>NMH,NML<NMH,NML>NMH,True,False
+1110,0,0,1,NML>NMH,NML<NMH,NML>NMH,False,True

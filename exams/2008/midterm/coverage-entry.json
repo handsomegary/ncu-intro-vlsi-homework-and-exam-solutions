@@ -1,0 +1,40 @@
+{
+  "year": 2008,
+  "season": "Spring",
+  "exam": "midterm",
+  "status": "complete",
+  "questions_count": 5,
+  "questions": [
+    {
+      "number": 1,
+      "points": 40,
+      "status": "complete"
+    },
+    {
+      "number": 2,
+      "points": 20,
+      "status": "complete"
+    },
+    {
+      "number": 3,
+      "points": 20,
+      "status": "complete"
+    },
+    {
+      "number": 4,
+      "points": 10,
+      "status": "complete"
+    },
+    {
+      "number": 5,
+      "points": 10,
+      "status": "complete",
+      "printed_mark": "10%"
+    }
+  ],
+  "points_printed_total": 100,
+  "points_note": "Q1-Q4 print 40+20+20+10 points; Q5 prints (10%). Its ten-percent remainder is interpreted as ten points of the intended 100-point paper.",
+  "original_printed_pages": 2,
+  "missing": [],
+  "year_basis": "Printed Spring 2008 footer on the authentic question pages."
+}

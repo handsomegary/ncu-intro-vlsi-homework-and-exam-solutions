@@ -1,0 +1,5 @@
+assumed_evaluation_fraction_D,critical_frequency_kHz,safe_condition
+1/4,96.15384615384616,f greater than this boundary; equality has zero threshold margin
+1/2,192.30769230769232,f greater than this boundary; equality has zero threshold margin
+3/4,288.46153846153845,f greater than this boundary; equality has zero threshold margin
+1,384.61538461538464,f greater than this boundary; equality has zero threshold margin

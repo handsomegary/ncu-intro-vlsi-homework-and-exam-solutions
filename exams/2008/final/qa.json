@@ -1,0 +1,177 @@
+{
+  "status": "ready",
+  "scope": "All original Q1-Q8; printed weights total 115%.",
+  "pdfs": {
+    "exam": {
+      "pages": 4,
+      "raster_images": 0
+    },
+    "solution": {
+      "pages": 9,
+      "raster_images": 0
+    },
+    "original-exam": {
+      "pages": 3,
+      "raster_images": 3
+    }
+  },
+  "compilation": {
+    "built_in": {
+      "exam": "success",
+      "solution": "success"
+    },
+    "local": {
+      "exam": {
+        "pages": 4,
+        "warnings": [],
+        "compiled": true
+      },
+      "solution": {
+        "pages": 9,
+        "warnings": [],
+        "compiled": true
+      }
+    }
+  },
+  "visual_qa": {
+    "exam_pages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "solution_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "original_pages": [
+      1,
+      2,
+      3
+    ],
+    "student_answer_pages": [
+      1,
+      2
+    ],
+    "latest_changed_pages_rechecked": {
+      "exam": [
+        1,
+        4
+      ],
+      "solution": [
+        9
+      ]
+    },
+    "result": "All pages visually inspected. Final prompt paragraph separation, gate width labels and evidence table are readable, with no clipping or overlap."
+  },
+  "original_year_evidence": "Printed Fall 2008 footer on all three pages.",
+  "student_answer_sets": 1,
+  "duplicate_answer_pdfs": true,
+  "q7a_source_gap": {
+    "rectangle_xyxy_exclusive": [
+      455,
+      1690,
+      465,
+      1709
+    ],
+    "native_white_pixels": 190,
+    "independently_confirmed": true
+  },
+  "verification": {
+    "all_checks_passed": true,
+    "analytical_csv_files": 27,
+    "analytical_csv_rows": 649,
+    "comparison_rows": 8,
+    "csv_rows_by_file": {
+      "q2_differential_candidates.csv": 128,
+      "q2_differential_complete_netlist.csv": 22,
+      "q2_domino_complete_netlist.csv": 19,
+      "q2_domino_phases.csv": 64,
+      "q2_static_netlist.csv": 10,
+      "q2_truth.csv": 32,
+      "q3_dynamic_register_netlist.csv": 12,
+      "q3_phase_histories.csv": 8,
+      "q4_duty_parameter.csv": 4,
+      "q4_dynamic_capacitances.csv": 2,
+      "q4_full_adder_literal_netlist.csv": 20,
+      "q4_full_adder_truth.csv": 8,
+      "q4_retention_bounds.csv": 2,
+      "q5_conditional_hold.csv": 4,
+      "q5_setup_bound.csv": 3,
+      "q6_schmitt_literal_netlist.csv": 6,
+      "q6_symbolic_family_checks.csv": 14,
+      "q6_trip_regions_symbolic.csv": 4,
+      "q7a_latch_candidates.csv": 32,
+      "q7a_literal_netlist.csv": 8,
+      "q7b_literal_netlist.csv": 12,
+      "q7b_switch_truth.csv": 8,
+      "q8a_keeper_write_checks.csv": 200,
+      "q8a_upstream_literal_netlist.csv": 6,
+      "q8a_upstream_truth_resistance.csv": 8,
+      "q8b_negative_edge_trace.csv": 9,
+      "q8b_source_mux_phases.csv": 4,
+      "student-comparison.csv": 8
+    },
+    "simulation_claimed": false
+  },
+  "source_qualifications": [
+    "Q4 evaluation duty is unprovided; frequency bound remains a function of duty.",
+    "Q5 contamination clock-to-Q delay is unprovided; hold bound remains conditional.",
+    "Q6 device thresholds and feedback lengths are unprovided; size ratios remain a symbolic onset family.",
+    "Q8 has a source panel-reference typo; the two intact mux/buffer drawings provide the selection premise."
+  ],
+  "generated_utc": "2026-10-14T13:54:27.772164+00:00",
+  "sha256": {
+    "coverage-entry.json": "814121e29b85cb2eab231c42a31121f01d2c04662ae96ed589ce47d3d7d43846",
+    "exam.pdf": "4ac1adf0a3f10a403243adca41664be19f5fa32f18f5775e7d5280c486881df9",
+    "exam.tex": "8fc2ac190e4e67930e82a0e2b12c5156eb8cf4c934333bed2f6a0850f5d4bd87",
+    "logic-layout-verification.json": "eecef85bf103080deff70566f0a0c9da6a3e8fab61980ad812fc0e3c8d4c9edb",
+    "numerical-verification.json": "185669e02cc6694d59d3b26ffccbd7a3f96a8fdd9b4a756632381a89d915895a",
+    "q2_differential_candidates.csv": "e8e1359040324e9b920e61cc778acdbb7053c160ec9922fab0dcbd3ff70e2b2c",
+    "q2_differential_complete_netlist.csv": "8b2f044d007514bbcaf2bda9fc04e0398e5678dc698577415b1afd8e3f4e0a99",
+    "q2_domino_complete_netlist.csv": "1fae823357a0161feb0da77886dd91cd70b9e957b4b4565aecad13f17dcc119a",
+    "q2_domino_phases.csv": "ba03324c27c640534c8706de52d461457de12b222ab270bcbf6eb96d6384c382",
+    "q2_static_netlist.csv": "e97ff80993b9c2d695cf76bb6710cb3643bd8fc90342fcde66c3a42596bc8685",
+    "q2_truth.csv": "77fb999f21b3ca72078e312f330fc3adb69bff61865abfb1105fb16c940619d6",
+    "q3_dynamic_register_netlist.csv": "340e739d2d660fec47935446d858842c51bace00f1315f57a9df0d501084eb05",
+    "q3_phase_histories.csv": "6f6cfa9458c520966f8af4648a79d5a64cf1ef10ec1b840e7a2cc50d9ffaa00a",
+    "q4_duty_parameter.csv": "37c5ff5eb6631e446fd6ebe44fc74fc1fa627c40049c0b27d4ed2ce0c51b3216",
+    "q4_dynamic_capacitances.csv": "123b9cf03bbb002868f2bb8e250bb218716d5572da800c61f8c3175f638082de",
+    "q4_full_adder_literal_netlist.csv": "1bbf0b49fa5428cbfd80dce441dd0fb1602b107edefe96e65ce01ca7115e658c",
+    "q4_full_adder_truth.csv": "b2e2fc2fc76f62a6b36b3f60835b3544a1dde8c0aed20deff7b221a79d747e07",
+    "q4_retention_bounds.csv": "07ce1e13751470db9ba5a25dae42b037b417aedbdbbd9d6c2f21f11b7b4db610",
+    "q5_conditional_hold.csv": "c26850e9a835f1d19d010f8bdcedf6edcfb616c0c792cd8ea8264ff95e2b4650",
+    "q5_setup_bound.csv": "6a82040744d0fb306266b7be486a7ab895d245c352bbba1db79fac34fbb26a2a",
+    "q6_schmitt_literal_netlist.csv": "9e59e69a43ef545358a0c5e8eb19549ddd94c43c528239969aaba1d20d18f577",
+    "q6_symbolic_family_checks.csv": "1acb4c3908896a440c48fb2b4481bd8a28600a038d083e3de6b70c5489e3aeab",
+    "q6_trip_regions_symbolic.csv": "d1e40d892f5c02b35911d3e3bd6b8da82c740170c4cc11935bde64ae22f74d4a",
+    "q7a-gap-evidence.json": "ee04cb38e2dbe5dedea1178d90377557ba68171e43000752c9fbfb08ec311190",
+    "q7a_latch_candidates.csv": "6d38e5109ac34801b27a0451cd3e31f408fcf28b4d7ace2aa3cba682f354d49d",
+    "q7a_literal_netlist.csv": "4cb7a7ddb05ca70113eda0759bc050ee1a3cf15def764efa2f3f937c26d02469",
+    "q7b_literal_netlist.csv": "7474ed152b5aa2911e7fbc363e320ff590fb071977bb37ed760913ecf00a8718",
+    "q7b_switch_truth.csv": "391f391e85690e742c7bf2dd295199e1047664f2db6729ccd0a0f4c50a7dc9ba",
+    "q8a_keeper_write_checks.csv": "731be3e3195b7c2b05623a2459b846a03c359951d3b0e3dd618dee4684f0b9fd",
+    "q8a_upstream_literal_netlist.csv": "c367dcff9b9e0c79097eae2731fffbeb62285b04f1d1fd3dd7d56f1727f27744",
+    "q8a_upstream_truth_resistance.csv": "ee4fd0ab06111664d6212369a1c2fcfcfa57341c67e710d6c4237011aa1cf5b4",
+    "q8b_negative_edge_trace.csv": "fb358c4eebb4e5aee6d31e88c1a11bc9fbcc8c16389eb96eb843ad49e30ac9b2",
+    "q8b_source_mux_phases.csv": "0dae124ab7070fee7b4e00df1d5e6d81133299e608b6baf08f97bfeb999b6985",
+    "README.md": "1ae024ab8a55aa51bbd5b8c87b4e11031c28ea7640b5c82563834b1903f87831",
+    "solution.pdf": "e26aacb18a73cde2cafdab2b1d78bbb7f2c193460f005d4ad10dd744765d26e9",
+    "solution.tex": "21e03901429110307b69c04031f36307f101389fb285c5625d54b6139dd8a768",
+    "sources.json": "d212cbd3b82bbee3c727cb6f0f19674a7b5945dbb4b375b0fd2fd5cace89a2bf",
+    "SOURCES.md": "dc4055f9919dee2c8bb33d4dfcfce186c69a175638911348dc481607fd368037",
+    "student-comparison.csv": "770bd1249890ddaf3539cff86823f3fa9a0d6b7bcd3c038053a678ded24fa99f",
+    "verification.json": "6d52462259ad6d87d9f0349c5c834bcc9bcbbf8382fa899d87845e733889659e",
+    "verify.py": "06cb0e2d904dd8babc8269c0c8f21c7235a127c438b5489c85171044b23d8b3b",
+    "verify_logic_layout.py": "f60fa0d669a9b88c4d69c8b9a121b1cb1697c2e5e94f05e62926fbb8a2c213e9",
+    "verify_numerical.py": "78c6371772e88bc87a6eba322f6df48884c7c07bba5191a5c982a8b936c0006f"
+  },
+  "artifact_hash_convention": "SHA256 of exact binary bytes; text artifacts normalized to LF, matching Git archive and MANIFEST.json."
+}

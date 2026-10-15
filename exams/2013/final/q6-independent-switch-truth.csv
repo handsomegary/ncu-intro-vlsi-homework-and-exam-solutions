@@ -1,0 +1,9 @@
+a,b,c,Z,VDD_reachable,VSS_reachable,on_devices
+0,0,0,1,True,False,P3 P4 P5
+0,0,1,0,False,True,P3 P4 N5
+0,1,0,0,False,True,P3 N4 P5
+0,1,1,0,False,True,P3 N4 N5
+1,0,0,0,False,True,N3 P4 P5
+1,0,1,0,False,True,N3 P4 N5
+1,1,0,0,False,True,N3 N4 P5
+1,1,1,0,False,True,N3 N4 N5

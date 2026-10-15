@@ -1,0 +1,656 @@
+{
+  "year": 2008,
+  "season": "Spring",
+  "exam": "midterm",
+  "status": "PASS",
+  "method": "ideal static MOS graphs; analytical balanced/general RC delays; conditional dual-Vt slack; buffer optimization; no process simulation",
+  "Q1": {
+    "MOS": 10,
+    "graph": [
+      {
+        "name": "QN1",
+        "kind": "N",
+        "drain": "f",
+        "gate": "x",
+        "source": "QNj1",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "QN2",
+        "kind": "N",
+        "drain": "QNj1",
+        "gate": "y",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "QN3",
+        "kind": "N",
+        "drain": "f",
+        "gate": "u",
+        "source": "QNj2",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "QN4",
+        "kind": "N",
+        "drain": "f",
+        "gate": "v",
+        "source": "QNj2",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "QN5",
+        "kind": "N",
+        "drain": "QNj2",
+        "gate": "w",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "QP1",
+        "kind": "P",
+        "drain": "f",
+        "gate": "x",
+        "source": "QPj1",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "QP2",
+        "kind": "P",
+        "drain": "f",
+        "gate": "y",
+        "source": "QPj1",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "QP3",
+        "kind": "P",
+        "drain": "QPj1",
+        "gate": "u",
+        "source": "QPj2",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "QP4",
+        "kind": "P",
+        "drain": "QPj2",
+        "gate": "v",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "QP5",
+        "kind": "P",
+        "drain": "QPj1",
+        "gate": "w",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      }
+    ],
+    "cases": 32,
+    "function": "NOT[xy+(u+v)w]"
+  },
+  "Q2": {
+    "MOS": 26,
+    "graph": [
+      {
+        "name": "AP1",
+        "kind": "P",
+        "drain": "Am",
+        "gate": "I1",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "AP2",
+        "kind": "P",
+        "drain": "a",
+        "gate": "I2",
+        "source": "Am",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "AN1",
+        "kind": "N",
+        "drain": "a",
+        "gate": "I1",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "AN2",
+        "kind": "N",
+        "drain": "a",
+        "gate": "I2",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "BP1",
+        "kind": "P",
+        "drain": "Bm",
+        "gate": "I0",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "H"
+      },
+      {
+        "name": "BP2",
+        "kind": "P",
+        "drain": "b",
+        "gate": "a",
+        "source": "Bm",
+        "body": "VDD",
+        "vt": "H"
+      },
+      {
+        "name": "BN1",
+        "kind": "N",
+        "drain": "b",
+        "gate": "I0",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "H"
+      },
+      {
+        "name": "BN2",
+        "kind": "N",
+        "drain": "b",
+        "gate": "a",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "H"
+      },
+      {
+        "name": "CP",
+        "kind": "P",
+        "drain": "c",
+        "gate": "b",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "H"
+      },
+      {
+        "name": "CN",
+        "kind": "N",
+        "drain": "c",
+        "gate": "b",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "H"
+      },
+      {
+        "name": "DP1",
+        "kind": "P",
+        "drain": "d",
+        "gate": "a",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "DP2",
+        "kind": "P",
+        "drain": "d",
+        "gate": "I3",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "DN1",
+        "kind": "N",
+        "drain": "d",
+        "gate": "a",
+        "source": "Dm",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "DN2",
+        "kind": "N",
+        "drain": "Dm",
+        "gate": "I3",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "EP1",
+        "kind": "P",
+        "drain": "Em",
+        "gate": "c",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "EP2",
+        "kind": "P",
+        "drain": "n",
+        "gate": "d",
+        "source": "Em",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "EN1",
+        "kind": "N",
+        "drain": "n",
+        "gate": "c",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "EN2",
+        "kind": "N",
+        "drain": "n",
+        "gate": "d",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "FP",
+        "kind": "P",
+        "drain": "O0",
+        "gate": "n",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "FN",
+        "kind": "N",
+        "drain": "O0",
+        "gate": "n",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "GP1",
+        "kind": "P",
+        "drain": "m",
+        "gate": "d",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "GP2",
+        "kind": "P",
+        "drain": "m",
+        "gate": "I4",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "GN1",
+        "kind": "N",
+        "drain": "m",
+        "gate": "d",
+        "source": "Gm",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "GN2",
+        "kind": "N",
+        "drain": "Gm",
+        "gate": "I4",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "HP",
+        "kind": "P",
+        "drain": "O1",
+        "gate": "m",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "HN",
+        "kind": "N",
+        "drain": "O1",
+        "gate": "m",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      }
+    ],
+    "cases": 32,
+    "functions": [
+      "O0=1",
+      "O1=I4*(I1+I2+NOTI3)"
+    ],
+    "balanced_mean_gate_delays": {
+      "A NOR(I1,I2)": 3,
+      "B NOR(I0,a)": 1.5,
+      "C INV(b)": 1,
+      "D NAND(a,I3)": 3,
+      "E+F OR(c,d)": 3.5,
+      "G+H AND(d,I4)": 3.5
+    },
+    "balance_assumption": "Rp = Rn at Wp = 2 um / Wn = 1 um requires mu_n/mu_p = 2; not stated in Q2; general r formulas also included",
+    "mean_path_max": 9.5,
+    "edge_O1_sensitized_max": 11,
+    "edge_O0_conservative_arc_sum_max": 12,
+    "conditional_Vt": {
+      "low": 20,
+      "high": 6,
+      "high_devices": "B NOR and C inverter only",
+      "mean_metric_bound": "rho <= 6/5 in illustrative uniform high-Vt scaling"
+    },
+    "optimum_limit": "No high-Vt characterization or leakage weights are provided; candidate is eligible under explicit slack, not claimed as a unique optimum.",
+    "O0_scope": "Steady constant 1; preserve printed physical paths and label arc sums conservative; balanced isolated-a edge model has no pulse.",
+    "no_process_measurement": true
+  },
+  "Q3": {
+    "continuous_beta": 2.718281828459045,
+    "continuous_N": "ln(CL/Ci)",
+    "integer_rule": "N >= 1: compare floor/ceil ln(F), beta = F^(1/N); restrict to even N if required",
+    "delay": "D=N*F^(1/N)*referenceRC",
+    "eta_definition": "(PT-PL)/PT; overhead fraction",
+    "eta": "(beta^(N-1)-1)/(beta^N-1)",
+    "continuous_eta": "(F/e-1)/(F-1), only when continuous N = ln(F) is appropriate",
+    "large_load_limit": 0.36787944117144233,
+    "no_parasitic_model": true,
+    "integer_cases": 7
+  },
+  "Q4": {
+    "mu_n_over_mu_p": 2,
+    "T_over_RC": 6,
+    "feasible_alpha": [
+      1,
+      2
+    ],
+    "chosen_alpha": 1,
+    "delay": "T/RC=(1+alpha)*(1+2/alpha)",
+    "power": "2*a01*f*(1+alpha)*C*VDD^2",
+    "chosen_to_alpha2_power_ratio": 0.6666666666666666,
+    "source_scope": "T brackets the first two inverters; CL after the third excludes the first pair; ignore unspecified diffusion/wire capacitances"
+  },
+  "Q5": {
+    "MOS": 28,
+    "graph": [
+      {
+        "name": "CN1",
+        "kind": "N",
+        "drain": "cb",
+        "gate": "x",
+        "source": "CNj1",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "CN2",
+        "kind": "N",
+        "drain": "CNj1",
+        "gate": "y",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "CN3",
+        "kind": "N",
+        "drain": "cb",
+        "gate": "c",
+        "source": "CNj2",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "CN4",
+        "kind": "N",
+        "drain": "CNj2",
+        "gate": "x",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "CN5",
+        "kind": "N",
+        "drain": "CNj2",
+        "gate": "y",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "CP1",
+        "kind": "P",
+        "drain": "cb",
+        "gate": "x",
+        "source": "CPj1",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "CP2",
+        "kind": "P",
+        "drain": "cb",
+        "gate": "y",
+        "source": "CPj1",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "CP3",
+        "kind": "P",
+        "drain": "CPj1",
+        "gate": "c",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "CP4",
+        "kind": "P",
+        "drain": "CPj1",
+        "gate": "x",
+        "source": "CPj2",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "CP5",
+        "kind": "P",
+        "drain": "CPj2",
+        "gate": "y",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "CIP",
+        "kind": "P",
+        "drain": "cout",
+        "gate": "cb",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "CIN",
+        "kind": "N",
+        "drain": "cout",
+        "gate": "cb",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SN1",
+        "kind": "N",
+        "drain": "sb",
+        "gate": "cb",
+        "source": "SNj1",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SN2",
+        "kind": "N",
+        "drain": "SNj1",
+        "gate": "x",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SN3",
+        "kind": "N",
+        "drain": "SNj1",
+        "gate": "y",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SN4",
+        "kind": "N",
+        "drain": "SNj1",
+        "gate": "c",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SN5",
+        "kind": "N",
+        "drain": "sb",
+        "gate": "x",
+        "source": "SNj2",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SN6",
+        "kind": "N",
+        "drain": "SNj2",
+        "gate": "y",
+        "source": "SNj3",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SN7",
+        "kind": "N",
+        "drain": "SNj3",
+        "gate": "c",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      },
+      {
+        "name": "SP1",
+        "kind": "P",
+        "drain": "sb",
+        "gate": "cb",
+        "source": "SPj1",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SP2",
+        "kind": "P",
+        "drain": "sb",
+        "gate": "x",
+        "source": "SPj2",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SP3",
+        "kind": "P",
+        "drain": "SPj2",
+        "gate": "y",
+        "source": "SPj3",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SP4",
+        "kind": "P",
+        "drain": "SPj3",
+        "gate": "c",
+        "source": "SPj1",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SP5",
+        "kind": "P",
+        "drain": "SPj1",
+        "gate": "x",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SP6",
+        "kind": "P",
+        "drain": "SPj1",
+        "gate": "y",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SP7",
+        "kind": "P",
+        "drain": "SPj1",
+        "gate": "c",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SIP",
+        "kind": "P",
+        "drain": "sout",
+        "gate": "sb",
+        "source": "VDD",
+        "body": "VDD",
+        "vt": "L"
+      },
+      {
+        "name": "SIN",
+        "kind": "N",
+        "drain": "sout",
+        "gate": "sb",
+        "source": "VSS",
+        "body": "VSS",
+        "vt": "L"
+      }
+    ],
+    "cases": 8,
+    "sum": "x XOR y XOR ci",
+    "carry": "xy+ci(x+y)",
+    "source_comparison": "Graded booklet answers inverse operand recovery; not adopted. Ungraded study sheet gives correct forward Boolean/gate logic but not complete MOS expansion; independent 28-MOS schematic supplied.",
+    "source_last_row": "111 -> s = 1, co = 1 confirmed from compiled original; photo ink circle around sum is annotation"
+  }
+}

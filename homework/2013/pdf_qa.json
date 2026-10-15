@@ -1,0 +1,32 @@
+[
+  {
+    "homework": "HW1",
+    "pdf_pages": 5,
+    "builtin_compiler": "success",
+    "local_export": "MiKTeX pdfLaTeX, two successful passes",
+    "all_pages_visually_checked": true,
+    "overfull_boxes": 0,
+    "pdf_sha256": "6fc138c57868712e0f53d5bfccafd7c47e0a188bcbb749b65fad1d97f20656cb",
+    "tex_sha256": "6c5b8c4209018be2a1302122d4feb6d91cd18d56e40f1e013c8e9818a3bd48f5"
+  },
+  {
+    "homework": "HW2",
+    "pdf_pages": 2,
+    "builtin_compiler": "success",
+    "local_export": "MiKTeX pdfLaTeX, two successful passes",
+    "all_pages_visually_checked": true,
+    "overfull_boxes": 0,
+    "pdf_sha256": "67c549e0cd2e7d3c5a089012df8da4f474dff31dad0a55faecdf53794fef60ea",
+    "tex_sha256": "5894206270b6ae1c6a4414d8d04af912055eb7bcedf66970a6a10280ff40efcb"
+  },
+  {
+    "homework": "HW3",
+    "pdf_pages": 3,
+    "builtin_compiler": "success",
+    "local_export": "MiKTeX pdfLaTeX, two successful passes",
+    "all_pages_visually_checked": true,
+    "overfull_boxes": 0,
+    "pdf_sha256": "3c1a9f046c8f79b40957dbc845d38ce6133ce598cee1b5f0c0d4c40438a369c3",
+    "tex_sha256": "7bbd49e88bf63673b34032ed670a6a93d4ca9b546bc90b0cdbdbc2f7f3bac382"
+  }
+]

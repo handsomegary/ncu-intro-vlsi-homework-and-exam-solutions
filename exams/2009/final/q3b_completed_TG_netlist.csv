@@ -1,0 +1,5 @@
+device,type,left_channel,right_channel,gate
+P_existing,p,X,Y,C
+N_added,n,X,Y,Cbar
+P_Cbar,p,VDD,Cbar,C
+N_Cbar,n,Cbar,VSS,C

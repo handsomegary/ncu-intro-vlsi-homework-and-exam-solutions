@@ -1,0 +1,9 @@
+name,kind,drain,gate,source,body,vt
+AN1,N,f,w,ANj1,VSS,L
+AN2,N,ANj1,x,VSS,VSS,L
+AN3,N,ANj1,y,VSS,VSS,L
+AN4,N,ANj1,z,VSS,VSS,L
+AP1,P,f,w,VDD,VDD,L
+AP2,P,f,x,APj1,VDD,L
+AP3,P,APj1,y,APj2,VDD,L
+AP4,P,APj2,z,VDD,VDD,L

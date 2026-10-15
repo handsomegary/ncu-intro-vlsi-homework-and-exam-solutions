@@ -1,0 +1,9 @@
+question,retained,corrected_or_completed
+1,"Bounce, power-variable, dynamic/cascade concepts and custom-flow ordering","Complete energy accounting; add extraction; qualify corner claim, monotonic inputs and pad/core definitions"
+2,"Complement identity, differential and dual static topology ideas","Explicit complement generators, domino clocks/output inverter and complete MOS schematics"
+3,No complete student solution,Original first two p-clock/last two n-clock stages give positive-edge identity
+4,NP style and corrected 3Cd+3Cg/3Cd+2Cg counts,Separate high/low voltage margins; 2.60 us critical hold; duty-dependent frequency
+5,Setup/hold inequalities,Finish 7.5 ns setup; keep unprovided tccq symbolic
+6,Internal node VTplus minus Vtn relation,Replace constant-R division by a threshold-dependent MOS-current family
+7,No complete literal student extraction,8 MOS inverting positive-level latch; 12 MOS NAND3 with six OFF devices; white-gap proof
+8,No complete keeper/mux answer,Strict p<1/n<0.5 keeper bounds; source high-master/low-slave falling-edge order and timing

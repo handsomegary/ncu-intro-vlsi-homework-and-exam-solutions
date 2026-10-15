@@ -1,0 +1,32 @@
+{
+  "year": 2010,
+  "exam": "final",
+  "printed_term": "Fall 2010",
+  "original_pages": 3,
+  "points": [
+    30,
+    15,
+    15,
+    15,
+    15,
+    10,
+    15,
+    15
+  ],
+  "points_sum": 130,
+  "student_source": "2010/final/answer.pdf",
+  "reviewed_student_pdf_pages": 12,
+  "student_redistributed": false,
+  "comparison_limits": "Multiple graded booklets; independent original-first derivation.",
+  "layout_independent_contact_reviews": 2,
+  "reviewed_student_booklets": 6,
+  "reviewed_student_cover_scores": [
+    113,
+    110,
+    77,
+    76,
+    30,
+    39
+  ],
+  "grader_scores_are_not_correctness_proof": true
+}

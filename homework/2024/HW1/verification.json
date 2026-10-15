@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "model": "ideal binary MOS switch connectivity; not SPICE",
+  "test_counts": {
+    "1a_all_wxyz": 16,
+    "1b_all_xyz": 8,
+    "2_one_hot_controls_times_all_data": 64,
+    "3_static_all_AB": 4,
+    "3_TG_all_AB": 4,
+    "shared_inverter_truth_values": 2,
+    "out_of_spec_control_examples": 2
+  },
+  "total_asserted_cases": 100,
+  "truth_table_rows": 96,
+  "device_counts": {
+    "1a": 4,
+    "1b": 10,
+    "2_including_control_inverters": 40,
+    "3_static_core": 8,
+    "3_static_with_input_inverters": 12,
+    "3_TG_with_input_inverters": 8
+  },
+  "solutions_tex_sha256": "a4f413cc6cd4f118debeb791e795016523245f08f8795689070467eb1eae0783",
+  "limitations": [
+    "No transistor sizing or process-model evaluation",
+    "No analog swing, delay, capacitance or switching-transient validation",
+    "Problem 2 checked against only its four specified one-hot controls"
+  ]
+}

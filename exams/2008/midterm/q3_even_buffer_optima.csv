@@ -1,0 +1,8 @@
+CL_over_Ci,even_N,beta,delay_over_unitRC,scope,passed
+2,2,1.4142135623730951,2.8284271247461903,only if noninverting parity is required; not stated,True
+4,2,2.0,4.0,only if noninverting parity is required; not stated,True
+16,2,4.0,8.0,only if noninverting parity is required; not stated,True
+64,4,2.8284271247461903,11.313708498984761,only if noninverting parity is required; not stated,True
+256,6,2.5198420997897464,15.119052598738477,only if noninverting parity is required; not stated,True
+1000,8,2.371373705661655,18.97098964529324,only if noninverting parity is required; not stated,True
+1000000,14,2.6826957952797255,37.55774113391615,only if noninverting parity is required; not stated,True

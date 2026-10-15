@@ -1,0 +1,4 @@
+path,baseline_units,assigned_Vt,new_delay_bound_units
+A -> inverter -> XOR -> D,2,LVT,2
+B -> XOR -> D (gate abstraction),1,LVT,1
+B/C -> NAND -> E,1,HVT,2

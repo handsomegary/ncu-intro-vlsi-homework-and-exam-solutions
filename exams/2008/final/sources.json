@@ -1,0 +1,43 @@
+{
+  "year": 2008,
+  "exam": "final",
+  "canonical_source": "2008/final/final.pdf",
+  "year_evidence": "Fall 2008 printed footer; handwritten 2009 annotation disregarded",
+  "answer_sets": [
+    {
+      "set": "single supplied set",
+      "paths": [
+        "answer.pdf",
+        "final-answer.pdf"
+      ],
+      "sha256": "71ee6167fcfdc5205889b851f54130c9190523226d75a556d6ea54eb40746437",
+      "exact_duplicate": true,
+      "photo_pairs": [
+        {
+          "paths": [
+            "answer (1).jpg",
+            "final-answer (1).jpg"
+          ],
+          "sha256": "4322c1a5b97587ac4b6ee71a0e8e5d482927c1f9f0a5c2484e17cfe40a0bfa74"
+        },
+        {
+          "paths": [
+            "answer (2).jpg",
+            "final-answer (2).jpg"
+          ],
+          "sha256": "14c809bbde0a2bb33f0faaefb90fd0eea1bf42703e3d1660e8b948c170c7bdf8"
+        }
+      ]
+    }
+  ],
+  "source_typos": [
+    "Q8(b) references Figure 6(c); the actual two mux latch drawings are in right panel (b).",
+    "Figure 6 caption repeats low-level although the upper latch is low-level and the lower is high-level."
+  ],
+  "unprovided_parameters": [
+    "Q4 evaluation duty",
+    "Q5 tccq",
+    "Q6 Vtn, |Vtp| and feedback channel lengths"
+  ],
+  "graph_evidence": "Q7(a): a native 190-white-pixel gap was independently confirmed by a second reader; no image alteration."
+}

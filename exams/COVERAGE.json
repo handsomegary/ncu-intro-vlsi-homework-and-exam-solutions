@@ -1,0 +1,501 @@
+{
+  "policy": "Authentic original prompts govern independent derivations; student answers are fallible references. Missing original premises are not inferred. User-approved partial coverage is labeled explicitly.",
+  "completed_exams": [
+    {
+      "year": 2024,
+      "exam": "midterm",
+      "questions": 7,
+      "points": 100,
+      "exam_tex": "2024/midterm/exam.tex",
+      "exam_pdf": "2024/midterm/exam.pdf",
+      "solution_tex": "2024/midterm/solution.tex",
+      "solution_pdf": "2024/midterm/solution.pdf",
+      "status": "complete"
+    },
+    {
+      "year": 2024,
+      "exam": "final",
+      "questions": 6,
+      "points": 110,
+      "exam_tex": "2024/final/exam.tex",
+      "exam_pdf": "2024/final/exam.pdf",
+      "solution_tex": "2024/final/solution.tex",
+      "solution_pdf": "2024/final/solution.pdf",
+      "status": "complete"
+    },
+    {
+      "year": 2023,
+      "exam": "midterm",
+      "questions": [
+        5,
+        6,
+        7
+      ],
+      "points": 35,
+      "exam_tex": "2023/midterm/exam.tex",
+      "exam_pdf": "2023/midterm/exam.pdf",
+      "solution_tex": "2023/midterm/solution.tex",
+      "solution_pdf": "2023/midterm/solution.pdf",
+      "status": "available_questions_complete",
+      "missing": "Q1-Q3 and Q4 opening; Q4 tail preserved without inferred answer"
+    },
+    {
+      "year": 2023,
+      "exam": "final",
+      "questions": 7,
+      "points": 115,
+      "exam_tex": "2023/final/exam.tex",
+      "exam_pdf": "2023/final/exam.pdf",
+      "solution_tex": "2023/final/solution.tex",
+      "solution_pdf": "2023/final/solution.pdf",
+      "status": "complete"
+    },
+    {
+      "year": 2022,
+      "exam": "midterm",
+      "questions": 6,
+      "points": 100,
+      "exam_tex": "2022/midterm/exam.tex",
+      "exam_pdf": "2022/midterm/exam.pdf",
+      "solution_tex": "2022/midterm/solution.tex",
+      "solution_pdf": "2022/midterm/solution.pdf",
+      "status": "complete"
+    },
+    {
+      "year": 2021,
+      "exam": "midterm",
+      "questions": 6,
+      "points": 100,
+      "exam_tex": "2021/midterm/exam.tex",
+      "exam_pdf": "2021/midterm/exam.pdf",
+      "solution_tex": "2021/midterm/solution.tex",
+      "solution_pdf": "2021/midterm/solution.pdf",
+      "status": "complete"
+    },
+    {
+      "year": 2021,
+      "exam": "final",
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        "7(a)-(c)"
+      ],
+      "points": 76,
+      "printed_whole_paper_points": 105,
+      "status": "available_questions_complete",
+      "scope_label": "Q1-Q5 and Q7(a)-(c),76pts; cropped Q6 omitted",
+      "missing": "Q6(a)/(b) and timing premises cropped; visible Q6(c) retained without numeric answer. Q7(d) fragment retained; typed Q7(d)-(f) are separated as unverified secondary text.",
+      "exam_tex": "2021/final/exam.tex",
+      "exam_pdf": "2021/final/exam.pdf",
+      "solution_tex": "2021/final/solution.tex",
+      "solution_pdf": "2021/final/solution.pdf"
+    },
+    {
+      "year": 2018,
+      "exam": "final",
+      "status": "complete",
+      "questions_count": 8,
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "points_printed_total": 115,
+      "missing": [],
+      "notes": "All eight printed questions available; model-dependent numerical claims explicitly conditioned.",
+      "points": 115,
+      "question_details": [
+        {
+          "number": 1,
+          "points": 30,
+          "status": "complete"
+        },
+        {
+          "number": 2,
+          "points": 10,
+          "status": "complete"
+        },
+        {
+          "number": 3,
+          "points": 10,
+          "status": "complete"
+        },
+        {
+          "number": 4,
+          "points": 15,
+          "status": "complete"
+        },
+        {
+          "number": 5,
+          "points": 15,
+          "status": "complete"
+        },
+        {
+          "number": 6,
+          "points": 10,
+          "status": "complete"
+        },
+        {
+          "number": 7,
+          "points": 10,
+          "status": "complete"
+        },
+        {
+          "number": 8,
+          "points": 15,
+          "status": "complete"
+        }
+      ],
+      "exam_tex": "2018/final/exam.tex",
+      "exam_pdf": "2018/final/exam.pdf",
+      "solution_tex": "2018/final/solution.tex",
+      "solution_pdf": "2018/final/solution.pdf"
+    },
+    {
+      "year": 2016,
+      "exam": "final",
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "question_count": 8,
+      "points_printed_total": 120,
+      "preserved_original_pdf_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "complete",
+      "missing": [],
+      "points": 120,
+      "question_page_numbers": [
+        1,
+        2,
+        3
+      ],
+      "exam_tex": "2016/final/exam.tex",
+      "exam_pdf": "2016/final/exam.pdf",
+      "solution_tex": "2016/final/solution.tex",
+      "solution_pdf": "2016/final/solution.pdf"
+    },
+    {
+      "year": 2013,
+      "exam": "final",
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "points": 150,
+      "printed_whole_paper_points": 150,
+      "status": "complete",
+      "scope_label": "Q1–Q8,150pts; Q7 underdetermined ratios explicitly qualified",
+      "missing": null,
+      "qualifications": [
+        "Q4 missing external output-load premise",
+        "Q5 sign and gate-minimum model explicit",
+        "Q7 upper threshold not inferable; no fabricated ratio"
+      ],
+      "exam_tex": "2013/final/exam.tex",
+      "exam_pdf": "2013/final/exam.pdf",
+      "solution_tex": "2013/final/solution.tex",
+      "solution_pdf": "2013/final/solution.pdf"
+    },
+    {
+      "year": 2012,
+      "exam": "midterm",
+      "status": "complete",
+      "questions_count": 7,
+      "questions": [
+        {
+          "number": 1,
+          "points": 30,
+          "status": "complete"
+        },
+        {
+          "number": 2,
+          "points": 15,
+          "status": "complete"
+        },
+        {
+          "number": 3,
+          "points": 10,
+          "status": "complete"
+        },
+        {
+          "number": 4,
+          "points": 10,
+          "status": "complete"
+        },
+        {
+          "number": 5,
+          "points": 10,
+          "status": "complete"
+        },
+        {
+          "number": 6,
+          "points": 10,
+          "status": "complete"
+        },
+        {
+          "number": 7,
+          "points": 15,
+          "status": "complete"
+        }
+      ],
+      "points_printed_total": 100,
+      "original_printed_pages": 3,
+      "missing": [],
+      "year_basis": "Archive folder; printed date absent; matching reference duplicated under 2013.",
+      "points": 100,
+      "exam_tex": "2012/midterm/exam.tex",
+      "exam_pdf": "2012/midterm/exam.pdf",
+      "solution_tex": "2012/midterm/solution.tex",
+      "solution_pdf": "2012/midterm/solution.pdf"
+    },
+    {
+      "year": 2012,
+      "exam": "final",
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "question_count": 8,
+      "points": 140,
+      "question_page_numbers": [
+        1,
+        2,
+        3
+      ],
+      "source_printed_pages": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "status": "complete",
+      "missing": [],
+      "exam_tex": "2012/final/exam.tex",
+      "exam_pdf": "2012/final/exam.pdf",
+      "solution_tex": "2012/final/solution.tex",
+      "solution_pdf": "2012/final/solution.pdf"
+    },
+    {
+      "year": 2011,
+      "exam": "midterm",
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "points": 110,
+      "printed_whole_paper_points": 110,
+      "original_photo_panels": 6,
+      "status": "complete",
+      "scope_label": "Q1–Q6,110pts; source/model limits qualified",
+      "missing": null,
+      "approved_assumptions": [
+        "Figure3 six-gate bus connected toVDD, visibly noted"
+      ],
+      "exam_tex": "2011/midterm/exam.tex",
+      "exam_pdf": "2011/midterm/exam.pdf",
+      "solution_tex": "2011/midterm/solution.tex",
+      "solution_pdf": "2011/midterm/solution.pdf"
+    },
+    {
+      "year": 2010,
+      "exam": "final",
+      "questions": 8,
+      "points": 130,
+      "status": "complete",
+      "exam_tex": "2010/final/exam.tex",
+      "exam_pdf": "2010/final/exam.pdf",
+      "solution_tex": "2010/final/solution.tex",
+      "solution_pdf": "2010/final/solution.pdf"
+    },
+    {
+      "year": 2009,
+      "exam": "midterm",
+      "questions": 6,
+      "points": 105,
+      "status": "complete",
+      "exam_tex": "2009/midterm/exam.tex",
+      "exam_pdf": "2009/midterm/exam.pdf",
+      "solution_tex": "2009/midterm/solution.tex",
+      "solution_pdf": "2009/midterm/solution.pdf"
+    },
+    {
+      "year": 2009,
+      "exam": "final",
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "question_count": 7,
+      "points": 90,
+      "question_page_numbers": [
+        1,
+        2,
+        3
+      ],
+      "source_printed_pages": [
+        "1-1",
+        "1-2",
+        "1-3"
+      ],
+      "source_point_style": "percent labels, printed question weights total90%",
+      "status": "complete",
+      "missing": [],
+      "exam_tex": "2009/final/exam.tex",
+      "exam_pdf": "2009/final/exam.pdf",
+      "solution_tex": "2009/final/solution.tex",
+      "solution_pdf": "2009/final/solution.pdf"
+    },
+    {
+      "year": 2008,
+      "season": "Spring",
+      "exam": "midterm",
+      "status": "complete",
+      "questions_count": 5,
+      "questions": [
+        {
+          "number": 1,
+          "points": 40,
+          "status": "complete"
+        },
+        {
+          "number": 2,
+          "points": 20,
+          "status": "complete"
+        },
+        {
+          "number": 3,
+          "points": 20,
+          "status": "complete"
+        },
+        {
+          "number": 4,
+          "points": 10,
+          "status": "complete"
+        },
+        {
+          "number": 5,
+          "points": 10,
+          "status": "complete",
+          "printed_mark": "10%"
+        }
+      ],
+      "points_printed_total": 100,
+      "points_note": "Q1-Q4 print 40+20+20+10 points; Q5 prints (10%). Its ten-percent remainder is interpreted as ten points of the intended 100-point paper.",
+      "original_printed_pages": 2,
+      "missing": [],
+      "year_basis": "Printed Spring 2008 footer on the authentic question pages.",
+      "points": 100,
+      "exam_tex": "2008/midterm/exam.tex",
+      "exam_pdf": "2008/midterm/exam.pdf",
+      "solution_tex": "2008/midterm/solution.tex",
+      "solution_pdf": "2008/midterm/solution.pdf"
+    },
+    {
+      "year": 2008,
+      "exam": "final",
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "question_count": 8,
+      "points": 115,
+      "question_page_numbers": [
+        1,
+        2,
+        3
+      ],
+      "source_printed_pages": [
+        "1-1",
+        "1-2",
+        "1-3"
+      ],
+      "source_point_style": "printed percent weights total115%",
+      "status": "complete",
+      "missing": [],
+      "exam_tex": "2008/final/exam.tex",
+      "exam_pdf": "2008/final/exam.pdf",
+      "solution_tex": "2008/final/solution.tex",
+      "solution_pdf": "2008/final/solution.pdf"
+    },
+    {
+      "year": 2007,
+      "exam": "midterm",
+      "questions": 7,
+      "points": 110,
+      "status": "complete",
+      "scope_label": "Q1-Q7; printed110% retained",
+      "exam_tex": "2007/midterm/exam.tex",
+      "exam_pdf": "2007/midterm/exam.pdf",
+      "solution_tex": "2007/midterm/solution.tex",
+      "solution_pdf": "2007/midterm/solution.pdf"
+    },
+    {
+      "year": 2007,
+      "exam": "final",
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "points": 105,
+      "printed_whole_paper_points": 105,
+      "status": "complete",
+      "scope_label": "Q1–Q7 (105 printed percentage points); duty, device-strength and minimum-timing assumptions qualified",
+      "missing": null,
+      "exam_tex": "2007/final/exam.tex",
+      "exam_pdf": "2007/final/exam.pdf",
+      "solution_tex": "2007/final/solution.tex",
+      "solution_pdf": "2007/final/solution.pdf"
+    }
+  ],
+  "other_archive_exams": "pending individual selection and original/source checks"
+}

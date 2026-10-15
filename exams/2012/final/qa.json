@@ -1,0 +1,147 @@
+{
+  "status": "ready",
+  "scope": "All complete original Q1-Q8; 140 printed points",
+  "pdfs": {
+    "exam": {
+      "pages": 5,
+      "raster_images": 0
+    },
+    "solution": {
+      "pages": 11,
+      "raster_images": 0
+    },
+    "original-exam": {
+      "pages": 3,
+      "raster_images": 3
+    }
+  },
+  "compilation": {
+    "built_in": {
+      "exam": "success",
+      "solution": "success"
+    },
+    "local": {
+      "exam": {
+        "pages": 5,
+        "warnings": [],
+        "compiled": true
+      },
+      "solution": {
+        "pages": 11,
+        "warnings": [],
+        "compiled": true
+      }
+    }
+  },
+  "visual_qa": {
+    "exam_pages": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "solution_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "original_pages": [
+      1,
+      2,
+      3
+    ],
+    "latest_changed_pages_rechecked": {
+      "exam": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "solution": [
+        2,
+        3,
+        8
+      ]
+    },
+    "result": "All reconstructed pages inspected. Waveform/circuit separation, label spacing, all22 NP MOS, gate bubbles/clock controls, 24 literal layout MOS and named nets checked. No clipping/overlap."
+  },
+  "checks": "All analytical conduction/RC/current/path assertions passed; no process simulation",
+  "csv_row_counts": {
+    "q2_differential_candidates.csv": 32,
+    "q2_differential_complete_netlist.csv": 14,
+    "q2_dynamic_netlist.csv": 5,
+    "q2_dynamic_phases.csv": 16,
+    "q2_transistor_counts.csv": 3,
+    "q2_truth.csv": 8,
+    "q3_stage_table.csv": 4,
+    "q4_footer_bound.csv": 13,
+    "q4_single_paths.csv": 30,
+    "q4_switch_network.csv": 384,
+    "q5_n_stage.csv": 8,
+    "q5_p_stage_independent_z.csv": 16,
+    "q5_reachable_paths.csv": 8,
+    "q5_sharing_cases.csv": 8,
+    "q6_paths.csv": 36,
+    "q7a_clock_phases.csv": 2,
+    "q7a_full_switch_connectivity.csv": 64,
+    "q7a_literal_netlist.csv": 12,
+    "q7b_full_switch_truth.csv": 8,
+    "q7b_literal_netlist.csv": 12,
+    "q8_current_balance.csv": 3,
+    "q8_square_law_regions.csv": 2,
+    "student-comparison.csv": 8
+  },
+  "csv_total_rows": 696,
+  "sha256": {
+    "coverage-entry.json": "8512c037cec03d1a7a7ff2a24d356808da8ca504b7782256f6f8620131016133",
+    "exam.pdf": "ebb8df278bea279bb34b8cb1cb429aacf65b122bd17e257814740919f78c1a11",
+    "exam.tex": "c73cfd923d9d5b1a2605e1726f659a396069f9039b9e4aaf0a50bc5a02874b82",
+    "logic-layout-verification.json": "5920c454fb66b627af2324c4fb0b1017a00231d2d87d0af37b8747ed62eca32b",
+    "numerical-verification.json": "2fd19ae7586a34635eace44188fba2c5c179dbd3ef036af61c100ab9a3c0c54f",
+    "q2_differential_candidates.csv": "41c1b6a7800a5f2adeb4786aa41c2fcda831648975057130f0da522ebb1b914c",
+    "q2_differential_complete_netlist.csv": "a5bfb70697665d9d44b5f0001c5bf528e9feb75bdc22d603da767ff2277f3cb2",
+    "q2_dynamic_netlist.csv": "8d71a304c67bca415374d73a7269cf426bf5e8fa118c0738f0671e78b500fae4",
+    "q2_dynamic_phases.csv": "07ef785c066afd914d5a87b6529cb0b738933de75b96924f98e0e66a9f6fb1f4",
+    "q2_transistor_counts.csv": "e31edba6cca23be7a499f4289acc6d84e19ff6c21b21ac5de85607133fc7100e",
+    "q2_truth.csv": "2ada9d69ea0e62a3f695dfe2387263d98e6657398f30b77911be6ef3771d809c",
+    "q3_stage_table.csv": "bab0c728fa5e8604b8c2b29f2bf58dcb41f4a374aa8908e2b087ffe75c88f50d",
+    "q4_footer_bound.csv": "9197738e502531aaf1c98fd69eb49cf4235d9966198da5d41a991eac511edf1e",
+    "q4_single_paths.csv": "4d38f574e2388cce1a1f78114425df1c31bfad84b9f347f9d4d50fa520ec03af",
+    "q4_switch_network.csv": "4b92ffcbff2d0a26544eca245440c32577b929bcc645a09c9ea7eb95a686d983",
+    "q5-verification.json": "9da98c07492333520a0e6abdb92ec60bc9018358a10f20188b117473d860a48b",
+    "q5_n_stage.csv": "85d2f9bedf3775066e8f4dabbb3b1ceacb5b8fb66ef0a119f878f12c709a9451",
+    "q5_p_stage_independent_z.csv": "1566f75ff4988146efd7eaf8671430e2465528c237f5ae0490b4536602dcf1a5",
+    "q5_reachable_paths.csv": "2caee688ff6fe63575e156a4aa0fe0c8c77ba0c526460e6fd0b53b6a1130623b",
+    "q5_sharing_cases.csv": "196cb30128716f3e19a71a520bf8e63f11907a0648e5a65d008209bc91dfdac6",
+    "q6_paths.csv": "5783ec591e01753fb1bccc3d62f33cc860ddc51a59e9fc172a3f1ef215c57579",
+    "q7a_clock_phases.csv": "557830c60130b83a9e1850b657b31908de30442f764b145d8fce99779017337b",
+    "q7a_full_switch_connectivity.csv": "043baa07c7bba389d7fd0f198a32ffb75252dc9307cc54668b9b281ca15923bc",
+    "q7a_literal_netlist.csv": "f5c2da461c7d3afc3265d269319c87ab78b76d488ad9d861a32a099cad38e74b",
+    "q7b_full_switch_truth.csv": "69da1c33e24ee835e74415eb38f2dbcfae46d760a5016b6b3ab30bf67bbcad74",
+    "q7b_literal_netlist.csv": "88249c7d27159d7137bfa95c1d1748a64ca73ee3d1c415bd2967143b86d8f0e6",
+    "q8_current_balance.csv": "115385ae444959b8316653c7ca1869211a3b0696ee9ad802e7e23ff92e8b1d73",
+    "q8_square_law_regions.csv": "18266d733ca9212f22d6eeff296e09f7029599a01228d63ef4fd17cb9aa1cdd8",
+    "README.md": "a1985285499cd1368005e9de82cc20e1192981d3b6148db79901532a92a9318b",
+    "solution.pdf": "471af35dd37e900fb98dd5caef87f9112ab492a3dda30dc3217647a15f45aae3",
+    "solution.tex": "61a6d0f7cfb2e336417efbbecc238ce75381df45b903bf876877536ec6283d68",
+    "sources.json": "b4a08d6d12f25fab764a46fec581cf376d7a6933c423e21d4e6cf2b6e61dc21b",
+    "SOURCES.md": "389ef10adffda6feafa0ca4c9ccc2e49df29f80c344597877f47390bcfc9369a",
+    "student-comparison.csv": "db9ae2c3414234d29338072663b87636371af5fd0f8e06af22a69d7c6fb0e616",
+    "verification.json": "9b6ff2dd68993e0c6b90f6ac43640bce0a1d14e7f5de1ea704b4bc3209452ec7",
+    "verify.py": "222469f437c35c18ae247f2333a10c914165d236d71b995e0a646c840fd5d257",
+    "verify_logic_layout.py": "6ed6a3f878350312203aaf040943e014bc70f52fd61bb0aa0667bbd420c8c06d",
+    "verify_numerical.py": "3d8bb3a4414f85b1c98dbdfabbd41c513fc59e2f8cb96b0c1fd11de61888b0a2",
+    "verify_q5.py": "f8948dfbdaeb40162f77e8a72e999cb6d2f929641299b9b31defac66aed238e1"
+  },
+  "artifact_hash_convention": "SHA256 of exact binary bytes; text artifacts normalized to LF, matching Git archive and MANIFEST.json."
+}

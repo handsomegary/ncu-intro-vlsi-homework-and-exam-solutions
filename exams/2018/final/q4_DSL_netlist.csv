@@ -1,0 +1,13 @@
+name,kind,drain,gate,source,body,role,weak,column
+HA,N,vf,A,Hu,VSS,logic,False,
+HB,N,Hu,B,Hv,VSS,logic,False,
+HC,N,Hv,C,VSS,VSS,logic,False,
+HD,N,Hu,D,VSS,VSS,logic,False,
+GA,N,vg,Ab,VSS,VSS,logic,False,
+GD,N,vg,Db,Gw,VSS,logic,False,
+GB,N,Gw,Bb,VSS,VSS,logic,False,
+GC,N,Gw,Cb,VSS,VSS,logic,False,
+NFsplit,N,f,Vref,vf,VSS,reference_clamp,False,
+NGsplit,N,g,Vref,vg,VSS,reference_clamp,False,
+PFload,P,f,vg,VDD,VDD,ratioed_load,True,
+PGload,P,g,vf,VDD,VDD,ratioed_load,True,

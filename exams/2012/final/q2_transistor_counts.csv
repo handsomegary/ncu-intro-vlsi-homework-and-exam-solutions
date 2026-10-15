@@ -1,0 +1,4 @@
+implementation,pMOS,nMOS,total
+dynamic simplified,1,4,5
+"differential core, complements supplied",2,6,8
+"differential complete, original A/B/C inputs",5,9,14

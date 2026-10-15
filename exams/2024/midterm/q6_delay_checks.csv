@@ -1,0 +1,3 @@
+case,nand_n_width_relative_W_over_L,nand_p_width_relative_W_over_L,inverter_n_width_relative_W_over_L,inverter_p_width_relative_W_over_L,inverter_input_cap_over_Cg,NAND_pull_up_resistance_over_R,NAND_pull_down_resistance_over_R,INV_pull_up_resistance_over_R,INV_pull_down_resistance_over_R,AND_output_rise_delay_over_R_Cg,AND_output_fall_delay_over_R_Cg,worst_delay_over_R_Cg,strictly_below_8_R_Cg
+student_native_drawing,1,2,1,2,3,1.0,2.0,1.0,1.0,10.0,7.0,10.0,False
+corrected_NAND_nMOS_widths,2,2,1,2,3,1.0,1.0,1.0,1.0,7.0,7.0,7.0,True

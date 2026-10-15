@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "scope": "Ideal switch connectivity and Boolean polarity, not analogue timing",
+  "source": "2024 midterm printed pages 1\u20132 and supplied answer pages 4 and 6",
+  "q2": {
+    "cases": 16,
+    "cofactor_s1": "xy+yz",
+    "cofactor_s0": "x+y+z",
+    "control_order_root_to_leaf": [
+      "s",
+      "y",
+      "x",
+      "z"
+    ],
+    "cell_convention": "left input is selected by 1; right by 0",
+    "leaf_input_words_left_to_right": [
+      "1111",
+      "1110",
+      "1101",
+      "1100",
+      "1011",
+      "1010",
+      "1001",
+      "1000",
+      "0111",
+      "0110",
+      "0101",
+      "0100",
+      "0011",
+      "0010",
+      "0001",
+      "0000"
+    ],
+    "leaf_constants_left_to_right": [
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "mux_cells": 15,
+    "data_path_stages": 4,
+    "student_diagram_logic": "correct",
+    "csv": "q2_mux_truth.csv"
+  },
+  "q7": {
+    "case_counts": {
+      "a": 8,
+      "b": 8,
+      "c": 16
+    },
+    "total_cases": 32,
+    "reference_functions": {
+      "a": "NOT[X(Y+Z)]",
+      "b": "NOT[XY+Z]",
+      "c": "NOT[X+Y(W+Z)]"
+    },
+    "transistor_counts": {
+      "a": 6,
+      "b": 6,
+      "c": 8
+    },
+    "all_rails_exclusive": true,
+    "all_output_polarities_correct": true,
+    "student_diagrams_logic": "all three correct",
+    "csv": "q7_switch_checks.csv"
+  }
+}

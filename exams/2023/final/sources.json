@@ -1,0 +1,248 @@
+{
+  "year": 2023,
+  "exam": "final",
+  "original": {
+    "filename": "112學年度第一學期超大型積體電路導論期末考 Li.pdf",
+    "pages": 2,
+    "status": "complete printed original; Fall2023 footer"
+  },
+  "local_reference": {
+    "filename": "期末整理.pdf",
+    "sha256": "9d10ef2752981e95e5d3ed452e45275e2b0a1e0e9d99899ad00f6d01c7b11373",
+    "pages": 17,
+    "status": "mixed-year study compilation; no matched graded booklet",
+    "published": false,
+    "comparison": "General notes consulted; differently parameterized question snippets cannot supply missing clock duty, latch properties, or unique sizing.",
+    "page_comparison": {
+      "6": "General dynamic-logic/common-rail notes useful; physical-design wording conflates geometry generation with fabrication, corrected in Q1.",
+      "8": "Related f=NOT(x1*x2+x3) designs; several drawings marked uncertain. All submitted DPL/NP graphs are independently derived and checked.",
+      "12": "Different AND-to-OR question explicitly says50percent duty and3/2ns,2.5/2ns edges. Cannot supply absent duty for this AND-to-AND3/1ns,2/1ns question.",
+      "2,4,13,16": "Related Schmitt-trigger divider methods, but different widths/thresholds/supply/edge target. Recalculate all2023 quantities.",
+      "14_layout": "Related symbolic layout functional10MOS inverter/NOR/inverter is consistent; retain4physical off isolation devices missing from simplified drawing.",
+      "14,15_timing": "Different handwritten gate parameters/logic paths; reversed hold reasoning and unrelated clock-buffer proposal are not adopted. Derive all original2023 clock taps/latch bounds."
+    }
+  },
+  "scope": {
+    "questions": 7,
+    "original_points": 115,
+    "original_gaps": [],
+    "scan_ambiguities": [
+      "Q3 middle clock glyph top stroke touches footer gate wire: phi_bar selected transcription; phi alternate explicitly covered; primary static-middle repair works under both"
+    ],
+    "semantic_conditions": [
+      "Q2 numerical duty absent: both6ns adjustable and10ns50percent shown",
+      "Q3 supplied internal node capacitances: totals primary, wire-only alternatives",
+      "Q5 fixed-output-C vs literal feedback-gate-capacitance model",
+      "Q7 latch and gate minimum delays not provided; clock high phase H unspecified: general bounds and explicit50percent conditional ideal-latch limit"
+    ]
+  },
+  "primary_references": [
+    {
+      "id": "ncu-power",
+      "url": "https://staff.ee.ncu.edu.tw/jfli/public_html/VLSI/lecture/ch04.pdf",
+      "authority": "Li, National Central University; official course lecture",
+      "locators": "slides 58, 60, 62, 65, 66–67",
+      "questions": [
+        "Q1(a)",
+        "Q1(d)"
+      ],
+      "access": "PDF text opened successfully"
+    },
+    {
+      "id": "ncu-dynamic-limitations",
+      "url": "https://www.ee.ncu.edu.tw/jfli/public_html/VLSI/lecture/ch06.pdf",
+      "authority": "Li, National Central University; official course lecture",
+      "locators": "slides 13–18",
+      "questions": [
+        "Q1(e)"
+      ],
+      "access": "PDF text opened successfully"
+    },
+    {
+      "id": "ncu-physical",
+      "url": "https://www.ee.ncu.edu.tw/jfli/public_html/VLSI/lecture/ch05.pdf",
+      "authority": "Li, National Central University; official course lecture",
+      "locators": "slides 3, 7, 12, 26–31",
+      "questions": [
+        "Q1(b)",
+        "Q1(c)",
+        "Q1(f)",
+        "Q1(h)"
+      ],
+      "access": "PDF text opened successfully"
+    },
+    {
+      "id": "ncu-clock",
+      "url": "https://www.ee.ncu.edu.tw/jfli/public_html/VLSI/lecture/ch07.pdf",
+      "authority": "Li, National Central University; official course lecture",
+      "locators": "slides 37–41",
+      "questions": [
+        "Q1(a)",
+        "Q7(d)"
+      ],
+      "access": "PDF text opened successfully"
+    },
+    {
+      "id": "hmc-cell-design",
+      "url": "https://pages.hmc.edu/harris/class/e158/01/lect09.pdf",
+      "authority": "David Harris, Harvey Mudd College; lecture based on Mark Horowitz Stanford EE271",
+      "locators": "slides 8–9, 12, 14",
+      "questions": [
+        "Q1(c)",
+        "Q1(h)"
+      ],
+      "access": "PDF text opened successfully"
+    },
+    {
+      "id": "nptel-design-rules",
+      "url": "https://archive.nptel.ac.in/content/storage2/courses/117101058/Slides/13.1.htm",
+      "authority": "NPTEL university engineering course; Lecture 13 Layout Design Rules",
+      "locators": "section 13.1 Motivation",
+      "questions": [
+        "Q1(f)"
+      ],
+      "access": "HTML opened successfully"
+    },
+    {
+      "id": "tufts-dynamic",
+      "url": "https://www.cs.tufts.edu/comp/103/notes/Lecture16(DynamicLogic).pdf",
+      "authority": "Tufts COMP103 Lecture 16; adapted from Mary Jane Irwin/Rabaey",
+      "locators": "slides 7, 10–16, 21",
+      "questions": [
+        "Q1(a)",
+        "Q1(e)"
+      ],
+      "access": "PDF text opened successfully"
+    },
+    {
+      "id": "openroad-fill",
+      "url": "https://openroad.readthedocs.io/en/latest/main/src/dpl/README.html#filler-placement",
+      "authority": "OpenROAD official implementation documentation",
+      "locators": "Filler Placement",
+      "questions": [
+        "Q1(g): filler"
+      ],
+      "access": "HTML opened successfully"
+    },
+    {
+      "id": "iastate-fill",
+      "url": "https://class.ece.iastate.edu/ee330/labs/EE%20330%20Lab%209%20Spring%202026.pdf",
+      "authority": "Iowa State University EE330 laboratory instructions",
+      "locators": "Filler Cells subsection",
+      "questions": [
+        "Q1(g): filler"
+      ],
+      "access": "PDF text opened successfully"
+    },
+    {
+      "id": "cadence-physical-cells",
+      "url": "https://community.cadence.com/cadence_blogs_8/b/di/posts/you-know-how-but-do-you-remember-why",
+      "authority": "Cadence official Digital Design training blog, 1 June 2026",
+      "locators": "DCap Cells; EndCap Cells; Filler Cells",
+      "questions": [
+        "Q1(g): filler, decap, endcap"
+      ],
+      "access": "HTML opened successfully"
+    },
+    {
+      "id": "cadence-tap-endcap",
+      "url": "https://community.cadence.com/cadence_technology_forums/f/custom-ic-design/11105/end-cap-cells",
+      "authority": "Cadence-hosted technical forum; expert reply, supporting rather than strongest source",
+      "locators": "Ted / Austin CAD Guy reply",
+      "questions": [
+        "Q1(g): tap, endcap"
+      ],
+      "access": "Indexed page content available"
+    },
+    {
+      "id": "gatech-tap",
+      "url": "https://gtcad.gatech.edu/www/papers/06423265.pdf",
+      "authority": "Georgia Tech author-hosted IEEE paper: TABB: A Post-Silicon Tuning Method to Minimize Clock Skew Variations in 3-D ICs",
+      "locators": "printed page 1728; PDF page 9",
+      "questions": [
+        "Q1(g): tap"
+      ],
+      "access": "PDF text opened successfully"
+    },
+    {
+      "id": "openroad-tap-endcap",
+      "url": "https://openroad.readthedocs.io/en/latest/main/src/tap/README.html",
+      "authority": "OpenROAD official implementation documentation",
+      "locators": "Add Tapcell/Endcap; options table",
+      "questions": [
+        "Q1(g): tap, endcap"
+      ],
+      "access": "HTML opened successfully"
+    },
+    {
+      "id": "ncu-gatearray-time",
+      "url": "https://www.ee.ncu.edu.tw/jimmy/public_html/courses/DSD06/01_intro.pdf",
+      "authority": "National Central University DSD06 course lecture",
+      "locators": "slides 1-23 through 1-28; PDF pages 12–14",
+      "questions": [
+        "Q1(h)"
+      ],
+      "access": "PDF text opened successfully"
+    },
+    {
+      "id": "imperial-gatearray-sog",
+      "url": "https://www.ee.ic.ac.uk/pcheung/teaching/ee4_asic/notes/lecture1%20-%20introduction.pdf",
+      "authority": "Peter Cheung, Imperial College London E4.20 Digital IC Design",
+      "locators": "lecture slides 13–14",
+      "questions": [
+        "Q1(h)"
+      ],
+      "access": "Search index exposes exact slide text, but direct open timed out; use NCU/HMC as robust references"
+    },
+    {
+      "id": "amd-fpga-time",
+      "url": "https://www.amd.com/en/blogs/2025/from-invention-to-ai-acceleration--celebrating-40-years-of-fpga-.html",
+      "authority": "AMD FPGA inventor/vendor official history blog",
+      "locators": "opening paragraphs",
+      "questions": [
+        "Q1(h), alternative FPGA interpretation"
+      ],
+      "access": "Indexed official page content available"
+    },
+    {
+      "id": "unm-htree",
+      "url": "https://www.unm.edu/~pzarkesh/ECE520/lectures/lecture18.pdf",
+      "authority": "University of New Mexico ECE520 Lecture 18",
+      "locators": "slide 13",
+      "questions": [
+        "Q7(d)"
+      ],
+      "access": "PDF text opened successfully"
+    },
+    {
+      "id": "rochester-clock",
+      "url": "https://hajim.rochester.edu/ece/sites/friedman/papers/MK_Chapter11_08.pdf",
+      "authority": "Eby Friedman, University of Rochester author-hosted clock-distribution chapter",
+      "locators": "section 11.4.4 Symmetric Topologies; printed page 425",
+      "questions": [
+        "Q7(d)"
+      ],
+      "access": "Source opens as PDF; exact section content available through search index; direct PDF text extraction returned zero lines."
+    },
+    {
+      "id": "synopsys-mesh",
+      "url": "https://www.ispd.cc/slides/2009/s7p1.pdf",
+      "authority": "Synopsys Industrial Clock Synthesis presentation at ISPD 2009",
+      "locators": "slide 24; PDF page 24",
+      "questions": [
+        "Q7(d), supplemental mesh alternative"
+      ],
+      "access": "PDF text opened successfully"
+    },
+    {
+      "id": "openroad-clock-balancing",
+      "url": "https://openroad.readthedocs.io/en/latest/main/src/cts/README.html",
+      "authority": "OpenROAD official CTS documentation; TritonCTS authors",
+      "locators": "clock_tree_synthesis options: balance_levels, dont_use_dummy_load, delay_buffer_derate, repair_clock_nets",
+      "questions": [
+        "Q7(d): practical balanced-tree explanation"
+      ],
+      "access": "HTML opened successfully"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+a,b,c,phase,raw_x,raw_xb,y1_tied_VSS,y2,expected_y2,rail_exclusive,passed
+0,0,0,precharge,1,1,0,0,0,True,True
+0,0,0,evaluate,0,1,0,0,0,True,True
+0,0,1,precharge,1,1,0,0,0,True,True
+0,0,1,evaluate,0,1,0,1,1,True,True
+0,1,0,precharge,1,1,0,0,0,True,True
+0,1,0,evaluate,1,0,0,1,1,True,True
+0,1,1,precharge,1,1,0,0,0,True,True
+0,1,1,evaluate,1,0,0,0,0,True,True
+1,0,0,precharge,1,1,0,0,0,True,True
+1,0,0,evaluate,1,0,0,1,1,True,True
+1,0,1,precharge,1,1,0,0,0,True,True
+1,0,1,evaluate,1,0,0,0,0,True,True
+1,1,0,precharge,1,1,0,0,0,True,True
+1,1,0,evaluate,0,1,0,0,0,True,True
+1,1,1,precharge,1,1,0,0,0,True,True
+1,1,1,evaluate,0,1,0,1,1,True,True

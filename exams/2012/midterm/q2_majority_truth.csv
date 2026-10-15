@@ -1,0 +1,9 @@
+X,Y,Z,f,allowed,high_path,low_path,passed
+0,0,0,0,True,,N1;N2,True
+0,0,1,0,False,,N4;N5,True
+0,1,0,0,True,,N1;N2,True
+0,1,1,1,False,P3;P2,,True
+1,0,0,0,True,,N1;N3,True
+1,0,1,1,True,P3;P1,,True
+1,1,0,1,True,P5;P4,,True
+1,1,1,1,True,P3;P1,,True

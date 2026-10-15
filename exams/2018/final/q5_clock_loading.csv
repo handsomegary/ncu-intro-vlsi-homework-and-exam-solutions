@@ -1,0 +1,5 @@
+device,clock,gate_cap_over_C
+P1,CLK,4.0
+N4,CLK,8.0
+P2,CLKB,6.0
+N5,CLKB,1.0

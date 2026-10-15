@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "logic_rows": 8,
+  "analytical_retention_example_ms": 9.0,
+  "retention_example": "Vdd=1.8V, Vt=0.45V, C=20fF, IL=1pA; illustrative only",
+  "runs": [
+    {
+      "deck": "q2_retention.sp",
+      "status": "PASS",
+      "rows": 1
+    },
+    {
+      "deck": "q3_resistance.sp",
+      "status": "PASS",
+      "rows": 1
+    },
+    {
+      "deck": "q3_cic018.sp",
+      "status": "PASS",
+      "rows": 8
+    }
+  ],
+  "multi_vt_scope": "symbolic topology and gate-level timing only; CIC TT library provides no separate high/low threshold pair",
+  "literal_minimum_low_ratio": 2.25,
+  "conventional_maximum_low_ratio": 4.5
+}

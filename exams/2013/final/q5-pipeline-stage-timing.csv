@@ -1,0 +1,8 @@
+path,logic_ns,hold_margin_ns,setup_bound_ns
+stage1_u,3/5,3/10,11/10
+stage1_v,1/2,1/5,1
+stage1_not_w,7/10,2/5,6/5
+stage2_Y1,2/5,1/10,9/10
+stage2_Y2_from_u,2/5,1/10,9/10
+stage2_Y2_from_v_or_not_w,4/5,1/2,13/10
+stage2_Y3_restoration_and_padding,3/5,3/10,11/10

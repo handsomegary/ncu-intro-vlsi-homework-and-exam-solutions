@@ -1,0 +1,3 @@
+node,diffusion_count,gate_count,diffusion_devices,gate_devices,capacitance_fF
+z,3,3,P_pre N_A_top N_C_top,P_carry_inv N_carry_inv P_z,3.6
+w,3,2,P_z P_C_series N_reset,P_sum_inv N_sum_inv,2.6

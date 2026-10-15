@@ -1,0 +1,25 @@
+initial_sample,next_input,event,I,phi,A,B,C,O,expected_O
+0,0,old low phase,0,0,1,0,1,0,0
+0,0,input changes while low,0,0,1,0,1,0,0
+0,0,rising edge/master opens,0,1,1,0,1,0,0
+0,0,input changes while high,1,1,0,1,0,0,0
+0,0,falling edge/sample,1,0,0,1,0,1,1
+0,0,input changes after falling edge,0,0,1,1,0,1,1
+0,1,old low phase,0,0,1,0,1,0,0
+0,1,input changes while low,1,0,1,0,1,0,0
+0,1,rising edge/master opens,1,1,0,1,0,0,0
+0,1,input changes while high,0,1,1,0,0,0,0
+0,1,falling edge/sample,0,0,1,0,1,0,0
+0,1,input changes after falling edge,1,0,1,0,1,0,0
+1,0,old low phase,1,0,0,1,0,1,1
+1,0,input changes while low,0,0,1,1,0,1,1
+1,0,rising edge/master opens,0,1,1,0,0,1,1
+1,0,input changes while high,1,1,0,1,0,1,1
+1,0,falling edge/sample,1,0,0,1,0,1,1
+1,0,input changes after falling edge,0,0,1,1,0,1,1
+1,1,old low phase,1,0,0,1,0,1,1
+1,1,input changes while low,1,0,0,1,0,1,1
+1,1,rising edge/master opens,1,1,0,1,0,1,1
+1,1,input changes while high,0,1,1,0,0,1,1
+1,1,falling edge/sample,0,0,1,0,1,0,0
+1,1,input changes after falling edge,1,0,1,0,1,0,0

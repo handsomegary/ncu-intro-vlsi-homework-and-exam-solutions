@@ -1,0 +1,15 @@
+device,type,left_channel,right_channel,gate
+PL,p,VDD,F,Fbar
+PR,p,VDD,Fbar,F
+NLA,n,F,ab,A
+NLB,n,ab,VSS,B
+NLC,n,F,VSS,C
+NRCbar,n,Fbar,cbar,Cbar
+NRAbar,n,cbar,VSS,Abar
+NRBbar,n,cbar,VSS,Bbar
+PAbar,p,VDD,Abar,A
+NAbar,n,Abar,VSS,A
+PBbar,p,VDD,Bbar,B
+NBbar,n,Bbar,VSS,B
+PCbar,p,VDD,Cbar,C
+NCbar,n,Cbar,VSS,C

@@ -1,0 +1,20 @@
+{
+  "status": "ready",
+  "exam_pages": 3,
+  "solution_pages": 5,
+  "original_pages": 3,
+  "all_final_pages_visually_checked": true,
+  "builtin_compiler": "success for both latest sources",
+  "local_compiler": "MiKTeX pdfLaTeX, two passes for each source",
+  "overfull_boxes": 0,
+  "underfull_boxes": 0,
+  "typeset_raster_image_count": 0,
+  "scope": "All7 original questions; printed110% retained",
+  "artifact_sha256": {
+    "exam.tex": "3ea184d59bac0a630253c5c3d2b42a7ea7bdbf31913e65a578003b2590fc1c68",
+    "solution.tex": "a57999a5a140dcc8ad2584a1cffaa38ad086267bb164041c45c04edee8cb63db",
+    "exam.pdf": "bfff0469d06de9379c3e90eac1f7a6c39b6fd2c61222e2372c5995c6720b6010",
+    "solution.pdf": "60c32cbc2b4b141a5426fd7f317024148353aadf32c3d2034ef61482592ba2bc"
+  },
+  "artifact_hash_convention": "SHA256 of exact binary bytes; text artifacts normalized to LF, matching Git archive and MANIFEST.json."
+}

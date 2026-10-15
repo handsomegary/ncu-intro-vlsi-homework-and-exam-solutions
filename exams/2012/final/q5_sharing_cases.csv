@@ -1,0 +1,9 @@
+ABC,floating_connected_nodes,initial_high_charge_pF_V,pooled_cap_pF,shared_z_V,false_p_trigger
+000,z,72/25,8/5,1.8,False
+001,"y,z",72/25,12/5,1.2,True
+010,z,72/25,8/5,1.8,False
+011,not floating: connected to GND,,,,
+100,"x,z",72/25,2,1.44,False
+101,not floating: connected to GND,,,,
+110,not floating: connected to GND,,,,
+111,not floating: connected to GND,,,,

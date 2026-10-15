@@ -1,0 +1,17 @@
+A,B,C,D,f,g,DSL_vf_PDN_on,DSL_vg_PDN_on,DSL_check_scope,passed
+0,0,0,0,1,0,False,True,lower PDN complement only; no analogue rail/noise-margin claim,True
+0,0,0,1,1,0,False,True,lower PDN complement only; no analogue rail/noise-margin claim,True
+0,0,1,0,1,0,False,True,lower PDN complement only; no analogue rail/noise-margin claim,True
+0,0,1,1,1,0,False,True,lower PDN complement only; no analogue rail/noise-margin claim,True
+0,1,0,0,1,0,False,True,lower PDN complement only; no analogue rail/noise-margin claim,True
+0,1,0,1,1,0,False,True,lower PDN complement only; no analogue rail/noise-margin claim,True
+0,1,1,0,1,0,False,True,lower PDN complement only; no analogue rail/noise-margin claim,True
+0,1,1,1,1,0,False,True,lower PDN complement only; no analogue rail/noise-margin claim,True
+1,0,0,0,1,0,False,True,lower PDN complement only; no analogue rail/noise-margin claim,True
+1,0,0,1,0,1,True,False,lower PDN complement only; no analogue rail/noise-margin claim,True
+1,0,1,0,1,0,False,True,lower PDN complement only; no analogue rail/noise-margin claim,True
+1,0,1,1,0,1,True,False,lower PDN complement only; no analogue rail/noise-margin claim,True
+1,1,0,0,1,0,False,True,lower PDN complement only; no analogue rail/noise-margin claim,True
+1,1,0,1,0,1,True,False,lower PDN complement only; no analogue rail/noise-margin claim,True
+1,1,1,0,0,1,True,False,lower PDN complement only; no analogue rail/noise-margin claim,True
+1,1,1,1,0,1,True,False,lower PDN complement only; no analogue rail/noise-margin claim,True

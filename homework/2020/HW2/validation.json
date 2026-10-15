@@ -1,0 +1,28 @@
+{
+  "analytical": {
+    "Q1_cases": 8,
+    "Q2_cases": 64,
+    "Q3_minimum_Wn_Wp": 4.5,
+    "all_pass": true
+  },
+  "simulations": [
+    {
+      "deck": "q2_testbench.sp",
+      "status": "completed",
+      "cases": 64,
+      "pass": true
+    },
+    {
+      "deck": "q3_fixed_resistance.sp",
+      "status": "completed",
+      "rows": 3,
+      "pass": true
+    },
+    {
+      "deck": "q3_cic018_tt.sp",
+      "status": "completed",
+      "rows": 3,
+      "pass": true
+    }
+  ]
+}

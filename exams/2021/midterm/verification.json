@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "checks": {
+    "q2_mux_cases": 2048,
+    "q2_nand_cases": 8,
+    "q3_printed_truth_and_cmos_cases": 16,
+    "q5_xor_cases": 4,
+    "q6a_cmos_cases": 16,
+    "q6b_cmos_cases": 8,
+    "q6b_transition_states": 3,
+    "q4_pre_discharge_device_samples": 15,
+    "q4_conducting_discharge_device_samples": 9
+  },
+  "q4_course_resistance_model": {
+    "u_V": 0.39999999999999997,
+    "trip_V": 0.8,
+    "exact_transient_claimed": false
+  },
+  "q6b_equivalent_W_over_W": {
+    "p": 0.5,
+    "n": 0.5
+  },
+  "limitations": [
+    "Ideal switch/Boolean checks do not establish transistor analog performance.",
+    "Q4 constant-R divider and frozen-u region samples are labeled approximations; exact waveform requires missing current laws, capacitances, slew and pull-up network.",
+    "Conducting discharge samples test voltage inequalities, not a solved dynamic trajectory.",
+    "No HSPICE result is claimed."
+  ],
+  "device_counts": {
+    "Q2_core": 28,
+    "Q2_select_inverters": 6,
+    "Q3": 14,
+    "Q6a": 10,
+    "Q6b": 6
+  }
+}

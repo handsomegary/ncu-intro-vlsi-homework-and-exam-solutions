@@ -1,0 +1,47 @@
+{
+  "year": 2012,
+  "exam": "midterm",
+  "status": "complete",
+  "questions_count": 7,
+  "questions": [
+    {
+      "number": 1,
+      "points": 30,
+      "status": "complete"
+    },
+    {
+      "number": 2,
+      "points": 15,
+      "status": "complete"
+    },
+    {
+      "number": 3,
+      "points": 10,
+      "status": "complete"
+    },
+    {
+      "number": 4,
+      "points": 10,
+      "status": "complete"
+    },
+    {
+      "number": 5,
+      "points": 10,
+      "status": "complete"
+    },
+    {
+      "number": 6,
+      "points": 10,
+      "status": "complete"
+    },
+    {
+      "number": 7,
+      "points": 15,
+      "status": "complete"
+    }
+  ],
+  "points_printed_total": 100,
+  "original_printed_pages": 3,
+  "missing": [],
+  "year_basis": "Archive folder; printed date absent; matching reference duplicated under 2013."
+}

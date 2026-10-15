@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "Q3_truth_cases": 32,
+  "Q3_dynamic_phase_cases": 64,
+  "Q4_full_switch_resistance_cases": 64,
+  "Q4_minimal_balanced_paths": 5,
+  "Q4_strict_clock_target_feasible": false,
+  "Q5_correlated_cases": 8,
+  "Q5_delay_RC": [
+    "8/3",
+    "10"
+  ],
+  "Q5_sharing_min_V": "9/7",
+  "Q5_pMOS_enable_boundary_V": "6/5",
+  "Q6_worst_magnitude_skew_logic_max_ns": "15/2",
+  "Q6_buffer_count_with_single_delay_model": 3,
+  "Q7_physical_MOS": 16,
+  "Q7_switch_states": 16,
+  "Q7_consistent_conditional_states": 8,
+  "Q7_sampling": "falling edge, noninverting, conditional writeability",
+  "Q8_beta_ratio": 1,
+  "model": "ideal switches/RC/current onset, no process simulation",
+  "points_printed_total": 130
+}

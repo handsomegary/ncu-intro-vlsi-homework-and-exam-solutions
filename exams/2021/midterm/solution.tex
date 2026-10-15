@@ -1,0 +1,234 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=18mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array,enumitem}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage{tikz}\usetikzlibrary{shapes.gates.logic.US,positioning,arrows.meta}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
+\setlength{\emergencystretch}{2em}
+\newcommand{\VDD}{V_{DD}}
+\newcommand{\mos}[4]{\begin{scope}[shift={(#1,#2)}]
+\draw (0,.24)--(0,-.24);\draw (0,.20)--(.25,.20)--(.25,.5);
+\draw (0,-.20)--(.25,-.20)--(.25,-.5);\draw (-.16,.23)--(-.16,-.23);
+\ifnum#4=1\draw (-.26,0) circle (.06);\draw (-.75,0)--(-.32,0);\else\draw (-.75,0)--(-.16,0);\fi
+\node[anchor=east,font=\scriptsize] at (-.76,0) {$#3$};\end{scope}}
+\newcommand{\ground}[2]{\draw (#1,#2)--(#1,{#2-.12});\draw ({#1-.17},{#2-.12})--({#1+.17},{#2-.12});\draw ({#1-.11},{#2-.20})--({#1+.11},{#2-.20});}
+\newcommand{\rail}[3]{\draw (#1,#2)--(#1,{#2+.14});\node[above,font=\scriptsize] at (#1,{#2+.14}) {$#3$};}
+
+\usetikzlibrary{calc,patterns}
+\newcommand{\hm}[4]{\begin{scope}[shift={(#1,#2)}]
+\draw(-.24,0)--(.24,0);\draw(-.2,0)--(-.2,-.25)--(-.5,-.25);
+\draw(.2,0)--(.2,-.25)--(.5,-.25);\draw(-.23,.16)--(.23,.16);
+\ifnum#4=1\draw(0,.26)circle(.06);\draw(0,.32)--(0,.75);\else\draw(0,.16)--(0,.75);\fi
+\node[font=\scriptsize,above right]at(.30,.05){$#3$};\end{scope}}
+\newcommand{\tg}[3]{\draw(#1-.24,#2-.13)rectangle(#1+.24,#2+.13);\node[above,font=\tiny,inner sep=2pt]at(#1,#2+.13){$e=#3$};}
+\begin{document}
+\begin{center}{\Large\bfseries 2021 Midterm -- Corrected Solutions}\\[3pt]EE3032 Introduction to VLSI, National Central University\end{center}
+The complete original paper has six questions. Derivations below use the photographed problem statements first. The three-page corrected student PDF and the seven answer/lecture photographs are comparison evidence, not an official numerical model. The archive assigns the paper to 2021; the paper itself has no printed year.
+
+\textbf{1. Short answers (35 points)}
+\begin{enumerate}[label=(\alph*),leftmargin=7mm,itemsep=6pt]
+\item Coat the wafer with photoresist; align the mask and expose; develop the resist; etch the exposed target film/silicon through the resist pattern; strip the resist. Exposure/development makes the temporary resist mask, and etching transfers it to the target surface.
+\item Insert a grounded shield between the wires, and increase their spacing (or shorten the parallel overlap). Both reduce mutual capacitive coupling. A repeater can lower victim impedance, but it does not remove the coupling capacitance.
+\item SOI places a thin active silicon layer above a buried insulator (usually buried oxide) and a handle wafer. This isolates source/drain regions from the bulk substrate, reduces junction area and associated leakage/capacitance, and removes a conducting bulk path. Fully depleted thin-body SOI also improves electrostatic control. Gate tunneling and all other leakage are not automatically eliminated.
+\item The course correction lists thermal oxidation and chemical vapor deposition (CVD) of oxide. Thermal growth consumes silicon and can use dry oxygen or wet steam; CVD deposits an oxide film rather than oxidizing the underlying silicon. The distinction matters when describing the physical process.
+\item Static CMOS is ratio-less for correct steady-state Boolean levels and gives full rail-to-rail restored outputs. In its ideal stable state one network is off, so there is no direct DC supply-to-ground path; real leakage remains.
+\item The intended two components are leakage-current mechanisms: reverse-biased source/drain-to-body junction leakage and subthreshold conduction through an off channel. Thus $P_{static}=V_{DD}I_{leak}$. The output load capacitance causes switching energy, not static DC power; a voltage source by itself is not a leakage mechanism. Modern devices can also have gate leakage, but that does not replace the two course-listed mechanisms.
+\item PMOS passes a strong high level to the pull-up rail, while NMOS passes a strong low level to ground. Complementary pull-up/pull-down networks therefore restore both rails without the threshold loss of an NMOS-only high or a PMOS-only low.
+\item Via-first and via-last. Via-middle is another integration sequence, but only two are requested.
+\item For a series NMOS stack with its body at ground, the device nearest the output can have the largest elevated source voltage and hence largest $V_{SB}$. Its threshold rises by $\gamma(\sqrt{2\phi_F+V_{SB}}-\sqrt{2\phi_F})$. The analogous PMOS stack has its body at $V_{DD}$. This is a stack/source-to-body effect: being attached to the output drain alone does not create body effect, and a grounded-source inverter NMOS has $V_{SB}=0$.
+\item During plasma processing, a long temporarily floating conductor can collect charge and drive a damaging voltage across a connected thin gate oxide. Add an antenna protection diode to provide a discharge path; or split/re-route the long connection with a jumper to a later metal layer so the early fabrication-stage antenna area is smaller. These are fabrication antenna fixes, rather than RF antenna measures.
+\item Wafer-to-wafer (W2W), die-to-wafer (D2W), and die-to-die (D2D), as expressly listed on the photographed lecture-board correction. Face-to-face/back-to-back describe orientation; TSV and CMP describe other operations, so neither list is the requested three assembly groupings.
+\item $C_L=C_g+C_d+C_w$: fan-out input gate capacitance, diffusion/junction capacitance on the driving output, and interconnect/routing capacitance.
+\item Shorted-gate (SG) FinFET, with the two side gates tied together, and independent-gate (IG) FinFET, with independently controlled side gates.
+\end{enumerate}
+\newpage
+\textbf{2. Transmission-gate 8:1 MUX and NAND (15 points)}
+
+\textbf{(a)} Use a balanced tree of seven 2:1 MUX cells. Each cell has two transmission gates: the top path is enabled by $\bar S$, the bottom path by $S$. In the figure, each TG box is the parallel PMOS/NMOS pair shown in the key below. Its label gives the NMOS enable $e$; the PMOS gate is the complement $\bar e$ shown in the key.
+\begin{center}\begin{tikzpicture}[x=.86cm,y=.88cm,font=\scriptsize]
+\tg{1}{7.55}{\overline{S_0}}\draw(1.24,7.55)--(1.8,7.55)--(1.8,7);
+\tg{1}{6.45}{S_0}\draw(1.24,6.45)--(1.8,6.45)--(1.8,7);
+\draw(1.8,7)--(2.15,7);\fill(1.8,7)circle(.025);
+\tg{1}{5.55}{\overline{S_0}}\draw(1.24,5.55)--(1.8,5.55)--(1.8,5);
+\tg{1}{4.45}{S_0}\draw(1.24,4.45)--(1.8,4.45)--(1.8,5);
+\draw(1.8,5)--(2.15,5);\fill(1.8,5)circle(.025);
+\tg{1}{3.55}{\overline{S_0}}\draw(1.24,3.55)--(1.8,3.55)--(1.8,3);
+\tg{1}{2.45}{S_0}\draw(1.24,2.45)--(1.8,2.45)--(1.8,3);
+\draw(1.8,3)--(2.15,3);\fill(1.8,3)circle(.025);
+\tg{1}{1.55}{\overline{S_0}}\draw(1.24,1.55)--(1.8,1.55)--(1.8,1);
+\tg{1}{0.44999999999999996}{S_0}\draw(1.24,0.44999999999999996)--(1.8,0.44999999999999996)--(1.8,1);
+\draw(1.8,1)--(2.15,1);\fill(1.8,1)circle(.025);
+\tg{5}{6.55}{\overline{S_1}}\draw(5.24,6.55)--(5.8,6.55)--(5.8,6);
+\tg{5}{5.45}{S_1}\draw(5.24,5.45)--(5.8,5.45)--(5.8,6);
+\draw(5.8,6)--(6.15,6);\fill(5.8,6)circle(.025);
+\tg{5}{2.55}{\overline{S_1}}\draw(5.24,2.55)--(5.8,2.55)--(5.8,2);
+\tg{5}{1.45}{S_1}\draw(5.24,1.45)--(5.8,1.45)--(5.8,2);
+\draw(5.8,2)--(6.15,2);\fill(5.8,2)circle(.025);
+\tg{9}{4.55}{\overline{S_2}}\draw(9.24,4.55)--(9.8,4.55)--(9.8,4);
+\tg{9}{3.45}{S_2}\draw(9.24,3.45)--(9.8,3.45)--(9.8,4);
+\draw(9.8,4)--(10.15,4);\fill(9.8,4)circle(.025);
+\draw(-.2,7.55)node[left]{$D_0$}--(.76,7.55);
+\draw(-.2,6.45)node[left]{$D_1$}--(.76,6.45);
+\draw(-.2,5.55)node[left]{$D_2$}--(.76,5.55);
+\draw(-.2,4.45)node[left]{$D_3$}--(.76,4.45);
+\draw(-.2,3.55)node[left]{$D_4$}--(.76,3.55);
+\draw(-.2,2.45)node[left]{$D_5$}--(.76,2.45);
+\draw(-.2,1.55)node[left]{$D_6$}--(.76,1.55);
+\draw(-.2,0.45)node[left]{$D_7$}--(.76,0.45);
+\draw(2.15,7)--(3,7)--(3,6.55)--(4.76,6.55);
+\draw(2.15,5)--(3,5)--(3,5.45)--(4.76,5.45);
+\draw(2.15,3)--(3,3)--(3,2.55)--(4.76,2.55);
+\draw(2.15,1)--(3,1)--(3,1.45)--(4.76,1.45);
+\draw(6.15,6)--(7,6)--(7,4.55)--(8.76,4.55);
+\draw(6.15,2)--(7,2)--(7,3.45)--(8.76,3.45);
+\draw(10.15,4)--(11,4)node[right]{$Y$};
+\node[align=center]at(1,-.65){First stage\\$S_0$};\node[align=center]at(5,-.65){Second stage\\$S_1$};\node[align=center]at(9,-.65){Third stage\\$S_2$};
+\end{tikzpicture}\end{center}
+\begin{center}\begin{tikzpicture}[x=.75cm,y=.75cm,font=\scriptsize]
+\hm{1.5}{2}{P}{1}\hm{1.5}{.5}{N}{0}
+\draw(.25,1.4)--(.25,1.75)--(1,1.75);\draw(.25,1.4)--(.25,.25)--(1,.25);\draw(2,1.75)--(2.8,1.75)--(2.8,1.4);\draw(2,.25)--(2.8,.25)--(2.8,1.4);\draw(-.4,1.4)--(.25,1.4);\draw(2.8,1.4)--(3.4,1.4);\node[left]at(-.4,1.4){in};\node[right]at(3.4,1.4){out};\node[above]at(1.5,2.75){$\bar e$};\node[above]at(1.5,1.25){$e$};
+\end{tikzpicture}\end{center}
+Generate $\bar S_0$, $\bar S_1$, and $\bar S_2$ with three ordinary static CMOS inverters. The core has 14 TGs = 28 MOS, plus 6 MOS for these select inverters. No output restoration buffer is required to obtain full rails with a TG; a buffer can be added for drive. Every selected data path crosses three TGs. With $i=4S_2+2S_1+S_0$, the output is $Y=D_i$.
+
+\textbf{(b)} Connect $S_2=A$, $S_1=B$, $S_0=C$, and choose
+\[D_0=D_1=\cdots=D_6=1,\qquad D_7=0.\]
+Then $F=1$ except when $ABC=111$, so $F=\overline{ABC}$. Constants mean physical $V_{DD}$/ground connections. The eight-input three-TG branch design in the students' work is also logically valid; the tree uses fewer switches and shares internal stages. It is important to connect the three selects, not just draw the data constants.
+\newpage
+\textbf{3. Static CMOS from the truth table (15 points)}
+
+The original on-set is $\{3,5,7,9,10,11,13,14,15\}$ in binary $ABCD$ order. Grouping the ones gives
+\[\boxed{F=AC+AD+BD+CD=AC+D(A+B+C).}\]
+For example, $ABCD=1010$ has $F=1$, so a solution containing only the three $D$ terms is incomplete. Another valid factorization is $F=(A+B+C)(A+D)(C+D)$.
+
+Use a complementary complex gate to produce $G=\bar F$, followed by a static inverter to restore the positive $F$ polarity. The NMOS pull-down of $G$ is $(A\text{ series }C)$ in parallel with $D\text{ series }(A\parallel B\parallel C)$. Its PMOS dual is $(A\parallel C)$ in series with $D\parallel(A\text{ series }B\text{ series }C)$.
+\begin{center}\begin{tikzpicture}[x=.8cm,y=.82cm,font=\scriptsize]
+\mos{0}{0.0}{A}{0}\node[right]at(0.45,0.45){$\mathrm{N1}$};\node[above]at(0.25,0.5){$G$};\node[below]at(0.25,-0.5){$n1$};
+\mos{5}{0.0}{C}{0}\node[right]at(5.45,0.45){$\mathrm{N2}$};\node[above]at(5.25,0.5){$n1$};\node[below]at(5.25,-0.5){$0$};
+\mos{10}{0.0}{D}{0}\node[right]at(10.45,0.45){$\mathrm{N3}$};\node[above]at(10.25,0.5){$G$};\node[below]at(10.25,-0.5){$n2$};
+\mos{0}{-2.25}{A}{0}\node[right]at(0.45,-1.8){$\mathrm{N4}$};\node[above]at(0.25,-1.75){$n2$};\node[below]at(0.25,-2.75){$0$};
+\mos{5}{-2.25}{B}{0}\node[right]at(5.45,-1.8){$\mathrm{N5}$};\node[above]at(5.25,-1.75){$n2$};\node[below]at(5.25,-2.75){$0$};
+\mos{10}{-2.25}{C}{0}\node[right]at(10.45,-1.8){$\mathrm{N6}$};\node[above]at(10.25,-1.75){$n2$};\node[below]at(10.25,-2.75){$0$};
+\mos{0}{-4.5}{A}{1}\node[right]at(0.45,-4.05){$\mathrm{P1}$};\node[above]at(0.25,-4.0){$V_{DD}$};\node[below]at(0.25,-5.0){$p1$};
+\mos{5}{-4.5}{C}{1}\node[right]at(5.45,-4.05){$\mathrm{P2}$};\node[above]at(5.25,-4.0){$V_{DD}$};\node[below]at(5.25,-5.0){$p1$};
+\mos{10}{-4.5}{D}{1}\node[right]at(10.45,-4.05){$\mathrm{P3}$};\node[above]at(10.25,-4.0){$p1$};\node[below]at(10.25,-5.0){$G$};
+\mos{0}{-6.75}{A}{1}\node[right]at(0.45,-6.3){$\mathrm{P4}$};\node[above]at(0.25,-6.25){$p1$};\node[below]at(0.25,-7.25){$p2$};
+\mos{5}{-6.75}{B}{1}\node[right]at(5.45,-6.3){$\mathrm{P5}$};\node[above]at(5.25,-6.25){$p2$};\node[below]at(5.25,-7.25){$p3$};
+\mos{10}{-6.75}{C}{1}\node[right]at(10.45,-6.3){$\mathrm{P6}$};\node[above]at(10.25,-6.25){$p3$};\node[below]at(10.25,-7.25){$G$};
+\mos{0}{-9.0}{G}{1}\node[right]at(0.45,-8.55){$\mathrm{P7}$};\node[above]at(0.25,-8.5){$V_{DD}$};\node[below]at(0.25,-9.5){$F$};
+\mos{5}{-9.0}{G}{0}\node[right]at(5.45,-8.55){$\mathrm{N7}$};\node[above]at(5.25,-8.5){$F$};\node[below]at(5.25,-9.5){$0$};
+\end{tikzpicture}\end{center}
+All source/drain names in this schematic are electrical net labels: repeated names are connected, and $0$ denotes ground. This is a complete 14-MOS realization. The six NMOS implement $F$ as a conduction condition; the six PMOS implement $\bar F$. The last two transistors invert $G$. PMOS bodies connect to $V_{DD}$ and NMOS bodies to ground. Exhaustive connectivity checking gives exactly one rail connection and the correct $F$ for all 16 rows.
+
+Both student sets have valid four-term Boolean expressions (one includes a redundant product). The corrected circuit is factored and includes the required output polarity explicitly; it does not assume complemented inputs are freely available.
+\newpage
+\textbf{4. Feedback NMOS gate (15 points: 9+6)}
+\begin{center}\begin{tikzpicture}[x=.85cm,y=.85cm,font=\scriptsize]
+\draw[dashed](.15,4.5)rectangle(1.65,5.4);\node[align=center]at(.9,4.95){P\\network};\draw(.9,5.4)--(.9,5.8);\node[above]at(.9,5.8){1.2 V};
+\draw(.9,4.5)--(.9,4.1)--(1.25,4.1)--(1.25,3.5);\mos{1}{3}{N3}{0}
+\draw(1.25,2.5)--(1.25,2);\mos{1}{1.5}{N1}{0}\ground{1.25}{1}
+\draw(-.75,2.25)--(.05,2.25)--(.05,3)--(.25,3);\draw(.05,2.25)--(.05,1.5)--(.25,1.5);\fill(-.75,2.25)circle(.045);\node[left]at(-.75,2.25){$V_{in}$};
+\draw(1.25,4.1)--(4.6,4.1);\fill(4.6,4.1)circle(.045);\node[right]at(4.6,4.1){$V_{out}$};
+\hm{3.25}{2.25}{N2}{0}\draw(1.25,2.25)--(2.75,2);\fill(1.25,2.25)circle(.035);\draw(3.75,2)--(4.1,2)--(4.1,2.6);\node[above]at(4.1,2.6){1.2 V};\draw(3.25,3)--(3.25,4.1);\fill(3.25,4.1)circle(.03);\node at(2.2,.25){(a)};
+\begin{scope}[shift={(7.2,1.6)},x=.85cm,y=1.7cm]
+\draw[->](0,0)--(4.25,0)node[right]{$t$};\draw[->](0,0)--(0,1.65)node[above]{Voltage};
+\draw[thick](0,1.2)--(1.65,1.2)--(2.85,0)--(4,0);\node at(.75,1.36){$V_{out}$};
+\draw[thick](1.1,0)--(2.55,1.2)--(4,1.2);\node at(3.7,1.4){$V_{in}$};
+\draw[dashed](0,.4)--(1.58,.4)--(1.58,0);\draw[dashed](0,.8)--(2.07,.8)--(2.07,0);\node[left]at(0,.4){0.4 V};\node[left]at(0,1.2){1.2 V};\node[below]at(1.58,0){$t_1$};\node[below]at(2.07,0){$t_2$};\node at(2.07,.9){$x$};\end{scope}
+\node at(8.75,.25){(b)};
+\end{tikzpicture}\end{center}
+Name the junction of N1, N3, and N2 $u$. N2's gate is $V_{out}$, not $V_{in}$; its right terminal is tied to 1.2 V.
+
+\textbf{(a) Course fixed-resistance answer.} The photographed lecture-board correction expressly uses the divider with N1 and N2 conducting while $V_{out}$ is still high:
+\[u=\frac{R_{N1}}{R_{N1}+R_{N2}}(1.2\text{ V})=\frac{R}{R+2R}(1.2\text{ V})=0.4\text{ V}.\]
+N3 starts conducting when $V_{GS3}=V_{in}-u$ reaches $V_{tn}=0.4$ V. Thus the threshold used for the qualitative point $x$ is
+\[\boxed{V_{in}(x)\simeq0.4+0.4=0.8\text{ V}.}\]
+This is a lumped on-resistance approximation. The first student's shortcut $V_{out}-V_t$ happens to give the same number, but it omits the specified resistance ratio and is not the correct divider derivation. A time-constant/ramp argument is also unnecessary: no numerical input slew or capacitance is given.
+
+\textbf{(b) Region conditions.} For an NMOS with the lower-potential terminal used as its source, cutoff means $V_{GS}<V_t$; saturation means $V_{GS}\ge V_t$ and $V_{GD}\le V_t$; triode means $V_{GS}\ge V_t$ and $V_{GD}>V_t$. Applying the actual gate connections gives:
+\begin{center}\begin{tabular}{lll}\toprule Device & $V_{GS}$ & $V_{GD}$\\\midrule N1 & $V_{in}$ & $V_{in}-u$\\N2 & $V_{out}-u$ & $V_{out}-1.2$\\N3 & $V_{in}-u$ & $V_{in}-V_{out}$\\\bottomrule\end{tabular}\end{center}
+\newpage
+\textbf{4(b), continued: distinguish onset from output discharge.}
+
+The interval ends at the drawn input/output crossing $x$, so before that crossing $V_{out}\ge V_{in}$. In the conducting output-discharge portion, N3 is on, which means $V_{in}-u>0.4$ V. This directly proves the expected conducting-state answer:
+\begin{center}\begin{tabular}{lll}\toprule Device & Region during discharge before $x$ & Reason\\\midrule N1 & triode (linear) & $V_{GD1}=V_{in}-u>0.4$\\N2 & saturation & $V_{GS2}\ge V_{in}-u>0.4$, $V_{GD2}\le0$\\N3 & saturation & $V_{GS3}>0.4$, $V_{GD3}=V_{in}-V_{out}\le0$\\\bottomrule\end{tabular}\end{center}
+\[\boxed{\text{Conducting discharge: N1 linear, N2 saturation, N3 saturation.}}\]
+The first student's N1 linear and N2 saturation classifications can apply here, but N3 linear is wrong: before the crossing, its $V_{GD}$ is nonpositive, so an on N3 is saturated.
+
+There is also an onset portion if $t_1$ is interpreted as the instant $V_{in}$ first reaches 0.4 V. Before N3 turns on, $V_{in}-u<0.4$ V. An on N1 is then saturated, N2 is saturated if on, and N3 is off. At $V_{in}-u=0.4$ V, N1 is at its saturation/triode boundary and N3 is at its turn-on boundary. These boundary states are not the fully conducting discharge state above. The original qualitative waveform does not specify $u(t)$ or locate N3 turn-on numerically relative to every part of the ramp; the region inequalities handle both phases without inventing a transient.
+
+\textbf{Physical-model limit.} Constant $R$, $2R$, and $R$ do not constitute a self-consistent saturation-current model. The exact moving $u(t)$ and the exact crossing $V_{out}=V_{in}$ depend on the pull-up network, MOS current laws, body effect, capacitances, and slew, which the original does not supply. Hence 0.8 V is the documented course approximation, rather than an exact transistor-level transient prediction. The region inequalities remain the authoritative test if a more detailed waveform is provided. For instance, a square-law saturation model with $\beta_1/\beta_2=2$ would give a different initial N3 turn-on value, $0.4+0.8/(1+\sqrt2)\simeq0.7314$ V; that additional model is not specified by the exam and is not substituted for its requested resistor answer.
+
+\textbf{5. Four-transistor circuit (10 points)}
+\begin{center}\begin{tikzpicture}[x=.9cm,y=.9cm,font=\small]
+\mos{3}{3}{\phantom{B}}{1}\mos{3}{1.5}{\phantom{B}}{0}
+\draw(3.25,3.5)--(3.25,4)--(.15,4)node[left]{$A$};\draw(3.25,1)--(3.25,.5)--(.15,.5)node[left]{$\bar A$};
+\draw(3.25,2.5)--(3.25,2)--(4,2)node[right]{$y$};\draw(3.25,2)--(3.25,2);\draw(3.25,2)--(3.25,2);\draw(3.25,2)--(3.25,2);\draw(3.25,2)--(3.25,2);
+\draw(.15,2)--(1.28,2);\node[left]at(.15,2){$B$};\draw(1.28,1.76)rectangle(1.78,2.24);\draw(1.78,2)--(3.25,2);
+\draw(1.53,2.24)--(1.53,2.65);\draw(1.53,2.76)circle(.055);\draw(1.53,2.82)--(1.53,4);\draw(1.53,1.76)--(1.53,.5);
+\draw(.65,2)--(.65,1.25)--(2.1,1.25)--(2.1,3)--(2.25,3);\draw(2.1,1.5)--(2.25,1.5);\fill(.65,2)circle(.03);\fill(2.1,1.5)circle(.03);\fill(3.25,2)circle(.03);
+\end{tikzpicture}\end{center}
+When $A=0$, the transmission gate is on and passes $B$ to $y$. When $A=1$, the TG is off and the right-hand pair has conventional rails $A=1$, $\bar A=0$, giving $y=\bar B$. Consequently
+\[\boxed{y=\bar A B+A\bar B=A\oplus B.}\]
+The first student called it an inverter and received only partial credit; that conclusion ignores the $A=0$ pass mode. The second student's XOR conclusion is correct.
+
+The pass mode has finite TG resistance and relies on the upstream $B$ driver; it provides no independent restoring gain or fixed drive strength. The switched supply inputs $A,\bar A$ must themselves be well-driven complementary signals. During imperfectly matched transitions, contention or a floating output can occur. Supply/body connections and fan-out therefore matter; this is not interchangeable with a conventional always-powered static XOR under arbitrary loading and slew. Complement generation for $\bar A$ also costs an inverter if it is not already present.
+\newpage
+\textbf{6. Positive function and transition-specific inverter (10 points)}
+
+\textbf{(a)} Factor the specified positive function:
+\[F=X(Y+Z)+XW=X(Y+Z+W).\]
+Implement $G=\overline{X(Y+Z+W)}$ with an 8-MOS complementary gate, then use a 2-MOS inverter. This needs only the original inputs:
+\begin{center}\begin{tikzpicture}[x=.8cm,y=.82cm,font=\scriptsize]
+\mos{0}{0.0}{X}{0}\node[right]at(0.45,0.45){$\mathrm{N1}$};\node[above]at(0.25,0.5){$G$};\node[below]at(0.25,-0.5){$n1$};
+\mos{5}{0.0}{Y}{0}\node[right]at(5.45,0.45){$\mathrm{N2}$};\node[above]at(5.25,0.5){$n1$};\node[below]at(5.25,-0.5){$0$};
+\mos{10}{0.0}{Z}{0}\node[right]at(10.45,0.45){$\mathrm{N3}$};\node[above]at(10.25,0.5){$n1$};\node[below]at(10.25,-0.5){$0$};
+\mos{0}{-2.25}{W}{0}\node[right]at(0.45,-1.8){$\mathrm{N4}$};\node[above]at(0.25,-1.75){$n1$};\node[below]at(0.25,-2.75){$0$};
+\mos{5}{-2.25}{X}{1}\node[right]at(5.45,-1.8){$\mathrm{P1}$};\node[above]at(5.25,-1.75){$V_{DD}$};\node[below]at(5.25,-2.75){$G$};
+\mos{10}{-2.25}{Y}{1}\node[right]at(10.45,-1.8){$\mathrm{P2}$};\node[above]at(10.25,-1.75){$V_{DD}$};\node[below]at(10.25,-2.75){$p1$};
+\mos{0}{-4.5}{Z}{1}\node[right]at(0.45,-4.05){$\mathrm{P3}$};\node[above]at(0.25,-4.0){$p1$};\node[below]at(0.25,-5.0){$p2$};
+\mos{5}{-4.5}{W}{1}\node[right]at(5.45,-4.05){$\mathrm{P4}$};\node[above]at(5.25,-4.0){$p2$};\node[below]at(5.25,-5.0){$G$};
+\mos{10}{-4.5}{G}{1}\node[right]at(10.45,-4.05){$\mathrm{P5}$};\node[above]at(10.25,-4.0){$V_{DD}$};\node[below]at(10.25,-5.0){$F$};
+\mos{0}{-6.75}{G}{0}\node[right]at(0.45,-6.3){$\mathrm{N5}$};\node[above]at(0.25,-6.25){$F$};\node[below]at(0.25,-7.25){$0$};
+\end{tikzpicture}\end{center}
+The NMOS network is $X$ in series with $Y\parallel Z\parallel W$. Its PMOS dual is $X$ in parallel with $Y$--$Z$--$W$ in series. The final inverter is essential to make $F$ positive. The students' complemented-input versions can also be correct if the complements are explicitly generated, but expanding the unfactored expression needlessly duplicates $X$.
+
+\textbf{(b)} The given function here is different: $F=\overline{X(Y+Z)}$. Its six-transistor AOI21 network is
+\begin{center}\begin{tikzpicture}[x=.8cm,y=.82cm,font=\scriptsize]
+\mos{0}{0.0}{X}{0}\node[right]at(0.45,0.45){$\mathrm{N_X}$};\node[above]at(0.25,0.5){$F$};\node[below]at(0.25,-0.5){$n$};
+\mos{5}{0.0}{Y}{0}\node[right]at(5.45,0.45){$\mathrm{N_Y}$};\node[above]at(5.25,0.5){$n$};\node[below]at(5.25,-0.5){$0$};
+\mos{10}{0.0}{Z}{0}\node[right]at(10.45,0.45){$\mathrm{N_Z}$};\node[above]at(10.25,0.5){$n$};\node[below]at(10.25,-0.5){$0$};
+\mos{0}{-2.25}{X}{1}\node[right]at(0.45,-1.8){$\mathrm{P_X}$};\node[above]at(0.25,-1.75){$V_{DD}$};\node[below]at(0.25,-2.75){$F$};
+\mos{5}{-2.25}{Y}{1}\node[right]at(5.45,-1.8){$\mathrm{P_Y}$};\node[above]at(5.25,-1.75){$V_{DD}$};\node[below]at(5.25,-2.75){$p$};
+\mos{10}{-2.25}{Z}{1}\node[right]at(10.45,-1.8){$\mathrm{P_Z}$};\node[above]at(10.25,-1.75){$p$};\node[below]at(10.25,-2.75){$F$};
+\end{tikzpicture}\end{center}
+Every device has $W/L$. For the specified sequence $101\to100\to101$, only $Z$ switches, while $X=1,Y=0$. The truth sequence is $F:0\to1\to0$, so the equivalent inverter input is $Z$.
+\newpage
+\textbf{6(b), continued.}
+
+On the rising-output edge ($Z:1\to0$), $P_X$ is off and $P_Y,P_Z$ are in series. Thus $R_{p,eq}=2R_p$ and $(W/L)_{p,eq}=W/(2L)$.
+
+On the falling-output edge ($Z:0\to1$), $N_Y$ is off and $N_X,N_Z$ are in series. Thus $R_{n,eq}=2R_n$ and $(W/L)_{n,eq}=W/(2L)$.
+\[\boxed{(W/L)_{p,eq}=(W/L)_{n,eq}=\frac{W}{2L},\quad\text{input}=Z.}\]
+\begin{center}\begin{tikzpicture}[x=.85cm,y=.8cm,font=\scriptsize]
+\mos{1}{2.5}{\phantom{Z}}{1}\mos{1}{1}{\phantom{Z}}{0}
+\draw(1.25,3)--(1.25,3.35);\node[above]at(1.25,3.35){$V_{DD}$};\ground{1.25}{.5}
+\draw(1.25,2)--(1.25,1.5);\draw(1.25,1.75)--(3.75,1.75)node[right]{$F$};\fill(1.25,1.75)circle(.03);
+\draw(-.7,1.75)node[left]{$Z$}--(.05,1.75);\draw(.05,1.75)--(.05,2.5)--(.25,2.5);\draw(.05,1.75)--(.05,1)--(.25,1);
+\node[right]at(1.55,2.5){$W/(2L)$};\node[right]at(1.55,1){$W/(2L)$};
+\draw(3.3,1.75)--(3.3,.8);\draw(3.05,.8)--(3.55,.8);\draw(3.05,.66)--(3.55,.66);\ground{3.3}{.66}\node[right]at(3.55,.73){$C_L$};
+\end{tikzpicture}\end{center}
+Both widths may be written $W/2$ with length $L$, or widths $W$ with length $2L$ within the simple resistance model. PMOS and NMOS do not thereby have equal physical resistance: their mobilities may differ. Retain the original output capacitance $C_L$ when using
+\[t_r\simeq0.69(2R_p)C_L,\qquad t_f\simeq0.69(2R_n)C_L.\]
+These expressions capture the effective output drive, not a full Elmore network including internal-node charge or nonlinear MOS transients. No numerical time is determined without a load and device model.
+
+The three-page student PDF uses the all-input-on pull-down and all-input-off pull-up equivalents, $2W/(3L)$ and $3W/(2L)$. Those are general network states, not the specified $X=1,Y=0$ transition, and therefore answer the wrong question. The five-page answer/lecture set's page 4 correctly selects the two series devices on each edge.
+
+\textbf{Verification and source limits}
+
+\texttt{verify.py} independently checks all 16 Q3 truth rows against the printed table and transistor connectivity, all 16 Q6(a) input states against its transistor graph, all 8 Q6(b) states plus the three transition states, all four Q5 conduction states, and all eight NAND select rows. The 8:1 selection tree is exhaustively checked for every 8-bit data vector and select value (2048 cases). The Q4 divider and device inequalities are checked separately under their labeled approximation. These checks are ideal Boolean/connectivity and algebra checks, not HSPICE measurements.
+
+Point labels are preserved: Q1--Q6 totals are $35+15+15+15+10+10=100$, and Q4(a)+(b) prints $9+6=15$.
+
+\textbf{Source notes.} The supplied comparison evidence includes two corrected student sets and three lecture-board correction photographs. Lecture-board pages specifically support Q1(d),(f),(k), and the Q4 resistance derivation. Later typed study annotations on the student images are distinguished from grading and from printed exam text.
+\end{document}

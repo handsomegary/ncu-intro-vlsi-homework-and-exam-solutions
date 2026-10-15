@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "case": 498,
+  "old": 71,
+  "new": 70,
+  "input": "x0",
+  "output": "s2",
+  "direction": "rise",
+  "original_max_timestep_ps": 2,
+  "refined_max_timestep_ps": 1,
+  "original_delay_ps": 833.5269883,
+  "refined_delay_ps": 833.9053097999999,
+  "difference_ps": 0.37832149999997,
+  "relative_difference_percent": 0.045388032458501024,
+  "input_crossing_ns": 1.01,
+  "output_crossing_ns": 1.84390531,
+  "all_logic_levels_pass": true,
+  "initial_result": 8,
+  "final_result": 7,
+  "waveform_points": 3001,
+  "same_original_netlist": true,
+  "refined_other_output_delays_ps": {
+    "s0": 246.40227430000002,
+    "s1": 563.2540032999999,
+    "s2": 833.9053097999999,
+    "cout": 723.1445613999999
+  },
+  "scope": "Refinement of the original sweep worst transition, not a second full sweep."
+}

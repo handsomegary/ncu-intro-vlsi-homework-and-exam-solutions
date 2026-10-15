@@ -1,0 +1,10 @@
+sizing,path,R_over_k,R_P1_over_k,clock_C_over_C
+independent_a,N1-N6,3/4,3/4,4
+independent_a,N2-N3-N6,3/4,3/4,4
+independent_a,N4-N5-N3-N6,3/4,3/4,4
+independent_b,N1-N6,3/2,3/2,2
+independent_b,N2-N3-N6,3/2,3/2,2
+independent_b,N4-N5-N3-N6,3/2,3/2,2
+student_a,N1-N6,3/4,3/4,14/3
+student_a,N2-N3-N6,3/4,3/4,14/3
+student_a,N4-N5-N3-N6,3/4,3/4,14/3

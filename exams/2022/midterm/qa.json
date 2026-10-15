@@ -1,0 +1,91 @@
+{
+  "status": "ready",
+  "scope": "Complete original 2022 midterm Q1-Q6; 100 points",
+  "built_in_compilation": {
+    "exam": "success",
+    "solution": "success"
+  },
+  "local_compilation": {
+    "exam": {
+      "pages": 3,
+      "warnings": [],
+      "compiled": true
+    },
+    "solution": {
+      "pages": 10,
+      "warnings": [],
+      "compiled": true
+    }
+  },
+  "pdfs": {
+    "exam": {
+      "pages": 3,
+      "embedded_raster_images": 0
+    },
+    "solution": {
+      "pages": 10,
+      "embedded_raster_images": 0
+    },
+    "original-exam": {
+      "pages": 2,
+      "embedded_raster_images": 2
+    }
+  },
+  "visual_review": {
+    "exam_pages": [
+      1,
+      2,
+      3
+    ],
+    "solution_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "result": "All pages inspected. Editable circuits, labels, connections, equations and page layout checked; no clipping or overlaps found.",
+    "last_typography_revision_rechecked_solution_pages": [
+      4,
+      8,
+      10
+    ]
+  },
+  "analytical_verification": "pass; no process-model simulation claimed",
+  "csv_row_counts": {
+    "q2_mux8_selection.csv": 8,
+    "q2_shannon_truth.csv": 16,
+    "q2_unbuffered_rc_scaling.csv": 10,
+    "q3_fixed_NMOS_balancing.csv": 8,
+    "q3_stage_count.csv": 10,
+    "q4_regions.csv": 15,
+    "q5_xor_routes.csv": 4,
+    "q6a_cmos_truth.csv": 16,
+    "q6b_equivalent_inverter.csv": 3
+  },
+  "stable_file_sha256": {
+    "exam.pdf": "7c82974c2b072076479269351785738e3863f27629d2c7fc20106e6e3b631615",
+    "exam.tex": "f91d17f324b4893add27a7f41908ff521aa085d329fe14cd36243864b497bc23",
+    "q2_mux8_selection.csv": "ffbef193a67c6f2ca563d8a144b4e9a1a43bdbe6539b328d974ddfef69e06ce2",
+    "q2_shannon_truth.csv": "30c2177a56cc4f4a15af84e293db8cbc324ccfb231b6f33c23ced6ca37f31bbc",
+    "q2_unbuffered_rc_scaling.csv": "2b2b7c23be9e87a5cd0226927ce82de2bbe77cf7396d69bbcc6965e74905fe96",
+    "q3_fixed_NMOS_balancing.csv": "8d39902db8a639803456881787a095fc15b081484b1f582c4f09d4fb9e580c60",
+    "q3_stage_count.csv": "fb18eb9933df099f851e2b6411a8c8ebd31b992d7bee98a4a46488ad37f317cd",
+    "q4_regions.csv": "c66f9a9f58ba9b6b4f6abb141beaad6b7a7ad345c17baef8baf363b4031a5991",
+    "q5_xor_routes.csv": "d78c83448a0b8d8970bda58c240cafa965b1e27b1b52a234361bfe0c68ddba64",
+    "q6a_cmos_truth.csv": "a306704e662c34ace796290073dce64ef703ede034dcce70b67242d8e2d283af",
+    "q6b_equivalent_inverter.csv": "5816bc47184057d05569101879db418fcad0166261b5fa1d70b0f62d402fced3",
+    "README.md": "9128b0e079ebc32ccac7ea831cd5992101b4872be01cbb885998a82e8a6a2e60",
+    "solution.pdf": "9690282999efbe950995c6d7bc0ddc9fc8822a48b069e763dfd5f41011c1507d",
+    "solution.tex": "1751660cadef6a03a22ecda88668ab3ade9a1fd140f0d3eebaaebc22084136d9",
+    "sources.json": "63b5bc1e7531ddbfd934402dca987a7e035d7784272904f3238cf92cdd46f292",
+    "SOURCES.md": "4498fb28f06527ffe68eb153824afd1f69bdade4f04fb78ebf11b099357cfad9",
+    "verification.json": "8e4de7cb07a088ca3e7ff747f5fe545594aafa77d19c51d8c662effb0af3197e",
+    "verify.py": "2f03895fbae362a5d4df245388ac773d2f781970851571ef04cebeaf8756b19b"
+  }
+}

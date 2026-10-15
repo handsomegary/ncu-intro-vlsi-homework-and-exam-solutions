@@ -1,0 +1,5 @@
+Rp_over_Rn,A_NOR,B_NOR,C_INV,D_NAND,E_F_OR,G_H_AND,model,passed
+1/2,2.6666666666666665,1.3333333333333333,1.0,3.3333333333333335,3.3333333333333335,3.6666666666666665,mean rise/fall;actual fanout;given inverter mean = 1 unit,True
+1,3.0,1.5,1.0,3.0,3.5,3.5,mean rise/fall;actual fanout;given inverter mean = 1 unit,True
+2,3.3333333333333335,1.6666666666666667,1.0,2.6666666666666665,3.6666666666666665,3.3333333333333335,mean rise/fall;actual fanout;given inverter mean = 1 unit,True
+3,3.5,1.75,1.0,2.5,3.75,3.25,mean rise/fall;actual fanout;given inverter mean = 1 unit,True

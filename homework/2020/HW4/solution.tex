@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=21mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,frame=single}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\newcommand{\mos}[4]{\begin{scope}[shift={(#1,#2)}]
+\draw (0,.24)--(0,-.24);
+\draw (0,.20)--(.25,.20)--(.25,.5);
+\draw (0,-.20)--(.25,-.20)--(.25,-.5);
+\draw (-.16,.23)--(-.16,-.23);
+\ifnum#4=1\draw (-.26,0) circle (.06);\draw (-.75,0)--(-.32,0);\else\draw (-.75,0)--(-.16,0);\fi
+\node[anchor=east,font=\small] at (-.76,0) {$#3$};
+\end{scope}}
+\newcommand{\ground}[2]{\draw (#1,#2)--(#1,{#2-.12});\draw ({#1-.17},{#2-.12})--({#1+.17},{#2-.12});\draw ({#1-.11},{#2-.20})--({#1+.11},{#2-.20});}
+\newcommand{\rail}[3]{\draw (#1,#2)--(#1,{#2+.15});\node[above,font=\small] at (#1,{#2+.15}) {$#3$};}
+\newcommand{\outputnode}[3]{\fill (#1,#2) circle (.04);\draw (#1,#2)--({#1+.7},#2) node[right] {$#3$};}
+\begin{document}
+\begin{center}{\Large\bfseries Introduction to VLSI Design, 2020}\par{\large Homework 4: pre-layout SPICE deliverable}\end{center}
+\section*{Requested scope and completed circuit}
+The original assignment asks for a schematic simulation and then a layout, extraction, and post-layout delay comparison. The requested scope stops at the \texttt{.sp} stage. This deliverable therefore contains the complete reusable six-transistor AND netlist, a 1 fF loaded testbench, automated measurement code, and the verified schematic-level data. No layout, DRC/LVS, extracted parasitic circuit, or post-layout result is represented as completed.
+
+The supplied two copies of \texttt{homework4.pdf} are preserved in the assignments folder. The HW4 circuit is identical to the HW3 schematic: $F=\overline{AB}$ is the NAND node and $Z=AB$ is the loaded final output. The device sizes, body ties, model, supply, and delay convention are unchanged from the independently verified HW3 design:
+\begin{center}\begin{tabular}{lrr}\toprule Devices&$W$ ($\mu$m)&$L$ ($\mu$m)\\\midrule
+Two NAND PMOS&2.50&0.18\\Two NAND NMOS&2.00&0.18\\Output PMOS&2.50&0.18\\Output NMOS&1.00&0.18\\\bottomrule\end{tabular}\end{center}
+\texttt{and2.sp} contains the circuit. The internal node is local to the subcircuit, all NMOS bodies use VSS, all PMOS bodies use VDD, and the external pins are \texttt{a b f z vdd vss}. The testbench explicitly places \texttt{CL z vss 1f}. Declared source/drain dimensions estimate schematic parasitics and are not an extraction.
+
+\section*{Primary testbench}
+\begin{lstlisting}
+.protect
+.lib 'D:/cic018.l' TT
+.unprotect
+.include 'and2.sp'
+.temp 25
+VDD vdd 0 1.8
+VSS vss 0 0
+VA a vss PWL(0 0 2n 0 2.02n 1.8 5n 1.8)
+VB b vss PWL(0 0 2n 0 2.02n 1.8 5n 1.8)
+XAND a b f z vdd vss and2
+CL z vss 1f
+.tran 1p 5n
+.measure tran delay_f TRIG V(a) VAL=0.9 RISE=1 TD=1.9n
++ TARG V(f) VAL=0.9 FALL=1 TD=1.9n
+.measure tran delay_z TRIG V(a) VAL=0.9 RISE=1 TD=1.9n
++ TARG V(z) VAL=0.9 RISE=1 TD=1.9n
+.end
+\end{lstlisting}
+The distributed \texttt{testbench.sp} also records output precision and before/after voltages. The model path is a local prerequisite.
+\newpage\section*{Verified pre-layout worst-case results}
+These are the same actual HSPICE measurements as HW3, because HW4 reuses the exact same circuit. They are not a second or post-layout simulation. CIC018 TT, 1.8 V, 25 C, 1 fF, 20 ps input ramp, and the 50-percent crossing convention apply.
+\begin{center}\begin{tabular}{lclr}\toprule Node&Direction&Input transition&Delay (ps)\\\midrule
+F&HL&\texttt{00->11}&29.4932\\
+F&LH&\texttt{11->10}&41.8569\\
+Z&HL&\texttt{11->10}&63.7000\\
+Z&LH&\texttt{00->11}&47.6815\\
+\bottomrule\end{tabular}\end{center}
+All six output-changing transitions were covered in both directions. Before/after levels pass the 1.6 V high and 0.2 V low bands. Tightening the timestep to 0.2 ps provides the accompanying convergence evidence. Raw license details and the process model are excluded from the repository.
+\section*{Comparison and corrections}
+Two supplied HW4 submissions were reviewed: J.-M. Wu's PDF and \texttt{pre-sim.sp}, and S.-Y. Sun's report and \texttt{1.inv.sp}. Wu's HW4 pre-simulation fixes the upper NMOS body to VSS, but still uses 3.3 V on \texttt{N\_18/P\_18} and omits the 1 fF load in that standalone file. Sun's listed schematic follows the same six-transistor topology. Their layout and extracted-netlist artifacts are background only because the requested scope stops before layout. Reported faster post-layout values are not imported into this pre-layout design.
+
+\section*{Reproduction and consistency check}
+Run \texttt{python simulate.py --model D:/cic018.l --raw-dir <scratch>}. The copied script performs the full six-transition sweep and exports the same schema as HW3. The included \texttt{provenance.json} records that the checked-in result CSVs are reused from HW3 and gives the SHA-256 hash of the identical netlist. Regenerating HW4 with the same model and simulator should reproduce them within simulator precision. For a single primary run, invoke HSPICE directly on \texttt{testbench.sp} from this directory.
+
+\end{document}

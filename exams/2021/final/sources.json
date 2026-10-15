@@ -1,0 +1,38 @@
+{
+  "exam": "2021 final",
+  "year_basis": "archive folder, no printed date",
+  "original_container_pages": 3,
+  "printed_whole_question_points": [
+    15,
+    10,
+    10,
+    10,
+    20,
+    15,
+    25
+  ],
+  "printed_total": 105,
+  "answerable_original": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4",
+    "Q5",
+    "Q7a",
+    "Q7b",
+    "Q7c"
+  ],
+  "missing_and_skipped": [
+    "Q6 numerical premises",
+    "Q6a",
+    "Q6b",
+    "Q6c numerical redesign",
+    "original Q7d-Q7f"
+  ],
+  "secondary_unverified_supplement": [
+    "Q7d",
+    "Q7e",
+    "Q7f"
+  ],
+  "sources": []
+}

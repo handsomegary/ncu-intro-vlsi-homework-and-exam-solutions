@@ -1,0 +1,30 @@
+{
+  "builtin_compiler": "both standalone documents successful",
+  "local_compiler": "pdfLaTeX two passes each",
+  "box_warnings": 0,
+  "render_dpi": 120,
+  "total_pages_inspected": 11,
+  "records": [
+    {
+      "file": "exam.pdf",
+      "pages": 3,
+      "sha256": "8393a17124464036e6278967a646c05b10e7910ba4a41d8e232139532bbf0aba",
+      "all_pages_rendered_and_visually_inspected": true
+    },
+    {
+      "file": "solution.pdf",
+      "pages": 8,
+      "sha256": "a047ebc47ebc2490e8c299d9fa343b078562dcf12cdaf4c3c05317967030dd42",
+      "all_pages_rendered_and_visually_inspected": true
+    }
+  ],
+  "visual_adjustments": [
+    "separated Q3 device/input labels",
+    "moved NP output X away from adjacent A gate label",
+    "moved Q6 Z leader clear of gate/well lines",
+    "widened pipeline gate block",
+    "separated Q8 feedback labels and explanatory note",
+    "kept Q8 explanation together on its own page"
+  ],
+  "status": "passed"
+}

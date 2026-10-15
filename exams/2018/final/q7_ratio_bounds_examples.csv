@@ -1,0 +1,3 @@
+driver_R,TG_R,feedback_R,write_high_over_VDD,write_low_over_VDD,passed
+1.0,0.5,2.0,0.5714285714285714,0.42857142857142855,True
+2.0,1.0,4.0,0.5714285714285714,0.42857142857142855,True

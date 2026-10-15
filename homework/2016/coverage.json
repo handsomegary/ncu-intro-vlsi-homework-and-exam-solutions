@@ -1,0 +1,16 @@
+{
+  "year": 2016,
+  "available_original_assignments": [
+    "HW3"
+  ],
+  "completed_original_assignments": [
+    "HW3"
+  ],
+  "missing_original_assignments": [
+    "HW1",
+    "HW2",
+    "HW4"
+  ],
+  "coverage_rule": "Only assignments with supplied original prompts are completed; missing prompts are not reconstructed from student-only answers.",
+  "missing_reason": "Original prompt not supplied in source directory"
+}
