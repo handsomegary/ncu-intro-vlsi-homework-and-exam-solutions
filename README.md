@@ -13,6 +13,10 @@ The [homework archive](homework/README.md#public-assignment-questions) includes 
 
 Public exam readers can use the reconstructed papers and corrected solutions here.
 
+## Processing workflow
+
+[整理流程與重現方法](PROCESSING.md) explains the tools and checks used to reconstruct papers, derive and verify solutions, run SPICE simulations, and decide which TXT, PNG, JSON and other artifacts belong in the published collection.
+
 ## Verification
 
 ```sh
