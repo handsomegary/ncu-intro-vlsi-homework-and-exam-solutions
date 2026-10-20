@@ -21,4 +21,4 @@ maximum-low ratio 4.5 are derived separately. HW3's three-stage diagram resolves
 its wording “four full adders.” HW4 follows the user's pre-layout-only scope.
 
 See [SOURCES.md](SOURCES.md) for the existing-answer review and integration decisions.
-Use the local CIC018 model, default `D:/cic018.l`; it is not included in the repository.
+Select your authorized CIC018 model with `--model` or `CIC018_MODEL`; it is not included in the repository. Use `--check-environment` before simulation. See the [fresh-download guide](../../REPRODUCING.md).

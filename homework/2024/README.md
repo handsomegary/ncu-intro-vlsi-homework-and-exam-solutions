@@ -20,7 +20,7 @@ Each homework README explains the requirements, design choices, file purposes, r
 ## Local requirements
 
 - PrimeSim HSPICE S-2021.09. The executable used here was `C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com`.
-- The user's external CIC018 model, default `D:/cic018.l`: TT, 1.8 V, 25 C. The model is read locally and is not redistributed.
+- Your external authorized CIC018 model, selected with `--model` or `CIC018_MODEL`: TT, 1.8 V, 25 C. The model is read locally and is not redistributed. Use `--check-environment` to check your installation paths first; see the [fresh-download guide](../../REPRODUCING.md).
 - Python 3; see each homework folder for reproduction instructions.
 - Each English `.tex` report is standalone and compiles with PDFLaTeX; a PDF preview is included. Diagrams and statistics come from source or simulation data, without hspui screenshots.
 

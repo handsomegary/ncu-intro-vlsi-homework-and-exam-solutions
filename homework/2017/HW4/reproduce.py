@@ -4,6 +4,9 @@ Domino: 8 independent evaluate/precharge cycles, both outputs checked.
 Balanced tr=tf means max 10-90% rise/fall per output at stated conditions.
 """
 from pathlib import Path
+import sys as _simulation_sys
+_simulation_sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from simulation_environment import default_hspice, default_model, add_environment_check, resolve_simulation_args
 import argparse,csv,json,os,subprocess,bisect
 H=Path(__file__).resolve().parent
 
@@ -96,8 +99,8 @@ def run(kind,pars,a,label):
  return stats,metrics,checks,s
 
 def main():
- ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--hspice',default=os.environ.get('HSPICE','C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com'));ap.add_argument('--model',default=os.environ.get('CIC018_MODEL','D:/cic018.l'));ap.add_argument('--work',default=str(H.parents[2]/'scratch'/'2017HW4'));ap.add_argument('--no-calibrate',action='store_true')
- a=ap.parse_args();results=H/'results';results.mkdir(exist_ok=True);summary={};allcal=[]
+ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--hspice',default=default_hspice());ap.add_argument('--model',default=default_model());ap.add_argument('--work',default=str(H.parents[2]/'scratch'/'2017HW4'));ap.add_argument('--no-calibrate',action='store_true')
+ add_environment_check(ap);a=ap.parse_args();resolve_simulation_args(ap,a);results=H/'results';results.mkdir(exist_ok=True);summary={};allcal=[]
  for kind in ['mirror','domino']:
   defaults={'WOSS':1.8,'WOSC':1.8} if kind=='mirror' else {'WPSS':1.8,'WPSC':1.8}
   cfg=H/f'{kind}_sizes.json';pars=json.loads(cfg.read_text()) if cfg.exists() else defaults

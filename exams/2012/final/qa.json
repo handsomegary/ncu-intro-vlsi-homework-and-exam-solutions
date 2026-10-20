@@ -106,7 +106,7 @@
     "coverage-entry.json": "8512c037cec03d1a7a7ff2a24d356808da8ca504b7782256f6f8620131016133",
     "exam.pdf": "ebb8df278bea279bb34b8cb1cb429aacf65b122bd17e257814740919f78c1a11",
     "exam.tex": "c73cfd923d9d5b1a2605e1726f659a396069f9039b9e4aaf0a50bc5a02874b82",
-    "logic-layout-verification.json": "5920c454fb66b627af2324c4fb0b1017a00231d2d87d0af37b8747ed62eca32b",
+    "logic-layout-verification.json": "ba1eaf439e7a577ce20c7cbd73923c9783dab8ad63566d885a77450ee6a6858c",
     "numerical-verification.json": "2fd19ae7586a34635eace44188fba2c5c179dbd3ef036af61c100ab9a3c0c54f",
     "q2_differential_candidates.csv": "41c1b6a7800a5f2adeb4786aa41c2fcda831648975057130f0da522ebb1b914c",
     "q2_differential_complete_netlist.csv": "a5bfb70697665d9d44b5f0001c5bf528e9feb75bdc22d603da767ff2277f3cb2",
@@ -139,7 +139,7 @@
     "student-comparison.csv": "db9ae2c3414234d29338072663b87636371af5fd0f8e06af22a69d7c6fb0e616",
     "verification.json": "9b6ff2dd68993e0c6b90f6ac43640bce0a1d14e7f5de1ea704b4bc3209452ec7",
     "verify.py": "222469f437c35c18ae247f2333a10c914165d236d71b995e0a646c840fd5d257",
-    "verify_logic_layout.py": "6ed6a3f878350312203aaf040943e014bc70f52fd61bb0aa0667bbd420c8c06d",
+    "verify_logic_layout.py": "649fea3ccb2d437f2ff2dfc35c0f5a6814f75a2fa50ddefbed0ac8e7ea083d4f",
     "verify_numerical.py": "3d8bb3a4414f85b1c98dbdfabbd41c513fc59e2f8cb96b0c1fd11de61888b0a2",
     "verify_q5.py": "f8948dfbdaeb40162f77e8a72e999cb6d2f929641299b9b31defac66aed238e1"
   },

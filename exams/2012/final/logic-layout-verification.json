@@ -36,8 +36,8 @@
   },
   "Q7": {
     "literal_netlists_verified": {
-      "q7a_literal_netlist.csv": "1f137ae246dfe02fd791594ef385c2d77c3b8dc3671b33c985a2d81731eca90e",
-      "q7b_literal_netlist.csv": "fcee65aaac73d7bfd2935420a0de7757b8e7b11bcd1ac21b9d39841db1e2d084"
+      "q7a_literal_netlist.csv": "f5c2da461c7d3afc3265d269319c87ab78b76d488ad9d861a32a099cad38e74b",
+      "q7b_literal_netlist.csv": "88249c7d27159d7137bfa95c1d1748a64ca73ee3d1c415bd2967143b86d8f0e6"
     },
     "a": {
       "device_counts": {

@@ -3,6 +3,9 @@ Uses the user's local D:/cic018.l; the model is not redistributed.
 python reproduce.py --hspice PATH --model PATH --work PATH
 """
 from pathlib import Path
+import sys as _simulation_sys
+_simulation_sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from simulation_environment import default_hspice, default_model, add_environment_check, resolve_simulation_args
 import argparse,csv,json,re,subprocess,os
 HERE=Path(__file__).resolve().parent
 CASES=[('00',0,0,'a'),('01',0,1,'a'),('10',1,0,'b')]
@@ -38,10 +41,10 @@ def deck(case,model):
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--hspice',default=os.environ.get('HSPICE','C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com'))
-    ap.add_argument('--model',default=os.environ.get('CIC018_MODEL','D:/cic018.l'))
+    ap.add_argument('--hspice',default=default_hspice())
+    ap.add_argument('--model',default=default_model())
     ap.add_argument('--work',default=str(HERE.parents[2]/'scratch'/('2016_'+HERE.name)))
-    a=ap.parse_args(); raw=Path(a.work).resolve();model=Path(a.model).resolve()
+    add_environment_check(ap);a=ap.parse_args();resolve_simulation_args(ap,a); raw=Path(a.work).resolve();model=Path(a.model).resolve()
     if not model.is_file():raise FileNotFoundError('Local CIC018 model required: '+str(model))
     results=HERE/'results'/'and_gate';results.mkdir(parents=True,exist_ok=True)
     delays=[];levels=[];waves=[];statuses=[]

@@ -4,6 +4,9 @@ The process file stays external. TG widths are fixed at N=10um, P=20um,
 L=.18um in both designs. Raw simulation and license logs go to --work.
 """
 from pathlib import Path
+import sys as _simulation_sys
+_simulation_sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from simulation_environment import default_hspice, default_model, add_environment_check, resolve_simulation_args
 from itertools import product
 import argparse,csv,hashlib,json,os,shutil,subprocess,tempfile,re
 from collections import defaultdict
@@ -147,10 +150,10 @@ def run(a,stem,deck):
  return rows
 def main():
  p=argparse.ArgumentParser(description=__doc__)
- p.add_argument('--model',type=Path,default=os.getenv('CIC018_MODEL','D:/cic018.l'))
- p.add_argument('--hspice',default=os.getenv('HSPICE','C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com'))
+ p.add_argument('--model',type=Path,default=default_model())
+ p.add_argument('--hspice',default=default_hspice())
  p.add_argument('--work',type=Path,default=Path(tempfile.gettempdir())/'intro-vlsi-2013-hw3')
- p.add_argument('--prepare-only',action='store_true');a=p.parse_args();a.model=a.model.resolve();a.work=a.work.resolve()
+ p.add_argument('--prepare-only',action='store_true');add_environment_check(p);a=p.parse_args();resolve_simulation_args(p,a,skip=a.prepare_only);a.model=a.model.resolve();a.work=a.work.resolve()
  netlist=mux_netlist();(H/'mux.sp').write_text(netlist,encoding='ascii')
  (H/'results').mkdir(exist_ok=True);check_topologies(netlist)
  # Independent exhaustive function proof, then actual electrical delay checks.

@@ -1,5 +1,8 @@
 """2015 HW3 HSPICE: equal-size AND delays and intrinsic-channel overlap power."""
 from pathlib import Path
+import sys as _simulation_sys
+_simulation_sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from simulation_environment import default_hspice, default_model, add_environment_check, resolve_simulation_args
 import sys,argparse,json
 sys.path.insert(0,str(Path(__file__).resolve().parent.parent))
 from sim_utils import header,run,measurements,trace,write_csv,integral
@@ -48,10 +51,10 @@ EIN{k} icn{k} 0 VOL='LX4(MN{k})'
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--hspice',default='C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com');ap.add_argument('--model',default='D:/cic018.l')
+    ap.add_argument('--hspice',default=default_hspice());ap.add_argument('--model',default=default_model())
     ap.add_argument('--raw-dir',default=str(HERE.parents[2]/'2015-simulation'/'HW3'))
     ap.add_argument('--power-only',action='store_true',help='Recompute only the five-load intrinsic-channel power sweep')
-    args=ap.parse_args();raw=Path(args.raw_dir).resolve();delays=[];checks=[]
+    add_environment_check(ap);args=ap.parse_args();resolve_simulation_args(ap,args);raw=Path(args.raw_dir).resolve();delays=[];checks=[]
     previous=json.loads((HERE/'verification.json').read_text()) if args.power_only else None
     for step in ([] if args.power_only else [1,.2]):
         deck=and_deck(args.model,step);lis=run(args.hspice,raw/f'and_step{step}',deck,[HERE/'and2.sp']);m=measurements(lis)

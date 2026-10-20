@@ -4,12 +4,15 @@ Psc = VDD * average(max(0,min(IDS_p,IDS_n))) over a steady period.
 Displacement current and CL switching energy are not called short circuit.
 """
 from pathlib import Path
+import sys as _simulation_sys
+_simulation_sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from simulation_environment import default_hspice, default_model, add_environment_check, resolve_simulation_args
 import argparse,csv,json,os,subprocess
 H=Path(__file__).resolve().parent
 LOADS=[.1,.3,.5,.7,1.0]
 def main():
- ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--hspice',default=os.environ.get('HSPICE','C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com'));ap.add_argument('--model',default=os.environ.get('CIC018_MODEL','D:/cic018.l'));ap.add_argument('--work',default=str(H.parents[2]/'scratch'/('power_'+H.parent.name)))
- a=ap.parse_args();model=Path(a.model).resolve();raw=Path(a.work).resolve()/'power';raw.mkdir(parents=True,exist_ok=True);res=H/'results'/'power';res.mkdir(parents=True,exist_ok=True)
+ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--hspice',default=default_hspice());ap.add_argument('--model',default=default_model());ap.add_argument('--work',default=str(H.parents[2]/'scratch'/('power_'+H.parent.name)))
+ add_environment_check(ap);a=ap.parse_args();resolve_simulation_args(ap,a);model=Path(a.model).resolve();raw=Path(a.work).resolve()/'power';raw.mkdir(parents=True,exist_ok=True);res=H/'results'/'power';res.mkdir(parents=True,exist_ok=True)
  s=f"* Inverter direct-path power versus CLOAD\n.protect\n.lib '{model.as_posix()}' tt\n.unprotect\n"
  s+='vvdd vdd 0 1.8\nvin in 0 pulse(0 1.8 5n 3n 3n 40n 86n)\nMP out in vdd vdd P_18 W=1.44u L=.18u\nMN out in 0 0 N_18 W=.36u L=.18u\nCL out 0 CLOAD\n.temp 25\n.option measform=3 measdgt=9 delmax=10p\n.param CLOAD=.1p\n.data capvals CLOAD\n.1p\n.3p\n.5p\n.7p\n1p\n.enddata\n.tran 10p 180n sweep DATA=capvals\n'
  s+=".measure tran isc AVG PAR('max(0,min(lx4(mp),lx4(mn)))') from=91n to=177n\n.measure tran peaksc MAX PAR('max(0,min(lx4(mp),lx4(mn)))') from=91n to=177n\n.measure tran ptotal AVG PAR('-1.8*i(vvdd)') from=91n to=177n\n.measure tran psc PARAM='1.8*isc'\n.measure tran elsc PARAM='psc*86n'\n.measure tran out_high FIND v(out) at=175n\n.measure tran out_low FIND v(out) at=125n\n.end\n"

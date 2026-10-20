@@ -5,6 +5,9 @@ Q2 tests all 64 valid words electrically. Q3's fixed-resistance model is the
 assignment model; a separate BSIM3 experiment is explicitly supplementary.
 """
 from pathlib import Path
+import sys as _simulation_sys
+_simulation_sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from simulation_environment import default_hspice, default_model, add_environment_check, resolve_simulation_args
 from itertools import product
 import argparse,csv,json,re,subprocess,shutil
 HERE=Path(__file__).resolve().parent
@@ -15,11 +18,11 @@ def write_csv(path,rows):
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--hspice',default='C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com')
-    ap.add_argument('--model',default='D:/cic018.l')
+    ap.add_argument('--hspice',default=default_hspice())
+    ap.add_argument('--model',default=default_model())
     ap.add_argument('--raw-dir',default=str(HERE.parents[2]/'2020-simulation'/'HW2'))
     ap.add_argument('--skip-hspice',action='store_true')
-    args=ap.parse_args();model=Path(args.model).resolve();raw=Path(args.raw_dir).resolve()
+    add_environment_check(ap);args=ap.parse_args();resolve_simulation_args(ap,args,skip=args.skip_hspice);model=Path(args.model).resolve();raw=Path(args.raw_dir).resolve()
     q1=[]
     for a,b,c in product([0,1],repeat=3):
         d=int(not(a^b));e=int(not(b and c))

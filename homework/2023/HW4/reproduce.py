@@ -1,12 +1,15 @@
 """Independently rerun the identical HW3 pre-layout netlist. No layout/PEX."""
 from pathlib import Path
+import sys as _simulation_sys
+_simulation_sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from simulation_environment import default_hspice, default_model, add_environment_check, resolve_simulation_args
 import argparse,hashlib,importlib.util,json,os
 HERE=Path(__file__).resolve().parent
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--hspice',default=os.getenv('HSPICE','C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com'))
-    ap.add_argument('--model',type=Path,default=os.getenv('CIC018_MODEL','D:/cic018.l'))
-    ap.add_argument('--work',type=Path,default=HERE/'.simulation');a=ap.parse_args()
+    ap.add_argument('--hspice',default=default_hspice())
+    ap.add_argument('--model',type=Path,default=default_model())
+    ap.add_argument('--work',type=Path,default=HERE/'.simulation');add_environment_check(ap);a=ap.parse_args();resolve_simulation_args(ap,a)
     spec=importlib.util.spec_from_file_location('h3',HERE.parent/'HW3'/'reproduce.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
     assert m.sha(HERE/'rca.sp')==m.sha(HERE.parent/'HW3'/'rca.sp')
     deck=m.power(a.model.resolve());(HERE/'testbench.sp').write_text(deck)

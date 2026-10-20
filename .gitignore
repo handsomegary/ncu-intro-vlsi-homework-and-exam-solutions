@@ -30,3 +30,6 @@ run_artifacts/
 .run_testbench.sp
 .DS_Store
 
+
+# Local exports from saved-data reproduction.
+reproduced/

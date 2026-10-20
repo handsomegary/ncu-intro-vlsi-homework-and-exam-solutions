@@ -59,6 +59,18 @@ def main():
                 covered.add((year['year'],assignment['homework']))
     require(covered==contexts,'Completed homework question coverage')
     require(manifest['completed_assignments']==31 and manifest['completed_exams']==20,'Published archive counts')
+    reproduction=json.loads((ROOT/'simulation_entries.json').read_text(encoding='utf-8-sig'))
+    require(len(reproduction['entries'])==23,'Direct simulation-driver coverage')
+    for entry in reproduction['entries']:
+        source=ROOT/entry['path']
+        require(source.is_file(),f'Missing simulation driver: {entry["path"]}')
+        text=source.read_text(encoding='utf-8-sig')
+        require('resolve_simulation_args(' in text and 'add_environment_check(' in text,
+                f'Missing environment preflight: {entry["path"]}')
+    for name in ['simulation_environment.py','check_environment.py','reproduce_saved.py',
+                 'prepare_instructor_testbench.py','requirements-plots.txt','REPRODUCING.md']:
+        require(name in manifest['artifact_sha256'] and (ROOT/name).is_file(),
+                f'Missing fresh-download support: {name}')
     full_name=re.compile(r'(?:Jin[\s_\-\u2010-\u2014]*Fu\s+Li|Li\s*,?\s*Jin[\s_\-\u2010-\u2014]*Fu|J\s*\.\s*[-\u2010-\u2014]?\s*F\s*\.\s*Li)|'+chr(26446)+'['+chr(36914)+chr(36827)+']'+chr(31119),re.I)
     for name in manifest['artifact_sha256']:
         file=ROOT/name

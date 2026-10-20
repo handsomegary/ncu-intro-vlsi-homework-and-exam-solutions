@@ -32,13 +32,14 @@ The original [homework2.pdf](../assignments/homework2.pdf) contains two analytic
 Run in Windows PowerShell:
 
 ```powershell
-python .\reproduce.py --hspice 'C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com'
+python .\reproduce.py --hspice 'C:/your-tools/hspice.com' --model 'C:/your-models/cic018.l' --check-environment
+python .\reproduce.py --hspice 'C:/your-tools/hspice.com' --model 'C:/your-models/cic018.l'
 python .\validate_results.py
 pdflatex -interaction=nonstopmode -halt-on-error solution.tex
 pdflatex -interaction=nonstopmode -halt-on-error solution.tex
 ```
 
-Use `--raw-dir 'another-local-directory'` to select a raw-log directory. A valid HSPICE license service is required. An execution environment with network isolation must allow the simulator to connect to the existing license service.
+Use your actual installation/model paths, or set `HSPICE` and `CIC018_MODEL`. `--model` rewrites the process path only in scratch copies. Use `--raw-dir 'another-local-directory'` to select a raw-log directory. A valid HSPICE license service is required. See the [fresh-download guide](../../../REPRODUCING.md) for saved-data reproduction without CAD.
 
 ## Model and actual verification results
 

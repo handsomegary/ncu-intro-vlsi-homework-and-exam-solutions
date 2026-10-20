@@ -4,6 +4,9 @@ Local CIC018 model is a prerequisite, never distributed. Raw simulator files
 go to --raw-dir; only measurements, sampled waveforms and checks are exported.
 """
 from pathlib import Path
+import sys as _simulation_sys
+_simulation_sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from simulation_environment import default_hspice, default_model, add_environment_check, resolve_simulation_args
 import argparse, csv, json, re, subprocess, shutil, hashlib
 
 HERE = Path(__file__).resolve().parent
@@ -72,10 +75,10 @@ CL z vss 1f
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--hspice',default='C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com')
-    ap.add_argument('--model',default='D:/cic018.l')
+    ap.add_argument('--hspice',default=default_hspice())
+    ap.add_argument('--model',default=default_model())
     ap.add_argument('--raw-dir',default=str(HERE.parents[2]/'2020-simulation'/'HW3'))
-    args=ap.parse_args();model=Path(args.model).resolve();raw=Path(args.raw_dir).resolve()
+    add_environment_check(ap);args=ap.parse_args();resolve_simulation_args(ap,args);model=Path(args.model).resolve();raw=Path(args.raw_dir).resolve()
     if not model.is_file():raise FileNotFoundError('Local model file missing; not distributed in this repository')
     rows=[];checks=[];trace_rows=[]
     # Primary fixed-slew result, timestep convergence, and a slower input check.

@@ -1,0 +1,20 @@
+name: Verify public reproduction package
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  public-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify published files and numerical evidence
+        run: python -B verify_package.py
+      - name: Check portable entry points without licensed CAD
+        run: python -B -m unittest discover -s tests -v
+      - name: Regenerate public saved-result analysis
+        run: python -B reproduce_saved.py --outdir reproduced/saved

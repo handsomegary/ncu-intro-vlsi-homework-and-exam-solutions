@@ -4,6 +4,9 @@ Requires only Python standard library, a licensed HSPICE, and an external CIC018
 model. Raw simulator artifacts stay in run_artifacts/ (excluded from Git).
 """
 from pathlib import Path
+import sys as _simulation_sys
+_simulation_sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from simulation_environment import default_hspice, default_model, add_environment_check, resolve_simulation_args
 import argparse
 import csv
 import hashlib
@@ -13,13 +16,12 @@ import re
 import subprocess
 
 HERE=Path(__file__).resolve().parent
-DEFAULT_HSPICE=r'C:\synopsys\Hspice_S-2021.09\WIN64\hspice.com'
 
 def run():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--hspice',default=os.environ.get('HSPICE', DEFAULT_HSPICE))
-    p.add_argument('--model',default=os.environ.get('CIC018_MODEL','D:/cic018.l'))
-    args=p.parse_args()
+    p.add_argument('--hspice',default=default_hspice())
+    p.add_argument('--model',default=default_model())
+    add_environment_check(p);args=p.parse_args();resolve_simulation_args(p,args)
     model=Path(args.model).resolve()
     if not model.is_file(): raise SystemExit(f'Missing external process model: {model}')
     raw=HERE/'run_artifacts';raw.mkdir(exist_ok=True)

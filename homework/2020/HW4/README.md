@@ -10,5 +10,5 @@ HW3 circuit packaged as the requested pre-layout .sp-only deliverable.
 python simulate.py --model D:/cic018.l --raw-dir <scratch>
 ```
 
-Requires Python 3 and licensed HSPICE (default `C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com`); the CIC018 model is local and is not distributed. Keep raw simulator output in a scratch directory. Pass `--hspice <path>` to override the executable.
+Requires Python 3 and licensed HSPICE; the authorized CIC018 model is external and is not distributed. Select your paths with `--hspice` and `--model`, or `HSPICE`/`CIC018_MODEL`. Add `--check-environment` to verify paths without simulation. Keep raw simulator output in a scratch directory. See the [fresh-download guide](../../../REPRODUCING.md).
 HW4 intentionally stops at schematic SPICE; no layout/extraction is claimed. Its checked-in result data are the identical-circuit HW3 measurements, explicitly recorded in `provenance.json`.

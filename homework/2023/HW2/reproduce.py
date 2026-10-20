@@ -1,5 +1,8 @@
 """Analytical checks plus three actual HSPICE measurements, kept distinct."""
 from pathlib import Path
+import sys as _simulation_sys
+_simulation_sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from simulation_environment import default_hspice, default_model, add_environment_check, resolve_simulation_args
 import argparse,csv,itertools,json,os,subprocess
 HERE=Path(__file__).resolve().parent
 def csvwrite(p,rows):
@@ -24,10 +27,10 @@ def logical_checks():
     return len(rows)
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--hspice',default=os.getenv('HSPICE','C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com'))
-    ap.add_argument('--model',type=Path,default=os.getenv('CIC018_MODEL','D:/cic018.l'))
+    ap.add_argument('--hspice',default=default_hspice())
+    ap.add_argument('--model',type=Path,default=default_model())
     ap.add_argument('--work',type=Path,default=HERE/'.simulation');ap.add_argument('--logic-only',action='store_true')
-    a=ap.parse_args();n=logical_checks()
+    add_environment_check(ap);a=ap.parse_args();resolve_simulation_args(ap,a,skip=a.logic_only);n=logical_checks()
     if a.logic_only:print(f'{n} logic checks; sizing checks passed');return
     a.work=a.work.resolve();a.work.mkdir(parents=True,exist_ok=True);status=[]
     for stem in ('q2_retention','q3_resistance','q3_cic018'):

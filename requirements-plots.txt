@@ -1,0 +1,2 @@
+# Optional; package verification and saved-result reproduction need only Python.
+matplotlib>=3.8,<4

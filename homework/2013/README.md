@@ -18,7 +18,7 @@ Every available homework includes standalone `solution.tex`, a compiled PDF,
 reproducible code, and saved verification data. Source identities and comparison
 decisions are recorded in [SOURCES.md](SOURCES.md) and [yearcoverage.json](yearcoverage.json).
 
-The process library remains a local prerequisite (`D:/cic018.l` by default).
+The process library remains an external prerequisite selected with `--model` or `CIC018_MODEL`. Use `--check-environment` to verify the executable and model paths before simulation; see the [fresh-download guide](../../REPRODUCING.md).
 No process-model text, license information, layout files or student-only inferred
 homework tasks are published. Analytical checks and physical HSPICE measurements
 are identified separately.

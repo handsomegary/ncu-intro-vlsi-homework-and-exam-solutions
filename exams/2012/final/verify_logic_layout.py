@@ -86,7 +86,8 @@ def read_literal_csv(name, expected):
                 for name, kind, left, right, gate in ds}
     assert canonical(devices) == canonical(expected), f'Source contact-map mismatch: {name}'
     assert counts(devices) == {'pMOS': 6, 'nMOS': 6, 'total': 12}
-    return devices, hashlib.sha256(path.read_bytes()).hexdigest()
+    # CSV identities follow the collection's LF-normalized text hash policy.
+    return devices, hashlib.sha256(path.read_bytes().replace(b'\r\n', b'\n')).hexdigest()
 
 
 # Q2: the printed bar covers all of A(B+C)+C. Absorption reduces it to AB+C.

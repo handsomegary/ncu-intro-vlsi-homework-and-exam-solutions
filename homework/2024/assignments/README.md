@@ -19,6 +19,13 @@ The original PDFs define the assignments. This table describes the requirements 
 - `energy = average power x 9 ns`; HW3 area is `sum(W_i L_i)` for all transistors.
 - Read the [English clarification translation](hw3_clarifications.en.md). At the user's request, numerical statistics and reproducible checks replace GUI waveform screenshots in this delivery.
 
+The published [HW3 testbench](../HW3/testbench.sp) contains the prescribed input
+stimuli and a model/include path that must be configured for a new installation.
+Use [prepare_instructor_testbench.py](../../../prepare_instructor_testbench.py),
+as described in the [fresh-download guide](../../../REPRODUCING.md), to create a
+runtime copy from that published deck and the included HW3 circuit with your own
+authorized model. The helper leaves the published files unchanged.
+
 ## HW4 area and scope
 
 The [English clarification translation](hw4_clarifications.en.md) specifies a layout rectangle covering all materials, **not** HW3's `sum(W_i L_i)`. No physical layout area or post-layout results are claimed, and previous students' layout values are not reused.

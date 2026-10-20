@@ -4,6 +4,9 @@ No process model is distributed. Set CIC018_MODEL and HSPICE or use CLI flags.
 Raw simulator files stay in --work; only derived data enter --results.
 """
 from pathlib import Path
+import sys as _simulation_sys
+_simulation_sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from simulation_environment import default_hspice, default_model, add_environment_check, resolve_simulation_args
 import argparse, csv, json, os, re, subprocess, hashlib
 
 HERE = Path(__file__).absolute().parent
@@ -195,12 +198,12 @@ def exhaustive_deck(model):
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--model',default=os.getenv('CIC018_MODEL','D:/cic018.l'))
-    ap.add_argument('--hspice',default=os.getenv('HSPICE',r'C:\synopsys\Hspice_S-2021.09\WIN64\hspice.com'))
+    ap.add_argument('--model',default=default_model())
+    ap.add_argument('--hspice',default=default_hspice())
     ap.add_argument('--work',type=Path,default=HERE/'.simulation')
     ap.add_argument('--results',type=Path,default=HERE/'results')
     ap.add_argument('--selected',default='compact64_min')
-    args=ap.parse_args(); model=Path(args.model).absolute(); args.work=args.work.absolute()
+    add_environment_check(ap);args=ap.parse_args();resolve_simulation_args(ap,args); model=Path(args.model).absolute(); args.work=args.work.absolute()
     if not model.is_file():raise FileNotFoundError('Set CIC018_MODEL to the licensed CIC018 library.')
     args.results.mkdir(parents=True,exist_ok=True)
     instructor=(HERE/'testbench.sp').read_text()

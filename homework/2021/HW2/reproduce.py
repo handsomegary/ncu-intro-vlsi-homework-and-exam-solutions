@@ -2,6 +2,9 @@
 No dual-Vt PDK is provided; Q1 is verified logically, not as leakage data.
 """
 from pathlib import Path
+import sys as _simulation_sys
+_simulation_sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from simulation_environment import default_hspice, default_model, add_environment_check, resolve_simulation_args
 import argparse,csv,json,os,subprocess
 H=Path(__file__).resolve().parent
 
@@ -25,8 +28,8 @@ def pwl(node,vals,step=10):
  for j in range(0,len(points),5):s+='+ '+' '.join(points[j:j+5])+'\n'
  return s+'+)\n'
 def main():
- ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--hspice',default=os.environ.get('HSPICE','C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com'));ap.add_argument('--model',default=os.environ.get('CIC018_MODEL','D:/cic018.l'));ap.add_argument('--work',default=str(H.parents[2]/'scratch'/'2021_HW2'))
- a=ap.parse_args();model=Path(a.model).resolve();raw=Path(a.work).resolve();results=H/'results';results.mkdir(exist_ok=True)
+ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--hspice',default=default_hspice());ap.add_argument('--model',default=default_model());ap.add_argument('--work',default=str(H.parents[2]/'scratch'/'2021_HW2'))
+ add_environment_check(ap);a=ap.parse_args();resolve_simulation_args(ap,a);model=Path(a.model).resolve();raw=Path(a.work).resolve();results=H/'results';results.mkdir(exist_ok=True)
  if not model.is_file():raise FileNotFoundError('Local model required: '+str(model))
  cases=[(data,r) for r in range(4) for data in range(16)]
  s=header(model)+".include 'rotator.sp'\n"

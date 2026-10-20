@@ -19,10 +19,15 @@ Public exam readers can use the reconstructed papers and corrected solutions her
 
 ## Verification
 
+Python 3.10+ can verify the saved results without CAD. The [fresh-download guide](REPRODUCING.md) also covers saved-data analysis, optional plots, portable HSPICE/model configuration and preparing a runnable copy of the published testbench.
+
 ```sh
 python verify_package.py
+python reproduce_saved.py --outdir reproduced/saved
 ```
 
 The checker verifies public artifact hashes, coverage, links, mathematical checks and saved simulation evidence. It does not launch HSPICE. Each assignment provides its own reproduction instructions. The CIC018 process model is not redistributed.
+
+New process simulations require your own licensed HSPICE installation and authorized CIC018 model. The simulation drivers accept `--hspice`, `--model` and `--check-environment`; the environment check verifies paths without starting CAD or contacting its license service.
 
 [MANIFEST.json](MANIFEST.json) records SHA256 hashes, with text line endings normalized to LF and binary files unchanged.

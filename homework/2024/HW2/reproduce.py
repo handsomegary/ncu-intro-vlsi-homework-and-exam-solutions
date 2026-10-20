@@ -8,7 +8,11 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 from pathlib import Path
+import sys as _simulation_sys
+_simulation_sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from simulation_environment import default_hspice, default_model, add_environment_check, resolve_simulation_args
 import subprocess
 import tempfile
 import sys
@@ -16,9 +20,9 @@ import sys
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--hspice", default="C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com")
+    parser.add_argument("--hspice", default=default_hspice())
     parser.add_argument("--raw-dir", default=str(Path(tempfile.gettempdir()) / "intro-vlsi-2024" / "HW2"))
-    args = parser.parse_args()
+    parser.add_argument("--model", default=default_model());add_environment_check(parser);args=parser.parse_args();resolve_simulation_args(parser,args)
     here = Path(__file__).resolve().parent
     rawdir = Path(args.raw_dir).resolve()
     rawdir.mkdir(parents=True, exist_ok=True)
@@ -34,7 +38,12 @@ def main() -> int:
             writer.writerow(["constant_resistance", ab, "vout", vout, "V", "closed_form"])
     statuses = []
     for stem in decks:
-        command = [args.hspice, "-i", str(here / f"{stem}.sp"), "-o", str(rawdir / stem)]
+        source = (here / f"{stem}.sp").read_text(encoding="ascii")
+        source = re.sub(r"(?im)^(\s*\.lib\s+)'[^']+'",
+                        lambda m: m[1]+"'"+args.model.as_posix()+"'", source)
+        runtime = rawdir / f"{stem}.sp"
+        runtime.write_text(source, encoding="ascii", newline="\n")
+        command = [args.hspice, "-i", str(runtime), "-o", str(rawdir / stem)]
         try:
             result = subprocess.run(command, cwd=here, capture_output=True, timeout=180)
             # Keep the actual stdout/stderr; .lis is independently created by HSPICE.

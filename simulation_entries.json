@@ -1,0 +1,143 @@
+{
+  "scope": "Executable process-simulation drivers; wrapper reproduce.py commands delegate to these entries.",
+  "entries": [
+    {
+      "path": "homework/2013/HW3/reproduce.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": "prepare_only"
+    },
+    {
+      "path": "homework/2015/HW3/reproduce.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2015/HW4/reproduce.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2016/HW3/simulate_and.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2016/HW3/simulate_power.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2017/HW3/simulate_and.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2017/HW3/simulate_power.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2017/HW4/reproduce.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2018/HW2/reproduce.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": "analytical_only"
+    },
+    {
+      "path": "homework/2019/HW2/reproduce.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": "analytical_only"
+    },
+    {
+      "path": "homework/2020/HW2/reproduce.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": "skip_hspice"
+    },
+    {
+      "path": "homework/2020/HW3/simulate.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2020/HW4/simulate.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2021/HW2/reproduce.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2021/HW3/reproduce.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2021/HW4/reproduce.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2023/HW2/reproduce.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": "logic_only"
+    },
+    {
+      "path": "homework/2023/HW3/refine_worst.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2023/HW3/reproduce.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2023/HW4/reproduce.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2024/HW2/reproduce.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2024/HW3/simulate.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    },
+    {
+      "path": "homework/2024/HW4/reproduce.py",
+      "model_override": true,
+      "environment_check": true,
+      "non_simulation_mode": null
+    }
+  ]
+}

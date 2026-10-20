@@ -5,6 +5,9 @@ condition. Report all 56 static input transitions and all 8 domino evaluate
 words. The separate monotone carry-complement domino rail enables sum logic.
 """
 from pathlib import Path
+import sys as _simulation_sys
+_simulation_sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from simulation_environment import default_hspice, default_model, add_environment_check, resolve_simulation_args
 import sys,argparse,json,hashlib,re
 sys.path.insert(0,str(Path(__file__).resolve().parent.parent))
 from sim_utils import header,run,measurements,trace,write_csv
@@ -137,8 +140,8 @@ def export_waveforms(kind,model,raw,hspice,worst):
     (HERE/(kind+'_testbench.sp')).write_text(deck,encoding='ascii',newline='\n')
 
 def main():
-    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--hspice',default='C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com');ap.add_argument('--model',default='D:/cic018.l');ap.add_argument('--raw-dir',default=str(HERE.parents[2]/'2015-simulation'/'HW4'));ap.add_argument('--waveforms-only',action='store_true')
-    args=ap.parse_args();raw=Path(args.raw_dir).resolve();history=[];summary={}
+    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--hspice',default=default_hspice());ap.add_argument('--model',default=default_model());ap.add_argument('--raw-dir',default=str(HERE.parents[2]/'2015-simulation'/'HW4'));ap.add_argument('--waveforms-only',action='store_true')
+    add_environment_check(ap);args=ap.parse_args();resolve_simulation_args(ap,args);raw=Path(args.raw_dir).resolve();history=[];summary={}
     if args.waveforms_only:
         summary=json.loads((HERE/'verification.json').read_text())
         for kind in ['mirror','domino']:export_waveforms(kind,args.model,raw,args.hspice,summary[kind]['worst_delays'])

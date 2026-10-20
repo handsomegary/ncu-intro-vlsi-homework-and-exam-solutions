@@ -5,6 +5,9 @@ crossing minus the 50% input crossing. Unchanged outputs have no required delay.
 The power workload is a separate 128-vector binary-count sequence.
 """
 from pathlib import Path
+import sys as _simulation_sys
+_simulation_sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from simulation_environment import default_hspice, default_model, add_environment_check, resolve_simulation_args
 import argparse, csv, hashlib, itertools, json, os, shutil, subprocess
 HERE=Path(__file__).resolve().parent
 INS=['x0','x1','x2','y0','y1','y2','cin']; OUTS=['s0','s1','s2','cout']
@@ -57,10 +60,10 @@ def power(model):
 def voltage_ok(v,bit):return 1.6<=v<=1.82 if bit else -.02<=v<=.2
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--hspice',default=os.getenv('HSPICE','C:/synopsys/Hspice_S-2021.09/WIN64/hspice.com'))
-    ap.add_argument('--model',type=Path,default=os.getenv('CIC018_MODEL','D:/cic018.l'))
+    ap.add_argument('--hspice',default=default_hspice())
+    ap.add_argument('--model',type=Path,default=default_model())
     ap.add_argument('--work',type=Path,default=HERE/'.simulation');ap.add_argument('--results',type=Path,default=HERE/'results')
-    args=ap.parse_args();args.work=args.work.resolve();args.results.mkdir(parents=True,exist_ok=True)
+    add_environment_check(ap);args=ap.parse_args();resolve_simulation_args(ap,args);args.work=args.work.resolve();args.results.mkdir(parents=True,exist_ok=True)
     deck,cases=sweep(args.model.resolve());(HERE/'characterize.sp').write_text(deck)
     rows=run(args.hspice,args.work/'characterize',deck,HERE/'rca.sp')
     if len(rows)!=896:raise AssertionError(f'Expected 896 sweeps, got {len(rows)}')
