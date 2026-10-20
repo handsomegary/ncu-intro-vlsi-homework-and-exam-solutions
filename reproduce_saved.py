@@ -14,7 +14,9 @@ HW = ROOT/'homework'
 
 def fresh_output(value):
     path = Path(value).expanduser().resolve()
-    generated = (ROOT/'reproduced').resolve()
+    # Keep the allowlist lexical: a reproduced/ symlink into homework/ must
+    # not turn the protected destination itself into an allowed source tree.
+    generated = ROOT/'reproduced'
     if path == ROOT or (path.is_relative_to(ROOT) and not path.is_relative_to(generated)):
         raise ValueError('Choose an output outside the repository or under its reproduced/ directory.')
     if path.exists() and (not path.is_dir() or any(path.iterdir())):

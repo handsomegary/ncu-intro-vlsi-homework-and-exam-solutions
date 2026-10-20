@@ -124,6 +124,14 @@ class ReproductionEnvironment(unittest.TestCase):
                          (ROOT/'reproduced/new-output').resolve())
         self.assertEqual(fresh_output(self.work/'external output'),
                          (self.work/'external output').resolve())
+        real_resolve=Path.resolve
+        def redirected_resolve(path,*args,**kwargs):
+            if path==ROOT/'reproduced':return ROOT/'homework'
+            return real_resolve(path,*args,**kwargs)
+        # Simulate a symlink/junction without requiring Windows link privileges.
+        with patch.object(Path,'resolve',autospec=True,side_effect=redirected_resolve):
+            with self.assertRaises(ValueError):
+                fresh_output(ROOT/'homework/2024/HW3/new-output')
 
     def test_prepared_deck_keeps_unicode_output_path_and_rejects_apostrophe(self):
         output=self.work/('prepared '+chr(0x984c)+chr(0x76ee))
